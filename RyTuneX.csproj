@@ -13,7 +13,6 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <UseWinUI>true</UseWinUI>
-    <WinUISDKReferences>true</WinUISDKReferences>
     <DefaultLanguage>en-US</DefaultLanguage>
     <AppxBundleAutoResourcePackageQualifiers>Scale|DXFeatureLevel</AppxBundleAutoResourcePackageQualifiers>
     <AppxDefaultResourceQualifiers>Language=en-US;ar-TN;de;es-ES;fr-FR;he-IL;it-IT;ja-JP;ko-KR;pt-BR;ru-RU;tr-TR;vi-VN;id-ID;zh-Hans;zh-Hant|Contrast=standard|Scale=200|HomeRegion=001|TargetSize=256|LayoutDirection=LTR|DXFeatureLevel=DX9|Configuration=|AlternateForm=|Platform=UAP</AppxDefaultResourceQualifiers>
@@ -36,8 +35,11 @@
   <ItemGroup>
     <None Remove="Assets\discord.png" />
     <None Remove="Assets\github.png" />
-    <None Remove="Assets\WindowIcon.ico" />
     <None Remove="Views\*.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="Assets\WindowIcon.ico" />
   </ItemGroup>
 
   <ItemGroup>
@@ -64,16 +66,15 @@
       <PackageReference Include="CommunityToolkit.WinUI.Controls.Primitives" Version="8.2.251219" />
       <PackageReference Include="CommunityToolkit.WinUI.Controls.Segmented" Version="8.2.251219" />
       <PackageReference Include="CommunityToolkit.WinUI.Controls.SettingsControls" Version="8.2.251219" />
-      <PackageReference Include="DevWinUI" Version="9.9.3" />
-      <PackageReference Include="DevWinUI.Controls" Version="9.9.3" />
-      <PackageReference Include="Microsoft.Extensions.Hosting" Version="10.0.5" />
-      <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.8.260317003" />
-      <PackageReference Include="System.Diagnostics.PerformanceCounter" Version="10.0.5" />
-      <PackageReference Include="System.Drawing.Common" Version="10.0.5" />
+      <PackageReference Include="DevWinUI" Version="10.1.0" />
+      <PackageReference Include="Microsoft.Extensions.Hosting" Version="10.0.10" />
+      <PackageReference Include="Microsoft.WindowsAppSDK" Version="2.3.1" />
+      <PackageReference Include="System.Diagnostics.PerformanceCounter" Version="10.0.10" />
+      <PackageReference Include="System.Drawing.Common" Version="10.0.10" />
       <PackageReference Include="System.Management" Version="10.0.10" />
-      <PackageReference Include="System.ServiceProcess.ServiceController" Version="10.0.5" />
+      <PackageReference Include="System.ServiceProcess.ServiceController" Version="10.0.10" />
       <PackageReference Include="Vortice.DXGI" Version="3.8.3" />
-      <PackageReference Include="WinUIEx" Version="2.9.0" />
+      <PackageReference Include="WinUIEx" Version="2.9.2" />
   </ItemGroup>
   
   <ItemGroup Condition="'$(DisableMsixProjectCapabilityAddedByProject)'!='true' and '$(EnableMsixTooling)'=='true'">
@@ -81,6 +82,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="Assets\WindowIcon.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Controls\UsageGraph.xaml">
       <Generator>MSBuild:Compile</Generator>
     </None>

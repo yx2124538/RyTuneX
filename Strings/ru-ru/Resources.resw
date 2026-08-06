@@ -1719,4 +1719,10 @@
   <data name="Type" xml:space="preserve">
     <value>Тип</value>
   </data>
+  <data name="Search" xml:space="preserve">
+    <value>Поиск...</value>
+  </data>
+  <data name="Shell_Packages.Content" xml:space="preserve">
+    <value>Пакеты</value>
+  </data>
 </root>

@@ -1722,4 +1722,10 @@
   <data name="Type" xml:space="preserve">
     <value>유형</value>
   </data>
+  <data name="Search" xml:space="preserve">
+    <value>검색...</value>
+  </data>
+  <data name="Shell_Packages.Content" xml:space="preserve">
+    <value>패키지</value>
+  </data>
 </root>

@@ -1722,4 +1722,10 @@ Check your computer for memory problems</value>
   <data name="Type" xml:space="preserve">
     <value>Type</value>
   </data>
+  <data name="Search" xml:space="preserve">
+    <value>Search...</value>
+  </data>
+  <data name="Shell_Packages.Content" xml:space="preserve">
+    <value>Packages</value>
+  </data>
 </root>

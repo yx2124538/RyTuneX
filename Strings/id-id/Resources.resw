@@ -1720,4 +1720,10 @@
   <data name="Type" xml:space="preserve">
     <value>Jenis</value>
   </data>
+  <data name="Search" xml:space="preserve">
+    <value>Cari...</value>
+  </data>
+  <data name="Shell_Packages.Content" xml:space="preserve">
+    <value>Paket</value>
+  </data>
 </root>

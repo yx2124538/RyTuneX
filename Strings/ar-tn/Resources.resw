@@ -1722,4 +1722,10 @@
   <data name="Type" xml:space="preserve">
     <value>النوع</value>
   </data>
+  <data name="Search" xml:space="preserve">
+    <value>ابحث...</value>
+  </data>
+  <data name="Shell_Packages.Content" xml:space="preserve">
+    <value>الحزم</value>
+  </data>
 </root>

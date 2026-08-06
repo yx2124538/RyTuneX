@@ -1722,4 +1722,10 @@
   <data name="Type" xml:space="preserve">
     <value>类型</value>
   </data>
+  <data name="Search" xml:space="preserve">
+    <value>搜索...</value>
+  </data>
+  <data name="Shell_Packages.Content" xml:space="preserve">
+    <value>软件包</value>
+  </data>
 </root>

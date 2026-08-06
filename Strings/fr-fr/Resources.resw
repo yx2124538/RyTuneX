@@ -1722,4 +1722,10 @@ Vérifiez votre ordinateur pour détecter d'éventuels problèmes de mémoire</v
   <data name="Type" xml:space="preserve">
     <value>Type</value>
   </data>
+  <data name="Search" xml:space="preserve">
+    <value>Rechercher...</value>
+  </data>
+  <data name="Shell_Packages.Content" xml:space="preserve">
+    <value>Packages</value>
+  </data>
 </root>

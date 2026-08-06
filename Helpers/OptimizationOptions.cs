@@ -4,10 +4,30 @@ using System.Collections.Concurrent;
 using System.Diagnostics;
 using System.Drawing.Imaging;
 using System.Runtime.InteropServices;
+using System.Text;
 using System.Text.RegularExpressions;
 using System.Xml.Linq;
+using Windows.ApplicationModel;
+using Windows.Management.Deployment;
 
 namespace RyTuneX.Helpers;
+
+public class AppInfo : Tuple<string, string, bool>
+{
+    public string Name { get; }
+    public string IconPath { get; }
+    public bool IsWin32 { get; }
+    public string PackageId { get; }
+
+    public AppInfo(string name, string iconPath, bool isWin32, string packageId)
+        : base(name, iconPath, isWin32)
+    {
+        Name = name;
+        IconPath = iconPath;
+        IsWin32 = isWin32;
+        PackageId = packageId;
+    }
+}
 
 internal partial class OptimizationOptions
 {
@@ -29,7 +49,28 @@ internal partial class OptimizationOptions
     [DllImport("user32.dll")]
     private static extern bool DestroyIcon(IntPtr hIcon);
 
-    public static async Task<(List<Tuple<string, string, bool>> Apps, HashSet<string> UninstallableNames)> GetInstalledApps()
+    [DllImport("shlwapi.dll", BestFitMapping = false, CharSet = CharSet.Unicode, ExactSpelling = true, SetLastError = false, ThrowOnUnmappableChar = true)]
+    private static extern int SHLoadIndirectString(string pszSource, StringBuilder pszOutBuf, uint cchOutBuf, IntPtr ppvReserved);
+
+    private static string CleanPackageName(string rawName)
+    {
+        if (string.IsNullOrWhiteSpace(rawName)) return "Unknown App";
+
+        var name = rawName;
+        if (name.StartsWith("Microsoft.", StringComparison.OrdinalIgnoreCase))
+        {
+            name = name["Microsoft.".Length..];
+        }
+        if (name.StartsWith("Windows.", StringComparison.OrdinalIgnoreCase))
+        {
+            name = name["Windows.".Length..];
+        }
+
+        var result = Regex.Replace(name, @"(?<=[a-z])(?=[A-Z])|(?<=[A-Z])(?=[A-Z][a-z])", " ");
+        return string.IsNullOrWhiteSpace(result) ? rawName : result.Trim();
+    }
+
+    public static async Task<(List<AppInfo> Apps, HashSet<string> UninstallableNames)> GetInstalledApps()
     {
         Directory.CreateDirectory(IconCacheDirectory);
         EnsureDefaultIcon();
@@ -42,8 +83,8 @@ internal partial class OptimizationOptions
         var (uwpApps, uninstallableNames) = uwpAppsTask.Result;
 
         var installedApps = uwpApps.Concat(win32AppsTask.Result)
-            .DistinctBy(app => app.Item1)
-            .OrderBy(app => app.Item1)
+            .DistinctBy(app => app.Name, StringComparer.OrdinalIgnoreCase)
+            .OrderBy(app => app.Name)
             .ToList();
 
         _ = LogHelper.Log("Returning Installed Apps [GetInstalledApps]");
@@ -76,99 +117,160 @@ internal partial class OptimizationOptions
         return $"{safe}_{Math.Abs(identity.GetHashCode())}.png";
     }
 
-    private static async Task<(List<Tuple<string, string, bool>> Apps, HashSet<string> UninstallableNames)> GetUwpApps()
+    private static string? ResolveIndirectString(string resourceUri)
     {
-        var installedApps = new List<Tuple<string, string, bool>>();
-        var uninstallableNames = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+        try
+        {
+            var sb = new StringBuilder(1024);
+            int hr = SHLoadIndirectString(resourceUri, sb, (uint)sb.Capacity, IntPtr.Zero);
+            if (hr == 0 && sb.Length > 0)
+            {
+                return sb.ToString();
+            }
+        }
+        catch { }
+        return null;
+    }
 
-        // Single PowerShell call that returns Name, InstallLocation, and NonRemovable
-        var command = """Get-AppxPackage -AllUsers | Select-Object Name,InstallLocation,NonRemovable | Format-List""";
+    private static async Task<string> GetUwpDisplayNameAsync(Package pkg)
+    {
+        // 1. Dynamic WinRT AppListEntry DisplayName (returns real-time localized name from Windows app manifest/resource)
+        try
+        {
+            var appListEntries = await pkg.GetAppListEntriesAsync();
+            if (appListEntries != null && appListEntries.Count > 0)
+            {
+                var displayName = appListEntries[0].DisplayInfo?.DisplayName;
+                if (!string.IsNullOrWhiteSpace(displayName) && !displayName.StartsWith("ms-resource:", StringComparison.OrdinalIgnoreCase))
+                {
+                    return displayName.Trim();
+                }
+            }
+        }
+        catch { }
+
+        // 2. Package.DisplayName property
+        try
+        {
+            var displayName = pkg.DisplayName;
+            if (!string.IsNullOrWhiteSpace(displayName) && !displayName.StartsWith("ms-resource:", StringComparison.OrdinalIgnoreCase))
+            {
+                return displayName.Trim();
+            }
+        }
+        catch { }
+
+        // 3. Dynamic real-time resolution of ms-resource: indirect strings via SHLoadIndirectString API
+        try
+        {
+            var rawName = pkg.DisplayName;
+            if (!string.IsNullOrWhiteSpace(rawName) && rawName.StartsWith("ms-resource:", StringComparison.OrdinalIgnoreCase))
+            {
+                var indirectUri = $"@{{{pkg.Id.FullName}?{rawName}}}";
+                var resolved = ResolveIndirectString(indirectUri);
+                if (!string.IsNullOrWhiteSpace(resolved) &&
+                    !resolved.StartsWith("ms-resource:", StringComparison.OrdinalIgnoreCase) &&
+                    !resolved.StartsWith("@{", StringComparison.OrdinalIgnoreCase))
+                {
+                    return resolved.Trim();
+                }
+
+                var indirectUri2 = $"@{{{pkg.Id.FullName}?ms-resource://{pkg.Id.Name}/resources/AppName}}";
+                var resolved2 = ResolveIndirectString(indirectUri2);
+                if (!string.IsNullOrWhiteSpace(resolved2) &&
+                    !resolved2.StartsWith("ms-resource:", StringComparison.OrdinalIgnoreCase) &&
+                    !resolved2.StartsWith("@{", StringComparison.OrdinalIgnoreCase))
+                {
+                    return resolved2.Trim();
+                }
+            }
+        }
+        catch { }
+
+        // 4. Dynamic formatting fallback for internal identity names
+        return CleanPackageName(pkg.Id.Name);
+    }
+
+    private static async Task<(List<AppInfo> Apps, HashSet<string> UninstallableNames)> GetUwpApps()
+    {
+        var installedApps = new List<AppInfo>();
+        var uninstallableNames = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
 
         try
         {
-            using var process = new Process
+            var packageManager = new PackageManager();
+            IEnumerable<Package> packages;
+            try
             {
-                StartInfo = new ProcessStartInfo
-                {
-                    FileName = "powershell.exe",
-                    Arguments = $"-NoProfile -Command \"{command}\"",
-                    RedirectStandardOutput = true,
-                    UseShellExecute = false,
-                    CreateNoWindow = true
-                }
-            };
-            process.Start();
-
-            var output = await process.StandardOutput.ReadToEndAsync().ConfigureAwait(false);
-
-            // Parse all apps and track which are removable
-            string? currentName = null;
-            string? currentLocation = null;
-            bool currentNonRemovable = false;
-            var parsedApps = new List<(string Name, string? Location)>();
-
-            foreach (var line in output.Split([Environment.NewLine], StringSplitOptions.RemoveEmptyEntries))
+                packages = packageManager.FindPackagesForUser(string.Empty);
+            }
+            catch
             {
-                if (line.StartsWith("Name", StringComparison.Ordinal))
+                try { packages = packageManager.FindPackages(); }
+                catch { packages = Array.Empty<Package>(); }
+            }
+
+            var parsedApps = new List<(string Name, string? Location, bool NonRemovable, string PackageId)>();
+
+            foreach (var pkg in packages)
+            {
+                try
                 {
-                    // Flush previous app
-                    if (!string.IsNullOrEmpty(currentName))
+                    if (pkg.IsFramework || pkg.IsResourcePackage || pkg.IsOptional)
+                        continue;
+
+                    var rawName = pkg.Id.Name;
+                    if (string.IsNullOrWhiteSpace(rawName))
+                        continue;
+
+                    if (rawName.Contains("RyTuneX", StringComparison.OrdinalIgnoreCase))
+                        continue;
+
+                    var displayName = await GetUwpDisplayNameAsync(pkg).ConfigureAwait(false);
+
+                    string? location = null;
+                    try { location = pkg.InstalledLocation?.Path; } catch { }
+
+                    bool nonRemovable = false;
+                    try
                     {
-                        parsedApps.Add((currentName, currentLocation));
-                        if (!currentNonRemovable)
-                            uninstallableNames.Add(currentName);
+                        nonRemovable = (pkg.SignatureKind == PackageSignatureKind.System);
                     }
+                    catch { }
 
-                    currentName = line.Split([':'], 2)[1].Trim();
-                    currentLocation = null;
-                    currentNonRemovable = false;
+                    var packageId = pkg.Id.FullName ?? rawName;
+
+                    parsedApps.Add((displayName, location, nonRemovable, packageId));
+
+                    if (!nonRemovable)
+                    {
+                        uninstallableNames.Add(displayName);
+                        uninstallableNames.Add(packageId);
+                        uninstallableNames.Add(rawName);
+                    }
                 }
-                else if (line.StartsWith("InstallLocation", StringComparison.Ordinal))
+                catch (Exception ex)
                 {
-                    currentLocation = line.Split([':'], 2)[1].Trim();
-                }
-                else if (line.StartsWith("NonRemovable", StringComparison.Ordinal))
-                {
-                    var val = line.Split([':'], 2)[1].Trim();
-                    currentNonRemovable = val.Equals("True", StringComparison.OrdinalIgnoreCase);
-                }
-                else if (!string.IsNullOrWhiteSpace(currentLocation) && line.StartsWith(" ", StringComparison.Ordinal))
-                {
-                    currentLocation += " " + line.Trim();
+                    _ = LogHelper.LogWarning($"Error inspecting package: {ex.Message}");
                 }
             }
 
-            // Flush last app
-            if (!string.IsNullOrEmpty(currentName))
-            {
-                parsedApps.Add((currentName, currentLocation));
-                if (!currentNonRemovable)
-                    uninstallableNames.Add(currentName);
-            }
-
-            await process.WaitForExitAsync().ConfigureAwait(false);
-
-            // Extract icons in parallel (I/O-bound, safe to parallelize)
-            var iconTasks = parsedApps
-                .Where(app => !string.IsNullOrEmpty(app.Location))
-                .Select(async app =>
-                {
-                    var logoPath = await ExtractLogoPath(app.Location, false, app.Name).ConfigureAwait(false);
-                    return new Tuple<string, string, bool>(app.Name, logoPath, false);
-                })
+            var uniqueApps = parsedApps
+                .DistinctBy(app => app.Name, StringComparer.OrdinalIgnoreCase)
                 .ToList();
 
-            // Apps without install location still get added with empty icon
-            foreach (var app in parsedApps.Where(app => string.IsNullOrEmpty(app.Location)))
+            var iconTasks = uniqueApps.Select(async app =>
             {
-                installedApps.Add(new Tuple<string, string, bool>(app.Name, string.Empty, false));
-            }
+                var logoPath = await ExtractLogoPath(app.Location, false, app.Name).ConfigureAwait(false);
+                return new AppInfo(app.Name, logoPath, false, app.PackageId);
+            }).ToList();
 
-            installedApps.AddRange(await Task.WhenAll(iconTasks).ConfigureAwait(false));
+            var results = await Task.WhenAll(iconTasks).ConfigureAwait(false);
+            installedApps.AddRange(results);
         }
         catch (Exception ex)
         {
-            _ = LogHelper.LogError(ex.Message).ConfigureAwait(false);
+            _ = LogHelper.LogError($"Failed to load UWP apps via WinRT: {ex.Message}");
         }
 
         return (installedApps, uninstallableNames);
@@ -203,7 +305,6 @@ internal partial class OptimizationOptions
         }
     }
 
-    // Find the uninstall (or quiet uninstall) string for a Win32 app by its display name using the same uninstall roots as GetWin32Apps.
     internal static string? GetWin32UninstallString(string appName)
     {
         try
@@ -246,9 +347,117 @@ internal partial class OptimizationOptions
         return null;
     }
 
-    public static async Task<List<Tuple<string, string, bool>>> GetWin32Apps()
+    public static async Task UninstallWin32AppAsync(string appName)
     {
-        var appEntries = new List<(string DisplayName, string? InstallLocation, string? DisplayIcon)>();
+        if (appName.Contains("edge", StringComparison.OrdinalIgnoreCase) ||
+            appName.Contains("Microsoft Edge", StringComparison.OrdinalIgnoreCase))
+        {
+            var scriptFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Assets", "RemoveEdge.ps1");
+            var cmdCommand = $"powershell.exe -ExecutionPolicy Bypass -File \"{scriptFilePath}\" -UninstallEdge -RemoveEdgeData -NonInteractive";
+            await StartInCmd(cmdCommand).ConfigureAwait(false);
+            return;
+        }
+
+        var uninstallString = GetWin32UninstallString(appName);
+        if (string.IsNullOrEmpty(uninstallString))
+        {
+            throw new Exception($"Uninstall command for '{appName}' not found in registry.");
+        }
+
+        _ = LogHelper.Log($"Uninstall string for {appName}: {uninstallString}");
+
+        var exitCode = await StartInCmd(uninstallString).ConfigureAwait(false);
+        if (exitCode != 0)
+        {
+            _ = LogHelper.LogWarning($"Uninstall of Win32 app '{appName}' exited with code {exitCode}.");
+        }
+    }
+
+    public static async Task UninstallUwpAppAsync(string packageId, string appName)
+    {
+        _ = LogHelper.Log($"Uninstalling UWP App: '{appName}' (ID: '{packageId}')");
+
+        if (appName.Contains("edge", StringComparison.OrdinalIgnoreCase) ||
+            packageId.Contains("Microsoft.MicrosoftEdge", StringComparison.OrdinalIgnoreCase))
+        {
+            var scriptFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Assets", "RemoveEdge.ps1");
+            var cmdCommand = $"powershell.exe -ExecutionPolicy Bypass -File \"{scriptFilePath}\" -UninstallEdge -RemoveEdgeData -NonInteractive";
+            await StartInCmd(cmdCommand).ConfigureAwait(false);
+            return;
+        }
+
+        bool removedDirectly = false;
+
+        try
+        {
+            var packageManager = new PackageManager();
+            var packages = packageManager.FindPackages()
+                .Where(p => string.Equals(p.Id.FullName, packageId, StringComparison.OrdinalIgnoreCase) ||
+                            string.Equals(p.Id.FamilyName, packageId, StringComparison.OrdinalIgnoreCase) ||
+                            string.Equals(p.Id.Name, packageId, StringComparison.OrdinalIgnoreCase) ||
+                            string.Equals(p.Id.Name, appName, StringComparison.OrdinalIgnoreCase))
+                .ToList();
+
+            if (packages.Count > 0)
+            {
+                foreach (var pkg in packages)
+                {
+                    try
+                    {
+                        var depOp = packageManager.RemovePackageAsync(pkg.Id.FullName, RemovalOptions.RemoveForAllUsers);
+                        await depOp;
+                        removedDirectly = true;
+                        _ = LogHelper.Log($"Successfully removed UWP package {pkg.Id.FullName} via WinRT PackageManager.");
+                    }
+                    catch (Exception ex)
+                    {
+                        _ = LogHelper.LogWarning($"RemovePackageAsync (all users) failed for {pkg.Id.FullName}: {ex.Message}. Trying default remove.");
+                        try
+                        {
+                            var depOp = packageManager.RemovePackageAsync(pkg.Id.FullName);
+                            await depOp;
+                            removedDirectly = true;
+                            _ = LogHelper.Log($"Successfully removed UWP package {pkg.Id.FullName} via WinRT PackageManager.");
+                        }
+                        catch (Exception ex2)
+                        {
+                            _ = LogHelper.LogWarning($"Default RemovePackageAsync failed: {ex2.Message}");
+                        }
+                    }
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            _ = LogHelper.LogWarning($"WinRT Package Manager removal error: {ex.Message}");
+        }
+
+        try
+        {
+            var searchPattern = packageId;
+            if (searchPattern.Contains('_'))
+            {
+                searchPattern = searchPattern.Split('_')[0];
+            }
+
+            var removeProvisioned = $"Get-AppxProvisionedPackage -Online | Where-Object {{ $_.DisplayName -eq '{searchPattern}' -or $_.PackageName -like '*{searchPattern}*' }} | ForEach-Object {{ Remove-AppxProvisionedPackage -Online -PackageName $_.PackageName }}";
+            await RunPowerShell(removeProvisioned).ConfigureAwait(false);
+
+            if (!removedDirectly)
+            {
+                var removeAppx = $"Get-AppxPackage -AllUsers | Where-Object {{ $_.Name -eq '{searchPattern}' -or $_.PackageFullName -eq '{packageId}' }} | Remove-AppxPackage -AllUsers";
+                await RunPowerShell(removeAppx).ConfigureAwait(false);
+            }
+        }
+        catch (Exception ex)
+        {
+            _ = LogHelper.LogError($"Fallback PowerShell cleanup error for {packageId}: {ex.Message}");
+        }
+    }
+
+    public static async Task<List<AppInfo>> GetWin32Apps()
+    {
+        var appEntries = new List<(string DisplayName, string? InstallLocation, string? DisplayIcon, string UninstallString)>();
 
         try
         {
@@ -274,9 +483,6 @@ internal partial class OptimizationOptions
                 if (string.IsNullOrEmpty(displayName) || systemComponent == 1)
                     continue;
 
-                if (displayName.Contains("edge", StringComparison.CurrentCultureIgnoreCase))
-                    continue;
-
                 var installLocation = subKey.GetValue("InstallLocation") as string;
                 if (!string.IsNullOrEmpty(installLocation))
                 {
@@ -285,19 +491,22 @@ internal partial class OptimizationOptions
                         installLocation = Path.GetDirectoryName(installLocation);
                 }
 
-                if (string.IsNullOrEmpty(installLocation))
+                var uninstallString = subKey.GetValue("QuietUninstallString") as string;
+                if (string.IsNullOrEmpty(uninstallString))
                 {
-                    var uninstallString = (subKey.GetValue("UninstallString") as string)?.Replace("\"", "");
-                    if (!string.IsNullOrEmpty(uninstallString))
-                    {
-                        installLocation = Path.GetDirectoryName(uninstallString);
-                        if (!string.IsNullOrEmpty(installLocation) && installLocation.Contains(".exe"))
-                            installLocation = Path.GetDirectoryName(installLocation);
-                    }
+                    uninstallString = subKey.GetValue("UninstallString") as string;
+                }
+
+                if (string.IsNullOrEmpty(installLocation) && !string.IsNullOrEmpty(uninstallString))
+                {
+                    var cleanUninstall = uninstallString.Replace("\"", "");
+                    installLocation = Path.GetDirectoryName(cleanUninstall);
+                    if (!string.IsNullOrEmpty(installLocation) && installLocation.Contains(".exe"))
+                        installLocation = Path.GetDirectoryName(installLocation);
                 }
 
                 var displayIcon = subKey.GetValue("DisplayIcon") as string;
-                appEntries.Add((displayName, installLocation, displayIcon));
+                appEntries.Add((displayName, installLocation, displayIcon, uninstallString ?? string.Empty));
             }
         }
         catch (Exception ex)
@@ -305,21 +514,19 @@ internal partial class OptimizationOptions
             _ = LogHelper.LogError($"Failed to load Win32 apps: {ex.Message}");
         }
 
-        // Deduplicate before icon extraction to avoid wasted work
         var unique = appEntries
             .DistinctBy(e => e.DisplayName, StringComparer.OrdinalIgnoreCase)
             .ToList();
 
-        // Extract icons in parallel
         var iconTasks = unique.Select(async entry =>
         {
             var logoPath = await ExtractLogoPath(entry.InstallLocation, true, entry.DisplayName, entry.DisplayIcon).ConfigureAwait(false);
-            return new Tuple<string, string, bool>(entry.DisplayName, logoPath, true);
+            return new AppInfo(entry.DisplayName, logoPath, true, entry.UninstallString);
         }).ToList();
 
         var results = await Task.WhenAll(iconTasks).ConfigureAwait(false);
 
-        return [.. results.OrderBy(app => app.Item1)];
+        return [.. results.OrderBy(app => app.Name)];
     }
 
     private static async Task<string> ExtractLogoPath(string? installLocation, bool isWin32, string appName, string? displayIconPath = null)

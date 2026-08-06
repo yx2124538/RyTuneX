@@ -1718,4 +1718,10 @@
   <data name="Type" xml:space="preserve">
     <value>類型</value>
   </data>
+  <data name="Search" xml:space="preserve">
+    <value>搜尋...</value>
+  </data>
+  <data name="Shell_Packages.Content" xml:space="preserve">
+    <value>套件</value>
+  </data>
 </root>

@@ -95,7 +95,6 @@
                             BorderThickness="0"
                             VerticalAlignment="Center"
                             HorizontalAlignment="Center"
-                            PlaceholderText="Search settings..."
                             CornerRadius="16"
                             QueryIcon="Find"
                             TextMemberPath="DisplayName"
@@ -177,7 +176,7 @@
                         <FontIcon FontFamily="{StaticResource SymbolThemeFontFamily}" Glyph="&#xE74D;"/>
                     </NavigationViewItem.Icon>
                 </NavigationViewItem>
-                <NavigationViewItem Content="Packages" helpers:NavigationHelper.NavigateTo="RyTuneX.Views.PackagesPage">
+                <NavigationViewItem x:Uid="Shell_Packages" helpers:NavigationHelper.NavigateTo="RyTuneX.Views.PackagesPage">
                     <NavigationViewItem.Icon>
                         <FontIcon FontFamily="{StaticResource SymbolThemeFontFamily}" Glyph="&#xE896;"/>
                     </NavigationViewItem.Icon>

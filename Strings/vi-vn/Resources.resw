@@ -1722,4 +1722,10 @@ Kiểm tra máy tính để phát hiện sự cố bộ nhớ.</value>
   <data name="Type" xml:space="preserve">
     <value>Loại</value>
   </data>
+  <data name="Search" xml:space="preserve">
+    <value>Tìm kiếm...</value>
+  </data>
+  <data name="Shell_Packages.Content" xml:space="preserve">
+    <value>Gói</value>
+  </data>
 </root>

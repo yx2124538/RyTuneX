@@ -1722,4 +1722,10 @@ Bilgisayarınızda bellek sorunları olup olmadığını kontrol edin</value>
   <data name="Type" xml:space="preserve">
     <value>Tür</value>
   </data>
+  <data name="Search" xml:space="preserve">
+    <value>Ara...</value>
+  </data>
+  <data name="Shell_Packages.Content" xml:space="preserve">
+    <value>Paketler</value>
+  </data>
 </root>

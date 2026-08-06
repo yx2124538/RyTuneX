@@ -1722,4 +1722,10 @@ Sind Sie sicher, dass Sie fortfahren möchten?</value>
   <data name="Type" xml:space="preserve">
     <value>Typ</value>
   </data>
+  <data name="Search" xml:space="preserve">
+    <value>Suchen...</value>
+  </data>
+  <data name="Shell_Packages.Content" xml:space="preserve">
+    <value>Pakete</value>
+  </data>
 </root>

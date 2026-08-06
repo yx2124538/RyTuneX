@@ -70,6 +70,7 @@ public sealed partial class ShellPage : Page
         App.MainWindow.ExtendsContentIntoTitleBar = true;
         App.MainWindow.SetTitleBar(AppTitleBar);
         App.MainWindow.Activated += MainWindow_Activated;
+        TitleBarSearchBox.PlaceholderText = "Search".GetLocalized();
 
         var savedStyle = ApplicationData.Current.LocalSettings.Values["NavigationStyle"] as string ?? "Auto";
         ApplyNavigationStyle(savedStyle);

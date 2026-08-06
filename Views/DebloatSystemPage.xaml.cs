@@ -6,7 +6,6 @@ using Microsoft.UI.Xaml.Media;
 using Microsoft.UI.Xaml.Navigation;
 using RyTuneX.Helpers;
 using System.Collections.ObjectModel;
-using System.Diagnostics;
 using System.Text;
 
 namespace RyTuneX.Views;
@@ -17,7 +16,7 @@ public sealed partial class DebloatSystemPage : Page
     private readonly CancellationTokenSource cancellationTokenSource = new();
     private CancellationTokenSource? _uninstallBatchCts;
     private Guid? _uninstallBatchRegistrationId;
-    private List<Tuple<string, string, bool>> allApps = new();
+    private List<AppInfo> allApps = new();
     private HashSet<string> uninstallableAppNames = new(StringComparer.OrdinalIgnoreCase);
     private string? _pendingScrollTarget;
 
@@ -94,7 +93,7 @@ public sealed partial class DebloatSystemPage : Page
             {
                 uninstallableAppNames = fetchedUninstallableNames;
                 allApps = installedApps.Where(app =>
-                    !app.Item1.Contains("rytunex", StringComparison.CurrentCultureIgnoreCase)).ToList();
+                    !app.Name.Contains("rytunex", StringComparison.CurrentCultureIgnoreCase)).ToList();
 
                 ApplyFilter();
 
@@ -136,17 +135,17 @@ public sealed partial class DebloatSystemPage : Page
 
         var filtered = appsFilter.SelectedIndex switch
         {
-            0 => allApps.Where(app => app.Item3 || uninstallableAppNames.Contains(app.Item1)),
-            2 => allApps.Where(app => app.Item3),
+            0 => allApps.Where(app => app.IsWin32 || uninstallableAppNames.Contains(app.Name) || uninstallableAppNames.Contains(app.PackageId)),
+            2 => allApps.Where(app => app.IsWin32),
             _ => allApps.AsEnumerable()
         };
 
         if (!string.IsNullOrEmpty(searchText))
         {
-            filtered = filtered.Where(app => app.Item1.Contains(searchText, StringComparison.CurrentCultureIgnoreCase));
+            filtered = filtered.Where(app => app.Name.Contains(searchText, StringComparison.CurrentCultureIgnoreCase));
         }
 
-        var result = filtered.OrderBy(app => app.Item1).ToList();
+        var result = filtered.OrderBy(app => app.Name).ToList();
 
         // Detach to clear without per-item animations
         appListView.ItemsSource = null;
@@ -223,10 +222,9 @@ public sealed partial class DebloatSystemPage : Page
                 uninstallingStatusBar.Opacity = 1;
             });
 
-            foreach (var appInfo in appListView.SelectedItems.OfType<Tuple<string, string, bool>>())
+            foreach (var appInfo in appListView.SelectedItems.OfType<AppInfo>())
             {
-                var selectedAppName = appInfo.Item1;
-                var isWin32App = appInfo.Item3;
+                var selectedAppName = appInfo.Name;
 
                 await DispatcherQueue.EnqueueAsync(() =>
                 {
@@ -241,7 +239,7 @@ public sealed partial class DebloatSystemPage : Page
                         break;
                     }
 
-                    await UninstallApps(selectedAppName, isWin32App);
+                    await UninstallApps(appInfo);
                     successfulUninstalls.Add(selectedAppName);
 
                     // Remove the uninstalled app from the view and cached list
@@ -250,6 +248,7 @@ public sealed partial class DebloatSystemPage : Page
                         AppList.Remove(appInfo);
                         allApps.Remove(appInfo);
                         uninstallableAppNames.Remove(selectedAppName);
+                        uninstallableAppNames.Remove(appInfo.PackageId);
                         installedAppsCount.Text = string.Format(RyTuneX.Helpers.ResourceExtensions.GetLocalized("TotalApps"), AppList.Count);
                     });
                 }
@@ -333,145 +332,17 @@ public sealed partial class DebloatSystemPage : Page
         }
     }
 
-    private static async Task UninstallApps(string appName, bool isWin32App)
+    private static async Task UninstallApps(AppInfo appInfo)
     {
-        _ = LogHelper.Log($"Uninstalling: {appName}");
+        _ = LogHelper.Log($"Uninstalling: {appInfo.Name}");
 
-        if (!isWin32App)
+        if (appInfo.IsWin32)
         {
-            if (!appName.Contains("edge.stable", StringComparison.CurrentCultureIgnoreCase))
-            {
-                var cmdCommandRemoveProvisioned = $"powershell -Command \"Get-AppxProvisionedPackage -Online | Where-Object {{ $_.DisplayName -eq '{appName}' }} | ForEach-Object {{ Remove-AppxProvisionedPackage -Online -PackageName $_.PackageName }}\"";
-                var cmdCommandRemoveAppxPackage = $"powershell -Command \"Get-AppxPackage -AllUsers | Where-Object {{ $_.Name -eq '{appName}' }} | Remove-AppxPackage\"";
-
-                // Create the process to try running Remove-AppxProvisionedPackage first
-                var processInfoProvisioned = new ProcessStartInfo(Environment.Is64BitOperatingSystem && !Environment.Is64BitProcess
-                        ? Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Windows), "SysNative", "cmd.exe")
-                        : Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Windows), "System32", "cmd.exe"), $"/c {cmdCommandRemoveProvisioned}")
-                {
-                    RedirectStandardError = true,
-                    UseShellExecute = false,
-                    CreateNoWindow = true
-                };
-
-                using var processProvisioned = new Process { StartInfo = processInfoProvisioned };
-                {
-                    processProvisioned.Start();
-
-                    var errorProvisioned = await processProvisioned.StandardError.ReadToEndAsync();
-
-                    // Log errors but ignore them and proceed to the second command
-                    if (!string.IsNullOrEmpty(errorProvisioned))
-                    {
-                        _ = LogHelper.LogError(errorProvisioned);
-                    }
-                }
-
-                // Run Remove-AppxPackage
-                var processInfoAppxPackage = new ProcessStartInfo(Environment.Is64BitOperatingSystem && !Environment.Is64BitProcess
-                        ? Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Windows), "SysNative", "cmd.exe")
-                        : Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Windows), "System32", "cmd.exe"), $"/c {cmdCommandRemoveAppxPackage}")
-                {
-                    RedirectStandardError = true,
-                    UseShellExecute = false,
-                    CreateNoWindow = true
-                };
-
-                using var processAppxPackage = new Process { StartInfo = processInfoAppxPackage };
-                {
-                    processAppxPackage.Start();
-
-                    var errorAppxPackage = await processAppxPackage.StandardError.ReadToEndAsync();
-
-                    if (!string.IsNullOrEmpty(errorAppxPackage))
-                    {
-                        _ = LogHelper.LogError(errorAppxPackage);
-                        throw new Exception($"Failed to remove Appx package for {appName}: {errorAppxPackage}");
-                    }
-                }
-            }
-            else
-            {
-                // Remove Edge using @he3als EdgeRemover script
-                // Link: https://github.com/he3als/EdgeRemover/blob/main/RemoveEdge.ps1
-
-                var scriptFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Assets", "RemoveEdge.ps1");
-
-                var cmdCommand = $"powershell.exe -ExecutionPolicy Bypass -File \"{scriptFilePath}\" -UninstallEdge -RemoveEdgeData -NonInteractive";
-
-                var processInfo = new ProcessStartInfo(Environment.Is64BitOperatingSystem && !Environment.Is64BitProcess
-                        ? Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Windows), "SysNative", "cmd.exe")
-                        : Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Windows), "System32", "cmd.exe"), $"/c {cmdCommand}")
-                {
-                    RedirectStandardError = true,
-                    UseShellExecute = false,
-                    CreateNoWindow = true
-                };
-
-                using var process = new Process { StartInfo = processInfo };
-                {
-                    process.Start();
-
-                    var error = await process.StandardError.ReadToEndAsync();
-
-                    if (!string.IsNullOrEmpty(error))
-                    {
-                        _ = LogHelper.LogError(error);
-                    }
-                }
-            }
+            await OptimizationOptions.UninstallWin32AppAsync(appInfo.Name).ConfigureAwait(false);
         }
         else
         {
-            try
-            {
-                var uninstallString = OptimizationOptions.GetWin32UninstallString(appName);
-
-                if (string.IsNullOrEmpty(uninstallString))
-                {
-                    _ = LogHelper.LogError($"Uninstall string for {appName} not found in uninstall roots.");
-                }
-
-                // If the uninstall string contains spaces, ensure it's quoted properly
-                if (uninstallString != null && !uninstallString.StartsWith("\"") && !uninstallString.EndsWith("\""))
-                {
-                    uninstallString = $"\"{uninstallString}\"";
-                    await LogHelper.Log($"Quoted uninstall string for {appName}: {uninstallString}");
-                }
-
-                // Execute the uninstall command using cmd
-                var processInfo = new ProcessStartInfo(Environment.Is64BitOperatingSystem && !Environment.Is64BitProcess
-                        ? Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Windows), "SysNative", "cmd.exe")
-                        : Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Windows), "System32", "cmd.exe"),
-                        $"/c {uninstallString}")
-                {
-                    RedirectStandardError = true,
-                    UseShellExecute = false,
-                    CreateNoWindow = true
-                };
-
-                using var process = new Process { StartInfo = processInfo };
-                process.Start();
-
-                // Read the error stream asynchronously
-                var error = await process.StandardError.ReadToEndAsync();
-
-                if (!string.IsNullOrEmpty(error))
-                {
-                    _ = LogHelper.LogError(error);
-                }
-
-                if (process.ExitCode != 0)
-                {
-                    _ = LogHelper.LogError($"Uninstallation failed with exit code: {process.ExitCode}");
-                }
-
-                _ = LogHelper.Log($"Successfully uninstalled {appName}");
-            }
-            catch (Exception ex)
-            {
-                _ = LogHelper.LogError($"Error uninstalling {appName}: {ex.Message}");
-            }
+            await OptimizationOptions.UninstallUwpAppAsync(appInfo.PackageId, appInfo.Name).ConfigureAwait(false);
         }
     }
 
@@ -583,9 +454,9 @@ public sealed partial class DebloatSystemPage : Page
     {
         var selectedItemsText = new StringBuilder();
 
-        foreach (var item in appListView.SelectedItems.OfType<Tuple<string, string, bool>>())
+        foreach (var item in appListView.SelectedItems.OfType<AppInfo>())
         {
-            selectedItemsText.AppendLine(item.Item1);
+            selectedItemsText.AppendLine(item.Name);
         }
 
         var firstLine = RyTuneX.Helpers.ResourceExtensions.GetLocalized("ConfirmRemoveApps");
