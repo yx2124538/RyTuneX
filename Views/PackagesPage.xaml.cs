@@ -277,7 +277,7 @@ public sealed partial class PackagesPage : Page
                 if (myVersion != _searchVersion) return;
 
                 if (p.Name.Contains(query, StringComparison.CurrentCultureIgnoreCase) ||
-                    p.Id.Contains(query,  StringComparison.CurrentCultureIgnoreCase))
+                    p.Id.Contains(query, StringComparison.CurrentCultureIgnoreCase))
                 {
                     PackageList.Add(p);
                     if (++batchCount % 100 == 0) await Task.Delay(1);
@@ -433,8 +433,8 @@ public sealed partial class PackagesPage : Page
             _isUpdatesMode = false;
 
             PackageSearchBox.Visibility = Visibility.Visible;
-            InstallButtonText.Text    = "PackagesPage_InstallButton.Text".GetLocalized();
-            InstallButtonIcon.Glyph  = "\uE896";
+            InstallButtonText.Text = "PackagesPage_InstallButton.Text".GetLocalized();
+            InstallButtonIcon.Glyph = "\uE896";
             installingStatusText.Text = "PackagesPage_SelectHint.Text".GetLocalized();
 
             // Always hide Updates grid and show the Browse grid

@@ -24,6 +24,7 @@ All notable changes to this branch will be documented in this file.
 
 ### Changes
 
+- Redesigned the `Home` page with a new layout featuring real-time system stats cards, a System info section, and a Quick Actions section.
 - Prevented Quick Access History and Task View settings from interfering with each other #103.
 - Replaced legacy APIs with modern Windows methods in `SystemInfo` page to prevent incorrect behavior #105.
 - Reworked the Debloat logic to use the native Windows Deployment API instead of Powershell for app detection and removal.
