@@ -2,6 +2,7 @@
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Media;
 using Microsoft.Win32;
+using RyTuneX.Helpers;
 using System.ServiceProcess;
 
 namespace RyTuneX.Views;
@@ -114,7 +115,9 @@ public sealed partial class ServicesPage : Page
         SortServices();
 
         ServicesListView.ItemsSource = _filteredServices;
-        ResultsText.Text = $"Showing {_filteredServices.Count} of {_allServices.Count} services";
+        ResultsText.Text = "ServicesPage_ResultsText".GetLocalized()
+            .Replace("{count}", _filteredServices.Count.ToString())
+            .Replace("{total}", _allServices.Count.ToString());
     }
 
     private void SortServices()
@@ -148,7 +151,7 @@ public sealed partial class ServicesPage : Page
 
         if (FilterComboBox.SelectedItem is ComboBoxItem item)
         {
-            _currentFilter = item.Content?.ToString() ?? "All";
+            _currentFilter = item.Tag?.ToString() ?? "All";
             ApplyFilterAndSort();
         }
     }
@@ -207,7 +210,7 @@ public sealed partial class ServicesPage : Page
             // Only process if user explicitly interacted with this ComboBox
             if (!_userInteractedComboBoxes.Remove(comboBox)) return;
 
-            var startupType = selectedItem.Content?.ToString();
+            var startupType = selectedItem.Tag?.ToString();
             if (string.IsNullOrEmpty(startupType)) return;
 
             // Find the current service to check if the startup type actually changed
@@ -287,19 +290,27 @@ public sealed partial class ServicesPage : Page
 
             var successText = action switch
             {
-                ServiceControlAction.Start => "started",
-                ServiceControlAction.Stop => "stopped",
-                ServiceControlAction.Restart => "restarted",
-                _ => "processed"
+                ServiceControlAction.Start => "ServicesPage_Action_Started".GetLocalized(),
+                ServiceControlAction.Stop => "ServicesPage_Action_Stopped".GetLocalized(),
+                ServiceControlAction.Restart => "ServicesPage_Action_Restarted".GetLocalized(),
+                _ => action.ToString().ToLowerInvariant()
             };
 
-            App.ShowNotification("Service Control", $"Service '{serviceName}' {successText} successfully.", InfoBarSeverity.Success, 3000);
+            App.ShowNotification(
+                "ServicesPage_Notification_ControlTitle".GetLocalized(),
+                "ServicesPage_Notification_ControlSuccess".GetLocalized()
+                    .Replace("{name}", serviceName)
+                    .Replace("{action}", successText),
+                InfoBarSeverity.Success, 3000);
             await LoadServicesAsync();
         }
         catch (Exception ex)
         {
             _ = LogHelper.LogError($"Error controlling service {serviceName}: {ex.Message}");
-            App.ShowNotification("Service Control Error", $"Failed to control service: {ex.Message}", InfoBarSeverity.Error, 5000);
+            App.ShowNotification(
+                "ServicesPage_Notification_ControlErrorTitle".GetLocalized(),
+                "ServicesPage_Notification_ControlError".GetLocalized().Replace("{error}", ex.Message),
+                InfoBarSeverity.Error, 5000);
         }
     }
 
@@ -323,7 +334,12 @@ public sealed partial class ServicesPage : Page
                 key?.SetValue("Start", startValue, RegistryValueKind.DWord);
             });
 
-            App.ShowNotification("Startup Type Changed", $"Service '{serviceName}' startup type set to {startupType}.", InfoBarSeverity.Success, 3000);
+            App.ShowNotification(
+                "ServicesPage_Notification_StartupChangedTitle".GetLocalized(),
+                "ServicesPage_Notification_StartupChanged".GetLocalized()
+                    .Replace("{name}", serviceName)
+                    .Replace("{type}", startupType),
+                InfoBarSeverity.Success, 3000);
 
             // Update the local data without full reload
             var service = _allServices.FirstOrDefault(s => s.Name == serviceName);
@@ -336,7 +352,10 @@ public sealed partial class ServicesPage : Page
         catch (Exception ex)
         {
             _ = LogHelper.LogError($"Error changing startup type for {serviceName}: {ex.Message}");
-            App.ShowNotification("Error", $"Failed to change startup type: {ex.Message}", InfoBarSeverity.Error, 5000);
+            App.ShowNotification(
+                "ServicesPage_Notification_StartupErrorTitle".GetLocalized(),
+                "ServicesPage_Notification_StartupError".GetLocalized().Replace("{error}", ex.Message),
+                InfoBarSeverity.Error, 5000);
 
             // Reload to reset the combobox
             _isUpdatingStartupType = true;

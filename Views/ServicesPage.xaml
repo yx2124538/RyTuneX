@@ -75,12 +75,12 @@
                             TextChanged="SearchBox_TextChanged"/>
             <ComboBox x:Name="FilterComboBox" Grid.Column="1" Margin="8,0,0,0" Width="140"
                       SelectionChanged="FilterComboBox_SelectionChanged">
-                <ComboBoxItem x:Uid="ServicesPage_FilterAll" IsSelected="True"/>
-                <ComboBoxItem x:Uid="ServicesPage_FilterRunning"/>
-                <ComboBoxItem x:Uid="ServicesPage_FilterStopped"/>
-                <ComboBoxItem x:Uid="ServicesPage_FilterAutomatic"/>
-                <ComboBoxItem x:Uid="ServicesPage_FilterManual"/>
-                <ComboBoxItem x:Uid="ServicesPage_FilterDisabled"/>
+                <ComboBoxItem x:Uid="ServicesPage_FilterAll" Tag="All" IsSelected="True"/>
+                <ComboBoxItem x:Uid="ServicesPage_FilterRunning" Tag="Running"/>
+                <ComboBoxItem x:Uid="ServicesPage_FilterStopped" Tag="Stopped"/>
+                <ComboBoxItem x:Uid="ServicesPage_FilterAutomatic" Tag="Automatic"/>
+                <ComboBoxItem x:Uid="ServicesPage_FilterManual" Tag="Manual"/>
+                <ComboBoxItem x:Uid="ServicesPage_FilterDisabled" Tag="Disabled"/>
             </ComboBox>
             <Button x:Name="RefreshButton" Grid.Column="2" Margin="8,0,0,0" Click="RefreshButton_Click">
                 <FontIcon Glyph="&#xE72C;" FontSize="14"/>
@@ -153,28 +153,28 @@
                                           HorizontalAlignment="Center"
                                           MinWidth="100"
                                           Padding="8,4">
-                                    <ComboBoxItem x:Uid="ServicesPage_StartupAutomatic"/>
-                                    <ComboBoxItem x:Uid="ServicesPage_StartupManual"/>
-                                    <ComboBoxItem x:Uid="ServicesPage_StartupDisabled"/>
+                                    <ComboBoxItem x:Uid="ServicesPage_StartupAutomatic" Tag="Automatic"/>
+                                    <ComboBoxItem x:Uid="ServicesPage_StartupManual" Tag="Manual"/>
+                                    <ComboBoxItem x:Uid="ServicesPage_StartupDisabled" Tag="Disabled"/>
                                 </ComboBox>
                                 <StackPanel Grid.Column="3" Orientation="Horizontal" HorizontalAlignment="Center" Spacing="4">
                                     <Button Tag="{x:Bind Name}" 
                                             Click="StartService_Click" 
-                                            ToolTipService.ToolTip="Start Service"
+                                            x:Uid="ServicesPage_StartServiceTooltip"
                                             Padding="8,6"
                                             IsEnabled="{x:Bind CanStart}">
                                         <FontIcon Glyph="&#xE768;" FontSize="12"/>
                                     </Button>
                                     <Button Tag="{x:Bind Name}" 
                                             Click="StopService_Click" 
-                                            ToolTipService.ToolTip="Stop Service"
+                                            x:Uid="ServicesPage_StopServiceTooltip"
                                             Padding="8,6"
                                             IsEnabled="{x:Bind CanStop}">
                                         <FontIcon Glyph="&#xE71A;" FontSize="12"/>
                                     </Button>
                                     <Button Tag="{x:Bind Name}" 
                                             Click="RestartService_Click" 
-                                            ToolTipService.ToolTip="Restart Service"
+                                            x:Uid="ServicesPage_RestartServiceTooltip"
                                             Padding="8,6"
                                             IsEnabled="{x:Bind CanStop}">
                                         <FontIcon Glyph="&#xE72C;" FontSize="12"/>
