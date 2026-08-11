@@ -110,13 +110,6 @@
                     <ToggleSwitch x:Name="MyPeople" Tag="MyPeople"/>
                 </controls:SettingsCard>
 
-                <controls:SettingsCard x:Uid="Feature_DisableSensorServices">
-                    <controls:SettingsCard.HeaderIcon>
-                        <FontIcon Glyph="&#xE957;"/>
-                    </controls:SettingsCard.HeaderIcon>
-                    <ToggleSwitch x:Name="SensorServices" Tag="SensorServices"/>
-                </controls:SettingsCard>
-
                 <controls:SettingsCard x:Uid="Feature_DisableWindowsInk">
                     <controls:SettingsCard.HeaderIcon>
                         <FontIcon Glyph="&#xEDC6;"/>

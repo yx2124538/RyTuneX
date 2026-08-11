@@ -103,7 +103,6 @@ public static class AppSearchService
         ("Feature_DisableGameBar", typeof(FeaturesPage), "Features", "\uE990", "GameBar"),
         ("Feature_DisableQuickAccessHistory", typeof(FeaturesPage), "Features", "\uE81C", "QuickAccessHistory"),
         ("Feature_DisableMyPeople", typeof(FeaturesPage), "Features", "\uE716", "MyPeople"),
-        ("Feature_DisableSensorServices", typeof(FeaturesPage), "Features", "\uE957", "SensorServices"),
         ("Feature_DisableWindowsInk", typeof(FeaturesPage), "Features", "\uEDC6", "WindowsInk"),
         ("Feature_DisableSpellingAndTypingFeatures", typeof(FeaturesPage), "Features", "\uF87B", "SpellingAndTypingFeatures"),
         ("Feature_DisableFaxService", typeof(FeaturesPage), "Features", "\uEF40", "FaxService"),

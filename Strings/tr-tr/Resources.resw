@@ -180,8 +180,38 @@
   <data name="HomePage_DiscordButton.Text" xml:space="preserve">
     <value>Serverımıza Katılın</value>
   </data>
-  <data name="HomePage_WebsiteButton.Text" xml:space="preserve">
-    <value>Daha fazla bilgi</value>
+  <data name="HomePage_MoreInfoButton.Text" xml:space="preserve">
+    <value>Daha Fazla Bilgi</value>
+  </data>
+  <data name="HomePage_SystemOverviewTitle.Text" xml:space="preserve">
+    <value>Sistem Genel Bakışı</value>
+  </data>
+  <data name="HomePage_SystemTitle.Text" xml:space="preserve">
+    <value>Sistem</value>
+  </data>
+  <data name="HomePage_System_InstalledApps.Text" xml:space="preserve">
+    <value>Yüklü Uygulamalar</value>
+  </data>
+  <data name="HomePage_System_Processes.Text" xml:space="preserve">
+    <value>İşlemler</value>
+  </data>
+  <data name="HomePage_System_Services.Text" xml:space="preserve">
+    <value>Hizmetler</value>
+  </data>
+  <data name="HomePage_QuickActionsTitle.Text" xml:space="preserve">
+    <value>Hızlı İşlemler</value>
+  </data>
+  <data name="HomePage_QuickAction_OptimizeSystem.Text" xml:space="preserve">
+    <value>Sistemi Optimize Et</value>
+  </data>
+  <data name="HomePage_QuickAction_RepairIssues.Text" xml:space="preserve">
+    <value>Sorunları Onar</value>
+  </data>
+  <data name="HomePage_QuickAction_ManageStartupApps.Text" xml:space="preserve">
+    <value>Başlangıç Uygulamalarını Yönet</value>
+  </data>
+  <data name="HomePage_QuickAction_CleanTemporaryFiles.Text" xml:space="preserve">
+    <value>Geçici Dosyaları Temizle</value>
   </data>
   <data name="SettingsPage_FeedbackButton.Content" xml:space="preserve">
     <value>Geri bildirim gönder</value>
@@ -191,15 +221,6 @@
   </data>
   <data name="SystemInfoPage_GPU.Text" xml:space="preserve">
     <value>Ekran Kartı</value>
-  </data>
-  <data name="SystemInfoPage_OS.Text" xml:space="preserve">
-    <value>İşletim Sistemi</value>
-  </data>
-  <data name="SystemInfoPage_RAM.Text" xml:space="preserve">
-    <value>RAM</value>
-  </data>
-  <data name="SystemInfoPage_Storage.Text" xml:space="preserve">
-    <value>Depolama</value>
   </data>
   <data name="Debloat" xml:space="preserve">
     <value>Temizle</value>
@@ -401,12 +422,6 @@
   </data>
   <data name="Feature_DisableMyPeople.Description" xml:space="preserve">
     <value>Görev çubuğundaki Kişilerim özelliğini kapatır</value>
-  </data>
-  <data name="Feature_DisableSensorServices.Header" xml:space="preserve">
-    <value>Sensör Hizmetlerini Devre Dışı Bırak</value>
-  </data>
-  <data name="Feature_DisableSensorServices.Description" xml:space="preserve">
-    <value>Gizlilik ve güç tasarrufu için sensör hizmetlerini kapatır. İlgili sensörlere sahip dizüstü bilgisayarlar için önerilmez</value>
   </data>
   <data name="Feature_DisableWindowsInk.Header" xml:space="preserve">
     <value>Windows Ink'i devre dışı bırak</value>
@@ -708,12 +723,6 @@
   <data name="Update" xml:space="preserve">
     <value>Güncelleme</value>
   </data>
-  <data name="SystemInfoPage_Network.Text" xml:space="preserve">
-    <value>Ağ</value>
-  </data>
-  <data name="SystemInfoPage_Battery.Text" xml:space="preserve">
-    <value>Pil</value>
-  </data>
   <data name="MACAddress" xml:space="preserve">
     <value>MAC Adresi</value>
   </data>
@@ -792,23 +801,11 @@
   <data name="HomePage_ramUsage.Text" xml:space="preserve">
     <value>RAM Kullanımı</value>
   </data>
-  <data name="HomePage_gpuUsage.Text" xml:space="preserve">
-    <value>GPU Kullanımı</value>
-  </data>
   <data name="HomePage_diskUsage.Text" xml:space="preserve">
     <value>Disk Kullanımı</value>
   </data>
   <data name="HomePage_networkUsage.Text" xml:space="preserve">
     <value>Ağ Kullanımı</value>
-  </data>
-  <data name="HomePage_installedAppsCount.Text" xml:space="preserve">
-    <value>Yüklü Uygulamalar</value>
-  </data>
-  <data name="HomePage_processesCount.Text" xml:space="preserve">
-    <value>İşlemler</value>
-  </data>
-  <data name="HomePage_servicesCount.Text" xml:space="preserve">
-    <value>Hizmetler</value>
   </data>
   <data name="Feature_DisableSmartScreen.Header" xml:space="preserve">
     <value>Akıllı Ekranı Devre Dışı Bırak</value>
@@ -1727,5 +1724,158 @@ Bilgisayarınızda bellek sorunları olup olmadığını kontrol edin</value>
   </data>
   <data name="Shell_Packages.Content" xml:space="preserve">
     <value>Paketler</value>
+  </data>
+  <data name="PackagesPage_BrowseTab.Content" xml:space="preserve">
+    <value>Göz At</value>
+  </data>
+  <data name="PackagesPage_UpdatesTabLabel.Text" xml:space="preserve">
+    <value>Güncellemeler</value>
+  </data>
+  <data name="PackagesPage_SearchBox.PlaceholderText" xml:space="preserve">
+    <value>WinGet paketlerini ara...</value>
+  </data>
+  <data name="PackagesPage_InstallButton.Text" xml:space="preserve">
+    <value>Seçilenleri Yükle</value>
+  </data>
+  <data name="PackagesPage_Installed.Text" xml:space="preserve">
+    <value>Yüklü</value>
+  </data>
+  <data name="PackagesPage_ColName.Text" xml:space="preserve">
+    <value>Paket Adı</value>
+  </data>
+  <data name="PackagesPage_ColId.Text" xml:space="preserve">
+    <value>Paket Kimliği</value>
+  </data>
+  <data name="PackagesPage_ColVersion.Text" xml:space="preserve">
+    <value>Sürüm</value>
+  </data>
+  <data name="PackagesPage_ColPublisher.Text" xml:space="preserve">
+    <value>Yayıncı</value>
+  </data>
+  <data name="PackagesPage_Loading.Text" xml:space="preserve">
+    <value>Paketler yükleniyor…</value>
+  </data>
+  <data name="PackagesPage_SelectHint.Text" xml:space="preserve">
+    <value>Yüklemek için bir paket seçin</value>
+  </data>
+  <data name="ServicesPage_SearchBox.PlaceholderText" xml:space="preserve">
+    <value>Hizmetlerde ara...</value>
+  </data>
+  <data name="ServicesPage_FilterAll.Content" xml:space="preserve">
+    <value>Tümü</value>
+  </data>
+  <data name="ServicesPage_FilterRunning.Content" xml:space="preserve">
+    <value>Çalışıyor</value>
+  </data>
+  <data name="ServicesPage_FilterStopped.Content" xml:space="preserve">
+    <value>Durduruldu</value>
+  </data>
+  <data name="ServicesPage_FilterAutomatic.Content" xml:space="preserve">
+    <value>Otomatik</value>
+  </data>
+  <data name="ServicesPage_FilterManual.Content" xml:space="preserve">
+    <value>Elle</value>
+  </data>
+  <data name="ServicesPage_FilterDisabled.Content" xml:space="preserve">
+    <value>Devre Dışı</value>
+  </data>
+  <data name="ServicesPage_ColName.Text" xml:space="preserve">
+    <value>Hizmet Adı</value>
+  </data>
+  <data name="ServicesPage_ColStatus.Text" xml:space="preserve">
+    <value>Durum</value>
+  </data>
+  <data name="ServicesPage_ColStartup.Text" xml:space="preserve">
+    <value>Başlangıç</value>
+  </data>
+  <data name="ServicesPage_ColActions.Text" xml:space="preserve">
+    <value>Eylemler</value>
+  </data>
+  <data name="ServicesPage_StartupAutomatic.Content" xml:space="preserve">
+    <value>Otomatik</value>
+  </data>
+  <data name="ServicesPage_StartupManual.Content" xml:space="preserve">
+    <value>Elle</value>
+  </data>
+  <data name="ServicesPage_StartupDisabled.Content" xml:space="preserve">
+    <value>Devre Dışı</value>
+  </data>
+  <data name="ProcessesPage_SearchBox.PlaceholderText" xml:space="preserve">
+    <value>İşlemlerde ara...</value>
+  </data>
+  <data name="ProcessesPage_ColName.Text" xml:space="preserve">
+    <value>Ad</value>
+  </data>
+  <data name="ProcessesPage_ColPID.Text" xml:space="preserve">
+    <value>PID</value>
+  </data>
+  <data name="ProcessesPage_ColMemory.Text" xml:space="preserve">
+    <value>Bellek</value>
+  </data>
+  <data name="ProcessesPage_ColThreads.Text" xml:space="preserve">
+    <value>İş Parçacıkları</value>
+  </data>
+  <data name="ProcessesPage_ColActions.Text" xml:space="preserve">
+    <value>Eylemler</value>
+  </data>
+  <data name="ProcessesPage_EndTask.Text" xml:space="preserve">
+    <value>Görevi Sonlandır</value>
+  </data>
+  <data name="SystemInfoPage_OS.Header" xml:space="preserve">
+    <value>İşletim Sistemi</value>
+  </data>
+  <data name="SystemInfoPage_Copy.Text" xml:space="preserve">
+    <value>Kopyala</value>
+  </data>
+  <data name="SystemInfoPage_Processor.Header" xml:space="preserve">
+    <value>İşlemci</value>
+  </data>
+  <data name="SystemInfoPage_Graphics.Header" xml:space="preserve">
+    <value>Grafik</value>
+  </data>
+  <data name="SystemInfoPage_RAM.Header" xml:space="preserve">
+    <value>RAM</value>
+  </data>
+  <data name="SystemInfoPage_Storage.Header" xml:space="preserve">
+    <value>Depolama</value>
+  </data>
+  <data name="SystemInfoPage_Network.Header" xml:space="preserve">
+    <value>Ağ</value>
+  </data>
+  <data name="SystemInfoPage_Battery.Header" xml:space="preserve">
+    <value>Pil</value>
+  </data>
+  <data name="SystemInfoPage_DriversForBackup.Text" xml:space="preserve">
+    <value>Yedeklenecek Sürücüler</value>
+  </data>
+  <data name="SettingsPage_LanguageCombo.PlaceholderText" xml:space="preserve">
+    <value>Sistem Dili</value>
+  </data>
+  <data name="Settings_NavLeft.Content" xml:space="preserve">
+    <value>Sol</value>
+  </data>
+  <data name="Settings_NavTop.Content" xml:space="preserve">
+    <value>Üst</value>
+  </data>
+  <data name="PackagesPage_UpdateButton" xml:space="preserve">
+    <value>Seçilenleri Güncelle</value>
+  </data>
+  <data name="PackagesPage_SelectUpdateHint" xml:space="preserve">
+    <value>Güncellenecek paketleri seçin</value>
+  </data>
+  <data name="PackagesPage_StatusLoading" xml:space="preserve">
+    <value>Paketler yükleniyor, lütfen bekleyin…</value>
+  </data>
+  <data name="PackagesPage_StatusNoUpdates" xml:space="preserve">
+    <value>Güncelleme yok. Tüm paketler güncel.</value>
+  </data>
+  <data name="PackagesPage_SelectedForInstall" xml:space="preserve">
+    <value>Yükleme için {0} paket seçildi</value>
+  </data>
+  <data name="PackagesPage_SelectedForUpdate" xml:space="preserve">
+    <value>Güncelleme için {0} paket seçildi</value>
+  </data>
+  <data name="HomePage_Version" xml:space="preserve">
+    <value>Sürüm</value>
   </data>
 </root>

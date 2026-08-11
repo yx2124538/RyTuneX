@@ -180,8 +180,38 @@
   <data name="HomePage_DiscordButton.Text" xml:space="preserve">
     <value>Tham gia máy chủ của chúng tôi</value>
   </data>
-  <data name="HomePage_WebsiteButton.Text" xml:space="preserve">
-    <value>Thông tin thêm</value>
+  <data name="HomePage_MoreInfoButton.Text" xml:space="preserve">
+    <value>Thêm thông tin</value>
+  </data>
+  <data name="HomePage_SystemOverviewTitle.Text" xml:space="preserve">
+    <value>Tổng quan hệ thống</value>
+  </data>
+  <data name="HomePage_SystemTitle.Text" xml:space="preserve">
+    <value>Hệ thống</value>
+  </data>
+  <data name="HomePage_System_InstalledApps.Text" xml:space="preserve">
+    <value>Ứng dụng đã cài đặt</value>
+  </data>
+  <data name="HomePage_System_Processes.Text" xml:space="preserve">
+    <value>Tiến trình</value>
+  </data>
+  <data name="HomePage_System_Services.Text" xml:space="preserve">
+    <value>Dịch vụ</value>
+  </data>
+  <data name="HomePage_QuickActionsTitle.Text" xml:space="preserve">
+    <value>Hành động nhanh</value>
+  </data>
+  <data name="HomePage_QuickAction_OptimizeSystem.Text" xml:space="preserve">
+    <value>Tối ưu hóa hệ thống</value>
+  </data>
+  <data name="HomePage_QuickAction_RepairIssues.Text" xml:space="preserve">
+    <value>Sửa chữa sự cố</value>
+  </data>
+  <data name="HomePage_QuickAction_ManageStartupApps.Text" xml:space="preserve">
+    <value>Quản lý ứng dụng khởi động</value>
+  </data>
+  <data name="HomePage_QuickAction_CleanTemporaryFiles.Text" xml:space="preserve">
+    <value>Dọn dẹp tệp tạm thời</value>
   </data>
   <data name="SettingsPage_FeedbackButton.Content" xml:space="preserve">
     <value>Gửi phản hồi</value>
@@ -191,15 +221,6 @@
   </data>
   <data name="SystemInfoPage_GPU.Text" xml:space="preserve">
     <value>Card đồ hoạ</value>
-  </data>
-  <data name="SystemInfoPage_OS.Text" xml:space="preserve">
-    <value>Hệ điều hành</value>
-  </data>
-  <data name="SystemInfoPage_RAM.Text" xml:space="preserve">
-    <value>RAM</value>
-  </data>
-  <data name="SystemInfoPage_Storage.Text" xml:space="preserve">
-    <value>Ổ đĩa</value>
   </data>
   <data name="Debloat" xml:space="preserve">
     <value>Debloat</value>
@@ -401,12 +422,6 @@
   </data>
   <data name="Feature_DisableMyPeople.Description" xml:space="preserve">
     <value>Tắt tính năng My People trên taskbar</value>
-  </data>
-  <data name="Feature_DisableSensorServices.Header" xml:space="preserve">
-    <value>Vô hiệu hoá Sensor Services</value>
-  </data>
-  <data name="Feature_DisableSensorServices.Description" xml:space="preserve">
-    <value>Tắt service liên quan tới sensor để bảo mật và tiết kiệm năng lượng. Không khuyến khích với laptop có sensor</value>
   </data>
   <data name="Feature_DisableWindowsInk.Header" xml:space="preserve">
     <value>Vô hiệu hoá Windows Ink</value>
@@ -708,12 +723,6 @@
   <data name="Update" xml:space="preserve">
     <value>Cập nhật</value>
   </data>
-  <data name="SystemInfoPage_Network.Text" xml:space="preserve">
-    <value>Mạng</value>
-  </data>
-  <data name="SystemInfoPage_Battery.Text" xml:space="preserve">
-    <value>Pin</value>
-  </data>
   <data name="MACAddress" xml:space="preserve">
     <value>Địa chỉ MAC</value>
   </data>
@@ -792,23 +801,11 @@
   <data name="HomePage_ramUsage.Text" xml:space="preserve">
     <value>Mức sử dụng RAM</value>
   </data>
-  <data name="HomePage_gpuUsage.Text" xml:space="preserve">
-    <value>Mức sử dụng GPU</value>
-  </data>
   <data name="HomePage_diskUsage.Text" xml:space="preserve">
     <value>Mức sử dụng Ổ đĩa</value>
   </data>
   <data name="HomePage_networkUsage.Text" xml:space="preserve">
     <value>Mức sử dụng Mạng</value>
-  </data>
-  <data name="HomePage_installedAppsCount.Text" xml:space="preserve">
-    <value>Ứng dụng đã cài đặt</value>
-  </data>
-  <data name="HomePage_processesCount.Text" xml:space="preserve">
-    <value>Tiến trình</value>
-  </data>
-  <data name="HomePage_servicesCount.Text" xml:space="preserve">
-    <value>Dịch vụ</value>
   </data>
   <data name="Feature_DisableSmartScreen.Header" xml:space="preserve">
     <value>Vô hiệu hoá Smart Screen</value>
@@ -1727,5 +1724,158 @@ Kiểm tra máy tính để phát hiện sự cố bộ nhớ.</value>
   </data>
   <data name="Shell_Packages.Content" xml:space="preserve">
     <value>Gói</value>
+  </data>
+  <data name="PackagesPage_BrowseTab.Content" xml:space="preserve">
+    <value>Duyệt</value>
+  </data>
+  <data name="PackagesPage_UpdatesTabLabel.Text" xml:space="preserve">
+    <value>Cập nhật</value>
+  </data>
+  <data name="PackagesPage_SearchBox.PlaceholderText" xml:space="preserve">
+    <value>Tìm kiếm gói WinGet...</value>
+  </data>
+  <data name="PackagesPage_InstallButton.Text" xml:space="preserve">
+    <value>Cài đặt mục đã chọn</value>
+  </data>
+  <data name="PackagesPage_Installed.Text" xml:space="preserve">
+    <value>Đã cài đặt</value>
+  </data>
+  <data name="PackagesPage_ColName.Text" xml:space="preserve">
+    <value>Tên gói</value>
+  </data>
+  <data name="PackagesPage_ColId.Text" xml:space="preserve">
+    <value>ID gói</value>
+  </data>
+  <data name="PackagesPage_ColVersion.Text" xml:space="preserve">
+    <value>Phiên bản</value>
+  </data>
+  <data name="PackagesPage_ColPublisher.Text" xml:space="preserve">
+    <value>Nhà xuất bản</value>
+  </data>
+  <data name="PackagesPage_Loading.Text" xml:space="preserve">
+    <value>Đang tải các gói…</value>
+  </data>
+  <data name="PackagesPage_SelectHint.Text" xml:space="preserve">
+    <value>Chọn một gói để cài đặt</value>
+  </data>
+  <data name="ServicesPage_SearchBox.PlaceholderText" xml:space="preserve">
+    <value>Tìm kiếm dịch vụ...</value>
+  </data>
+  <data name="ServicesPage_FilterAll.Content" xml:space="preserve">
+    <value>Tất cả</value>
+  </data>
+  <data name="ServicesPage_FilterRunning.Content" xml:space="preserve">
+    <value>Đang chạy</value>
+  </data>
+  <data name="ServicesPage_FilterStopped.Content" xml:space="preserve">
+    <value>Đã dừng</value>
+  </data>
+  <data name="ServicesPage_FilterAutomatic.Content" xml:space="preserve">
+    <value>Tự động</value>
+  </data>
+  <data name="ServicesPage_FilterManual.Content" xml:space="preserve">
+    <value>Thủ công</value>
+  </data>
+  <data name="ServicesPage_FilterDisabled.Content" xml:space="preserve">
+    <value>Đã vô hiệu hóa</value>
+  </data>
+  <data name="ServicesPage_ColName.Text" xml:space="preserve">
+    <value>Tên dịch vụ</value>
+  </data>
+  <data name="ServicesPage_ColStatus.Text" xml:space="preserve">
+    <value>Trạng thái</value>
+  </data>
+  <data name="ServicesPage_ColStartup.Text" xml:space="preserve">
+    <value>Khởi động</value>
+  </data>
+  <data name="ServicesPage_ColActions.Text" xml:space="preserve">
+    <value>Hành động</value>
+  </data>
+  <data name="ServicesPage_StartupAutomatic.Content" xml:space="preserve">
+    <value>Tự động</value>
+  </data>
+  <data name="ServicesPage_StartupManual.Content" xml:space="preserve">
+    <value>Thủ công</value>
+  </data>
+  <data name="ServicesPage_StartupDisabled.Content" xml:space="preserve">
+    <value>Đã vô hiệu hóa</value>
+  </data>
+  <data name="ProcessesPage_SearchBox.PlaceholderText" xml:space="preserve">
+    <value>Tìm kiếm tiến trình...</value>
+  </data>
+  <data name="ProcessesPage_ColName.Text" xml:space="preserve">
+    <value>Tên</value>
+  </data>
+  <data name="ProcessesPage_ColPID.Text" xml:space="preserve">
+    <value>PID</value>
+  </data>
+  <data name="ProcessesPage_ColMemory.Text" xml:space="preserve">
+    <value>Bộ nhớ</value>
+  </data>
+  <data name="ProcessesPage_ColThreads.Text" xml:space="preserve">
+    <value>Luồng</value>
+  </data>
+  <data name="ProcessesPage_ColActions.Text" xml:space="preserve">
+    <value>Hành động</value>
+  </data>
+  <data name="ProcessesPage_EndTask.Text" xml:space="preserve">
+    <value>Kết thúc tác vụ</value>
+  </data>
+  <data name="SystemInfoPage_OS.Header" xml:space="preserve">
+    <value>Hệ điều hành</value>
+  </data>
+  <data name="SystemInfoPage_Copy.Text" xml:space="preserve">
+    <value>Sao chép</value>
+  </data>
+  <data name="SystemInfoPage_Processor.Header" xml:space="preserve">
+    <value>Bộ xử lý</value>
+  </data>
+  <data name="SystemInfoPage_Graphics.Header" xml:space="preserve">
+    <value>Đồ họa</value>
+  </data>
+  <data name="SystemInfoPage_RAM.Header" xml:space="preserve">
+    <value>RAM</value>
+  </data>
+  <data name="SystemInfoPage_Storage.Header" xml:space="preserve">
+    <value>Lưu trữ</value>
+  </data>
+  <data name="SystemInfoPage_Network.Header" xml:space="preserve">
+    <value>Mạng</value>
+  </data>
+  <data name="SystemInfoPage_Battery.Header" xml:space="preserve">
+    <value>Pin</value>
+  </data>
+  <data name="SystemInfoPage_DriversForBackup.Text" xml:space="preserve">
+    <value>Driver để sao lưu</value>
+  </data>
+  <data name="SettingsPage_LanguageCombo.PlaceholderText" xml:space="preserve">
+    <value>Ngôn ngữ hệ thống</value>
+  </data>
+  <data name="Settings_NavLeft.Content" xml:space="preserve">
+    <value>Trái</value>
+  </data>
+  <data name="Settings_NavTop.Content" xml:space="preserve">
+    <value>Trên</value>
+  </data>
+  <data name="PackagesPage_UpdateButton" xml:space="preserve">
+    <value>Cập nhật các mục đã chọn</value>
+  </data>
+  <data name="PackagesPage_SelectUpdateHint" xml:space="preserve">
+    <value>Chọn các gói để cập nhật</value>
+  </data>
+  <data name="PackagesPage_StatusLoading" xml:space="preserve">
+    <value>Đang tải các gói, vui lòng chờ…</value>
+  </data>
+  <data name="PackagesPage_StatusNoUpdates" xml:space="preserve">
+    <value>Không có bản cập nhật nào. Tất cả các gói đã được cập nhật.</value>
+  </data>
+  <data name="PackagesPage_SelectedForInstall" xml:space="preserve">
+    <value>Đã chọn {0} gói để cài đặt</value>
+  </data>
+  <data name="PackagesPage_SelectedForUpdate" xml:space="preserve">
+    <value>Đã chọn {0} gói để cập nhật</value>
+  </data>
+  <data name="HomePage_Version" xml:space="preserve">
+    <value>Phiên bản</value>
   </data>
 </root>

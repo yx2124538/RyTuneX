@@ -69,18 +69,18 @@
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
-            <AutoSuggestBox x:Name="SearchBox" 
-                            PlaceholderText="Search services..." 
+            <AutoSuggestBox x:Name="SearchBox"
+                            x:Uid="ServicesPage_SearchBox"
                             QueryIcon="Find"
                             TextChanged="SearchBox_TextChanged"/>
             <ComboBox x:Name="FilterComboBox" Grid.Column="1" Margin="8,0,0,0" Width="140"
                       SelectionChanged="FilterComboBox_SelectionChanged">
-                <ComboBoxItem Content="All" IsSelected="True"/>
-                <ComboBoxItem Content="Running"/>
-                <ComboBoxItem Content="Stopped"/>
-                <ComboBoxItem Content="Automatic"/>
-                <ComboBoxItem Content="Manual"/>
-                <ComboBoxItem Content="Disabled"/>
+                <ComboBoxItem x:Uid="ServicesPage_FilterAll" IsSelected="True"/>
+                <ComboBoxItem x:Uid="ServicesPage_FilterRunning"/>
+                <ComboBoxItem x:Uid="ServicesPage_FilterStopped"/>
+                <ComboBoxItem x:Uid="ServicesPage_FilterAutomatic"/>
+                <ComboBoxItem x:Uid="ServicesPage_FilterManual"/>
+                <ComboBoxItem x:Uid="ServicesPage_FilterDisabled"/>
             </ComboBox>
             <Button x:Name="RefreshButton" Grid.Column="2" Margin="8,0,0,0" Click="RefreshButton_Click">
                 <FontIcon Glyph="&#xE72C;" FontSize="14"/>
@@ -102,17 +102,17 @@
             </Grid.ColumnDefinitions>
             <Button x:Name="NameHeader" Tag="Name" Click="SortHeader_Click" 
                     Background="Transparent" BorderThickness="0" Padding="0" HorizontalAlignment="Left">
-                <TextBlock Text="Service Name" FontWeight="SemiBold" FontSize="13"/>
+                <TextBlock x:Uid="ServicesPage_ColName" FontWeight="SemiBold" FontSize="13"/>
             </Button>
             <Button x:Name="StatusHeader" Tag="Status" Grid.Column="1" Click="SortHeader_Click" 
                     Background="Transparent" BorderThickness="0" Padding="0" HorizontalAlignment="Center">
-                <TextBlock Text="Status" FontWeight="SemiBold" FontSize="13"/>
+                <TextBlock x:Uid="ServicesPage_ColStatus" FontWeight="SemiBold" FontSize="13"/>
             </Button>
             <Button x:Name="StartTypeHeader" Tag="StartType" Grid.Column="2" Click="SortHeader_Click" 
                     Background="Transparent" BorderThickness="0" Padding="0" HorizontalAlignment="Center">
-                <TextBlock Text="Startup" FontWeight="SemiBold" FontSize="13"/>
+                <TextBlock x:Uid="ServicesPage_ColStartup" FontWeight="SemiBold" FontSize="13"/>
             </Button>
-            <TextBlock Text="Actions" Grid.Column="3" FontWeight="SemiBold" FontSize="13" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <TextBlock x:Uid="ServicesPage_ColActions" Grid.Column="3" FontWeight="SemiBold" FontSize="13" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         </Grid>
 
         <!-- Services List -->
@@ -153,9 +153,9 @@
                                           HorizontalAlignment="Center"
                                           MinWidth="100"
                                           Padding="8,4">
-                                    <ComboBoxItem Content="Automatic"/>
-                                    <ComboBoxItem Content="Manual"/>
-                                    <ComboBoxItem Content="Disabled"/>
+                                    <ComboBoxItem x:Uid="ServicesPage_StartupAutomatic"/>
+                                    <ComboBoxItem x:Uid="ServicesPage_StartupManual"/>
+                                    <ComboBoxItem x:Uid="ServicesPage_StartupDisabled"/>
                                 </ComboBox>
                                 <StackPanel Grid.Column="3" Orientation="Horizontal" HorizontalAlignment="Center" Spacing="4">
                                     <Button Tag="{x:Bind Name}" 

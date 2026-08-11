@@ -180,8 +180,38 @@
   <data name="HomePage_DiscordButton.Text" xml:space="preserve">
     <value>저희 서버에 가입하세요.</value>
   </data>
-  <data name="HomePage_WebsiteButton.Text" xml:space="preserve">
-    <value>추가 정보</value>
+  <data name="HomePage_MoreInfoButton.Text" xml:space="preserve">
+    <value>더 보기</value>
+  </data>
+  <data name="HomePage_SystemOverviewTitle.Text" xml:space="preserve">
+    <value>시스템 개요</value>
+  </data>
+  <data name="HomePage_SystemTitle.Text" xml:space="preserve">
+    <value>시스템</value>
+  </data>
+  <data name="HomePage_System_InstalledApps.Text" xml:space="preserve">
+    <value>설치된 앱</value>
+  </data>
+  <data name="HomePage_System_Processes.Text" xml:space="preserve">
+    <value>프로세스</value>
+  </data>
+  <data name="HomePage_System_Services.Text" xml:space="preserve">
+    <value>서비스</value>
+  </data>
+  <data name="HomePage_QuickActionsTitle.Text" xml:space="preserve">
+    <value>빠른 작업</value>
+  </data>
+  <data name="HomePage_QuickAction_OptimizeSystem.Text" xml:space="preserve">
+    <value>시스템 최적화</value>
+  </data>
+  <data name="HomePage_QuickAction_RepairIssues.Text" xml:space="preserve">
+    <value>문제 복구</value>
+  </data>
+  <data name="HomePage_QuickAction_ManageStartupApps.Text" xml:space="preserve">
+    <value>시작 앱 관리</value>
+  </data>
+  <data name="HomePage_QuickAction_CleanTemporaryFiles.Text" xml:space="preserve">
+    <value>임시 파일 정리</value>
   </data>
   <data name="SettingsPage_FeedbackButton.Content" xml:space="preserve">
     <value>피드백 보내기</value>
@@ -191,15 +221,6 @@
   </data>
   <data name="SystemInfoPage_GPU.Text" xml:space="preserve">
     <value>그래픽 카드</value>
-  </data>
-  <data name="SystemInfoPage_OS.Text" xml:space="preserve">
-    <value>운영 체제</value>
-  </data>
-  <data name="SystemInfoPage_RAM.Text" xml:space="preserve">
-    <value>RAM</value>
-  </data>
-  <data name="SystemInfoPage_Storage.Text" xml:space="preserve">
-    <value>저장소</value>
   </data>
   <data name="Debloat" xml:space="preserve">
     <value>Debloat</value>
@@ -401,12 +422,6 @@
   </data>
   <data name="Feature_DisableMyPeople.Description" xml:space="preserve">
     <value>작업 표시줄에서 내 사람 기능 끄기</value>
-  </data>
-  <data name="Feature_DisableSensorServices.Header" xml:space="preserve">
-    <value>센서 서비스 비활성화</value>
-  </data>
-  <data name="Feature_DisableSensorServices.Description" xml:space="preserve">
-    <value>개인 정보 보호 및 절전을 위해 센서 서비스를 끕니다. 관련 센서가 있는 노트북에는 권장되지 않습니다.</value>
   </data>
   <data name="Feature_DisableWindowsInk.Header" xml:space="preserve">
     <value>Windows Ink 비활성화</value>
@@ -708,12 +723,6 @@
   <data name="Update" xml:space="preserve">
     <value>업데이트</value>
   </data>
-  <data name="SystemInfoPage_Network.Text" xml:space="preserve">
-    <value>네트워크</value>
-  </data>
-  <data name="SystemInfoPage_Battery.Text" xml:space="preserve">
-    <value>배터리</value>
-  </data>
   <data name="MACAddress" xml:space="preserve">
     <value>MAC 주소</value>
   </data>
@@ -792,23 +801,11 @@
   <data name="HomePage_ramUsage.Text" xml:space="preserve">
     <value>RAM 사용량</value>
   </data>
-  <data name="HomePage_gpuUsage.Text" xml:space="preserve">
-    <value>GPU 사용량</value>
-  </data>
   <data name="HomePage_diskUsage.Text" xml:space="preserve">
     <value>디스크 사용량</value>
   </data>
   <data name="HomePage_networkUsage.Text" xml:space="preserve">
     <value>네트워크 사용량</value>
-  </data>
-  <data name="HomePage_installedAppsCount.Text" xml:space="preserve">
-    <value>설치된 앱</value>
-  </data>
-  <data name="HomePage_processesCount.Text" xml:space="preserve">
-    <value>프로세스</value>
-  </data>
-  <data name="HomePage_servicesCount.Text" xml:space="preserve">
-    <value>서비스</value>
   </data>
   <data name="Feature_DisableSmartScreen.Header" xml:space="preserve">
     <value>스마트 화면 비활성화</value>
@@ -1727,5 +1724,158 @@
   </data>
   <data name="Shell_Packages.Content" xml:space="preserve">
     <value>패키지</value>
+  </data>
+  <data name="PackagesPage_BrowseTab.Content" xml:space="preserve">
+    <value>둘러보기</value>
+  </data>
+  <data name="PackagesPage_UpdatesTabLabel.Text" xml:space="preserve">
+    <value>업데이트</value>
+  </data>
+  <data name="PackagesPage_SearchBox.PlaceholderText" xml:space="preserve">
+    <value>WinGet 패키지 검색...</value>
+  </data>
+  <data name="PackagesPage_InstallButton.Text" xml:space="preserve">
+    <value>선택한 항목 설치</value>
+  </data>
+  <data name="PackagesPage_Installed.Text" xml:space="preserve">
+    <value>설치됨</value>
+  </data>
+  <data name="PackagesPage_ColName.Text" xml:space="preserve">
+    <value>패키지 이름</value>
+  </data>
+  <data name="PackagesPage_ColId.Text" xml:space="preserve">
+    <value>패키지 ID</value>
+  </data>
+  <data name="PackagesPage_ColVersion.Text" xml:space="preserve">
+    <value>버전</value>
+  </data>
+  <data name="PackagesPage_ColPublisher.Text" xml:space="preserve">
+    <value>게시자</value>
+  </data>
+  <data name="PackagesPage_Loading.Text" xml:space="preserve">
+    <value>패키지를 불러오는 중…</value>
+  </data>
+  <data name="PackagesPage_SelectHint.Text" xml:space="preserve">
+    <value>설치할 패키지를 선택하세요</value>
+  </data>
+  <data name="ServicesPage_SearchBox.PlaceholderText" xml:space="preserve">
+    <value>서비스 검색...</value>
+  </data>
+  <data name="ServicesPage_FilterAll.Content" xml:space="preserve">
+    <value>전체</value>
+  </data>
+  <data name="ServicesPage_FilterRunning.Content" xml:space="preserve">
+    <value>실행 중</value>
+  </data>
+  <data name="ServicesPage_FilterStopped.Content" xml:space="preserve">
+    <value>중지됨</value>
+  </data>
+  <data name="ServicesPage_FilterAutomatic.Content" xml:space="preserve">
+    <value>자동</value>
+  </data>
+  <data name="ServicesPage_FilterManual.Content" xml:space="preserve">
+    <value>수동</value>
+  </data>
+  <data name="ServicesPage_FilterDisabled.Content" xml:space="preserve">
+    <value>사용 안 함</value>
+  </data>
+  <data name="ServicesPage_ColName.Text" xml:space="preserve">
+    <value>서비스 이름</value>
+  </data>
+  <data name="ServicesPage_ColStatus.Text" xml:space="preserve">
+    <value>상태</value>
+  </data>
+  <data name="ServicesPage_ColStartup.Text" xml:space="preserve">
+    <value>시작 유형</value>
+  </data>
+  <data name="ServicesPage_ColActions.Text" xml:space="preserve">
+    <value>작업</value>
+  </data>
+  <data name="ServicesPage_StartupAutomatic.Content" xml:space="preserve">
+    <value>자동</value>
+  </data>
+  <data name="ServicesPage_StartupManual.Content" xml:space="preserve">
+    <value>수동</value>
+  </data>
+  <data name="ServicesPage_StartupDisabled.Content" xml:space="preserve">
+    <value>사용 안 함</value>
+  </data>
+  <data name="ProcessesPage_SearchBox.PlaceholderText" xml:space="preserve">
+    <value>프로세스 검색...</value>
+  </data>
+  <data name="ProcessesPage_ColName.Text" xml:space="preserve">
+    <value>이름</value>
+  </data>
+  <data name="ProcessesPage_ColPID.Text" xml:space="preserve">
+    <value>PID</value>
+  </data>
+  <data name="ProcessesPage_ColMemory.Text" xml:space="preserve">
+    <value>메모리</value>
+  </data>
+  <data name="ProcessesPage_ColThreads.Text" xml:space="preserve">
+    <value>스레드</value>
+  </data>
+  <data name="ProcessesPage_ColActions.Text" xml:space="preserve">
+    <value>작업</value>
+  </data>
+  <data name="ProcessesPage_EndTask.Text" xml:space="preserve">
+    <value>작업 끝내기</value>
+  </data>
+  <data name="SystemInfoPage_OS.Header" xml:space="preserve">
+    <value>운영 체제</value>
+  </data>
+  <data name="SystemInfoPage_Copy.Text" xml:space="preserve">
+    <value>복사</value>
+  </data>
+  <data name="SystemInfoPage_Processor.Header" xml:space="preserve">
+    <value>프로세서</value>
+  </data>
+  <data name="SystemInfoPage_Graphics.Header" xml:space="preserve">
+    <value>그래픽</value>
+  </data>
+  <data name="SystemInfoPage_RAM.Header" xml:space="preserve">
+    <value>RAM</value>
+  </data>
+  <data name="SystemInfoPage_Storage.Header" xml:space="preserve">
+    <value>저장소</value>
+  </data>
+  <data name="SystemInfoPage_Network.Header" xml:space="preserve">
+    <value>네트워크</value>
+  </data>
+  <data name="SystemInfoPage_Battery.Header" xml:space="preserve">
+    <value>배터리</value>
+  </data>
+  <data name="SystemInfoPage_DriversForBackup.Text" xml:space="preserve">
+    <value>백업용 드라이버</value>
+  </data>
+  <data name="SettingsPage_LanguageCombo.PlaceholderText" xml:space="preserve">
+    <value>시스템 언어</value>
+  </data>
+  <data name="Settings_NavLeft.Content" xml:space="preserve">
+    <value>왼쪽</value>
+  </data>
+  <data name="Settings_NavTop.Content" xml:space="preserve">
+    <value>상단</value>
+  </data>
+  <data name="PackagesPage_UpdateButton" xml:space="preserve">
+    <value>선택한 항목 업데이트</value>
+  </data>
+  <data name="PackagesPage_SelectUpdateHint" xml:space="preserve">
+    <value>업데이트할 패키지를 선택하세요</value>
+  </data>
+  <data name="PackagesPage_StatusLoading" xml:space="preserve">
+    <value>패키지를 불러오는 중입니다. 잠시만 기다려 주세요…</value>
+  </data>
+  <data name="PackagesPage_StatusNoUpdates" xml:space="preserve">
+    <value>사용 가능한 업데이트가 없습니다. 모든 패키지가 최신 상태입니다.</value>
+  </data>
+  <data name="PackagesPage_SelectedForInstall" xml:space="preserve">
+    <value>설치할 패키지 {0}개가 선택됨</value>
+  </data>
+  <data name="PackagesPage_SelectedForUpdate" xml:space="preserve">
+    <value>업데이트할 패키지 {0}개가 선택됨</value>
+  </data>
+  <data name="HomePage_Version" xml:space="preserve">
+    <value>버전</value>
   </data>
 </root>

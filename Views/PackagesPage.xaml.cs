@@ -1,4 +1,4 @@
-using Microsoft.UI.Dispatching;
+﻿using Microsoft.UI.Dispatching;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Media;
@@ -28,9 +28,12 @@ public sealed partial class PackagesPage : Page
     private bool? _isWingetAvailable;
     private bool _isUpdatesMode;
     private bool _isLoading;
+    private bool _isOperating;   // true while an install/upgrade is running
+    private bool _isPageLoaded;  // true once Loaded is called + guards against InitializeComponent events
     private bool _suppressSearch;
     private int _updateCheckVersion;
     private int _updateCount;
+    private int _searchVersion;
 
     public PackagesPage()
     {
@@ -42,18 +45,37 @@ public sealed partial class PackagesPage : Page
 
     private async void PackagesPage_Loaded(object sender, RoutedEventArgs e)
     {
-        if (_isLoading) return;
+        _isPageLoaded = true;
+        if (_isLoading || _isOperating) return;
         if (_allPackages.Count == 0)
             await LoadPackagesAsync();
     }
 
+    // Enable / disable the whole page UI
+
+    private void SetPageBusy(bool busy)
+    {
+        InstallButton.IsEnabled = !busy;
+        RefreshButton.IsEnabled = !busy;
+        TabSegmented.IsEnabled = !busy;
+        PackageSearchBox.IsEnabled = !busy;
+    }
+
+    private void SetListBusy(bool busy)
+    {
+        PackagesGridView.IsEnabled = !busy;
+        UpdatesGridView.IsEnabled = !busy;
+    }
+
     // Refresh
+
     private async void RefreshButton_Click(object sender, RoutedEventArgs e)
     {
-        if (_isLoading) return;
+        if (_isLoading || _isOperating) return;
 
-        // Cancel any running tasks and reset everything
+        // Cancel any running background tasks and reset version counters
         Interlocked.Increment(ref _updateCheckVersion);
+        Interlocked.Increment(ref _searchVersion);
         var old = _cts;
         _cts = new CancellationTokenSource();
         try { old.Cancel(); } catch { }
@@ -61,14 +83,22 @@ public sealed partial class PackagesPage : Page
 
         _isWingetAvailable = null;
         _isUpdatesMode = false;
+        _allPackages.Clear();
         _updateablePackages.Clear();
+        _installedSnapshot.Clear();
         _updateCount = 0;
-        UpdatesTabLabel.Text = "Updates";
+
+        // Reset tab selection: set _isUpdatesMode = false first
+        // Then manually restore all UI to the Browse/loading state
+        UpdatesTabLabel.Text = "PackagesPage_UpdatesTabLabel.Text".GetLocalized();
         TabSegmented.SelectedIndex = 0;
+
+        // Reset all visibility here because SelectionChanged bails early
+        // when _isUpdatesMode is already false
         PackageSearchBox.Visibility = Visibility.Visible;
-        InstallButtonText.Text = "Install Selected";
+        InstallButtonText.Text = "PackagesPage_InstallButton.Text".GetLocalized();
         InstallButtonIcon.Glyph = "\uE896";
-        installingStatusText.Text = "Select a package to install";
+        installingStatusText.Text = "PackagesPage_SelectHint.Text".GetLocalized();
 
         _suppressSearch = true;
         try { PackageSearchBox.Text = string.Empty; }
@@ -76,8 +106,10 @@ public sealed partial class PackagesPage : Page
 
         PackageList.Clear();
         UpdatesList.Clear();
-        PackagesGridView.Visibility = Visibility.Collapsed;
         UpdatesGridView.Visibility = Visibility.Collapsed;
+        UpdatesGridView.SelectedItems.Clear();
+        PackagesGridView.Visibility = Visibility.Collapsed;
+        PackagesGridView.SelectedItems.Clear();
         LoadingState.Visibility = Visibility.Visible;
         StatusText.Visibility = Visibility.Collapsed;
 
@@ -85,9 +117,13 @@ public sealed partial class PackagesPage : Page
     }
 
     // Load
+
     private async Task LoadPackagesAsync()
     {
         _isLoading = true;
+        SetPageBusy(true);
+        SetListBusy(true);
+
         try
         {
             if (!await IsWingetAvailableAsync())
@@ -110,20 +146,20 @@ public sealed partial class PackagesPage : Page
                 var fallback = await DiscoverPopularPackagesFallbackAsync();
                 var seenIds = new HashSet<string>(discovered.Select(d => d.Id), StringComparer.OrdinalIgnoreCase);
                 foreach (var item in fallback)
-                {
                     if (seenIds.Add(item.Id))
                         discovered.Add(item);
-                }
 
                 if (discovered.Count == 0)
                 {
                     SetErrorState("No packages found. Try Refresh or search by name.");
-                    PackagesGridView.Visibility = Visibility.Visible;
                     return;
                 }
             }
 
+            // Build _allPackages on the current UI thread context
             int matched = 0;
+            var built = new List<WingetPackage>(discovered.Count);
+
             foreach (var d in discovered)
             {
                 _cts.Token.ThrowIfCancellationRequested();
@@ -156,21 +192,23 @@ public sealed partial class PackagesPage : Page
                     pkg.Version = "N/A";
                 }
 
-                _allPackages.Add(pkg);
+                built.Add(pkg);
             }
 
-            _allPackages = _allPackages
-                .OrderBy(p => p.Name, StringComparer.CurrentCultureIgnoreCase)
-                .ToList();
+            built.Sort((a, b) => string.Compare(a.Name, b.Name, StringComparison.CurrentCultureIgnoreCase));
+            _allPackages = built;
 
             _ = LogHelper.Log($"Loaded {_allPackages.Count} packages, {matched} already installed.");
 
-            // Dump everything into the list
-            int count = 0;
+            // Feed into the ObservableCollection in batches to keep the UI responsive
+            var currentSearch = _searchVersion;
+            int batchCount = 0;
             foreach (var p in _allPackages)
             {
+                _cts.Token.ThrowIfCancellationRequested();
+                if (_searchVersion != currentSearch) break; // search was started, stop bulk add
                 PackageList.Add(p);
-                if (++count % 50 == 0) await Task.Delay(1);
+                if (++batchCount % 100 == 0) await Task.Delay(1);
             }
 
             LoadingState.Visibility = Visibility.Collapsed;
@@ -179,6 +217,7 @@ public sealed partial class PackagesPage : Page
 
             if (PackageList.Count == 0) SetErrorState("No packages found.");
 
+            // Kick off the update check in the background
             _ = CheckAndApplyUpdatesAsync();
         }
         catch (OperationCanceledException) { }
@@ -190,105 +229,128 @@ public sealed partial class PackagesPage : Page
         finally
         {
             _isLoading = false;
+            // Only re-enable page controls when not in the middle of an install
+            if (!_isOperating)
+            {
+                SetPageBusy(false);
+                SetListBusy(false);
+            }
         }
     }
 
-    // Search 
+    // Search
+
     private void PackageSearchBox_TextChanged(AutoSuggestBox sender, AutoSuggestBoxTextChangedEventArgs args)
     {
         if (_suppressSearch || _isLoading || _isUpdatesMode) return;
         if (args.Reason == AutoSuggestionBoxTextChangeReason.SuggestionChosen) return;
-        ApplySearch(sender.Text?.Trim() ?? string.Empty);
+        _ = ApplySearch(sender.Text?.Trim() ?? string.Empty);
     }
 
     private void PackageSearchBox_QuerySubmitted(AutoSuggestBox sender, AutoSuggestBoxQuerySubmittedEventArgs args)
     {
         if (_suppressSearch || _isLoading || _isUpdatesMode) return;
-        ApplySearch(args.QueryText?.Trim() ?? string.Empty);
+        _ = ApplySearch(args.QueryText?.Trim() ?? string.Empty);
     }
 
-    private int _searchVersion;
-
-    private async void ApplySearch(string query)
+    private async Task ApplySearch(string query)
     {
-        var currentVersion = Interlocked.Increment(ref _searchVersion);
+        // Stamp this search, any older in-flight batch will see a mismatch and abort
+        var myVersion = Interlocked.Increment(ref _searchVersion);
         PackageList.Clear();
 
         if (string.IsNullOrWhiteSpace(query))
         {
-            // Empty => show everything
-            int count = 0;
+            // Empty query: show all packages. No async batching needed
+            // just fill synchronously so the caller can await completion
             foreach (var p in _allPackages)
             {
-                if (currentVersion != _searchVersion) return;
+                if (myVersion != _searchVersion) return;
                 PackageList.Add(p);
-                if (++count % 50 == 0) await Task.Delay(1);
             }
         }
         else
         {
-            int count = 0;
+            int batchCount = 0;
             foreach (var p in _allPackages)
             {
-                if (currentVersion != _searchVersion) return;
+                if (myVersion != _searchVersion) return;
+
                 if (p.Name.Contains(query, StringComparison.CurrentCultureIgnoreCase) ||
-                    p.Id.Contains(query, StringComparison.CurrentCultureIgnoreCase))
+                    p.Id.Contains(query,  StringComparison.CurrentCultureIgnoreCase))
                 {
                     PackageList.Add(p);
-                    if (++count % 50 == 0) await Task.Delay(1);
+                    if (++batchCount % 100 == 0) await Task.Delay(1);
                 }
             }
         }
 
-        if (currentVersion == _searchVersion)
+        if (myVersion == _searchVersion)
             _ = LogHelper.Log($"ApplySearch: '{query}' → {PackageList.Count}/{_allPackages.Count}");
     }
 
     // Update detection
+
     private async Task CheckAndApplyUpdatesAsync()
     {
         var myVersion = _updateCheckVersion;
+        // Snapshot the token now before any await so a later Refresh that
+        // disposes the old CTS cannot cause ObjectDisposedException
+        var token = _cts.Token;
         try
         {
-            _ = LogHelper.Log("Starting background update check…");
-            var updatables = await GetUpdatablePackagesFromCliAsync();
+            await LogHelper.Log("Starting background update check…");
+            var updatables = await GetUpdatablePackagesFromCliAsync(token);
             if (_updateCheckVersion != myVersion) return;
-            if (updatables.Count == 0) { _ = LogHelper.Log("No updates found."); return; }
+            if (updatables.Count == 0) { await LogHelper.Log("No updates found."); return; }
 
             var map = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
             foreach (var (id, ver) in updatables) map.TryAdd(id, ver);
 
+            // Capture snapshot reference before dispatch
             var snapshot = _allPackages;
             DispatcherQueue.TryEnqueue(() =>
             {
-                if (_updateCheckVersion != myVersion) return;
-
-                int count = 0;
-                foreach (var pkg in snapshot)
+                try
                 {
-                    if (map.TryGetValue(pkg.Id, out var latestVer))
+                    if (_updateCheckVersion != myVersion) return;
+
+                    int count = 0;
+                    foreach (var pkg in snapshot)
                     {
-                        pkg.HasUpdate = true;
-                        pkg.LatestVersion = latestVer;
-                        count++;
+                        if (map.TryGetValue(pkg.Id, out var latestVer))
+                        {
+                            pkg.HasUpdate = true;
+                            pkg.LatestVersion = latestVer;
+                            count++;
+                        }
                     }
+
+                    _updateCount = count;
+                    _updateablePackages = [.. snapshot.Where(p => p.HasUpdate)];
+
+                    // Rebuild UpdatesList in one shot
+                    UpdatesList.Clear();
+                    foreach (var pkg in _updateablePackages) UpdatesList.Add(pkg);
+
+                    var baseLabel = "PackagesPage_UpdatesTabLabel.Text".GetLocalized();
+                    UpdatesTabLabel.Text = count > 0 ? $"{baseLabel} ({count})" : baseLabel;
+                    _ = LogHelper.Log($"Update check done — {count} update(s).");
+
+                    if (_isUpdatesMode) RefreshUpdatesTabList();
                 }
-
-                _updateCount = count;
-                _updateablePackages = snapshot.Where(p => p.HasUpdate).ToList();
-                UpdatesList.Clear();
-                foreach (var pkg in _updateablePackages) UpdatesList.Add(pkg);
-                UpdatesTabLabel.Text = count > 0 ? $"Updates ({count})" : "Updates";
-                LogHelper.Log($"Update check done — {count} update(s).");
-
-                if (_isUpdatesMode) RefreshUpdatesTabList();
+                catch (Exception ex)
+                {
+                    _ = LogHelper.LogError($"Error applying updates to UI: {ex.Message}");
+                }
             });
         }
         catch (OperationCanceledException) { }
         catch (Exception ex) { await LogHelper.LogWarning($"Update check failed: {ex.Message}"); }
     }
 
-    private async Task<List<(string Id, string AvailableVersion)>> GetUpdatablePackagesFromCliAsync()
+    private async Task<List<(string Id, string AvailableVersion)>> GetUpdatablePackagesFromCliAsync(
+        CancellationToken token)
     {
         var psi = new ProcessStartInfo
         {
@@ -305,13 +367,23 @@ public sealed partial class PackagesPage : Page
         using var process = Process.Start(psi);
         if (process is null) return [];
 
-        var stdOut = process.StandardOutput.ReadToEndAsync();
-        var stdErr = process.StandardError.ReadToEndAsync();
-        try { await process.WaitForExitAsync(_cts.Token); }
-        catch (OperationCanceledException) { TryTerminateProcess(process); throw; }
+        // Read both streams concurrently with the process running so the pipe
+        // buffers never fill and deadlock the process on large output
+        var stdOutTask = process.StandardOutput.ReadToEndAsync(token);
+        var stdErrTask = process.StandardError.ReadToEndAsync(token);
 
-        var output = await stdOut;
-        _ = await stdErr;
+        try
+        {
+            await Task.WhenAll(stdOutTask, stdErrTask, process.WaitForExitAsync(token));
+        }
+        catch (OperationCanceledException)
+        {
+            TryTerminateProcess(process);
+            throw;
+        }
+
+        if (!stdOutTask.IsCompletedSuccessfully) return [];
+        var output = stdOutTask.Result;
 
         var results = new List<(string, string)>();
         var lines = output.Split(['\r', '\n'], StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries);
@@ -343,32 +415,56 @@ public sealed partial class PackagesPage : Page
     }
 
     // Tab switching
-    private void TabSegmented_SelectionChanged(object sender, SelectionChangedEventArgs e)
+
+    private async void TabSegmented_SelectionChanged(object sender, SelectionChangedEventArgs e)
     {
+        // The Segmented control fires SelectionChanged during InitializeComponent (SelectedIndex=0)
+        // before named elements are ready. Bail out until the page is fully loaded
+        if (!_isPageLoaded) return;
+
+        // Block tab switches during any operation or while loading
+        if (_isLoading || _isOperating) { TabSegmented.SelectedIndex = _isUpdatesMode ? 1 : 0; return; }
+
         if (TabSegmented.SelectedIndex == 0)
         {
-            if (!_isUpdatesMode) return;
+            // Always restore Browse state, regardless of _isUpdatesMode, so that
+            // Refresh (which resets _isUpdatesMode before changing the tab index)
+            // also correctly hides the Updates grid
             _isUpdatesMode = false;
+
             PackageSearchBox.Visibility = Visibility.Visible;
-            InstallButtonText.Text = "Install Selected";
-            InstallButtonIcon.Glyph = "\uE896";
-            installingStatusText.Text = "Select a package to install";
+            InstallButtonText.Text    = "PackagesPage_InstallButton.Text".GetLocalized();
+            InstallButtonIcon.Glyph  = "\uE896";
+            installingStatusText.Text = "PackagesPage_SelectHint.Text".GetLocalized();
+
+            // Always hide Updates grid and show the Browse grid
             UpdatesGridView.Visibility = Visibility.Collapsed;
             UpdatesGridView.SelectedItems.Clear();
             StatusText.Visibility = Visibility.Collapsed;
-            PackagesGridView.Visibility = Visibility.Visible;
+            LoadingState.Visibility = Visibility.Collapsed;
 
-            // Re-apply whatever is currently in the search box
-            ApplySearch(PackageSearchBox.Text?.Trim() ?? string.Empty);
+            // Keep PackagesGridView hidden while repopulating PackageList
+            // Showing it before the fill completes causes the stale updates list
+            // (or an empty/partially-cleared list) to flash on screen
+            PackagesGridView.Visibility = Visibility.Collapsed;
+            await ApplySearch(PackageSearchBox.Text?.Trim() ?? string.Empty);
+
+            // Only show the list if there's actually something to display
+            if (PackageList.Count > 0)
+                PackagesGridView.Visibility = Visibility.Visible;
+            else if (_allPackages.Count > 0)
+                SetErrorState("No packages match your search.");
         }
         else if (TabSegmented.SelectedIndex == 1)
         {
             if (_isUpdatesMode) return;
             _isUpdatesMode = true;
+
             PackageSearchBox.Visibility = Visibility.Collapsed;
-            InstallButtonText.Text = "Update Selected";
+            InstallButtonText.Text = "PackagesPage_UpdateButton".GetLocalized();
             InstallButtonIcon.Glyph = "\uE898";
-            installingStatusText.Text = "Select packages to update";
+            installingStatusText.Text = "PackagesPage_SelectUpdateHint".GetLocalized();
+
             PackagesGridView.Visibility = Visibility.Collapsed;
             PackagesGridView.SelectedItems.Clear();
             RefreshUpdatesTabList();
@@ -377,6 +473,7 @@ public sealed partial class PackagesPage : Page
 
     private void RefreshUpdatesTabList()
     {
+        // Sync UpdatesList with _updateablePackages if out of date
         if (UpdatesList.Count != _updateablePackages.Count)
         {
             UpdatesList.Clear();
@@ -386,8 +483,8 @@ public sealed partial class PackagesPage : Page
         if (UpdatesList.Count == 0)
         {
             StatusText.Text = _allPackages.Count == 0
-                ? "Loading packages, please wait…"
-                : "No updates available. All packages are up to date.";
+                ? "PackagesPage_StatusLoading".GetLocalized()
+                : "PackagesPage_StatusNoUpdates".GetLocalized();
             StatusText.Visibility = Visibility.Visible;
         }
         else
@@ -401,11 +498,15 @@ public sealed partial class PackagesPage : Page
     }
 
     // Install / Update
+
     private async void InstallSelectedApp_Click(object sender, RoutedEventArgs e)
     {
+        if (_isLoading || _isOperating) return;
+
         var activeView = _isUpdatesMode ? UpdatesGridView : PackagesGridView;
         var selected = activeView.SelectedItems.Cast<WingetPackage>()
-            .Where(p => _isUpdatesMode ? p.HasUpdate : !p.IsInstalled).ToList();
+            .Where(p => _isUpdatesMode ? p.HasUpdate : !p.IsInstalled)
+            .ToList();
 
         if (selected.Count == 0)
         {
@@ -415,9 +516,10 @@ public sealed partial class PackagesPage : Page
             return;
         }
 
-        InstallButton.IsEnabled = false;
-        RefreshButton.IsEnabled = false;
-        activeView.IsEnabled = false;
+        _isOperating = true;
+        SetPageBusy(true);
+        SetListBusy(true);
+
         installingStatusBar.Opacity = 1;
         installingStatusBar.Maximum = selected.Count;
         installingStatusBar.Value = 0;
@@ -457,7 +559,16 @@ public sealed partial class PackagesPage : Page
                     using var p = Process.Start(psi);
                     if (p != null)
                     {
-                        await p.WaitForExitAsync(localCts.Token);
+                        // Drain output asynchronously so the process never blocks on full pipe buffers
+                        var outTask = p.StandardOutput.ReadToEndAsync();
+                        var errTask = p.StandardError.ReadToEndAsync();
+
+                        try { await p.WaitForExitAsync(localCts.Token); }
+                        catch (OperationCanceledException) { TryTerminateProcess(p); break; }
+
+                        _ = await outTask;
+                        _ = await errTask;
+
                         if (p.ExitCode == 0)
                         {
                             ok++;
@@ -469,7 +580,11 @@ public sealed partial class PackagesPage : Page
                                 pkg.LatestVersion = string.Empty;
                                 _updateablePackages.Remove(pkg);
                                 _updateCount = Math.Max(0, _updateCount - 1);
-                                UpdatesTabLabel.Text = _updateCount > 0 ? $"Updates ({_updateCount})" : "Updates";
+
+                                var baseLabel = "PackagesPage_UpdatesTabLabel.Text".GetLocalized();
+                                UpdatesTabLabel.Text = _updateCount > 0
+                                    ? $"{baseLabel} ({_updateCount})"
+                                    : baseLabel;
                                 UpdatesList.Remove(pkg);
                             }
                         }
@@ -496,17 +611,20 @@ public sealed partial class PackagesPage : Page
             localCts.Dispose();
             OperationCancellationManager.ExitOperation();
 
-            InstallButton.IsEnabled = true;
-            RefreshButton.IsEnabled = true;
-            activeView.IsEnabled = true;
-            installingStatusText.Text = _isUpdatesMode ? "Select packages to update" : "Select a package to install";
+            _isOperating = false;
+            SetPageBusy(false);
+            SetListBusy(false);
+
+            installingStatusText.Text = _isUpdatesMode
+                ? "PackagesPage_SelectUpdateHint".GetLocalized()
+                : "PackagesPage_SelectHint.Text".GetLocalized();
             installingStatusBar.Opacity = 0;
             installingStatusBar.Value = 0;
             activeView.SelectedItems.Clear();
 
             if (_isUpdatesMode && UpdatesList.Count == 0)
             {
-                StatusText.Text = "All updates installed successfully.";
+                StatusText.Text = "PackagesPage_StatusNoUpdates".GetLocalized();
                 StatusText.Visibility = Visibility.Visible;
             }
 
@@ -517,34 +635,38 @@ public sealed partial class PackagesPage : Page
     }
 
     // SelectionChanged
+
     private void PackagesGridView_SelectionChanged(object sender, SelectionChangedEventArgs e)
     {
         if (sender is not ListViewBase view) return;
+        if (_isLoading) return;  // Ignore selection events during bulk-load
 
+        // Deselect items that cannot be acted on
         foreach (WingetPackage item in e.AddedItems)
             if (item.IsInstalled && !item.HasUpdate)
                 view.SelectedItems.Remove(item);
 
         var count = view.SelectedItems.Count;
         installingStatusText.Text = count == 0
-            ? (_isUpdatesMode ? "Select packages to update" : "Select a package to install")
-            : $"{count} package{(count == 1 ? "" : "s")} selected for {(_isUpdatesMode ? "update" : "installation")}";
+            ? (_isUpdatesMode
+                ? "PackagesPage_SelectUpdateHint".GetLocalized()
+                : "PackagesPage_SelectHint.Text".GetLocalized())
+            : string.Format(
+                _isUpdatesMode
+                    ? "PackagesPage_SelectedForUpdate".GetLocalized()
+                    : "PackagesPage_SelectedForInstall".GetLocalized(),
+                count);
     }
 
     // Winget discovery
+
     private async Task<bool> IsWingetAvailableAsync()
     {
         if (_isWingetAvailable.HasValue) return _isWingetAvailable.Value;
         try
         {
-            if (!await IsWingetCliAvailableAsync())
-            {
-                _isWingetAvailable = false;
-                return false;
-            }
-
-            _isWingetAvailable = true;
-            return true;
+            _isWingetAvailable = await IsWingetCliAvailableAsync();
+            return _isWingetAvailable.Value;
         }
         catch { }
 
@@ -612,6 +734,7 @@ public sealed partial class PackagesPage : Page
         var results = new List<DiscoveredPackageEntry>();
         var seen = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
 
+        // Run fallback queries sequentially so we don't hammer the network
         foreach (var q in new[] { "browser", "media", "code", "chat", "game", "archive", "social", "utility", "system" })
             foreach (var item in await SearchPackagesFromWingetCliAsync(q))
                 if (seen.Add(item.Id)) results.Add(item);
@@ -679,11 +802,11 @@ public sealed partial class PackagesPage : Page
     }
 
     // Installed detection
+
     private async Task<Dictionary<string, (string Name, string Version)>> GetInstalledPackagesMapAsync()
     {
         var result = new Dictionary<string, (string Name, string Version)>(StringComparer.OrdinalIgnoreCase);
         _installedSnapshot.Clear();
-
         await PopulateInstalledMapFallbackAsync(result);
         return result;
     }
@@ -723,19 +846,23 @@ public sealed partial class PackagesPage : Page
 
         foreach (var c in _installedSnapshot)
         {
-            if (!string.IsNullOrWhiteSpace(c.NormalizedName) && keys.Contains(c.NormalizedName)) { installed = (c.Name, c.Version); return true; }
-            if (!string.IsNullOrWhiteSpace(c.NormalizedId) && keys.Contains(c.NormalizedId)) { installed = (c.Name, c.Version); return true; }
+            if (!string.IsNullOrWhiteSpace(c.NormalizedName) && keys.Contains(c.NormalizedName))
+            { installed = (c.Name, c.Version); return true; }
+            if (!string.IsNullOrWhiteSpace(c.NormalizedId) && keys.Contains(c.NormalizedId))
+            { installed = (c.Name, c.Version); return true; }
             foreach (var key in keys)
             {
                 if (key.Length < 6 || string.IsNullOrWhiteSpace(c.NormalizedName)) continue;
-                if (c.NormalizedName.EndsWith(key, StringComparison.Ordinal)) { installed = (c.Name, c.Version); return true; }
+                if (c.NormalizedName.EndsWith(key, StringComparison.Ordinal))
+                { installed = (c.Name, c.Version); return true; }
             }
         }
 
         return false;
     }
 
-    // Helpers
+    // Static helpers
+
     private static string FormatPackageName(string id)
     {
         var d = id.IndexOf('.');
@@ -779,7 +906,6 @@ public sealed partial class PackagesPage : Page
         LoadingState.Visibility = Visibility.Collapsed;
         StatusText.Text = message;
         StatusText.Visibility = Visibility.Visible;
-        _isLoading = false;
     }
 
     private static void TryTerminateProcess(Process p)

@@ -139,7 +139,7 @@
 						<FontIcon Glyph="&#xE73E;"
 								  FontSize="12"
 								  Foreground="{ThemeResource SystemFillColorSuccessBrush}"/>
-						<TextBlock Text="Installed"
+						<TextBlock x:Uid="PackagesPage_Installed"
 								   FontSize="12"
 								   VerticalAlignment="Center"
 								   Foreground="{ThemeResource SystemFillColorSuccessBrush}"/>
@@ -196,20 +196,20 @@
 								VerticalAlignment="Center"
 								SelectionChanged="TabSegmented_SelectionChanged"
 								SelectedIndex="0">
-				<controls:SegmentedItem Content="Browse" />
+				<controls:SegmentedItem x:Uid="PackagesPage_BrowseTab" />
 				<controls:SegmentedItem x:Name="UpdatesTabItem">
-					<TextBlock x:Name="UpdatesTabLabel" Text="Updates" Margin="4,0"/>
+					<TextBlock x:Uid="PackagesPage_UpdatesTabLabel" x:Name="UpdatesTabLabel" Margin="4,0"/>
 				</controls:SegmentedItem>
 			</controls:Segmented>
 
 			<!-- Search box -->
-			<AutoSuggestBox x:Name="PackageSearchBox"
+			<AutoSuggestBox x:Uid="PackagesPage_SearchBox"
+							x:Name="PackageSearchBox"
 							Grid.Column="1"
 							HorizontalAlignment="Stretch"
 							MinWidth="80"
 							Height="34"
 							QueryIcon="Find"
-							PlaceholderText="Search all winget packages..."
 							Margin="0,0,10,0"
 							TextChanged="PackageSearchBox_TextChanged"
 							QuerySubmitted="PackageSearchBox_QuerySubmitted"/>
@@ -226,7 +226,7 @@
                         Style="{ThemeResource AccentButtonStyle}">
 					<StackPanel Orientation="Horizontal" Spacing="8">
 						<FontIcon x:Name="InstallButtonIcon" Glyph="&#xE896;" FontSize="16"/>
-						<TextBlock x:Name="InstallButtonText" Text="Install Selected"/>
+						<TextBlock x:Uid="PackagesPage_InstallButton" x:Name="InstallButtonText"/>
 					</StackPanel>
 				</Button>
 
@@ -262,10 +262,10 @@
 						<ColumnDefinition Width="1*"/>
 						<ColumnDefinition Width="1.2*"/>
 					</Grid.ColumnDefinitions>
-					<TextBlock Text="Package Name" FontWeight="SemiBold"/>
-					<TextBlock Grid.Column="1" Text="Package ID" FontWeight="SemiBold"/>
-					<TextBlock Grid.Column="2" Text="Version" FontWeight="SemiBold"/>
-					<TextBlock Grid.Column="3" Text="Publisher" FontWeight="SemiBold"/>
+					<TextBlock x:Uid="PackagesPage_ColName" FontWeight="SemiBold"/>
+					<TextBlock x:Uid="PackagesPage_ColId" Grid.Column="1" FontWeight="SemiBold"/>
+					<TextBlock x:Uid="PackagesPage_ColVersion" Grid.Column="2" FontWeight="SemiBold"/>
+					<TextBlock x:Uid="PackagesPage_ColPublisher" Grid.Column="3" FontWeight="SemiBold"/>
 				</Grid>
 			</Border>
 
@@ -274,7 +274,7 @@
 				<!-- Loading spinner -->
 				<StackPanel x:Name="LoadingState" VerticalAlignment="Center" Visibility="Visible">
 					<ProgressRing Margin="20" Width="100" Height="100" IsIndeterminate="True"/>
-					<TextBlock Text="Loading packages…"
+					<TextBlock x:Uid="PackagesPage_Loading"
 							   Style="{StaticResource DetailBodyBaseMediumStyle}"
 							   HorizontalAlignment="Center"/>
 				</StackPanel>
@@ -327,11 +327,11 @@
 				<ColumnDefinition Width="Auto"/>
 				<ColumnDefinition Width="*"/>
 			</Grid.ColumnDefinitions>
-			<TextBlock x:Name="installingStatusText"
+			<TextBlock x:Uid="PackagesPage_SelectHint"
+                       x:Name="installingStatusText"
                        Margin="12,6"
                        Grid.Column="0"
                        Style="{StaticResource CaptionTextBlockStyle}"
-                       Text="Select a package to install"
                        TextWrapping="Wrap"/>
 			<ProgressBar x:Name="installingStatusBar"
                          Margin="0,0,12,0"

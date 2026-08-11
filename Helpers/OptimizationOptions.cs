@@ -1094,11 +1094,6 @@ internal partial class OptimizationOptions
                 else await OptimizeSystemHelper.EnableOneDrive().ConfigureAwait(false);
                 break;
 
-            case "SensorServices":
-                if (isOn) await OptimizeSystemHelper.DisableSensorServices().ConfigureAwait(false);
-                else await OptimizeSystemHelper.EnableSensorServices().ConfigureAwait(false);
-                break;
-
             case "NewsAndInterests":
                 if (isOn) await OptimizeSystemHelper.DisableNewsAndInterests().ConfigureAwait(false);
                 else await OptimizeSystemHelper.EnableNewsAndInterests().ConfigureAwait(false);

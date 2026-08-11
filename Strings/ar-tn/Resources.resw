@@ -180,8 +180,38 @@
   <data name="HomePage_DiscordButton.Text" xml:space="preserve">
     <value>انضم إلى خادمنا</value>
   </data>
-  <data name="HomePage_WebsiteButton.Text" xml:space="preserve">
-    <value>مزيد من المعلومات</value>
+  <data name="HomePage_MoreInfoButton.Text" xml:space="preserve">
+    <value>معلومات أكثر</value>
+  </data>
+  <data name="HomePage_SystemOverviewTitle.Text" xml:space="preserve">
+    <value>نظرة عامة على النظام</value>
+  </data>
+  <data name="HomePage_SystemTitle.Text" xml:space="preserve">
+    <value>النظام</value>
+  </data>
+  <data name="HomePage_System_InstalledApps.Text" xml:space="preserve">
+    <value>التطبيقات المثبتة</value>
+  </data>
+  <data name="HomePage_System_Processes.Text" xml:space="preserve">
+    <value>العمليات</value>
+  </data>
+  <data name="HomePage_System_Services.Text" xml:space="preserve">
+    <value>الخدمات</value>
+  </data>
+  <data name="HomePage_QuickActionsTitle.Text" xml:space="preserve">
+    <value>الإجراءات السريعة</value>
+  </data>
+  <data name="HomePage_QuickAction_OptimizeSystem.Text" xml:space="preserve">
+    <value>تحسين النظام</value>
+  </data>
+  <data name="HomePage_QuickAction_RepairIssues.Text" xml:space="preserve">
+    <value>إصلاح المشاكل</value>
+  </data>
+  <data name="HomePage_QuickAction_ManageStartupApps.Text" xml:space="preserve">
+    <value>إدارة تطبيقات بدء التشغيل</value>
+  </data>
+  <data name="HomePage_QuickAction_CleanTemporaryFiles.Text" xml:space="preserve">
+    <value>تنظيف الملفات المؤقتة</value>
   </data>
   <data name="SettingsPage_FeedbackButton.Content" xml:space="preserve">
     <value>ترك تقييم</value>
@@ -191,15 +221,6 @@
   </data>
   <data name="SystemInfoPage_GPU.Text" xml:space="preserve">
     <value>بطاقة الرسومات</value>
-  </data>
-  <data name="SystemInfoPage_OS.Text" xml:space="preserve">
-    <value>نظام التشغيل</value>
-  </data>
-  <data name="SystemInfoPage_RAM.Text" xml:space="preserve">
-    <value>الذاكرة العشوائية (RAM)</value>
-  </data>
-  <data name="SystemInfoPage_Storage.Text" xml:space="preserve">
-    <value>التخزين</value>
   </data>
   <data name="Debloat" xml:space="preserve">
     <value>إزالة التطبيقات</value>
@@ -401,12 +422,6 @@
   </data>
   <data name="Feature_DisableMyPeople.Description" xml:space="preserve">
     <value>إيقاف ميزة أصدقائي في شريط المهام</value>
-  </data>
-  <data name="Feature_DisableSensorServices.Header" xml:space="preserve">
-    <value>تعطيل خدمات الاستشعار</value>
-  </data>
-  <data name="Feature_DisableSensorServices.Description" xml:space="preserve">
-    <value>إيقاف خدمات الاستشعار للخصوصية وتوفير الطاقة. غير مُوصى به للأجهزة المحمولة التي تحتوي على أجهزة استشعار ذات صلة</value>
   </data>
   <data name="Feature_DisableWindowsInk.Header" xml:space="preserve">
     <value>تعطيل حبر ويندوز</value>
@@ -708,12 +723,6 @@
   <data name="Update" xml:space="preserve">
     <value>تحديث</value>
   </data>
-  <data name="SystemInfoPage_Network.Text" xml:space="preserve">
-    <value>الشبكة</value>
-  </data>
-  <data name="SystemInfoPage_Battery.Text" xml:space="preserve">
-    <value>البطارية</value>
-  </data>
   <data name="MACAddress" xml:space="preserve">
     <value>عنوان ماك</value>
   </data>
@@ -792,23 +801,11 @@
   <data name="HomePage_ramUsage.Text" xml:space="preserve">
     <value>استخدام الذاكرة</value>
   </data>
-  <data name="HomePage_gpuUsage.Text" xml:space="preserve">
-    <value>بطاقة الرسومات</value>
-  </data>
   <data name="HomePage_diskUsage.Text" xml:space="preserve">
     <value>استخدام القرص</value>
   </data>
   <data name="HomePage_networkUsage.Text" xml:space="preserve">
     <value>استخدام الشبكة</value>
-  </data>
-  <data name="HomePage_installedAppsCount.Text" xml:space="preserve">
-    <value>التطبيقات المثبتة</value>
-  </data>
-  <data name="HomePage_processesCount.Text" xml:space="preserve">
-    <value>العمليات</value>
-  </data>
-  <data name="HomePage_servicesCount.Text" xml:space="preserve">
-    <value>الخدمات</value>
   </data>
   <data name="Feature_DisableSmartScreen.Header" xml:space="preserve">
     <value>تعطيل فلتر الشاشة الذكية</value>
@@ -1727,5 +1724,158 @@
   </data>
   <data name="Shell_Packages.Content" xml:space="preserve">
     <value>الحزم</value>
+  </data>
+  <data name="PackagesPage_BrowseTab.Content" xml:space="preserve">
+    <value>تصفح</value>
+  </data>
+  <data name="PackagesPage_UpdatesTabLabel.Text" xml:space="preserve">
+    <value>التحديثات</value>
+  </data>
+  <data name="PackagesPage_SearchBox.PlaceholderText" xml:space="preserve">
+    <value>ابحث في حزم WinGet...</value>
+  </data>
+  <data name="PackagesPage_InstallButton.Text" xml:space="preserve">
+    <value>تثبيت المحدد</value>
+  </data>
+  <data name="PackagesPage_Installed.Text" xml:space="preserve">
+    <value>المثبتة</value>
+  </data>
+  <data name="PackagesPage_ColName.Text" xml:space="preserve">
+    <value>اسم الحزمة</value>
+  </data>
+  <data name="PackagesPage_ColId.Text" xml:space="preserve">
+    <value>معرف الحزمة</value>
+  </data>
+  <data name="PackagesPage_ColVersion.Text" xml:space="preserve">
+    <value>الإصدار</value>
+  </data>
+  <data name="PackagesPage_ColPublisher.Text" xml:space="preserve">
+    <value>الناشر</value>
+  </data>
+  <data name="PackagesPage_Loading.Text" xml:space="preserve">
+    <value>جاري تحميل الحزم…</value>
+  </data>
+  <data name="PackagesPage_SelectHint.Text" xml:space="preserve">
+    <value>حدد حزمة لتثبيتها</value>
+  </data>
+  <data name="ServicesPage_SearchBox.PlaceholderText" xml:space="preserve">
+    <value>البحث عن الخدمات...</value>
+  </data>
+  <data name="ServicesPage_FilterAll.Content" xml:space="preserve">
+    <value>الكل</value>
+  </data>
+  <data name="ServicesPage_FilterRunning.Content" xml:space="preserve">
+    <value>قيد التشغيل</value>
+  </data>
+  <data name="ServicesPage_FilterStopped.Content" xml:space="preserve">
+    <value>متوقفة</value>
+  </data>
+  <data name="ServicesPage_FilterAutomatic.Content" xml:space="preserve">
+    <value>تلقائي</value>
+  </data>
+  <data name="ServicesPage_FilterManual.Content" xml:space="preserve">
+    <value>يدوي</value>
+  </data>
+  <data name="ServicesPage_FilterDisabled.Content" xml:space="preserve">
+    <value>معطل</value>
+  </data>
+  <data name="ServicesPage_ColName.Text" xml:space="preserve">
+    <value>اسم الخدمة</value>
+  </data>
+  <data name="ServicesPage_ColStatus.Text" xml:space="preserve">
+    <value>الحالة</value>
+  </data>
+  <data name="ServicesPage_ColStartup.Text" xml:space="preserve">
+    <value>نوع البدء</value>
+  </data>
+  <data name="ServicesPage_ColActions.Text" xml:space="preserve">
+    <value>الإجراءات</value>
+  </data>
+  <data name="ServicesPage_StartupAutomatic.Content" xml:space="preserve">
+    <value>تلقائي</value>
+  </data>
+  <data name="ServicesPage_StartupManual.Content" xml:space="preserve">
+    <value>يدوي</value>
+  </data>
+  <data name="ServicesPage_StartupDisabled.Content" xml:space="preserve">
+    <value>معطل</value>
+  </data>
+  <data name="ProcessesPage_SearchBox.PlaceholderText" xml:space="preserve">
+    <value>البحث عن العمليات...</value>
+  </data>
+  <data name="ProcessesPage_ColName.Text" xml:space="preserve">
+    <value>الاسم</value>
+  </data>
+  <data name="ProcessesPage_ColPID.Text" xml:space="preserve">
+    <value>معرف العملية (PID)</value>
+  </data>
+  <data name="ProcessesPage_ColMemory.Text" xml:space="preserve">
+    <value>الذاكرة</value>
+  </data>
+  <data name="ProcessesPage_ColThreads.Text" xml:space="preserve">
+    <value>المسارات (Threads)</value>
+  </data>
+  <data name="ProcessesPage_ColActions.Text" xml:space="preserve">
+    <value>الإجراءات</value>
+  </data>
+  <data name="ProcessesPage_EndTask.Text" xml:space="preserve">
+    <value>إنهاء المهمة</value>
+  </data>
+  <data name="SystemInfoPage_OS.Header" xml:space="preserve">
+    <value>نظام التشغيل</value>
+  </data>
+  <data name="SystemInfoPage_Copy.Text" xml:space="preserve">
+    <value>نسخ</value>
+  </data>
+  <data name="SystemInfoPage_Processor.Header" xml:space="preserve">
+    <value>المعالج</value>
+  </data>
+  <data name="SystemInfoPage_Graphics.Header" xml:space="preserve">
+    <value>بطاقة الرسومات</value>
+  </data>
+  <data name="SystemInfoPage_RAM.Header" xml:space="preserve">
+    <value>الذاكرة العشوائية (RAM)</value>
+  </data>
+  <data name="SystemInfoPage_Storage.Header" xml:space="preserve">
+    <value>التخزين</value>
+  </data>
+  <data name="SystemInfoPage_Network.Header" xml:space="preserve">
+    <value>الشبكة</value>
+  </data>
+  <data name="SystemInfoPage_Battery.Header" xml:space="preserve">
+    <value>البطارية</value>
+  </data>
+  <data name="SystemInfoPage_DriversForBackup.Text" xml:space="preserve">
+    <value>برامج التشغيل للنسخ الاحتياطي</value>
+  </data>
+  <data name="SettingsPage_LanguageCombo.PlaceholderText" xml:space="preserve">
+    <value>لغة النظام</value>
+  </data>
+  <data name="Settings_NavLeft.Content" xml:space="preserve">
+    <value>يسار</value>
+  </data>
+  <data name="Settings_NavTop.Content" xml:space="preserve">
+    <value>أعلى</value>
+  </data>
+  <data name="PackagesPage_UpdateButton" xml:space="preserve">
+    <value>تحديث المحدد</value>
+  </data>
+  <data name="PackagesPage_SelectUpdateHint" xml:space="preserve">
+    <value>حدد الحزم للتحديث</value>
+  </data>
+  <data name="PackagesPage_StatusLoading" xml:space="preserve">
+    <value>جاري تحميل الحزم، يرجى الانتظار…</value>
+  </data>
+  <data name="PackagesPage_StatusNoUpdates" xml:space="preserve">
+    <value>لا تتوفر تحديثات. جميع الحزم محدثة.</value>
+  </data>
+  <data name="PackagesPage_SelectedForInstall" xml:space="preserve">
+    <value>تم تحديد {0} حزمة (حزم) للتثبيت</value>
+  </data>
+  <data name="PackagesPage_SelectedForUpdate" xml:space="preserve">
+    <value>تم تحديد {0} حزمة (حزم) للتحديث</value>
+  </data>
+  <data name="HomePage_Version" xml:space="preserve">
+    <value>الإصدار</value>
   </data>
 </root>

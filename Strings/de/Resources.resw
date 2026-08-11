@@ -180,8 +180,38 @@
   <data name="HomePage_DiscordButton.Text" xml:space="preserve">
     <value>Treten Sie unserem Server bei</value>
   </data>
-  <data name="HomePage_WebsiteButton.Text" xml:space="preserve">
-    <value>Mehr Informationen</value>
+  <data name="HomePage_MoreInfoButton.Text" xml:space="preserve">
+    <value>Mehr Info</value>
+  </data>
+  <data name="HomePage_SystemOverviewTitle.Text" xml:space="preserve">
+    <value>Systemübersicht</value>
+  </data>
+  <data name="HomePage_SystemTitle.Text" xml:space="preserve">
+    <value>System</value>
+  </data>
+  <data name="HomePage_System_InstalledApps.Text" xml:space="preserve">
+    <value>Installierte Apps</value>
+  </data>
+  <data name="HomePage_System_Processes.Text" xml:space="preserve">
+    <value>Prozesse</value>
+  </data>
+  <data name="HomePage_System_Services.Text" xml:space="preserve">
+    <value>Dienste</value>
+  </data>
+  <data name="HomePage_QuickActionsTitle.Text" xml:space="preserve">
+    <value>Schnellaktionen</value>
+  </data>
+  <data name="HomePage_QuickAction_OptimizeSystem.Text" xml:space="preserve">
+    <value>System optimieren</value>
+  </data>
+  <data name="HomePage_QuickAction_RepairIssues.Text" xml:space="preserve">
+    <value>Probleme beheben</value>
+  </data>
+  <data name="HomePage_QuickAction_ManageStartupApps.Text" xml:space="preserve">
+    <value>Autostart-Apps verwalten</value>
+  </data>
+  <data name="HomePage_QuickAction_CleanTemporaryFiles.Text" xml:space="preserve">
+    <value>Temporäre Dateien bereinigen</value>
   </data>
   <data name="SettingsPage_FeedbackButton.Content" xml:space="preserve">
     <value>Feedback senden</value>
@@ -191,15 +221,6 @@
   </data>
   <data name="SystemInfoPage_GPU.Text" xml:space="preserve">
     <value>Grafikkarte</value>
-  </data>
-  <data name="SystemInfoPage_OS.Text" xml:space="preserve">
-    <value>Betriebssystem</value>
-  </data>
-  <data name="SystemInfoPage_RAM.Text" xml:space="preserve">
-    <value>Widder</value>
-  </data>
-  <data name="SystemInfoPage_Storage.Text" xml:space="preserve">
-    <value>Lagerung</value>
   </data>
   <data name="Debloat" xml:space="preserve">
     <value>Aufblähen</value>
@@ -401,12 +422,6 @@
   </data>
   <data name="Feature_DisableMyPeople.Description" xml:space="preserve">
     <value>Schaltet die Meine Kontakte-Funktion in der Taskleiste aus</value>
-  </data>
-  <data name="Feature_DisableSensorServices.Header" xml:space="preserve">
-    <value>Sensordienste deaktivieren</value>
-  </data>
-  <data name="Feature_DisableSensorServices.Description" xml:space="preserve">
-    <value>Schaltet die Sensordienste aus, um die Privatsphäre und den Stromverbrauch zu schützen. Nicht empfohlen für Laptops mit relevanten Sensoren</value>
   </data>
   <data name="Feature_DisableWindowsInk.Header" xml:space="preserve">
     <value>Windows Ink deaktivieren</value>
@@ -708,12 +723,6 @@
   <data name="Update" xml:space="preserve">
     <value>Aktualisieren</value>
   </data>
-  <data name="SystemInfoPage_Network.Text" xml:space="preserve">
-    <value>Netzwerk</value>
-  </data>
-  <data name="SystemInfoPage_Battery.Text" xml:space="preserve">
-    <value>Batterie</value>
-  </data>
   <data name="MACAddress" xml:space="preserve">
     <value>MAC-Adresse</value>
   </data>
@@ -792,23 +801,11 @@
   <data name="HomePage_ramUsage.Text" xml:space="preserve">
     <value>RAM-Auslastung</value>
   </data>
-  <data name="HomePage_gpuUsage.Text" xml:space="preserve">
-    <value>GPU-Auslastung</value>
-  </data>
   <data name="HomePage_diskUsage.Text" xml:space="preserve">
     <value>Festplattenauslastung</value>
   </data>
   <data name="HomePage_networkUsage.Text" xml:space="preserve">
     <value>Netzwerkauslastung</value>
-  </data>
-  <data name="HomePage_installedAppsCount.Text" xml:space="preserve">
-    <value>Installierte Apps</value>
-  </data>
-  <data name="HomePage_processesCount.Text" xml:space="preserve">
-    <value>Prozesse</value>
-  </data>
-  <data name="HomePage_servicesCount.Text" xml:space="preserve">
-    <value>Dienste</value>
   </data>
   <data name="Feature_DisableSmartScreen.Header" xml:space="preserve">
     <value>Smart Screen deaktivieren</value>
@@ -1727,5 +1724,158 @@ Sind Sie sicher, dass Sie fortfahren möchten?</value>
   </data>
   <data name="Shell_Packages.Content" xml:space="preserve">
     <value>Pakete</value>
+  </data>
+  <data name="PackagesPage_BrowseTab.Content" xml:space="preserve">
+    <value>Durchsuchen</value>
+  </data>
+  <data name="PackagesPage_UpdatesTabLabel.Text" xml:space="preserve">
+    <value>Updates</value>
+  </data>
+  <data name="PackagesPage_SearchBox.PlaceholderText" xml:space="preserve">
+    <value>WinGet-Pakete durchsuchen...</value>
+  </data>
+  <data name="PackagesPage_InstallButton.Text" xml:space="preserve">
+    <value>Ausgewählte installieren</value>
+  </data>
+  <data name="PackagesPage_Installed.Text" xml:space="preserve">
+    <value>Installiert</value>
+  </data>
+  <data name="PackagesPage_ColName.Text" xml:space="preserve">
+    <value>Paketname</value>
+  </data>
+  <data name="PackagesPage_ColId.Text" xml:space="preserve">
+    <value>Paket-ID</value>
+  </data>
+  <data name="PackagesPage_ColVersion.Text" xml:space="preserve">
+    <value>Version</value>
+  </data>
+  <data name="PackagesPage_ColPublisher.Text" xml:space="preserve">
+    <value>Herausgeber</value>
+  </data>
+  <data name="PackagesPage_Loading.Text" xml:space="preserve">
+    <value>Pakete werden geladen…</value>
+  </data>
+  <data name="PackagesPage_SelectHint.Text" xml:space="preserve">
+    <value>Wählen Sie ein Paket zum Installieren aus</value>
+  </data>
+  <data name="ServicesPage_SearchBox.PlaceholderText" xml:space="preserve">
+    <value>Dienste suchen...</value>
+  </data>
+  <data name="ServicesPage_FilterAll.Content" xml:space="preserve">
+    <value>Alle</value>
+  </data>
+  <data name="ServicesPage_FilterRunning.Content" xml:space="preserve">
+    <value>Laufend</value>
+  </data>
+  <data name="ServicesPage_FilterStopped.Content" xml:space="preserve">
+    <value>Gestoppt</value>
+  </data>
+  <data name="ServicesPage_FilterAutomatic.Content" xml:space="preserve">
+    <value>Automatisch</value>
+  </data>
+  <data name="ServicesPage_FilterManual.Content" xml:space="preserve">
+    <value>Manuell</value>
+  </data>
+  <data name="ServicesPage_FilterDisabled.Content" xml:space="preserve">
+    <value>Deaktiviert</value>
+  </data>
+  <data name="ServicesPage_ColName.Text" xml:space="preserve">
+    <value>Dienstname</value>
+  </data>
+  <data name="ServicesPage_ColStatus.Text" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="ServicesPage_ColStartup.Text" xml:space="preserve">
+    <value>Starttyp</value>
+  </data>
+  <data name="ServicesPage_ColActions.Text" xml:space="preserve">
+    <value>Aktionen</value>
+  </data>
+  <data name="ServicesPage_StartupAutomatic.Content" xml:space="preserve">
+    <value>Automatisch</value>
+  </data>
+  <data name="ServicesPage_StartupManual.Content" xml:space="preserve">
+    <value>Manuell</value>
+  </data>
+  <data name="ServicesPage_StartupDisabled.Content" xml:space="preserve">
+    <value>Deaktiviert</value>
+  </data>
+  <data name="ProcessesPage_SearchBox.PlaceholderText" xml:space="preserve">
+    <value>Prozesse suchen...</value>
+  </data>
+  <data name="ProcessesPage_ColName.Text" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="ProcessesPage_ColPID.Text" xml:space="preserve">
+    <value>PID</value>
+  </data>
+  <data name="ProcessesPage_ColMemory.Text" xml:space="preserve">
+    <value>Speicher</value>
+  </data>
+  <data name="ProcessesPage_ColThreads.Text" xml:space="preserve">
+    <value>Threads</value>
+  </data>
+  <data name="ProcessesPage_ColActions.Text" xml:space="preserve">
+    <value>Aktionen</value>
+  </data>
+  <data name="ProcessesPage_EndTask.Text" xml:space="preserve">
+    <value>Task beenden</value>
+  </data>
+  <data name="SystemInfoPage_OS.Header" xml:space="preserve">
+    <value>Betriebssystem</value>
+  </data>
+  <data name="SystemInfoPage_Copy.Text" xml:space="preserve">
+    <value>Kopieren</value>
+  </data>
+  <data name="SystemInfoPage_Processor.Header" xml:space="preserve">
+    <value>Prozessor</value>
+  </data>
+  <data name="SystemInfoPage_Graphics.Header" xml:space="preserve">
+    <value>Grafik</value>
+  </data>
+  <data name="SystemInfoPage_RAM.Header" xml:space="preserve">
+    <value>Arbeitsspeicher</value>
+  </data>
+  <data name="SystemInfoPage_Storage.Header" xml:space="preserve">
+    <value>Speicher</value>
+  </data>
+  <data name="SystemInfoPage_Network.Header" xml:space="preserve">
+    <value>Netzwerk</value>
+  </data>
+  <data name="SystemInfoPage_Battery.Header" xml:space="preserve">
+    <value>Akku</value>
+  </data>
+  <data name="SystemInfoPage_DriversForBackup.Text" xml:space="preserve">
+    <value>Treiber für Sicherung</value>
+  </data>
+  <data name="SettingsPage_LanguageCombo.PlaceholderText" xml:space="preserve">
+    <value>System-Sprache</value>
+  </data>
+  <data name="Settings_NavLeft.Content" xml:space="preserve">
+    <value>Links</value>
+  </data>
+  <data name="Settings_NavTop.Content" xml:space="preserve">
+    <value>Oben</value>
+  </data>
+  <data name="PackagesPage_UpdateButton" xml:space="preserve">
+    <value>Ausgewählte aktualisieren</value>
+  </data>
+  <data name="PackagesPage_SelectUpdateHint" xml:space="preserve">
+    <value>Pakete zum Aktualisieren auswählen</value>
+  </data>
+  <data name="PackagesPage_StatusLoading" xml:space="preserve">
+    <value>Pakete werden geladen, bitte warten…</value>
+  </data>
+  <data name="PackagesPage_StatusNoUpdates" xml:space="preserve">
+    <value>Keine Updates verfügbar. Alle Pakete sind auf dem neuesten Stand.</value>
+  </data>
+  <data name="PackagesPage_SelectedForInstall" xml:space="preserve">
+    <value>{0} Paket(e) für die Installation ausgewählt</value>
+  </data>
+  <data name="PackagesPage_SelectedForUpdate" xml:space="preserve">
+    <value>{0} Paket(e) zum Aktualisieren ausgewählt</value>
+  </data>
+  <data name="HomePage_Version" xml:space="preserve">
+    <value>Version</value>
   </data>
 </root>

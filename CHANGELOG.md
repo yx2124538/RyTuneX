@@ -20,12 +20,14 @@ All notable changes to this branch will be documented in this file.
 - Fixed broken dark/light theme in `SystemInfo` page #97.
 - Resolved numerous reported crashes from older versions.
 - Fixed text encoding problems in the Repair scanning results #99.
+- Minor bugs fixed in `Packages` page.
 
 ### Changes
 
 - Prevented Quick Access History and Task View settings from interfering with each other #103.
 - Replaced legacy APIs with modern Windows methods in `SystemInfo` page to prevent incorrect behavior #105.
 - Reworked the Debloat logic to use the native Windows Deployment API instead of Powershell for app detection and removal.
+- All UI strings are now fully localized across all supported languages.
 
 ## 1.7.0 - Released
 

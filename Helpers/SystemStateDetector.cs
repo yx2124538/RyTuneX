@@ -255,10 +255,6 @@ internal static class SystemStateDetector
             "OneDrive" => DwordEquals(RegistryHive.LocalMachine,
                 @"SOFTWARE\Policies\Microsoft\Windows\OneDrive", "DisableFileSyncNGSC", 1),
 
-            "SensorServices" => All(
-                ServiceDisabled("SensrSvc"),
-                ServiceDisabled("SensorService")),
-
             "NewsAndInterests" => All(
                 DwordEquals(RegistryHive.LocalMachine,
                     @"SOFTWARE\Policies\Microsoft\Dsh", "AllowNewsAndInterests", 0),
@@ -635,7 +631,7 @@ internal static class SystemStateDetector
         "WindowsDarkMode", "VerboseLogon", "ClassicContextMenu", "Search",
         "Biometrics", "SMBv1", "SMBv2", "ErrorReporting", "Cortana",
         "GamingMode", "FullscreenOptimizations", "UsbPowerSaving", "PowerThrottling",
-        "GpuDriverTweaks", "StoreUpdates", "OneDrive", "SensorServices",
+        "GpuDriverTweaks", "StoreUpdates", "OneDrive",
         "NewsAndInterests", "Hibernation", "EndTask", "MediaPlayerSharing",
 
         // Privacy Page

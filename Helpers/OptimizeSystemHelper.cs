@@ -1628,22 +1628,6 @@ public static partial class OptimizeSystemHelper
         await OptimizationOptions.StartInCmd("reg delete \"HKLM\\SOFTWARE\\Policies\\Microsoft\\Windows\\OneDrive\" /v DisableFileSyncNGSC /f").ConfigureAwait(false);
     }
 
-    public static async Task EnableSensorServices()
-    {
-        await OptimizationOptions.StartInCmd("reg add \"HKLM\\SYSTEM\\CurrentControlSet\\Services\\SensrSvc\" /v Start /t REG_DWORD /d 2 /f").ConfigureAwait(false);
-        await OptimizationOptions.StartInCmd("reg add \"HKLM\\SYSTEM\\CurrentControlSet\\Services\\SensorService\" /v Start /t REG_DWORD /d 2 /f").ConfigureAwait(false);
-        await OptimizationOptions.StartInCmd("sc start SensrSvc").ConfigureAwait(false);
-        await OptimizationOptions.StartInCmd("sc start SensorService").ConfigureAwait(false);
-    }
-
-    public static async Task DisableSensorServices()
-    {
-        await OptimizationOptions.StartInCmd("sc stop SensrSvc").ConfigureAwait(false);
-        await OptimizationOptions.StartInCmd("sc stop SensorService").ConfigureAwait(false);
-        await OptimizationOptions.StartInCmd("reg add \"HKLM\\SYSTEM\\CurrentControlSet\\Services\\SensrSvc\" /v Start /t REG_DWORD /d 4 /f").ConfigureAwait(false);
-        await OptimizationOptions.StartInCmd("reg add \"HKLM\\SYSTEM\\CurrentControlSet\\Services\\SensorService\" /v Start /t REG_DWORD /d 4 /f").ConfigureAwait(false);
-    }
-
     public static async Task DisableNewsAndInterests()
     {
         await OptimizationOptions.StartInCmd("reg add \"HKLM\\SOFTWARE\\Policies\\Microsoft\\Dsh\" /v AllowNewsAndInterests /t REG_DWORD /d 0 /f");
