@@ -44,18 +44,6 @@ public sealed partial class ShellPage : Page
                 var principal = new WindowsPrincipal(identity);
                 var admin = principal.IsInRole(WindowsBuiltInRole.Administrator);
 
-                if (!DispatcherQueue.TryEnqueue(() =>
-                {
-                    try
-                    {
-                        IsAdminIcon.Visibility = admin ? Visibility.Visible : Visibility.Collapsed;
-                        NotAdminIcon.Visibility = admin ? Visibility.Collapsed : Visibility.Visible;
-                    }
-                    catch (Exception ex)
-                    {
-                        _ = LogHelper.LogWarning($"Failed to update admin status icons: {ex.Message}");
-                    }
-                }))
                 {
                     _ = LogHelper.LogWarning("Admin status dispatcher enqueue failed.");
                 }
@@ -66,7 +54,6 @@ public sealed partial class ShellPage : Page
         LogHelper.Log("Initializing ShellPage");
         ViewModel.NavigationService.Frame = NavigationFrame;
         ViewModel.NavigationViewService.Initialize(NavigationViewControl);
-        AppTitleBarVersion.Text = SettingsPage.GetVersionDescription();
         App.MainWindow.ExtendsContentIntoTitleBar = true;
         App.MainWindow.SetTitleBar(AppTitleBar);
         App.MainWindow.Activated += MainWindow_Activated;

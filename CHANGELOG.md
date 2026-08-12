@@ -7,6 +7,7 @@ All notable changes to this branch will be documented in this file.
 
 ### Added
 
+- Added a new `Startup Apps` page to view, enable/disable, remove, and add startup apps.
 - Introduced new optimization toggles:
   - `Disable Usb PowerSaving`
   - `Disable Power Throttling`

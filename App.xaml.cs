@@ -308,6 +308,7 @@ public partial class App : Application
            services.AddTransient<RepairPage>();
            services.AddTransient<ProcessesPage>();
            services.AddTransient<ServicesPage>();
+           services.AddTransient<StartupPage>();
            services.AddTransient<ShellPage>();
            services.AddTransient<ShellViewModel>();
 

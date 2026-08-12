@@ -23,6 +23,7 @@ public class PageService : IPageService
         Configure<SettingsPage>();
         Configure<ProcessesPage>();
         Configure<ServicesPage>();
+        Configure<StartupPage>();
     }
 
     public Type GetPageType(string key)

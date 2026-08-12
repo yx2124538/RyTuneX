@@ -141,6 +141,7 @@ public static class AppSearchService
         ("Shell_GroupPolicy", typeof(PoliciesPage), "\uE9D5"),
         ("Shell_Processes", typeof(ProcessesPage), "\uECAA"),
         ("Shell_Services", typeof(ServicesPage), "\uEA86"),
+        ("Shell_Startup", typeof(StartupPage), "\uE7B8"),
         ("Shell_SystemInfo", typeof(SystemInfoPage), "\uE770"),
         ("Settings", typeof(SettingsPage), "\uE713")
     ];

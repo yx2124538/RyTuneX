@@ -68,7 +68,7 @@
                     <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
 
-                <StackPanel Grid.Row="0" HorizontalAlignment="Left" Orientation="Vertical" Margin="0,0,0,16">
+                <StackPanel Grid.Row="0" HorizontalAlignment="Left" Orientation="Vertical" Margin="24,8,0,16">
                     <TextBlock Text="RyTuneX" FontSize="36" FontWeight="SemiBold" Margin="0,0,0,4"/>
                     <TextBlock Text="{x:Bind _versionDescription}" Foreground="{ThemeResource TextFillColorSecondaryBrush}" FontSize="14"/>
                 </StackPanel>
