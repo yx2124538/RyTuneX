@@ -246,6 +246,11 @@ public sealed partial class SettingsPage : Page
         }
     }
 
+    private async void RateAndReviewCard_Click(object sender, RoutedEventArgs e)
+    {
+        await ReviewPromptHelper.ShowReviewPopupAsync(XamlRoot, forceShow: true);
+    }
+
     private void SupportDeveloperCard_Click(object sender, RoutedEventArgs e)
     {
         try

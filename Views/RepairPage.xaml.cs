@@ -8,22 +8,59 @@ using System.Diagnostics;
 using System.Globalization;
 using System.Text;
 using System.Text.RegularExpressions;
+using Windows.Storage;
 
 namespace RyTuneX.Views;
 
 public sealed partial class RepairPage : Page
 {
+    private static readonly (string Name, string FriendlyName)[] Components =
+    {
+        ("DISM", "Windows image"),
+        ("SFC", "System files"),
+        ("CHKDSK", "System drive"),
+    };
+
+    private enum RepairState
+    {
+        Idle,
+        Checking,
+        Healthy,
+        IssuesFound,
+        Repairing,
+        RepairCompleted
+    }
+
+    private enum RowStatus
+    {
+        Pending,
+        Checking,
+        Healthy,
+        NeedsAttention,
+        Scheduled,
+        Unknown
+    }
+
     private readonly Dictionary<string, StringBuilder> _scanResults = new()
     {
         { "DISM", new StringBuilder() },
         { "SFC", new StringBuilder() },
         { "CHKDSK", new StringBuilder() }
     };
+
+    // Tracks the last known health per component: true = healthy, false = needs attention, null = unknown/scheduled
+    private readonly Dictionary<string, bool?> _componentHealth = new()
+    {
+        { "DISM", null },
+        { "SFC", null },
+        { "CHKDSK", null }
+    };
+
+    private RepairState _currentState = RepairState.Idle;
     private Process? _runningProcess;
     private CancellationTokenSource? _cancellationTokenSource;
     private Guid? _cancellationRegistrationId;
     private int _currentProcessId;
-    public int selectedCount = 0;
     private string? _pendingScrollTarget;
     private int _sfcPrefaceLinesSkipped;
 
@@ -34,6 +71,9 @@ public sealed partial class RepairPage : Page
         LogHelper.Log("Initializing RepairPage");
         this.NavigationCacheMode = Microsoft.UI.Xaml.Navigation.NavigationCacheMode.Required;
         Loaded += RepairPage_Loaded;
+        Unloaded += RepairPage_Unloaded;
+        SetState(RepairState.Idle);
+        LoadLastCheckedTime();
     }
 
     protected override void OnNavigatedTo(NavigationEventArgs e)
@@ -48,6 +88,7 @@ public sealed partial class RepairPage : Page
 
     private async void RepairPage_Loaded(object sender, RoutedEventArgs e)
     {
+        LoadLastCheckedTime();
         if (!string.IsNullOrEmpty(_pendingScrollTarget))
         {
             await ScrollToElementHelper.ScrollToElementAsync(this, _pendingScrollTarget);
@@ -55,23 +96,53 @@ public sealed partial class RepairPage : Page
         }
     }
 
-    private async void OnScanButtonClick(object sender, RoutedEventArgs e)
+    private void LoadLastCheckedTime()
     {
-        if (selectedCount == 0) { return; }
-        _ = LogHelper.Log($"Starting system scan with {selectedCount} tool(s) selected");
-        await RunCommandsAsync(isRepair: false);
+        try
+        {
+            if (ApplicationData.Current.LocalSettings.Values.TryGetValue("RepairPage_LastCheckedTime", out var obj) &&
+                obj is string timeStr &&
+                DateTime.TryParse(timeStr, out var lastChecked))
+            {
+                LastCheckedText.Text = "RepairPage_LastCheckedFormat".GetLocalized().Replace("{time}", lastChecked.ToString("g"));
+            }
+            else
+            {
+                LastCheckedText.Text = "RepairPage_LastCheckedNever.Text".GetLocalized();
+            }
+        }
+        catch (Exception ex)
+        {
+            _ = LogHelper.LogWarning($"Failed to load last checked time: {ex.Message}");
+        }
     }
 
-    private async void OnRepairButtonClick(object sender, RoutedEventArgs e)
+    private void RepairPage_Unloaded(object sender, RoutedEventArgs e)
     {
-        if (selectedCount == 0) { return; }
-        _ = LogHelper.Log($"Starting system repair with {selectedCount} tool(s) selected");
-        await RunCommandsAsync(isRepair: true);
+    }
+
+    // Main workflow
+
+    private async void OnMainActionButtonClick(object sender, RoutedEventArgs e)
+    {
+        switch (_currentState)
+        {
+            case RepairState.Idle:
+            case RepairState.Healthy:
+            case RepairState.RepairCompleted:
+                _ = LogHelper.Log("Starting system health check");
+                await RunWorkflowAsync(isRepair: false);
+                break;
+
+            case RepairState.IssuesFound:
+                _ = LogHelper.Log("Starting system repair");
+                await RunWorkflowAsync(isRepair: true);
+                break;
+        }
     }
 
     private async void OnStopButtonClick(object sender, RoutedEventArgs e)
     {
-        // Disable the stop button to prevent multiple clicks
         StopButton.IsEnabled = false;
         _ = LogHelper.Log("User requested to stop current repair/scan operation");
         await StopCurrentOperationAsync();
@@ -79,17 +150,14 @@ public sealed partial class RepairPage : Page
 
     private async Task StopCurrentOperationAsync()
     {
-        // Cancel the operation via CancellationToken first
         _cancellationTokenSource?.Cancel();
 
-        // Kill the process tree asynchronously
         var processId = _currentProcessId;
         if (processId > 0)
         {
             await PseudoConsoleHelper.KillProcessTreeAsync(processId);
         }
 
-        // Also handle the fallback process if it exists
         if (_runningProcess != null)
         {
             try
@@ -106,29 +174,30 @@ public sealed partial class RepairPage : Page
         }
     }
 
-    private void ResetUIState()
+    private async Task RunWorkflowAsync(bool isRepair)
     {
-        DispatcherQueue.TryEnqueue(() =>
-        {
-            ProgressBar.Value = 0;
-            StatusTextBlock.Text = "StatusTextBlockDefault".GetLocalized();
-            StopButton.Visibility = Visibility.Collapsed;
-            StopButton.IsEnabled = true;
-            ScanRepairPanel.Visibility = Visibility.Visible;
-            PercentageTextBlock.Text = string.Empty;
-        });
-    }
+        var namesToRun = isRepair
+            ? _componentHealth.Where(kv => kv.Value == false).Select(kv => kv.Key).ToList()
+            : Components.Select(c => c.Name).ToList();
 
-    private async Task RunCommandsAsync(bool isRepair)
-    {
-        // Hide ScanRepair Panel while operation is in progress
-        ScanRepairPanel.Visibility = Visibility.Collapsed;
+        // Safety net: if "repair" is invoked with nothing flagged unhealthy, fall back to a full check.
+        if (isRepair && namesToRun.Count == 0)
+        {
+            isRepair = false;
+            namesToRun = Components.Select(c => c.Name).ToList();
+        }
+
+        SetState(isRepair ? RepairState.Repairing : RepairState.Checking);
+
+        ProgressGrid.Visibility = Visibility.Visible;
+        StatusTextBlock.Visibility = Visibility.Visible;
+        ActionPanel.Visibility = Visibility.Collapsed;
         StopButton.Visibility = Visibility.Visible;
         StopButton.IsEnabled = true;
         ProgressBar.Value = 0;
+        PercentageTextBlock.Text = string.Empty;
         _currentProcessId = 0;
 
-        // Create a new CancellationTokenSource for this operation
         _cancellationTokenSource?.Dispose();
         if (_cancellationRegistrationId.HasValue)
         {
@@ -139,23 +208,24 @@ public sealed partial class RepairPage : Page
         _cancellationRegistrationId = OperationCancellationManager.Register(_cancellationTokenSource);
         var ct = _cancellationTokenSource.Token;
 
-        var commands = new[]
+        var commandArgs = new Dictionary<string, (string Args, string ScheduleTemplate)>
         {
-            // (checkbox, command name, args, schedule template)
-            (DismCheckBox, "DISM", isRepair ? "/Online /Cleanup-Image /RestoreHealth" : "/Online /Cleanup-Image /ScanHealth", string.Empty),
-            (SfcCheckBox, "SFC", isRepair ? "/scannow" : "/verifyonly", string.Empty),
-            // schedule template uses placeholder {DriveRoot} which will be replaced at runtime
-            (ChkdskCheckBox, "CHKDSK", isRepair ? "/f" : "", "echo Y|chkdsk {DriveRoot} /f")
+            ["DISM"] = (isRepair ? "/Online /Cleanup-Image /RestoreHealth" : "/Online /Cleanup-Image /ScanHealth", string.Empty),
+            ["SFC"] = (isRepair ? "/scannow" : "/verifyonly", string.Empty),
+            // schedule template uses placeholder {DriveRoot}, replaced at runtime
+            ["CHKDSK"] = (isRepair ? "/f" : string.Empty, "echo Y|chkdsk {DriveRoot} /f"),
         };
 
         var current = 0;
-        var selectedNames = new List<string>();
+        var total = namesToRun.Count;
         var wasCancelled = false;
         var hasError = false;
+        var ranNames = new List<string>();
+        var chkdskScheduled = false;
 
         try
         {
-            foreach (var (checkBox, name, args, scheduleTemplate) in commands)
+            foreach (var name in namesToRun)
             {
                 if (ct.IsCancellationRequested)
                 {
@@ -163,50 +233,77 @@ public sealed partial class RepairPage : Page
                     break;
                 }
 
-                if (checkBox.IsChecked == true)
+                var friendlyName = Components.First(c => c.Name == name).FriendlyName;
+                var (args, scheduleTemplate) = commandArgs[name];
+
+                current++;
+                ranNames.Add(name);
+                StatusTextBlock.Text = isRepair
+                    ? "RepairPage_StatusRepairing".GetLocalized()
+                        .Replace("{friendlyName}", friendlyName.ToLowerInvariant())
+                        .Replace("{current}", current.ToString())
+                        .Replace("{total}", total.ToString())
+                    : "RepairPage_StatusChecking".GetLocalized()
+                        .Replace("{friendlyName}", friendlyName.ToLowerInvariant())
+                        .Replace("{current}", current.ToString())
+                        .Replace("{total}", total.ToString());
+                ProgressBar.Value = 0;
+                PercentageTextBlock.Text = string.Empty;
+                UpdateRowUi(name, RowStatus.Pending, string.Empty);
+
+                if (name == "CHKDSK" && isRepair)
                 {
-                    current++;
-                    selectedNames.Add(name);
-                    StatusTextBlock.Text = $"{current} / {selectedCount}: {name} {(isRepair ? "repair" : "scan")} in progress...";
-                    ProgressBar.Value = 0;
+                    var driveRoot = Path.GetPathRoot(Environment.GetFolderPath(Environment.SpecialFolder.Windows))?.TrimEnd('\\') ?? "C:";
 
-                    // Automatically schedule CHKDSK repair for next reboot
-                    if (name == "CHKDSK" && isRepair)
+                    App.ShowNotification("Repair".GetLocalized(), "ScheduledLater".GetLocalized(), InfoBarSeverity.Success, 5000);
+                    _scanResults[name].Clear();
+                    _scanResults[name].AppendLine("ScheduledLater".GetLocalized());
+
+                    if (!string.IsNullOrEmpty(scheduleTemplate))
                     {
-                        var driveRoot = Path.GetPathRoot(Environment.GetFolderPath(Environment.SpecialFolder.Windows))?.TrimEnd('\\') ?? "C:";
-
-                        App.ShowNotification("Repair".GetLocalized(), "ScheduledLater".GetLocalized(), InfoBarSeverity.Success, 5000);
-                        ChkdskCheckBox.IsEnabled = false;
-                        _scanResults[name].Clear();
-                        _scanResults[name].AppendLine("ScheduledLater".GetLocalized());
-                        if (!string.IsNullOrEmpty(scheduleTemplate))
-                        {
-                            var scheduleCmd = scheduleTemplate.Replace("{DriveRoot}", driveRoot);
-                            await OptimizationOptions.StartInCmd(scheduleCmd);
-                        }
-                        continue;
+                        var scheduleCmd = scheduleTemplate.Replace("{DriveRoot}", driveRoot);
+                        await OptimizationOptions.StartInCmd(scheduleCmd);
                     }
 
-                    try
+                    _componentHealth[name] = null;
+                    chkdskScheduled = true;
+                    UpdateRowUi(name, RowStatus.Scheduled, string.Empty);
+                    continue;
+                }
+
+                try
+                {
+                    await RunCommandAsync(name, args, ct);
+
+                    var rawOutput = _scanResults[name].ToString();
+                    var health = DetermineHealth(name, rawOutput);
+                    _componentHealth[name] = isRepair ? (health ?? true) : health;
+
+                    ProcessCommandResult(name);
+
+                    UpdateRowUi(name, _componentHealth[name] switch
                     {
-                        await RunCommandAsync(name, args, ct);
-                    }
-                    catch (OperationCanceledException)
+                        true => RowStatus.Healthy,
+                        false => RowStatus.NeedsAttention,
+                        null => RowStatus.Unknown
+                    }, string.Empty);
+                }
+                catch (OperationCanceledException)
+                {
+                    wasCancelled = true;
+                    break;
+                }
+                catch (Exception ex)
+                {
+                    _ = LogHelper.Log($"Error running {name}: {ex.Message}");
+                    _scanResults[name].AppendLine($"Error: {ex.Message}");
+                    hasError = true;
+                    UpdateRowUi(name, RowStatus.Unknown, string.Empty);
+
+                    if (ct.IsCancellationRequested)
                     {
                         wasCancelled = true;
                         break;
-                    }
-                    catch (Exception ex)
-                    {
-                        _ = LogHelper.Log($"Error running {name}: {ex.Message}");
-                        _scanResults[name].AppendLine($"Error: {ex.Message}");
-                        hasError = true;
-                        // Continue with next command unless cancelled
-                        if (ct.IsCancellationRequested)
-                        {
-                            wasCancelled = true;
-                            break;
-                        }
                     }
                 }
             }
@@ -214,31 +311,80 @@ public sealed partial class RepairPage : Page
         finally
         {
             _currentProcessId = 0;
-            ResetUIState();
 
-            if (wasCancelled)
+            var capturedRanNames = ranNames;
+            var capturedWasCancelled = wasCancelled;
+            var capturedHasError = hasError;
+            var capturedIsRepair = isRepair;
+            var capturedChkdskScheduled = chkdskScheduled;
+            var anyIssues = _componentHealth.Values.Any(v => v == false);
+
+            DispatcherQueue?.TryEnqueue(() =>
             {
-                App.ShowNotification("Repair".GetLocalized(), "OperationStopped".GetLocalized(), InfoBarSeverity.Error, 5000);
-            }
-            else if (hasError)
-            {
-                App.ShowNotification("Repair".GetLocalized(), "UnexpectedError".GetLocalized(), InfoBarSeverity.Error, 5000);
-                // Still show results dialog even if there were errors
-                if (selectedNames.Count > 0)
+                try
                 {
-                    await ShowScanResultsDialogAsync(selectedNames);
+                    ProgressGrid.Visibility = Visibility.Collapsed;
+                    StatusTextBlock.Visibility = Visibility.Collapsed;
+                    StopButton.Visibility = Visibility.Collapsed;
+                    StopButton.IsEnabled = true;
+                    ActionPanel.Visibility = Visibility.Visible;
+                    PercentageTextBlock.Text = string.Empty;
+
+                    PopulateTechnicalDetailsOnUiThread(capturedRanNames);
+
+                    if (capturedWasCancelled)
+                    {
+                        App.ShowNotification("Repair".GetLocalized(), "OperationStopped".GetLocalized(), InfoBarSeverity.Error, 5000);
+                        SetState(RepairState.Idle);
+                    }
+                    else
+                    {
+                        if (capturedHasError)
+                        {
+                            App.ShowNotification("Repair".GetLocalized(), "UnexpectedError".GetLocalized(), InfoBarSeverity.Error, 5000);
+                        }
+                        else
+                        {
+                            App.ShowNotification(
+                                "Repair".GetLocalized(),
+                                (capturedIsRepair ? "OperationCompleted" : "CheckCompleted").GetLocalized(),
+                                InfoBarSeverity.Success,
+                                5000);
+                        }
+
+                        var now = DateTime.Now;
+                        try
+                        {
+                            ApplicationData.Current.LocalSettings.Values["RepairPage_LastCheckedTime"] = now.ToString("o");
+                        }
+                        catch (Exception ex)
+                        {
+                            _ = LogHelper.LogWarning($"Failed to save last checked timestamp: {ex.Message}");
+                        }
+
+                        LastCheckedText.Text = "RepairPage_LastCheckedFormat".GetLocalized().Replace("{time}", now.ToString("g"));
+                        ResultsCard.Visibility = Visibility.Visible;
+
+                        if (capturedIsRepair)
+                        {
+                            SetState(anyIssues ? RepairState.IssuesFound : RepairState.RepairCompleted,
+                                note: capturedChkdskScheduled ? "RepairPage_ChkdskScheduledNote".GetLocalized() : null);
+
+                            // Notify optimization completion to trigger review popup
+                            ReviewPromptHelper.NotifyOptimizationCompleted(XamlRoot);
+                        }
+                        else
+                        {
+                            SetState(anyIssues ? RepairState.IssuesFound : RepairState.Healthy);
+                        }
+                    }
                 }
-            }
-            else
-            {
-                App.ShowNotification("Repair".GetLocalized(), "OperationCompleted".GetLocalized(), InfoBarSeverity.Success, 5000);
-                // Show results dialog
-                if (selectedNames.Count > 0)
+                catch (Exception ex)
                 {
-                    await ShowScanResultsDialogAsync(selectedNames);
+                    _ = LogHelper.LogException(ex, "Crash in post-scan UI update");
                 }
-            }
-            // Ensure the cancellation token source is signaled and unregistered
+            });
+
             try
             {
                 if (_cancellationTokenSource != null && !_cancellationTokenSource.IsCancellationRequested)
@@ -258,6 +404,194 @@ public sealed partial class RepairPage : Page
             _cancellationTokenSource = null;
         }
     }
+
+    private void SetState(RepairState state, string? note = null)
+    {
+        _currentState = state;
+
+        var successBrush = (Microsoft.UI.Xaml.Media.Brush)Application.Current.Resources["SystemFillColorSuccessBrush"];
+        var cautionBrush = (Microsoft.UI.Xaml.Media.Brush)Application.Current.Resources["SystemFillColorCautionBrush"];
+        var neutralBrush = (Microsoft.UI.Xaml.Media.Brush)Application.Current.Resources["TextFillColorSecondaryBrush"];
+
+        switch (state)
+        {
+            case RepairState.Idle:
+                MainStatusIcon.Glyph = "\uE90F"; // Repair
+                MainStatusIcon.Foreground = neutralBrush;
+                MainTitleText.Text = "RepairPage_StateIdle_Title".GetLocalized();
+                MainSubtitleText.Text = "RepairPage_StateIdle_Subtitle".GetLocalized();
+                MainActionButton.Content = "RepairPage_StateIdle_Button".GetLocalized();
+                break;
+
+            case RepairState.Checking:
+                MainStatusIcon.Glyph = "\uE90F";
+                MainStatusIcon.Foreground = neutralBrush;
+                MainTitleText.Text = "RepairPage_StateChecking_Title".GetLocalized();
+                MainSubtitleText.Text = "RepairPage_StateChecking_Subtitle".GetLocalized();
+                break;
+
+            case RepairState.Healthy:
+                MainStatusIcon.Glyph = "\uE930"; // Completed
+                MainStatusIcon.Foreground = successBrush;
+                MainTitleText.Text = "RepairPage_StateHealthy_Title".GetLocalized();
+                MainSubtitleText.Text = "RepairPage_StateHealthy_Subtitle".GetLocalized();
+                MainActionButton.Content = "RepairPage_StateHealthy_Button".GetLocalized();
+                break;
+
+            case RepairState.IssuesFound:
+                MainStatusIcon.Glyph = "\uE7BA"; // Important/Warning
+                MainStatusIcon.Foreground = cautionBrush;
+                MainTitleText.Text = "RepairPage_StateIssuesFound_Title".GetLocalized();
+                MainSubtitleText.Text = note ?? "RepairPage_StateIssuesFound_Subtitle".GetLocalized();
+                MainActionButton.Content = "RepairPage_StateIssuesFound_Button".GetLocalized();
+                break;
+
+            case RepairState.Repairing:
+                MainStatusIcon.Glyph = "\uE90F";
+                MainStatusIcon.Foreground = neutralBrush;
+                MainTitleText.Text = "RepairPage_StateRepairing_Title".GetLocalized();
+                MainSubtitleText.Text = "RepairPage_StateRepairing_Subtitle".GetLocalized();
+                break;
+
+            case RepairState.RepairCompleted:
+                MainStatusIcon.Glyph = "\uE930";
+                MainStatusIcon.Foreground = successBrush;
+                MainTitleText.Text = "RepairPage_StateRepairCompleted_Title".GetLocalized();
+                MainSubtitleText.Text = note ?? "RepairPage_StateRepairCompleted_Subtitle".GetLocalized();
+                MainActionButton.Content = "RepairPage_StateHealthy_Button".GetLocalized();
+                break;
+        }
+    }
+
+    private void UpdateRowUi(string name, RowStatus status, string _)
+    {
+        var (icon, text) = name switch
+        {
+            "DISM" => (ImageStatusIcon, ImageStatusText),
+            "SFC" => (FilesStatusIcon, FilesStatusText),
+            "CHKDSK" => (DriveStatusIcon, DriveStatusText),
+            _ => (null, null)
+        };
+
+        if (icon is null || text is null)
+        {
+            return;
+        }
+
+        void ApplyStatus()
+        {
+            var successBrush = (Microsoft.UI.Xaml.Media.Brush)Application.Current.Resources["SystemFillColorSuccessBrush"];
+            var cautionBrush = (Microsoft.UI.Xaml.Media.Brush)Application.Current.Resources["SystemFillColorCautionBrush"];
+            var neutralBrush = (Microsoft.UI.Xaml.Media.Brush)Application.Current.Resources["TextFillColorSecondaryBrush"];
+
+            switch (status)
+            {
+                case RowStatus.Healthy:
+                    icon.Glyph = "\uE73E";
+                    icon.Foreground = successBrush;
+                    text.Text = "RepairPage_RowStatus_Healthy".GetLocalized();
+                    break;
+                case RowStatus.NeedsAttention:
+                    icon.Glyph = "\uE7BA";
+                    icon.Foreground = cautionBrush;
+                    text.Text = "RepairPage_RowStatus_NeedsAttention".GetLocalized();
+                    break;
+                case RowStatus.Scheduled:
+                    icon.Glyph = "\uE823";
+                    icon.Foreground = neutralBrush;
+                    text.Text = "RepairPage_RowStatus_Scheduled".GetLocalized();
+                    break;
+                case RowStatus.Unknown:
+                    icon.Glyph = "\uE946";
+                    icon.Foreground = neutralBrush;
+                    text.Text = "RepairPage_RowStatus_Unknown".GetLocalized();
+                    break;
+                default:
+                    icon.Glyph = "\uE9CE";
+                    icon.Foreground = neutralBrush;
+                    text.Text = "RepairPage_RowStatus_Checking".GetLocalized();
+                    break;
+            }
+        }
+
+        // If already on the UI thread, apply directly otherwise enqueue
+        if (DispatcherQueue?.HasThreadAccess == true)
+        {
+            ApplyStatus();
+        }
+        else
+        {
+            DispatcherQueue?.TryEnqueue(ApplyStatus);
+        }
+    }
+
+    private void PopulateTechnicalDetailsOnUiThread(List<string> ranNames)
+    {
+        TechnicalDetailsPanel.Children.Clear();
+
+        var toolLabel = new Dictionary<string, string>
+        {
+            ["DISM"] = "DISM — " + "RepairPage_WindowsImage.Text".GetLocalized(),
+            ["SFC"] = "SFC — " + "RepairPage_SystemFiles.Text".GetLocalized(),
+            ["CHKDSK"] = "CHKDSK — " + "RepairPage_SystemDrive.Text".GetLocalized()
+        };
+
+        foreach (var name in ranNames)
+        {
+            TechnicalDetailsPanel.Children.Add(new TextBlock
+            {
+                Text = toolLabel.TryGetValue(name, out var label) ? label : name,
+                FontWeight = FontWeights.SemiBold,
+                Margin = new Thickness(0, 8, 0, 4)
+            });
+            TechnicalDetailsPanel.Children.Add(new TextBlock
+            {
+                Text = _scanResults[name].ToString().Trim(),
+                TextWrapping = TextWrapping.Wrap,
+                Style = (Style)Application.Current.Resources["CaptionTextBlockStyle"],
+                IsTextSelectionEnabled = true
+            });
+        }
+
+        TechnicalDetailsExpander.Visibility = ranNames.Count > 0 ? Visibility.Visible : Visibility.Collapsed;
+    }
+
+    private static bool? DetermineHealth(string name, string output)
+    {
+        if (string.IsNullOrWhiteSpace(output))
+        {
+            return null;
+        }
+
+        var text = output.ToLowerInvariant();
+
+        return name switch
+        {
+            "DISM" =>
+                text.Contains("no component store corruption") || text.Contains("operation completed successfully")
+                    ? true
+                    : text.Contains("repairable") || text.Contains("corruption detected") || text.Contains("restore health")
+                        ? false
+                        : (bool?)null,
+
+            "SFC" =>
+                text.Contains("did not find any integrity violations")
+                    ? true
+                    : text.Contains("found corrupt files")
+                        ? false
+                        : (bool?)null,
+
+            "CHKDSK" =>
+                text.Contains("found no problems") || text.Contains("no further action is required")
+                    ? true
+                    : text.Contains("errors found") || text.Contains("found problems")
+                        ? false
+                        : (bool?)null,
+
+            _ => null
+        };
+    }
+
 
     private async Task RunCommandAsync(string name, string args, CancellationToken ct)
     {
@@ -280,6 +614,8 @@ public sealed partial class RepairPage : Page
 
         try
         {
+            var stdinInput = name == "CHKDSK" ? "N\n" : null;
+
             await PseudoConsoleHelper.RunAsync(
                 $"\"{fileName}\" {args}",
                 line =>
@@ -288,7 +624,8 @@ public sealed partial class RepairPage : Page
                     HandleOutputLine(name, line);
                 },
                 ct,
-                processId => _currentProcessId = processId);
+                processId => _currentProcessId = processId,
+                stdinInput);
         }
         catch (OperationCanceledException)
         {
@@ -336,7 +673,6 @@ public sealed partial class RepairPage : Page
             }
             catch (OperationCanceledException)
             {
-                // Kill the process tree when cancelled
                 await PseudoConsoleHelper.KillProcessTreeAsync(_runningProcess.Id);
                 throw;
             }
@@ -480,28 +816,24 @@ public sealed partial class RepairPage : Page
             else if (commandName == "SFC")
             {
                 var match = Regex.Match(data, @"(\d+)%", RegexOptions.IgnoreCase);
-
                 if (match.Success)
                 {
                     percentage = int.Parse(match.Groups[1].Value);
                 }
-                else { }
             }
             else if (commandName == "CHKDSK")
             {
                 var match = Regex.Match(data, @"(\d+(?:[\.,]\d+)?)\s*%", RegexOptions.IgnoreCase);
-
                 if (match.Success)
                 {
                     var percentageText = match.Groups[1].Value.Replace(',', '.');
                     percentage = (int)Math.Round(double.Parse(percentageText, CultureInfo.InvariantCulture));
                 }
-                else { }
             }
 
             if (percentage > 0 && percentage <= 100)
             {
-                DispatcherQueue.TryEnqueue(() =>
+                DispatcherQueue?.TryEnqueue(() =>
                 {
                     ProgressBar.Value = percentage;
                     PercentageTextBlock.Text = $"{percentage}%";
@@ -540,43 +872,86 @@ public sealed partial class RepairPage : Page
         return Path.Combine(winDir, toolExecutable);
     }
 
-    private async Task ShowScanResultsDialogAsync(List<string> selectedNames)
+    private void ProcessCommandResult(string commandName)
     {
-        var stackPanel = new StackPanel { Spacing = 8 };
+        var rawOutput = _scanResults[commandName].ToString();
+        var lines = rawOutput.Split(new[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
 
-        foreach (var name in selectedNames)
+        if (lines.Length == 0) return;
+
+        _scanResults[commandName].Clear();
+
+        if (commandName == "DISM")
         {
-            stackPanel.Children.Add(new TextBlock
+            var dismLines = rawOutput
+                .Split(new[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries)
+                .Where(l => !string.IsNullOrWhiteSpace(l) && !l.Contains(@"[==========================") && !l.EndsWith(@"%]"))
+                .TakeLast(5)
+                .ToList();
+
+            if (dismLines.Count > 0)
             {
-                Text = $"{name}:",
-                FontWeight = FontWeights.Bold,
-                Margin = new Thickness(0, 8, 0, 4)
-            });
-            stackPanel.Children.Add(new TextBlock
+                foreach (var line in dismLines)
+                {
+                    _scanResults[commandName].AppendLine(line);
+                }
+            }
+            else
             {
-                Text = _scanResults[name].ToString().Trim(),
-                TextWrapping = TextWrapping.Wrap,
-                IsTextSelectionEnabled = true
-            });
+                var lastLines = lines.Skip(Math.Max(0, lines.Length - 5)).ToList();
+                foreach (var line in lastLines)
+                {
+                    _scanResults[commandName].AppendLine(line);
+                }
+            }
         }
-
-        var dialog = new ContentDialog
+        else if (commandName == "CHKDSK")
         {
-            XamlRoot = XamlRoot,
-            Style = (Style)Application.Current.Resources["DefaultContentDialogStyle"],
-            BorderBrush = (SolidColorBrush)Application.Current.Resources["AccentAAFillColorDefaultBrush"],
-            Title = "ScanResults".GetLocalized(),
-            Content = new ScrollViewer
+            var lastLines = lines.Skip(Math.Max(0, lines.Length - 10)).ToList();
+            foreach (var line in lastLines)
             {
-                Content = stackPanel,
-                VerticalScrollBarVisibility = ScrollBarVisibility.Auto,
-                HorizontalScrollBarVisibility = ScrollBarVisibility.Disabled,
-                MaxHeight = 350
-            },
-            CloseButtonText = "Close".GetLocalized()
-        };
+                _scanResults[commandName].AppendLine(line);
+            }
+        }
+        else if (commandName == "SFC")
+        {
+            var lastLines = lines.Skip(Math.Max(0, lines.Length - 5)).ToList();
+            foreach (var line in lastLines)
+            {
+                _scanResults[commandName].AppendLine(line);
+            }
+            try
+            {
+                var cbsLogPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Windows), "Logs", "CBS", "CBS.log");
+                if (File.Exists(cbsLogPath))
+                {
+                    var cbsLines = File.ReadLines(cbsLogPath)
+                                       .Where(l => l.Contains("[SR] Repair", StringComparison.OrdinalIgnoreCase))
+                                       .ToList();
 
-        await dialog.ShowAsync();
+                    if (cbsLines.Count > 0)
+                    {
+                        var headerStr = "RepairedFiles".GetLocalized();
+                        if (string.IsNullOrEmpty(headerStr) || headerStr == "RepairedFiles")
+                        {
+                            headerStr = "Repaired files (from CBS.log):";
+                        }
+
+                        _scanResults[commandName].AppendLine();
+                        _scanResults[commandName].AppendLine(headerStr);
+
+                        foreach (var line in cbsLines)
+                        {
+                            _scanResults[commandName].AppendLine(line);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                LogHelper.Log($"Could not parse CBS.log: {ex.Message}");
+            }
+        }
     }
 
     private async void BatteryHealthButton_Click(object sender, RoutedEventArgs e)
@@ -625,7 +1000,6 @@ public sealed partial class RepairPage : Page
             await OptimizationOptions.StartInCmd("bcdedit /bootsequence {memdiag}");
         };
         await memDialog.ShowAsync();
-
     }
 
     private async void EventViewerSettingsCard_Click(object sender, RoutedEventArgs e)
@@ -633,21 +1007,10 @@ public sealed partial class RepairPage : Page
         _ = LogHelper.Log("Opening Event Viewer");
         await OptimizationOptions.StartInCmd("eventvwr.msc");
     }
+
     private async void DiskOptimizationsButton_Click(object sender, RoutedEventArgs e)
     {
         _ = LogHelper.Log("Opening Disk Optimization utility");
         await OptimizationOptions.StartInCmd("%SystemRoot%\\System32\\dfrgui.exe");
-    }
-
-    private void CheckBox_Changed(object sender, RoutedEventArgs e)
-    {
-        selectedCount = 0;
-        foreach (var checkbox in CheckBoxes.Children)
-        {
-            if (checkbox is CheckBox checkBox && checkBox.IsChecked == true)
-            {
-                selectedCount++;
-            }
-        }
     }
 }

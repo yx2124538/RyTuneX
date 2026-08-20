@@ -35,6 +35,7 @@ public sealed partial class FeaturesPage : Page
     private async void FeaturesPage_Loaded(object sender, RoutedEventArgs e)
     {
         await InitializeToggleSwitchesAsync();
+        IntelligentCardEnhancer.EnhancePage(this);
 
         if (!string.IsNullOrEmpty(_pendingScrollTarget))
         {

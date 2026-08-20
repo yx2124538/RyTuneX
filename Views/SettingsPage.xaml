@@ -28,7 +28,7 @@
                 <controls:SettingsCard x:Name="LanguageSettingsCard"
                                x:Uid="Settings_LanguageSettingsCard"
                                HeaderIcon="{ui:FontIcon Glyph=&#xF2B7;}">
-                <ComboBox VerticalAlignment="Center" x:Name="LanguageComboBox" PlaceholderText="System Language" SelectionChanged="LanguageComboBox_SelectionChanged">
+                <ComboBox VerticalAlignment="Center" x:Name="LanguageComboBox" x:Uid="SettingsPage_LanguageCombo" SelectionChanged="LanguageComboBox_SelectionChanged">
                     <ComboBoxItem Content="English (US)" Tag="en-us"/>
                     <ComboBoxItem Content="Français (France)" Tag="fr-fr"/>
                     <ComboBoxItem Content="العربية (تونس)" Tag="ar-tn"/>
@@ -65,8 +65,8 @@
                     <ComboBox x:Name="NavigationStyleComboBox"
                               VerticalAlignment="Center"
                               SelectionChanged="NavigationStyleComboBox_SelectionChanged">
-                        <ComboBoxItem Content="Left" Tag="Auto"/>
-                        <ComboBoxItem Content="Top" Tag="Top"/>
+                        <ComboBoxItem x:Uid="Settings_NavLeft" Tag="Auto"/>
+                        <ComboBoxItem x:Uid="Settings_NavTop" Tag="Top"/>
                     </ComboBox>
                 </controls:SettingsCard>
             </StackPanel>
@@ -148,6 +148,14 @@
                                    Click="FileBugCard_Click">
                         <controls:SettingsCard.HeaderIcon>
                             <FontIcon Glyph="&#xEBE8;"/>
+                        </controls:SettingsCard.HeaderIcon>
+                        <FontIcon Glyph="&#xE8A7;" FontSize="14"/>
+                    </controls:SettingsCard>
+                    <controls:SettingsCard x:Uid="Settings_RateAndReviewCard"
+                                   IsClickEnabled="True"
+                                   Click="RateAndReviewCard_Click">
+                        <controls:SettingsCard.HeaderIcon>
+                            <FontIcon Glyph="&#xE735;"/>
                         </controls:SettingsCard.HeaderIcon>
                         <FontIcon Glyph="&#xE8A7;" FontSize="14"/>
                     </controls:SettingsCard>

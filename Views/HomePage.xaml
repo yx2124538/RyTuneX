@@ -6,194 +6,344 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:controls="using:CommunityToolkit.WinUI.Controls"
     xmlns:local="using:RyTuneX.Controls"
+    xmlns:behaviors="using:RyTuneX.Behaviors"
+    behaviors:NavigationViewHeaderBehavior.HeaderMode="Never"
     mc:Ignorable="d">
-    <ScrollView Padding="24,14,24,0">
-        <Grid x:Name="HeaderGrid" Margin="0,0,0,38">
+
+    <Page.Resources>
+        <Style x:Key="SettingsListItemStyle" TargetType="Button">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+            <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="16,14"/>
+            <Setter Property="CornerRadius" Value="0"/>
+            <Setter Property="UseSystemFocusVisuals" Value="True"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Grid x:Name="RootGrid"
+                              Background="{TemplateBinding Background}"
+                              CornerRadius="{TemplateBinding CornerRadius}"
+                              Padding="{TemplateBinding Padding}">
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Normal"/>
+                                    <VisualState x:Name="PointerOver">
+                                        <VisualState.Setters>
+                                            <Setter Target="RootGrid.Background"
+                                                    Value="{ThemeResource SubtleFillColorSecondaryBrush}"/>
+                                        </VisualState.Setters>
+                                    </VisualState>
+                                    <VisualState x:Name="Pressed">
+                                        <VisualState.Setters>
+                                            <Setter Target="RootGrid.Background"
+                                                    Value="{ThemeResource SubtleFillColorTertiaryBrush}"/>
+                                        </VisualState.Setters>
+                                    </VisualState>
+                                    <VisualState x:Name="Disabled"/>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                            <ContentPresenter HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                              VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Page.Resources>
+
+    <ScrollView Padding="24,14,24,24">
+        <Grid x:Name="RootGrid">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
-            <StackPanel
-                HorizontalAlignment="Left"
-                Grid.Row="0"
-                Padding="20"
-                VerticalAlignment="Center"
-                Orientation="Vertical">
-                <TextBlock
-                    Margin="0,6"
-                    FontSize="16"
-                    Text="{x:Bind _versionDescription}" />
-                <StackPanel>
-                    <Button
-                        Style="{StaticResource AccentButtonStyle}"
-                        Margin="6"
-                        HorizontalAlignment="Stretch"
-                        Click="GithubButton_Click">
-                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                            <BitmapIcon
-                                Width="20"
-                                Margin="10,0,10,0"
-                                HorizontalAlignment="Left"
-                                UriSource="ms-appx:///Assets/github.png"/>
-                            <TextBlock x:Uid="HomePage_WebsiteButton"/>
+
+            <!-- Header Grid -->
+            <Grid x:Name="HeaderGrid" Grid.Row="0" Margin="0,0,0,32">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <StackPanel Grid.Row="0" HorizontalAlignment="Left" Orientation="Vertical" Margin="24,8,0,16">
+                    <TextBlock Text="RyTuneX" FontSize="36" FontWeight="SemiBold" Margin="0,0,0,4"/>
+                    <TextBlock Text="{x:Bind _versionDescription}" Foreground="{ThemeResource TextFillColorSecondaryBrush}" FontSize="14"/>
+                </StackPanel>
+
+                <StackPanel Grid.Row="1" HorizontalAlignment="Right" Orientation="Horizontal" Spacing="12">
+                    <Button Style="{StaticResource DefaultButtonStyle}" Click="GithubButton_Click">
+                        <StackPanel Orientation="Horizontal" Spacing="8" Padding="8,4">
+                            <FontIcon Glyph="&#xE946;" FontSize="16"/>
+                            <TextBlock x:Uid="HomePage_MoreInfoButton" Text="More Info"/>
                         </StackPanel>
                     </Button>
-                    <Button
-                        Margin="6"
-                        HorizontalAlignment="Stretch"
-                        Click="DiscordButton_Click">
-                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                            <BitmapIcon
-                                Foreground="{ThemeResource TextFillColorPrimary}"
-                                Width="20"
-                                Margin="10,0,10,0"
-                                HorizontalAlignment="Left"
-                                UriSource="ms-appx:///Assets/discord.png"/>
-                            <TextBlock x:Uid="HomePage_DiscordButton"/>
+                    <Button Style="{StaticResource DefaultButtonStyle}" Click="DiscordButton_Click">
+                        <StackPanel Orientation="Horizontal" Spacing="8" Padding="8,4">
+                            <BitmapIcon UriSource="ms-appx:///Assets/discord.png" Width="16" Foreground="{ThemeResource TextFillColorPrimary}"/>
+                            <TextBlock x:Uid="HomePage_DiscordButton" Text="Join Our Server"/>
                         </StackPanel>
                     </Button>
                 </StackPanel>
-            </StackPanel>
-            <controls:WrapPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" HorizontalSpacing="8" VerticalSpacing="8">
-                <controls:WrapPanel.ChildrenTransitions>
-                        <EntranceThemeTransition FromVerticalOffset="50" />
-                        <RepositionThemeTransition IsStaggeringEnabled="False" />
-                    </controls:WrapPanel.ChildrenTransitions>
-                <!-- CPU Usage Block -->
-                <Grid x:Name="cpuUsage" Padding="10" Width="240" Height="150" CornerRadius="8" BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}" BorderThickness="1" Background="{ThemeResource CardBackgroundFillColorDefaultBrush}">
-                    <local:UsageGraph x:Name="cpuGraph" Margin="-10" />
-                    <FontIcon Glyph="&#xE950;" Width="40" Height="40" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-                    <Grid VerticalAlignment="Bottom" Margin="5">
+            </Grid>
+
+            <!-- Content Grid -->
+            <Grid x:Name="ContentGrid" Grid.Row="1" RowSpacing="24">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <!-- Intelligent Score Header -->
+                <local:IntelligentScoreHeaderControl x:Name="ScoreHeader" TargetCategory="All" Grid.Row="0"/>
+
+                <!-- System Overview (Row 1) -->
+                <Grid Grid.Row="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Grid.Row="0" x:Uid="HomePage_SystemOverviewTitle" Text="System Overview" Style="{StaticResource BodyStrongTextBlockStyle}" Margin="0,0,0,16"/>
+
+                    <Grid Grid.Row="1" ColumnSpacing="12">
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>
-                        <TextBlock x:Uid="HomePage_cpuUsage" TextWrapping="Wrap" VerticalAlignment="Bottom"/>
-                        <TextBlock x:Name="cpuUsageText" Grid.Column="1" Text="..." Margin="12,0,0,0" VerticalAlignment="Bottom" Style="{StaticResource DetailBodyBaseMediumStyle}"/>
+
+                        <!-- CPU -->
+                        <Grid x:Name="cpuUsage" Grid.Column="0" Height="140" CornerRadius="8" BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}" BorderThickness="1" Background="{ThemeResource CardBackgroundFillColorDefaultBrush}" Padding="16">
+                            <local:UsageGraph x:Name="cpuGraph" Margin="-16,0,-16,-16" VerticalAlignment="Bottom" Height="70"/>
+                            <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Left" Spacing="8">
+                                <FontIcon Glyph="&#xE950;" FontSize="16" Foreground="{ThemeResource TextFillColorSecondaryBrush}"/>
+                                <TextBlock x:Uid="HomePage_cpuUsage" Text="CPU" Style="{StaticResource BodyTextBlockStyle}"/>
+                            </StackPanel>
+                            <TextBlock x:Name="cpuUsageText" Text="0%" VerticalAlignment="Bottom" HorizontalAlignment="Left" Style="{StaticResource BodyStrongTextBlockStyle}" FontSize="16"/>
+                        </Grid>
+
+                        <!-- Memory -->
+                        <Grid x:Name="ramUsage" Grid.Column="1" Height="140" CornerRadius="8" BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}" BorderThickness="1" Background="{ThemeResource CardBackgroundFillColorDefaultBrush}" Padding="16">
+                            <local:UsageGraph x:Name="ramGraph" Margin="-16,0,-16,-16" VerticalAlignment="Bottom" Height="70"/>
+                            <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Left" Spacing="8">
+                                <FontIcon Glyph="&#xE964;" FontSize="16" Foreground="{ThemeResource TextFillColorSecondaryBrush}"/>
+                                <TextBlock x:Uid="HomePage_ramUsage" Text="Memory" Style="{StaticResource BodyTextBlockStyle}"/>
+                            </StackPanel>
+                            <TextBlock x:Name="ramUsageText" Text="0%" VerticalAlignment="Bottom" HorizontalAlignment="Left" Style="{StaticResource BodyStrongTextBlockStyle}" FontSize="16"/>
+                        </Grid>
+
+                        <!-- Disk -->
+                        <Grid x:Name="diskUsage" Grid.Column="2" Height="140" CornerRadius="8" BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}" BorderThickness="1" Background="{ThemeResource CardBackgroundFillColorDefaultBrush}" Padding="16">
+                            <local:UsageGraph x:Name="diskGraph" Margin="-16,0,-16,-16" VerticalAlignment="Bottom" Height="70"/>
+                            <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Left" Spacing="8">
+                                <FontIcon Glyph="&#xEDA2;" FontSize="16" Foreground="{ThemeResource TextFillColorSecondaryBrush}"/>
+                                <TextBlock x:Uid="HomePage_diskUsage" Text="Disk" Style="{StaticResource BodyTextBlockStyle}"/>
+                            </StackPanel>
+                            <TextBlock x:Name="diskUsageText" Text="0%" VerticalAlignment="Bottom" HorizontalAlignment="Left" Style="{StaticResource BodyStrongTextBlockStyle}" FontSize="16"/>
+                        </Grid>
+
+                        <!-- Network -->
+                        <Grid x:Name="networkUsage" Grid.Column="3" Height="140" CornerRadius="8" BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}" BorderThickness="1" Background="{ThemeResource CardBackgroundFillColorDefaultBrush}" Padding="16">
+                            <local:UsageGraph x:Name="networkDownloadGraph" Margin="-16,0,-16,-16" VerticalAlignment="Bottom" Height="70"/>
+                            <local:UsageGraph x:Name="networkUploadGraph" GraphColor="#C8A852" Margin="-16,0,-16,-16" VerticalAlignment="Bottom" Height="70"/>
+                            <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Left" Spacing="8">
+                                <FontIcon Glyph="&#xEDA3;" FontSize="16" Foreground="{ThemeResource TextFillColorSecondaryBrush}"/>
+                                <TextBlock x:Uid="HomePage_networkUsage" Text="Network" Style="{StaticResource BodyTextBlockStyle}"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Vertical" VerticalAlignment="Bottom" HorizontalAlignment="Left" Spacing="4" Margin="0,0,0,12">
+                                <StackPanel Orientation="Horizontal" Spacing="6">
+                                    <FontIcon Glyph="&#xE74A;" FontSize="10" Foreground="#C8A852"/>
+                                    <TextBlock x:Name="networkUploadUsageText" FontSize="12" Text="0 Mb" Style="{StaticResource DetailBodyBaseMediumStyle}"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" Spacing="6">
+                                    <FontIcon Glyph="&#xE74B;" FontSize="10" Foreground="{ThemeResource SystemAccentColor}"/>
+                                    <TextBlock x:Name="networkDownloadUsageText" FontSize="12" Text="0 Mb" Style="{StaticResource DetailBodyBaseMediumStyle}"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </Grid>
                     </Grid>
                 </Grid>
 
-                <!-- RAM Usage Block -->
-                <Grid x:Name="ramUsage" Padding="10" Width="240" Height="150" CornerRadius="8" BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}" BorderThickness="1" Background="{ThemeResource CardBackgroundFillColorDefaultBrush}" >
-                    <local:UsageGraph x:Name="ramGraph" Margin="-10" />
-                    <FontIcon Glyph="&#xE964;" Width="40" Height="40" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-                    <Grid VerticalAlignment="Bottom" Margin="5">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="Auto"/>
-                        </Grid.ColumnDefinitions>
-                        <TextBlock x:Uid="HomePage_ramUsage" TextWrapping="Wrap" VerticalAlignment="Bottom"/>
-                        <TextBlock x:Name="ramUsageText" Grid.Column="1" Text="..." Margin="12,0,0,0" VerticalAlignment="Bottom" Style="{StaticResource DetailBodyBaseMediumStyle}"/>
-                    </Grid>
-                </Grid>
+                <!-- System and Quick Actions (Row 2) -->
+                <Grid Grid.Row="2" ColumnSpacing="12">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
 
-                <!-- Disk Usage Block -->
-                <Grid x:Name="diskUsage" Padding="10" Width="240" Height="150" CornerRadius="8" BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}" BorderThickness="1" Background="{ThemeResource CardBackgroundFillColorDefaultBrush}" >
-                    <local:UsageGraph x:Name="diskGraph" Margin="-10" />
-                    <FontIcon Glyph="&#xEDA2;" Width="40" Height="40" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-                    <Grid VerticalAlignment="Bottom" Margin="5">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="Auto"/>
-                        </Grid.ColumnDefinitions>
-                        <TextBlock x:Uid="HomePage_diskUsage" TextWrapping="Wrap" VerticalAlignment="Bottom"/>
-                        <TextBlock x:Name="diskUsageText" Grid.Column="1" Text="..." Margin="12,0,0,0" VerticalAlignment="Bottom" Style="{StaticResource DetailBodyBaseMediumStyle}"/>
-                    </Grid>
-                </Grid>
+                    <!-- System Section -->
+                    <Border Grid.Column="0"
+                            Background="{ThemeResource CardBackgroundFillColorDefaultBrush}"
+                            CornerRadius="8"
+                            BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}"
+                            BorderThickness="1">
+                        <StackPanel>
+                            <TextBlock x:Uid="HomePage_SystemTitle" Text="System"
+                                       Style="{StaticResource BodyStrongTextBlockStyle}"
+                                       Margin="20"/>
 
-                <!-- Network Usage Block -->
-                <Grid x:Name="networkUsage" Padding="10" Width="240" Height="150" CornerRadius="8" BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}" BorderThickness="1" Background="{ThemeResource CardBackgroundFillColorDefaultBrush}">
-                    <local:UsageGraph x:Name="networkDownloadGraph" Margin="-10" />
-                    <local:UsageGraph x:Name="networkUploadGraph" GraphColor="#C8A852" Margin="-10" />
-                    <FontIcon Glyph="&#xEDA3;" Width="40" Height="40" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-                    <StackPanel x:Name="networkUsagePanel" Orientation="Horizontal"  Padding="10" Spacing="8" HorizontalAlignment="Right" VerticalAlignment="Top">
-                        <StackPanel.ChildrenTransitions>
-                            <EntranceThemeTransition FromVerticalOffset="50" />
-                            <RepositionThemeTransition IsStaggeringEnabled="False" />
-                        </StackPanel.ChildrenTransitions>
-                        <StackPanel Orientation="Horizontal" Spacing="2">
-                            <FontIcon Glyph="&#xE74A;" FontSize="10" Foreground="#C8A852"/>
-                            <TextBlock x:Name="networkUploadUsageText" FontSize="12" Text="..." Style="{StaticResource DetailBodyBaseMediumStyle}"/>
+                            <Rectangle Height="1" Fill="{ThemeResource DividerStrokeColorDefaultBrush}"/>
+
+                            <!-- Installed Apps -->
+                            <Button Style="{StaticResource SettingsListItemStyle}" Click="InstalledApps_Click">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+                                    <FontIcon Grid.Column="0" Glyph="&#xE71D;" FontSize="16"
+                                              Margin="0,0,16,0"
+                                              Foreground="{ThemeResource TextFillColorSecondaryBrush}"/>
+                                    <TextBlock Grid.Column="1" x:Uid="HomePage_System_InstalledApps"
+                                               Text="Installed Apps" VerticalAlignment="Center"/>
+                                    <TextBlock Grid.Column="2" x:Name="installedAppsCountText"
+                                               Text="..."
+                                               Foreground="{ThemeResource TextFillColorSecondaryBrush}"
+                                               VerticalAlignment="Center" Margin="0,0,12,0"/>
+                                    <FontIcon Grid.Column="3" Glyph="&#xE76C;" FontSize="12"
+                                              Foreground="{ThemeResource TextFillColorTertiaryBrush}"
+                                              VerticalAlignment="Center"/>
+                                </Grid>
+                            </Button>
+
+                            <Rectangle Height="1" Fill="{ThemeResource DividerStrokeColorDefaultBrush}"/>
+
+                            <!-- Processes -->
+                            <Button Style="{StaticResource SettingsListItemStyle}" Click="Processes_Click">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+                                    <FontIcon Grid.Column="0" Glyph="&#xECAA;" FontSize="16"
+                                              Margin="0,0,16,0"
+                                              Foreground="{ThemeResource TextFillColorSecondaryBrush}"/>
+                                    <TextBlock Grid.Column="1" x:Uid="HomePage_System_Processes"
+                                               Text="Processes" VerticalAlignment="Center"/>
+                                    <TextBlock Grid.Column="2" x:Name="processesCountText"
+                                               Text="..."
+                                               Foreground="{ThemeResource TextFillColorSecondaryBrush}"
+                                               VerticalAlignment="Center" Margin="0,0,12,0"/>
+                                    <FontIcon Grid.Column="3" Glyph="&#xE76C;" FontSize="12"
+                                              Foreground="{ThemeResource TextFillColorTertiaryBrush}"
+                                              VerticalAlignment="Center"/>
+                                </Grid>
+                            </Button>
+
+                            <Rectangle Height="1" Fill="{ThemeResource DividerStrokeColorDefaultBrush}"/>
+
+                            <!-- Services -->
+                            <Button Style="{StaticResource SettingsListItemStyle}" Click="Services_Click">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+                                    <FontIcon Grid.Column="0" Glyph="&#xE9F5;" FontSize="16"
+                                              Margin="0,0,16,0"
+                                              Foreground="{ThemeResource TextFillColorSecondaryBrush}"/>
+                                    <TextBlock Grid.Column="1" x:Uid="HomePage_System_Services"
+                                               Text="Services" VerticalAlignment="Center"/>
+                                    <TextBlock Grid.Column="2" x:Name="servicesCountText"
+                                               Text="..."
+                                               Foreground="{ThemeResource TextFillColorSecondaryBrush}"
+                                               VerticalAlignment="Center" Margin="0,0,12,0"/>
+                                    <FontIcon Grid.Column="3" Glyph="&#xE76C;" FontSize="12"
+                                              Foreground="{ThemeResource TextFillColorTertiaryBrush}"
+                                              VerticalAlignment="Center"/>
+                                </Grid>
+                            </Button>
                         </StackPanel>
-                        <StackPanel Orientation="Horizontal" Spacing="2">
-                            <FontIcon Glyph="&#xE74B;" FontSize="10" Foreground="{ThemeResource SystemAccentColor}"/>
-                            <TextBlock x:Name="networkDownloadUsageText" FontSize="12" Text="..." Style="{StaticResource DetailBodyBaseMediumStyle}"/>
-                        </StackPanel>
-                    </StackPanel>
-                    <TextBlock x:Uid="HomePage_networkUsage" TextWrapping="Wrap" VerticalAlignment="Bottom" Margin="5"/>
-                </Grid>
+                    </Border>
 
-                <!-- GPU Usage Block -->
-                <Grid x:Name="gpuUsage" Padding="10" Width="240" Height="150" CornerRadius="8" BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}" BorderThickness="1" Background="{ThemeResource CardBackgroundFillColorDefaultBrush}" >
-                    <local:UsageGraph x:Name="gpuGraph" Margin="-10" />
-                    <FontIcon Glyph="&#xF211;" Width="40" Height="40" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-                    <Grid VerticalAlignment="Bottom" Margin="5">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="Auto"/>
-                        </Grid.ColumnDefinitions>
-                        <TextBlock x:Uid="HomePage_gpuUsage" TextWrapping="Wrap" VerticalAlignment="Bottom"/>
-                        <TextBlock x:Name="gpuUsageText" Grid.Column="1" Text="..." Margin="12,0,0,0" VerticalAlignment="Bottom" Style="{StaticResource DetailBodyBaseMediumStyle}"/>
-                    </Grid>
-                </Grid>
+                    <!-- Quick Actions Section -->
+                    <Border Grid.Column="1"
+                            Background="{ThemeResource CardBackgroundFillColorDefaultBrush}"
+                            CornerRadius="8"
+                            BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}"
+                            BorderThickness="1">
+                        <StackPanel>
+                            <TextBlock x:Uid="HomePage_QuickActionsTitle" Text="Quick Actions"
+                                       Style="{StaticResource BodyStrongTextBlockStyle}"
+                                       Margin="20"/>
 
-                <!-- Installed Apps Count Block -->
-                <Grid x:Name="appsCount" Padding="10" Width="240" Height="150" CornerRadius="8" BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}" BorderThickness="1" Background="{ThemeResource CardBackgroundFillColorDefaultBrush}"
-                        PointerPressed="InstalledAppsBlock_PointerPressed"
-                        PointerEntered="InteractiveBlock_PointerEntered"
-                        PointerExited="InteractiveBlock_PointerExited">
-                    <FontIcon Glyph="&#xE71D;" Width="40" Height="40" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-                    <Grid VerticalAlignment="Bottom" Margin="5">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="Auto"/>
-                        </Grid.ColumnDefinitions>
-                        <TextBlock x:Uid="HomePage_installedAppsCount" TextWrapping="Wrap" VerticalAlignment="Bottom"/>
-                        <StackPanel Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Bottom" Margin="12,0,0,0" Spacing="4">
-                            <TextBlock x:Name="installedAppsCountText" Text="..." Style="{StaticResource DetailBodyBaseMediumStyle}"/>
-                            <FontIcon Glyph="&#xE76C;" FontSize="12" VerticalAlignment="Center" Opacity="0.6"/>
-                        </StackPanel>
-                    </Grid>
-                </Grid>
+                            <Rectangle Height="1" Fill="{ThemeResource DividerStrokeColorDefaultBrush}"/>
 
-                <!-- Processes Count Block -->
-                <Grid x:Name="processesCount" Padding="10" Width="240" Height="150" CornerRadius="8" BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}" BorderThickness="1" Background="{ThemeResource CardBackgroundFillColorDefaultBrush}"
-                        PointerPressed="ProcessesBlock_PointerPressed"
-                        PointerEntered="InteractiveBlock_PointerEntered"
-                        PointerExited="InteractiveBlock_PointerExited">
-                    <FontIcon Glyph="&#xECAA;" Width="40" Height="40" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-                    <Grid VerticalAlignment="Bottom" Margin="5">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="Auto"/>
-                        </Grid.ColumnDefinitions>
-                        <TextBlock x:Uid="HomePage_processesCount" TextWrapping="Wrap" VerticalAlignment="Bottom"/>
-                        <StackPanel Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Bottom" Margin="12,0,0,0" Spacing="4">
-                            <TextBlock x:Name="processesCountText" Text="..." Style="{StaticResource DetailBodyBaseMediumStyle}"/>
-                            <FontIcon Glyph="&#xE76C;" FontSize="12" VerticalAlignment="Center" Opacity="0.6"/>
-                        </StackPanel>
-                    </Grid>
-                </Grid>
+                            <!-- Optimize System -->
+                            <Button Style="{StaticResource SettingsListItemStyle}" Click="OptimizeSystem_Click">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+                                    <FontIcon Grid.Column="0" Glyph="&#xF259;" FontSize="16"
+                                              Margin="0,0,16,0"
+                                              Foreground="{ThemeResource TextFillColorSecondaryBrush}"/>
+                                    <TextBlock Grid.Column="1" x:Uid="HomePage_QuickAction_OptimizeSystem"
+                                               Text="Optimize System" VerticalAlignment="Center"/>
+                                    <FontIcon Grid.Column="2" Glyph="&#xE76C;" FontSize="12"
+                                              Foreground="{ThemeResource TextFillColorTertiaryBrush}"
+                                              VerticalAlignment="Center"/>
+                                </Grid>
+                            </Button>
 
-                <!-- Services Count Block -->
-                <Grid x:Name="servicesCount" Padding="10" Width="240" Height="150" CornerRadius="8" BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}" BorderThickness="1" Background="{ThemeResource CardBackgroundFillColorDefaultBrush}"
-                        PointerPressed="ServicesBlock_PointerPressed"
-                        PointerEntered="InteractiveBlock_PointerEntered"
-                        PointerExited="InteractiveBlock_PointerExited">
-                    <FontIcon Glyph="&#xE9F5;" Width="40" Height="40" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-                    <Grid VerticalAlignment="Bottom" Margin="5">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="Auto"/>
-                        </Grid.ColumnDefinitions>
-                        <TextBlock x:Uid="HomePage_servicesCount" TextWrapping="Wrap" VerticalAlignment="Bottom"/>
-                        <StackPanel Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Bottom" Margin="12,0,0,0" Spacing="4">
-                            <TextBlock x:Name="servicesCountText" Text="..." Style="{StaticResource DetailBodyBaseMediumStyle}"/>
-                            <FontIcon Glyph="&#xE76C;" FontSize="12" VerticalAlignment="Center" Opacity="0.6"/>
+                            <Rectangle Height="1" Fill="{ThemeResource DividerStrokeColorDefaultBrush}"/>
+
+                            <!-- Repair Issues -->
+                            <Button Style="{StaticResource SettingsListItemStyle}" Click="RepairIssues_Click">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+                                    <FontIcon Grid.Column="0" Glyph="&#xE90F;" FontSize="16"
+                                              Margin="0,0,16,0"
+                                              Foreground="{ThemeResource TextFillColorSecondaryBrush}"/>
+                                    <TextBlock Grid.Column="1" x:Uid="HomePage_QuickAction_RepairIssues"
+                                               Text="Repair Issues" VerticalAlignment="Center"/>
+                                    <FontIcon Grid.Column="2" Glyph="&#xE76C;" FontSize="12"
+                                              Foreground="{ThemeResource TextFillColorTertiaryBrush}"
+                                              VerticalAlignment="Center"/>
+                                </Grid>
+                            </Button>
+
+                            <Rectangle Height="1" Fill="{ThemeResource DividerStrokeColorDefaultBrush}"/>
+
+                            <!-- Clean Temporary Files -->
+                            <Button Style="{StaticResource SettingsListItemStyle}" Click="CleanTemporaryFiles_Click">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+                                    <FontIcon Grid.Column="0" Glyph="&#xE74D;" FontSize="16"
+                                              Margin="0,0,16,0"
+                                              Foreground="{ThemeResource TextFillColorSecondaryBrush}"/>
+                                    <TextBlock Grid.Column="1" x:Uid="HomePage_QuickAction_CleanTemporaryFiles"
+                                               Text="Clean Temporary Files" VerticalAlignment="Center"/>
+                                    <FontIcon Grid.Column="2" Glyph="&#xE76C;" FontSize="12"
+                                              Foreground="{ThemeResource TextFillColorTertiaryBrush}"
+                                              VerticalAlignment="Center"/>
+                                </Grid>
+                            </Button>
                         </StackPanel>
-                    </Grid>
+                    </Border>
                 </Grid>
-            </controls:WrapPanel>
+            </Grid>
         </Grid>
     </ScrollView>
 </Page>

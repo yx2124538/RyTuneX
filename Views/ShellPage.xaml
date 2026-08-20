@@ -44,7 +44,7 @@
                     VerticalAlignment="Center"
                     Width="38" Height="42"
                     Padding="10"
-                    Margin="2,2,0,0">
+                    Margin="2,2,8,0">
                 <AnimatedIcon x:Name="BackAnimatedIcon">
                     <AnimatedIcon.Source>
                         <animatedvisuals:AnimatedBackVisualSource/>
@@ -55,20 +55,6 @@
                 </AnimatedIcon>
             </Button>
             <StackPanel Grid.Column="1" Orientation="Horizontal">
-                <Grid Margin="8,0,16,0">
-                    <FontIcon x:Name="IsAdminIcon"
-                    x:Uid="IsAdminIcon"
-                    Glyph="&#xEA18;"
-                    VerticalAlignment="Center"
-                    Opacity="0.75"
-                    FontSize="18"/>
-                    <FontIcon x:Name="NotAdminIcon"
-                    x:Uid="NotAdminIcon"
-                    Glyph="&#xE1DE;"
-                    VerticalAlignment="Center"
-                    Opacity="0.75"
-                    FontSize="18"/>
-                </Grid>
                 <Image x:Name="ShellTitleBarImage" Source="/Assets/WindowIcon.ico"
                     HorizontalAlignment="Left"
                     Width="22"
@@ -76,15 +62,10 @@
                 <TextBlock x:Name="AppTitleBarText"
                     Text="RyTuneX"
                     VerticalAlignment="Center"
-                    Margin="16,0,0,0"
+                    Margin="12,0,0,0"
                     TextWrapping="NoWrap"
-                    Style="{StaticResource CaptionTextBlockStyle}"/>
-                <TextBlock x:Name="AppTitleBarVersion"
-                    VerticalAlignment="Center"
-                    Margin="8,0,0,0"
-                    TextWrapping="NoWrap"
-                    FontSize="11"
-                    Opacity="0.75"/>
+                    FontSize="14"
+                    Style="{StaticResource BodyTextBlockStyle}"/>
             </StackPanel>
             
             <!-- Search Box in Title Bar -->
@@ -95,7 +76,6 @@
                             BorderThickness="0"
                             VerticalAlignment="Center"
                             HorizontalAlignment="Center"
-                            PlaceholderText="Search settings..."
                             CornerRadius="16"
                             QueryIcon="Find"
                             TextMemberPath="DisplayName"
@@ -167,6 +147,11 @@
                         <FontIcon FontFamily="{StaticResource SymbolThemeFontFamily}" Glyph="&#xECAA;"/>
                     </NavigationViewItem.Icon>
                 </NavigationViewItem>
+                <NavigationViewItem x:Uid="Shell_Startup" helpers:NavigationHelper.NavigateTo="RyTuneX.Views.StartupPage">
+                    <NavigationViewItem.Icon>
+                        <FontIcon FontFamily="{StaticResource SymbolThemeFontFamily}" Glyph="&#xE7B8;"/>
+                    </NavigationViewItem.Icon>
+                </NavigationViewItem>
                 <NavigationViewItem x:Uid="Shell_Repair" helpers:NavigationHelper.NavigateTo="RyTuneX.Views.RepairPage">
                     <NavigationViewItem.Icon>
                         <FontIcon FontFamily="{StaticResource SymbolThemeFontFamily}" Glyph="&#xE90F;"/>
@@ -177,7 +162,7 @@
                         <FontIcon FontFamily="{StaticResource SymbolThemeFontFamily}" Glyph="&#xE74D;"/>
                     </NavigationViewItem.Icon>
                 </NavigationViewItem>
-                <NavigationViewItem Content="Packages" helpers:NavigationHelper.NavigateTo="RyTuneX.Views.PackagesPage">
+                <NavigationViewItem x:Uid="Shell_Packages" helpers:NavigationHelper.NavigateTo="RyTuneX.Views.PackagesPage">
                     <NavigationViewItem.Icon>
                         <FontIcon FontFamily="{StaticResource SymbolThemeFontFamily}" Glyph="&#xE896;"/>
                     </NavigationViewItem.Icon>

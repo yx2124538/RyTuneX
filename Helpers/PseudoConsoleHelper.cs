@@ -68,7 +68,8 @@ internal static partial class PseudoConsoleHelper
     }
 
     // Runs a command using ConPTY to capture real-time output.
-    public static async Task<int> RunAsync(string commandLine, Action<string> outputCallback, CancellationToken ct = default, Action<int>? processIdCallback = null)
+    // stdinInput: optional text written to the PTY's stdin after the process starts (e.g. "N\n" to answer CHKDSK's reboot prompt).
+    public static async Task<int> RunAsync(string commandLine, Action<string> outputCallback, CancellationToken ct = default, Action<int>? processIdCallback = null, string? stdinInput = null)
     {
         SafeFileHandle? inputRead = null, inputWrite = null, outputRead = null, outputWrite = null;
         var pty = IntPtr.Zero;
@@ -114,7 +115,7 @@ internal static partial class PseudoConsoleHelper
             // Notify caller of the process ID
             processIdCallback?.Invoke(processId);
 
-            // Close pipe ends we don't need
+            // Close the output-write and input-read ends we don't need on our side
             outputWrite.Dispose();
             outputWrite = null;
             inputRead.Dispose();
@@ -126,6 +127,44 @@ internal static partial class PseudoConsoleHelper
             // Read output while process runs
             var outputEncoding = await ConsoleEncodingHelper.GetOemConsoleEncodingAsync();
             var readTask = ReadOutputAsync(outputRead, outputEncoding, outputCallback, ct);
+
+            // For tools like CHKDSK that show a Y/N prompt at the END of their run,
+            // just fire a background task that periodically writes the answer into stdin
+            // until the process exits. The handle is handed off to the background task
+            // (set to null here so the finally block doesn't double-dispose it).
+            if (!string.IsNullOrEmpty(stdinInput) && inputWrite != null && !inputWrite.IsInvalid)
+            {
+                var stdinHandle = inputWrite;
+                inputWrite = null; // ownership transferred, finally block must not dispose
+                var stdinBytes = Encoding.UTF8.GetBytes(stdinInput);
+
+                _ = Task.Run(async () =>
+                {
+                    try
+                    {
+                        await using var stdinStream = new FileStream(stdinHandle, FileAccess.Write, 256, false);
+                        // Send the answer every 3 s until the process exits or is cancelled.
+                        // The prompt may appear at any point during a long scan.
+                        while (!process.HasExited && !ct.IsCancellationRequested)
+                        {
+                            try
+                            {
+                                await stdinStream.WriteAsync(stdinBytes, CancellationToken.None).ConfigureAwait(false);
+                                await stdinStream.FlushAsync(CancellationToken.None).ConfigureAwait(false);
+                            }
+                            catch
+                            {
+                                break; // pipe broken, process likely exited
+                            }
+                            await Task.Delay(3000).ConfigureAwait(false);
+                        }
+                    }
+                    catch
+                    {
+                        // Non-fatal
+                    }
+                }, CancellationToken.None);
+            }
 
             try
             {

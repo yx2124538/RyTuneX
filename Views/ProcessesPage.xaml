@@ -69,7 +69,7 @@
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
             <AutoSuggestBox x:Name="SearchBox"
-                            PlaceholderText="Search processes..."
+                            x:Uid="ProcessesPage_SearchBox"
                             QueryIcon="Find"
                             TextChanged="SearchBox_TextChanged"/>
             <Button x:Name="RefreshButton" Grid.Column="1" Margin="8,0,0,0" Click="RefreshButton_Click">
@@ -90,21 +90,21 @@
             </Grid.ColumnDefinitions>
             <Button x:Name="NameHeader" Tag="Name" Click="SortHeader_Click"
                     Background="Transparent" BorderThickness="0" Padding="0" HorizontalAlignment="Left">
-                <TextBlock Text="Name" FontWeight="SemiBold" FontSize="13"/>
+                <TextBlock x:Uid="ProcessesPage_ColName" FontWeight="SemiBold" FontSize="13"/>
             </Button>
             <Button x:Name="PidHeader" Tag="PID" Grid.Column="1" Click="SortHeader_Click"
                     Background="Transparent" BorderThickness="0" Padding="0" HorizontalAlignment="Center">
-                <TextBlock Text="PID" FontWeight="SemiBold" FontSize="13"/>
+                <TextBlock x:Uid="ProcessesPage_ColPID" FontWeight="SemiBold" FontSize="13"/>
             </Button>
             <Button x:Name="MemoryHeader" Tag="Memory" Grid.Column="2" Click="SortHeader_Click"
                     Background="Transparent" BorderThickness="0" Padding="0" HorizontalAlignment="Center">
-                <TextBlock Text="Memory" FontWeight="SemiBold" FontSize="13"/>
+                <TextBlock x:Uid="ProcessesPage_ColMemory" FontWeight="SemiBold" FontSize="13"/>
             </Button>
             <Button x:Name="ThreadsHeader" Tag="Threads" Grid.Column="3" Click="SortHeader_Click"
                     Background="Transparent" BorderThickness="0" Padding="0" HorizontalAlignment="Center">
-                <TextBlock Text="Threads" FontWeight="SemiBold" FontSize="13"/>
+                <TextBlock x:Uid="ProcessesPage_ColThreads" FontWeight="SemiBold" FontSize="13"/>
             </Button>
-            <TextBlock Text="Actions" Grid.Column="4" FontWeight="SemiBold" FontSize="13" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <TextBlock x:Uid="ProcessesPage_ColActions" Grid.Column="4" FontWeight="SemiBold" FontSize="13" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         </Grid>
 
         <!-- Process List -->
@@ -144,7 +144,7 @@
                                         Padding="12,6">
                                     <StackPanel Orientation="Horizontal" Spacing="6">
                                         <FontIcon Glyph="&#xE711;" FontSize="12"/>
-                                        <TextBlock Text="End Task" FontSize="12"/>
+                                        <TextBlock x:Uid="ProcessesPage_EndTask" FontSize="12"/>
                                     </StackPanel>
                                 </Button>
                             </Grid>

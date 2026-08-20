@@ -6,6 +6,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:controls="using:CommunityToolkit.WinUI.Controls"
     xmlns:ui="using:CommunityToolkit.WinUI"
+    xmlns:localControls="using:RyTuneX.Controls"
     mc:Ignorable="d">
     <Page.Resources>
         <x:Double x:Key="SettingsCardSpacing">4</x:Double>
@@ -20,6 +21,9 @@
     <Grid x:Name="ContentArea">
         <ScrollViewer Padding="24,14,24,0">
             <StackPanel Margin="0,0,0,38" Spacing="{StaticResource SettingsCardSpacing}">
+
+                <!-- Intelligent Score Header -->
+                <localControls:IntelligentScoreHeaderControl x:Name="ScoreHeader" TargetCategory="FeaturesAndUsability"/>
 
                 <!-- System Feature Control Toggles -->
                 <TextBlock Margin="6"
@@ -108,13 +112,6 @@
                         <FontIcon Glyph="&#xE716;"/>
                     </controls:SettingsCard.HeaderIcon>
                     <ToggleSwitch x:Name="MyPeople" Tag="MyPeople"/>
-                </controls:SettingsCard>
-
-                <controls:SettingsCard x:Uid="Feature_DisableSensorServices">
-                    <controls:SettingsCard.HeaderIcon>
-                        <FontIcon Glyph="&#xE957;"/>
-                    </controls:SettingsCard.HeaderIcon>
-                    <ToggleSwitch x:Name="SensorServices" Tag="SensorServices"/>
                 </controls:SettingsCard>
 
                 <controls:SettingsCard x:Uid="Feature_DisableWindowsInk">

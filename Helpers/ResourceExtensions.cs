@@ -6,7 +6,13 @@ public static class ResourceExtensions
 {
     private static readonly ResourceLoader _resourceLoader = new();
 
-    public static string GetLocalized(this string resourceKey) => _resourceLoader.GetString(resourceKey);
+    public static string GetLocalized(this string resourceKey)
+    {
+        // WinAppSDK ResourceLoader uses '/' as the path delimiter, not '.'
+        // Keys like "PageName_Control.Text" must be looked up as "PageName_Control/Text".
+        var lookupKey = resourceKey.Contains('.') ? resourceKey.Replace('.', '/') : resourceKey;
+        return _resourceLoader.GetString(lookupKey);
+    }
 
     // Tries to get a localized string, returning null if the resource is not found.
     // Handles both dot format (Feature.Header) and slash format (Feature/Header).

@@ -42,14 +42,14 @@
 
                     <!-- OS -->
                     <controls:SettingsExpander
+                            x:Uid="SystemInfoPage_OS"
                             IsExpanded="True"
-                            Header="Operating System"
                             HeaderIcon="{ui:FontIcon Glyph=&#xE958;}">
 
                         <Button Tag="os"
                                 Padding="10,10"
                                 Click="CopyExpander_Click">
-                            <TextBlock Margin="20,-4" Text="Copy" />
+                            <TextBlock x:Uid="SystemInfoPage_Copy" Margin="20,-4" />
                         </Button>
 
                         <controls:SettingsExpander.Items>
@@ -67,14 +67,14 @@
 
                     <!-- CPU -->
                     <controls:SettingsExpander
+                            x:Uid="SystemInfoPage_Processor"
                             IsExpanded="True"
-                            Header="Processor"
                             HeaderIcon="{ui:FontIcon Glyph=&#xE950;}">
 
                         <Button Tag="cpu"
                             Padding="10,10"
                             Click="CopyExpander_Click">
-                            <TextBlock Margin="20,-4" Text="Copy" />
+                            <TextBlock x:Uid="SystemInfoPage_Copy" Margin="20,-4" />
                         </Button>
 
                         <controls:SettingsExpander.Items>
@@ -92,14 +92,14 @@
 
                     <!-- GPU -->
                     <controls:SettingsExpander
+                            x:Uid="SystemInfoPage_Graphics"
                             IsExpanded="True"
-                            Header="Graphics"
                             HeaderIcon="{ui:FontIcon Glyph=&#xF211;}">
 
                         <Button Tag="gpu"
                                 Padding="10,10"
                                 Click="CopyExpander_Click">
-                            <TextBlock Margin="20,-4" Text="Copy" />
+                            <TextBlock x:Uid="SystemInfoPage_Copy" Margin="20,-4" />
                         </Button>
 
                         <controls:SettingsExpander.Items>
@@ -117,14 +117,14 @@
 
                     <!-- RAM -->
                     <controls:SettingsExpander
+                            x:Uid="SystemInfoPage_RAM"
                             IsExpanded="True"
-                            Header="RAM"
                             HeaderIcon="{ui:FontIcon Glyph=&#xE964;}">
 
                         <Button Tag="ram"
                                 Padding="10,10"
                                 Click="CopyExpander_Click">
-                            <TextBlock Margin="20,-4" Text="Copy" />
+                            <TextBlock x:Uid="SystemInfoPage_Copy" Margin="20,-4" />
                         </Button>
 
                         <controls:SettingsExpander.Items>
@@ -142,14 +142,14 @@
 
                     <!-- Storage -->
                     <controls:SettingsExpander
+                            x:Uid="SystemInfoPage_Storage"
                             IsExpanded="True"
-                            Header="Storage"
                             HeaderIcon="{ui:FontIcon Glyph=&#xEDA2;}">
 
                         <Button Tag="disk"
                                 Padding="10,10"
                                 Click="CopyExpander_Click">
-                            <TextBlock Margin="20,-4" Text="Copy" />
+                            <TextBlock x:Uid="SystemInfoPage_Copy" Margin="20,-4" />
                         </Button>
 
                         <controls:SettingsExpander.Items>
@@ -167,14 +167,14 @@
 
                     <!-- Network -->
                     <controls:SettingsExpander
+                            x:Uid="SystemInfoPage_Network"
                             IsExpanded="True"
-                            Header="Network"
                             HeaderIcon="{ui:FontIcon Glyph=&#xEDA3;}">
 
                         <Button Tag="network"
                                 Padding="10,10"
                                 Click="CopyExpander_Click">
-                            <TextBlock Margin="20,-4" Text="Copy" />
+                            <TextBlock x:Uid="SystemInfoPage_Copy" Margin="20,-4" />
                         </Button>
 
                         <controls:SettingsExpander.Items>
@@ -192,14 +192,14 @@
 
                     <!-- Battery -->
                     <controls:SettingsExpander
+                            x:Uid="SystemInfoPage_Battery"
                             IsExpanded="True"
-                            Header="Battery"
                             HeaderIcon="{ui:FontIcon Glyph=&#xF5F9;}">
 
                         <Button Tag="battery"
                                 Padding="10,10"
                                 Click="CopyExpander_Click">
-                            <TextBlock Margin="20,-4" Text="Copy" />
+                            <TextBlock x:Uid="SystemInfoPage_Copy" Margin="20,-4" />
                         </Button>
 
                         <controls:SettingsExpander.Items>
@@ -242,7 +242,7 @@
                         </StackPanel>
                         <StackPanel Grid.Row="2" Grid.Column="1" Orientation="Horizontal" Spacing="12" HorizontalAlignment="Right" VerticalAlignment="Center">
                             <Button x:Uid="SystemInfoPage_SelectButton" Content="Select" Click="SelectPathButton_Click" Margin="0"/>
-                            <TextBlock Text="Drivers for Backup" VerticalAlignment="Center" Foreground="{ThemeResource TextFillColorSecondaryBrush}" Margin="6,0"/>
+                            <TextBlock x:Uid="SystemInfoPage_DriversForBackup" VerticalAlignment="Center" Foreground="{ThemeResource TextFillColorSecondaryBrush}" Margin="6,0"/>
                             <Button x:Uid="SystemInfoPage_ExportButton" Content="Export" x:Name="ExtractButton" Click="ExtractButton_Click" Visibility="Visible"/>
                         </StackPanel>
                     </Grid>

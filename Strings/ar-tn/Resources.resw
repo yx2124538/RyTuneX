@@ -1,110 +1,51 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<root>
-  <!-- 
-    Microsoft ResX Schema 
-    
-    Version 2.0
-    
-    The primary goals of this format is to allow a simple XML format 
-    that is mostly human readable. The generation and parsing of the 
-    various data types are done through the TypeConverter classes 
-    associated with the data types.
-    
-    Example:
-    
-    ... ado.net/XML headers & schema ...
-    <resheader name="resmimetype">text/microsoft-resx</resheader>
-    <resheader name="version">2.0</resheader>
-    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
-    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
-    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
-    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
-    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
-        <value>[base64 mime encoded serialized .NET Framework object]</value>
-    </data>
-    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
-        <comment>This is a comment</comment>
-    </data>
-                
-    There are any number of "resheader" rows that contain simple 
-    name/value pairs.
-    
-    Each data row contains a name, and value. The row also contains a 
-    type or mimetype. Type corresponds to a .NET class that support 
-    text/value conversion through the TypeConverter architecture. 
-    Classes that don't support this are serialized and stored with the 
-    mimetype set.
-    
-    The mimetype is used for serialized objects, and tells the 
-    ResXResourceReader how to depersist the object. This is currently not 
-    extensible. For a given mimetype the value must be set accordingly:
-    
-    Note - application/x-microsoft.net.object.binary.base64 is the format 
-    that the ResXResourceWriter will generate, however the reader can 
-    read any of the formats listed below.
-    
-    mimetype: application/x-microsoft.net.object.binary.base64
-    value   : The object must be serialized with 
-            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
-            : and then encoded with base64 encoding.
-    
-    mimetype: application/x-microsoft.net.object.soap.base64
-    value   : The object must be serialized with 
-            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
-            : and then encoded with base64 encoding.
-
-    mimetype: application/x-microsoft.net.object.bytearray.base64
-    value   : The object must be serialized into a byte array 
-            : using a System.ComponentModel.TypeConverter
-            : and then encoded with base64 encoding.
-    -->
-  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
-    <xsd:element name="root" msdata:IsDataSet="true">
-      <xsd:complexType>
-        <xsd:choice maxOccurs="unbounded">
-          <xsd:element name="metadata">
-            <xsd:complexType>
-              <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" />
-              </xsd:sequence>
-              <xsd:attribute name="name" use="required" type="xsd:string" />
-              <xsd:attribute name="type" type="xsd:string" />
-              <xsd:attribute name="mimetype" type="xsd:string" />
-              <xsd:attribute ref="xml:space" />
-            </xsd:complexType>
-          </xsd:element>
-          <xsd:element name="assembly">
-            <xsd:complexType>
-              <xsd:attribute name="alias" type="xsd:string" />
-              <xsd:attribute name="name" type="xsd:string" />
-            </xsd:complexType>
-          </xsd:element>
-          <xsd:element name="data">
-            <xsd:complexType>
-              <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
-              </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
-              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
-              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
-              <xsd:attribute ref="xml:space" />
-            </xsd:complexType>
-          </xsd:element>
-          <xsd:element name="resheader">
-            <xsd:complexType>
-              <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-              </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" />
-            </xsd:complexType>
-          </xsd:element>
-        </xsd:choice>
-      </xsd:complexType>
-    </xsd:element>
-  </xsd:schema>
+<?xml version='1.0' encoding='utf-8'?>
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:schema id="root">
+    <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xs:element name="root" ns1:IsDataSet="true">
+      <xs:complexType>
+        <xs:choice maxOccurs="unbounded">
+          <xs:element name="metadata">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xsd:string" minOccurs="0" />
+              </xs:sequence>
+              <xs:attribute name="name" use="required" type="xsd:string" />
+              <xs:attribute name="type" type="xsd:string" />
+              <xs:attribute name="mimetype" type="xsd:string" />
+              <xs:attribute ref="xml:space" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="assembly">
+            <xs:complexType>
+              <xs:attribute name="alias" type="xsd:string" />
+              <xs:attribute name="name" type="xsd:string" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="data">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xsd:string" minOccurs="0" ns1:Ordinal="1" />
+                <xs:element name="comment" type="xsd:string" minOccurs="0" ns1:Ordinal="2" />
+              </xs:sequence>
+              <xs:attribute name="name" type="xsd:string" use="required" ns1:Ordinal="1" />
+              <xs:attribute name="type" type="xsd:string" ns1:Ordinal="3" />
+              <xs:attribute name="mimetype" type="xsd:string" ns1:Ordinal="4" />
+              <xs:attribute ref="xml:space" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="resheader">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xsd:string" minOccurs="0" ns1:Ordinal="1" />
+              </xs:sequence>
+              <xs:attribute name="name" type="xsd:string" use="required" />
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
   <resheader name="resmimetype">
     <value>text/microsoft-resx</value>
   </resheader>
@@ -118,7 +59,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Shell_Home.Content" xml:space="preserve">
-    <value>RyTuneX</value>
+    <value>الرئيسية</value>
   </data>
   <data name="Shell_Debloat.Content" xml:space="preserve">
     <value>إزالة التطبيقات</value>
@@ -180,8 +121,38 @@
   <data name="HomePage_DiscordButton.Text" xml:space="preserve">
     <value>انضم إلى خادمنا</value>
   </data>
-  <data name="HomePage_WebsiteButton.Text" xml:space="preserve">
-    <value>مزيد من المعلومات</value>
+  <data name="HomePage_MoreInfoButton.Text" xml:space="preserve">
+    <value>معلومات أكثر</value>
+  </data>
+  <data name="HomePage_SystemOverviewTitle.Text" xml:space="preserve">
+    <value>نظرة عامة على النظام</value>
+  </data>
+  <data name="HomePage_SystemTitle.Text" xml:space="preserve">
+    <value>النظام</value>
+  </data>
+  <data name="HomePage_System_InstalledApps.Text" xml:space="preserve">
+    <value>التطبيقات المثبتة</value>
+  </data>
+  <data name="HomePage_System_Processes.Text" xml:space="preserve">
+    <value>العمليات</value>
+  </data>
+  <data name="HomePage_System_Services.Text" xml:space="preserve">
+    <value>الخدمات</value>
+  </data>
+  <data name="HomePage_QuickActionsTitle.Text" xml:space="preserve">
+    <value>الإجراءات السريعة</value>
+  </data>
+  <data name="HomePage_QuickAction_OptimizeSystem.Text" xml:space="preserve">
+    <value>تحسين النظام</value>
+  </data>
+  <data name="HomePage_QuickAction_RepairIssues.Text" xml:space="preserve">
+    <value>إصلاح المشاكل</value>
+  </data>
+  <data name="HomePage_QuickAction_ManageStartupApps.Text" xml:space="preserve">
+    <value>إدارة تطبيقات بدء التشغيل</value>
+  </data>
+  <data name="HomePage_QuickAction_CleanTemporaryFiles.Text" xml:space="preserve">
+    <value>تنظيف الملفات المؤقتة</value>
   </data>
   <data name="SettingsPage_FeedbackButton.Content" xml:space="preserve">
     <value>ترك تقييم</value>
@@ -191,15 +162,6 @@
   </data>
   <data name="SystemInfoPage_GPU.Text" xml:space="preserve">
     <value>بطاقة الرسومات</value>
-  </data>
-  <data name="SystemInfoPage_OS.Text" xml:space="preserve">
-    <value>نظام التشغيل</value>
-  </data>
-  <data name="SystemInfoPage_RAM.Text" xml:space="preserve">
-    <value>الذاكرة العشوائية (RAM)</value>
-  </data>
-  <data name="SystemInfoPage_Storage.Text" xml:space="preserve">
-    <value>التخزين</value>
   </data>
   <data name="Debloat" xml:space="preserve">
     <value>إزالة التطبيقات</value>
@@ -337,7 +299,7 @@
     <value>التعريفات</value>
   </data>
   <data name="SystemInfoPage_ExtractButton.Content" xml:space="preserve">
-    <value>استخراج</value>
+    <value>تصدير</value>
   </data>
   <data name="SystemInfoPage_ExtractDrivers.Text" xml:space="preserve">
     <value>استخراج التعريفات إلى مجلد خارجي لسهولة النسخ الاحتياطي</value>
@@ -401,12 +363,6 @@
   </data>
   <data name="Feature_DisableMyPeople.Description" xml:space="preserve">
     <value>إيقاف ميزة أصدقائي في شريط المهام</value>
-  </data>
-  <data name="Feature_DisableSensorServices.Header" xml:space="preserve">
-    <value>تعطيل خدمات الاستشعار</value>
-  </data>
-  <data name="Feature_DisableSensorServices.Description" xml:space="preserve">
-    <value>إيقاف خدمات الاستشعار للخصوصية وتوفير الطاقة. غير مُوصى به للأجهزة المحمولة التي تحتوي على أجهزة استشعار ذات صلة</value>
   </data>
   <data name="Feature_DisableWindowsInk.Header" xml:space="preserve">
     <value>تعطيل حبر ويندوز</value>
@@ -521,6 +477,18 @@
   </data>
   <data name="Feature_EnableGamingMode.Description" xml:space="preserve">
     <value>يُمكن وضع اللعب، الذي يُحسن من موارد النظام لتجربة لعب أكثر سلاسة. قد يؤثر على عمليات الخلفية</value>
+  </data>
+  <data name="Feature_EnableFullscreenOptimizations.Header" xml:space="preserve">
+    <value>تفعيل تحسينات ملء الشاشة</value>
+  </data>
+  <data name="Feature_EnableFullscreenOptimizations.Description" xml:space="preserve">
+    <value>يخلي ويندوز يستعمل مسار تحسين ملء الشاشة للألعاب. عطّل هذا الخيار فقط مع الألعاب اللي تحتاج وضع ملء الشاشة الحصري.</value>
+  </data>
+  <data name="Feature_GpuDriverTweaks.Header" xml:space="preserve">
+    <value>تحسينات أداء تعريف بطاقة الرسوميات</value>
+  </data>
+  <data name="Feature_GpuDriverTweaks.Description" xml:space="preserve">
+    <value>يطبّق تعديلات سجلّ خاصة بـ AMD وNVIDIA وIntel لتقليل تبديل حالات طاقة بطاقة الرسوميات وتقليل زمن استجابة العرض.</value>
   </data>
   <data name="Feature_ExcludeDriversFromWindowsUpdates.Header" xml:space="preserve">
     <value>استبعاد تحديثات السائقين من ويندوز</value>
@@ -696,12 +664,6 @@
   <data name="Update" xml:space="preserve">
     <value>تحديث</value>
   </data>
-  <data name="SystemInfoPage_Network.Text" xml:space="preserve">
-    <value>الشبكة</value>
-  </data>
-  <data name="SystemInfoPage_Battery.Text" xml:space="preserve">
-    <value>البطارية</value>
-  </data>
   <data name="MACAddress" xml:space="preserve">
     <value>عنوان ماك</value>
   </data>
@@ -780,23 +742,11 @@
   <data name="HomePage_ramUsage.Text" xml:space="preserve">
     <value>استخدام الذاكرة</value>
   </data>
-  <data name="HomePage_gpuUsage.Text" xml:space="preserve">
-    <value>بطاقة الرسومات</value>
-  </data>
   <data name="HomePage_diskUsage.Text" xml:space="preserve">
     <value>استخدام القرص</value>
   </data>
   <data name="HomePage_networkUsage.Text" xml:space="preserve">
     <value>استخدام الشبكة</value>
-  </data>
-  <data name="HomePage_installedAppsCount.Text" xml:space="preserve">
-    <value>التطبيقات المثبتة</value>
-  </data>
-  <data name="HomePage_processesCount.Text" xml:space="preserve">
-    <value>العمليات</value>
-  </data>
-  <data name="HomePage_servicesCount.Text" xml:space="preserve">
-    <value>الخدمات</value>
   </data>
   <data name="Feature_DisableSmartScreen.Header" xml:space="preserve">
     <value>تعطيل فلتر الشاشة الذكية</value>
@@ -965,6 +915,18 @@
   </data>
   <data name="Feature_MouseHoverTime.Description" xml:space="preserve">
     <value>يُعدّل الوقت الذي ينتظره النظام قبل تنفيذ حدث التمرير. تعطيله قد يسرع التفاعلات ولكن قد يؤدي إلى تفعيلات غير مقصودة.</value>
+  </data>
+  <data name="Feature_KeyboardLatency.Header" xml:space="preserve">
+    <value>تحسين زمن استجابة لوحة المفاتيح</value>
+  </data>
+  <data name="Feature_KeyboardLatency.Description" xml:space="preserve">
+    <value>يضبط تأخير تكرار لوحة المفاتيح على أقل قيمة ويحافظ على سرعة التكرار عند الحد الأقصى لاستجابة أسرع للإدخال.</value>
+  </data>
+  <data name="Feature_DisableMouseAcceleration.Header" xml:space="preserve">
+    <value>تعطيل تسارع الماوس</value>
+  </data>
+  <data name="Feature_DisableMouseAcceleration.Description" xml:space="preserve">
+    <value>يعطّل تسارع مؤشر ويندوز حتى تبقى حركة الماوس ثابتة للألعاب والإدخال الدقيق.</value>
   </data>
   <data name="Feature_AutoComplete.Header" xml:space="preserve">
     <value>تعطيل الإكمال التلقائي</value>
@@ -1163,6 +1125,12 @@
   </data>
   <data name="OperationCompleted" xml:space="preserve">
     <value>اكتملت العملية</value>
+  </data>
+  <data name="CheckCompleted" xml:space="preserve">
+    <value>Check completed successfully</value>
+  </data>
+  <data name="RepairedFiles" xml:space="preserve">
+    <value>Repaired files (from CBS.log):</value>
   </data>
   <data name="RestorePointTitle" xml:space="preserve">
     <value>نقطة الاستعادة</value>
@@ -1419,6 +1387,18 @@
   <data name="Feature_AddUltimatePowerPlan.Header" xml:space="preserve">
     <value>إضافة خطة الأداء الفائق</value>
   </data>
+  <data name="Feature_DisableUsbPowerSaving.Header" xml:space="preserve">
+    <value>تعطيل توفير طاقة USB</value>
+  </data>
+  <data name="Feature_DisableUsbPowerSaving.Description" xml:space="preserve">
+    <value>يعطّل الإيقاف الانتقائي لـ USB وتوفير الطاقة لمنافذ USB الجذرية لتقليل زمن استجابة تنبيه المتحكم أثناء اللعب.</value>
+  </data>
+  <data name="Feature_DisablePowerThrottling.Header" xml:space="preserve">
+    <value>تعطيل خفض استهلاك الطاقة</value>
+  </data>
+  <data name="Feature_DisablePowerThrottling.Description" xml:space="preserve">
+    <value>يعطّل خفض استهلاك الطاقة في ويندوز وسلوك استعادة استهلاك طاقة USB حتى تبقى التطبيقات النشطة سريعة الاستجابة.</value>
+  </data>
   <data name="AddUltimatePowerPlanTitle" xml:space="preserve">
     <value>إضافة خطة الأداء النهائي</value>
   </data>
@@ -1673,5 +1653,1049 @@
   </data>
   <data name="Loading.Text" xml:space="preserve">
     <value>جارٍ التحميل...</value>
+  </data>
+  <data name="Vendor" xml:space="preserve">
+    <value>المصنّع</value>
+  </data>
+  <data name="DedicatedVRAM" xml:space="preserve">
+    <value>ذاكرة VRAM مخصّصة</value>
+  </data>
+  <data name="SharedMemory" xml:space="preserve">
+    <value>الذاكرة المشتركة</value>
+  </data>
+  <data name="Type" xml:space="preserve">
+    <value>النوع</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>ابحث...</value>
+  </data>
+  <data name="Shell_Packages.Content" xml:space="preserve">
+    <value>الحزم</value>
+  </data>
+  <data name="PackagesPage_BrowseTab.Content" xml:space="preserve">
+    <value>تصفح</value>
+  </data>
+  <data name="PackagesPage_UpdatesTabLabel.Text" xml:space="preserve">
+    <value>التحديثات</value>
+  </data>
+  <data name="PackagesPage_SearchBox.PlaceholderText" xml:space="preserve">
+    <value>ابحث في حزم WinGet...</value>
+  </data>
+  <data name="PackagesPage_InstallButton.Text" xml:space="preserve">
+    <value>تثبيت المحدد</value>
+  </data>
+  <data name="PackagesPage_Installed.Text" xml:space="preserve">
+    <value>المثبتة</value>
+  </data>
+  <data name="PackagesPage_ColName.Text" xml:space="preserve">
+    <value>اسم الحزمة</value>
+  </data>
+  <data name="PackagesPage_ColId.Text" xml:space="preserve">
+    <value>معرف الحزمة</value>
+  </data>
+  <data name="PackagesPage_ColVersion.Text" xml:space="preserve">
+    <value>الإصدار</value>
+  </data>
+  <data name="PackagesPage_ColPublisher.Text" xml:space="preserve">
+    <value>الناشر</value>
+  </data>
+  <data name="PackagesPage_Loading.Text" xml:space="preserve">
+    <value>جاري تحميل الحزم…</value>
+  </data>
+  <data name="PackagesPage_SelectHint.Text" xml:space="preserve">
+    <value>حدد حزمة لتثبيتها</value>
+  </data>
+  <data name="ServicesPage_SearchBox.PlaceholderText" xml:space="preserve">
+    <value>البحث عن الخدمات...</value>
+  </data>
+  <data name="ServicesPage_FilterAll.Content" xml:space="preserve">
+    <value>الكل</value>
+  </data>
+  <data name="ServicesPage_FilterRunning.Content" xml:space="preserve">
+    <value>قيد التشغيل</value>
+  </data>
+  <data name="ServicesPage_FilterStopped.Content" xml:space="preserve">
+    <value>متوقفة</value>
+  </data>
+  <data name="ServicesPage_FilterAutomatic.Content" xml:space="preserve">
+    <value>تلقائي</value>
+  </data>
+  <data name="ServicesPage_FilterManual.Content" xml:space="preserve">
+    <value>يدوي</value>
+  </data>
+  <data name="ServicesPage_FilterDisabled.Content" xml:space="preserve">
+    <value>معطل</value>
+  </data>
+  <data name="ServicesPage_ColName.Text" xml:space="preserve">
+    <value>اسم الخدمة</value>
+  </data>
+  <data name="ServicesPage_ColStatus.Text" xml:space="preserve">
+    <value>الحالة</value>
+  </data>
+  <data name="ServicesPage_ColStartup.Text" xml:space="preserve">
+    <value>نوع البدء</value>
+  </data>
+  <data name="ServicesPage_ColActions.Text" xml:space="preserve">
+    <value>الإجراءات</value>
+  </data>
+  <data name="ServicesPage_StartupAutomatic.Content" xml:space="preserve">
+    <value>تلقائي</value>
+  </data>
+  <data name="ServicesPage_StartupManual.Content" xml:space="preserve">
+    <value>يدوي</value>
+  </data>
+  <data name="ServicesPage_StartupDisabled.Content" xml:space="preserve">
+    <value>معطل</value>
+  </data>
+  <data name="ProcessesPage_SearchBox.PlaceholderText" xml:space="preserve">
+    <value>البحث عن العمليات...</value>
+  </data>
+  <data name="ProcessesPage_ColName.Text" xml:space="preserve">
+    <value>الاسم</value>
+  </data>
+  <data name="ProcessesPage_ColPID.Text" xml:space="preserve">
+    <value>معرف العملية (PID)</value>
+  </data>
+  <data name="ProcessesPage_ColMemory.Text" xml:space="preserve">
+    <value>الذاكرة</value>
+  </data>
+  <data name="ProcessesPage_ColThreads.Text" xml:space="preserve">
+    <value>المسارات (Threads)</value>
+  </data>
+  <data name="ProcessesPage_ColActions.Text" xml:space="preserve">
+    <value>الإجراءات</value>
+  </data>
+  <data name="ProcessesPage_EndTask.Text" xml:space="preserve">
+    <value>إنهاء المهمة</value>
+  </data>
+  <data name="SystemInfoPage_OS.Header" xml:space="preserve">
+    <value>نظام التشغيل</value>
+  </data>
+  <data name="SystemInfoPage_Copy.Text" xml:space="preserve">
+    <value>نسخ</value>
+  </data>
+  <data name="SystemInfoPage_Processor.Header" xml:space="preserve">
+    <value>المعالج</value>
+  </data>
+  <data name="SystemInfoPage_Graphics.Header" xml:space="preserve">
+    <value>بطاقة الرسومات</value>
+  </data>
+  <data name="SystemInfoPage_RAM.Header" xml:space="preserve">
+    <value>الذاكرة العشوائية (RAM)</value>
+  </data>
+  <data name="SystemInfoPage_Storage.Header" xml:space="preserve">
+    <value>التخزين</value>
+  </data>
+  <data name="SystemInfoPage_Network.Header" xml:space="preserve">
+    <value>الشبكة</value>
+  </data>
+  <data name="SystemInfoPage_Battery.Header" xml:space="preserve">
+    <value>البطارية</value>
+  </data>
+  <data name="SystemInfoPage_DriversForBackup.Text" xml:space="preserve">
+    <value>برامج التشغيل للنسخ الاحتياطي</value>
+  </data>
+  <data name="SettingsPage_LanguageCombo.PlaceholderText" xml:space="preserve">
+    <value>لغة النظام</value>
+  </data>
+  <data name="Settings_NavLeft.Content" xml:space="preserve">
+    <value>يسار</value>
+  </data>
+  <data name="Settings_NavTop.Content" xml:space="preserve">
+    <value>أعلى</value>
+  </data>
+  <data name="PackagesPage_UpdateButton" xml:space="preserve">
+    <value>تحديث المحدد</value>
+  </data>
+  <data name="PackagesPage_SelectUpdateHint" xml:space="preserve">
+    <value>حدد الحزم للتحديث</value>
+  </data>
+  <data name="PackagesPage_StatusLoading" xml:space="preserve">
+    <value>جاري تحميل الحزم، يرجى الانتظار…</value>
+  </data>
+  <data name="PackagesPage_StatusNoUpdates" xml:space="preserve">
+    <value>لا تتوفر تحديثات. جميع الحزم محدثة.</value>
+  </data>
+  <data name="PackagesPage_SelectedForInstall" xml:space="preserve">
+    <value>تم تحديد {0} حزمة (حزم) للتثبيت</value>
+  </data>
+  <data name="PackagesPage_SelectedForUpdate" xml:space="preserve">
+    <value>تم تحديد {0} حزمة (حزم) للتحديث</value>
+  </data>
+  <data name="HomePage_Version" xml:space="preserve">
+    <value>الإصدار</value>
+  </data>
+  <data name="RepairPage_SystemHealthTitle.Text" xml:space="preserve">
+    <value>صحة النظام</value>
+  </data>
+  <data name="RepairPage_SystemHealthSubtitle.Text" xml:space="preserve">
+    <value>افحص ويندوز بحثًا عن مشاكل النظام والتخزين الشائعة.</value>
+  </data>
+  <data name="RepairPage_LastCheckedNever.Text" xml:space="preserve">
+    <value>آخر فحص: أبداً</value>
+  </data>
+  <data name="RepairPage_CheckSystemButton.Content" xml:space="preserve">
+    <value>افحص النظام</value>
+  </data>
+  <data name="RepairPage_WindowsImage.Text" xml:space="preserve">
+    <value>صورة ويندوز</value>
+  </data>
+  <data name="RepairPage_WindowsImageDescription.Text" xml:space="preserve">
+    <value>مخزن مكونات ويندوز</value>
+  </data>
+  <data name="RepairPage_SystemFiles.Text" xml:space="preserve">
+    <value>ملفات النظام</value>
+  </data>
+  <data name="RepairPage_SystemFilesDescription.Text" xml:space="preserve">
+    <value>ملفات نظام ويندوز المحمية</value>
+  </data>
+  <data name="RepairPage_SystemDrive.Text" xml:space="preserve">
+    <value>محرك النظام</value>
+  </data>
+  <data name="RepairPage_SystemDriveDescription.Text" xml:space="preserve">
+    <value>سلامة نظام الملفات</value>
+  </data>
+  <data name="RepairPage_TechnicalDetails.Header" xml:space="preserve">
+    <value>التفاصيل الفنية</value>
+  </data>
+  <data name="RepairPage_MoreTroubleshooting.Text" xml:space="preserve">
+    <value>المزيد من استكشاف الأخطاء وإصلاحها</value>
+  </data>
+  <data name="RepairPage_StateIdle_Title" xml:space="preserve">
+    <value>صحة النظام</value>
+  </data>
+  <data name="RepairPage_StateIdle_Subtitle" xml:space="preserve">
+    <value>افحص ويندوز بحثًا عن مشاكل النظام والتخزين الشائعة.</value>
+  </data>
+  <data name="RepairPage_StateIdle_Button" xml:space="preserve">
+    <value>افحص النظام</value>
+  </data>
+  <data name="RepairPage_StateChecking_Title" xml:space="preserve">
+    <value>جاري فحص نظامك...</value>
+  </data>
+  <data name="RepairPage_StateChecking_Subtitle" xml:space="preserve">
+    <value>قد يستغرق هذا بضع دقائق.</value>
+  </data>
+  <data name="RepairPage_StateHealthy_Title" xml:space="preserve">
+    <value>نظامك سليم</value>
+  </data>
+  <data name="RepairPage_StateHealthy_Subtitle" xml:space="preserve">
+    <value>لم يتم العثور على أية مشاكل.</value>
+  </data>
+  <data name="RepairPage_StateHealthy_Button" xml:space="preserve">
+    <value>افحص مرة أخرى</value>
+  </data>
+  <data name="RepairPage_StateIssuesFound_Title" xml:space="preserve">
+    <value>تم العثور على مشاكل</value>
+  </data>
+  <data name="RepairPage_StateIssuesFound_Subtitle" xml:space="preserve">
+    <value>يمكن لـ RyTuneX إصلاح هذه المشاكل تلقائياً.</value>
+  </data>
+  <data name="RepairPage_StateIssuesFound_Button" xml:space="preserve">
+    <value>إصلاح النظام</value>
+  </data>
+  <data name="RepairPage_StateRepairing_Title" xml:space="preserve">
+    <value>جاري إصلاح نظامك...</value>
+  </data>
+  <data name="RepairPage_StateRepairing_Subtitle" xml:space="preserve">
+    <value>قد يستغرق هذا عدة دقائق. لا تقم بإيقاف تشغيل حاسوبك.</value>
+  </data>
+  <data name="RepairPage_StateRepairCompleted_Title" xml:space="preserve">
+    <value>اكتمل الإصلاح</value>
+  </data>
+  <data name="RepairPage_StateRepairCompleted_Subtitle" xml:space="preserve">
+    <value>تم إصلاح نظامك.</value>
+  </data>
+  <data name="RepairPage_RowStatus_Healthy" xml:space="preserve">
+    <value>سليم</value>
+  </data>
+  <data name="RepairPage_RowStatus_NeedsAttention" xml:space="preserve">
+    <value>يحتاج إلى اهتمام</value>
+  </data>
+  <data name="RepairPage_RowStatus_Scheduled" xml:space="preserve">
+    <value>مجدول عند إعادة التشغيل</value>
+  </data>
+  <data name="RepairPage_RowStatus_Unknown" xml:space="preserve">
+    <value>غير معروف</value>
+  </data>
+  <data name="RepairPage_RowStatus_Checking" xml:space="preserve">
+    <value>جاري الفحص...</value>
+  </data>
+  <data name="RepairPage_StatusChecking" xml:space="preserve">
+    <value>جاري فحص {friendlyName}... ({current}/{total})</value>
+  </data>
+  <data name="RepairPage_StatusRepairing" xml:space="preserve">
+    <value>جاري إصلاح {friendlyName}... ({current}/{total})</value>
+  </data>
+  <data name="RepairPage_LastCheckedFormat" xml:space="preserve">
+    <value>آخر فحص: {time}</value>
+  </data>
+  <data name="RepairPage_ChkdskScheduledNote" xml:space="preserve">
+    <value>تمت جدولة إصلاح محرك النظام عند إعادة التشغيل القادمة.</value>
+  </data>
+  <data name="ServicesPage_Notification_StartupChangedTitle" xml:space="preserve">
+    <value>تغيير نوع البدء</value>
+  </data>
+  <data name="ServicesPage_TotalServices.Text" xml:space="preserve">
+    <value>إجمالي الخدمات</value>
+  </data>
+  <data name="ServicesPage_StartServiceTooltip.ToolTipService.ToolTip" xml:space="preserve">
+    <value>تشغيل الخدمة</value>
+  </data>
+  <data name="ServicesPage_Action_Restarted" xml:space="preserve">
+    <value>إعادة تشغيل</value>
+  </data>
+  <data name="ServicesPage_Notification_ControlError" xml:space="preserve">
+    <value>فشل التحكم بالخدمة: {error}</value>
+  </data>
+  <data name="ServicesPage_StopServiceTooltip.ToolTipService.ToolTip" xml:space="preserve">
+    <value>إيقاف الخدمة</value>
+  </data>
+  <data name="ServicesPage_StoppedServices.Text" xml:space="preserve">
+    <value>الخدمات المتوقفة</value>
+  </data>
+  <data name="ServicesPage_Notification_StartupError" xml:space="preserve">
+    <value>فشل تغيير نوع البدء: {error}</value>
+  </data>
+  <data name="ServicesPage_Notification_StartupChanged" xml:space="preserve">
+    <value>تم ضبط نوع بدء الخدمة '{name}' إلى {type}.</value>
+  </data>
+  <data name="ServicesPage_Notification_ControlErrorTitle" xml:space="preserve">
+    <value>خطأ في التحكم بالخدمة</value>
+  </data>
+  <data name="ServicesPage_Notification_StartupErrorTitle" xml:space="preserve">
+    <value>خطأ</value>
+  </data>
+  <data name="ServicesPage_RunningServices.Text" xml:space="preserve">
+    <value>الخدمات قيد التشغيل</value>
+  </data>
+  <data name="ServicesPage_Notification_ControlSuccess" xml:space="preserve">
+    <value>تمت عملية {action} للخدمة '{name}' بنجاح.</value>
+  </data>
+  <data name="ServicesPage_Notification_ControlTitle" xml:space="preserve">
+    <value>التحكم بالخدمة</value>
+  </data>
+  <data name="ServicesPage_Action_Stopped" xml:space="preserve">
+    <value>إيقاف</value>
+  </data>
+  <data name="ServicesPage_Action_Started" xml:space="preserve">
+    <value>تشغيل</value>
+  </data>
+  <data name="ServicesPage_ResultsText" xml:space="preserve">
+    <value>عرض {count} من أصل {total} خدمة</value>
+  </data>
+  <data name="ServicesPage_RestartServiceTooltip.ToolTipService.ToolTip" xml:space="preserve">
+    <value>إعادة تشغيل الخدمة</value>
+  </data>
+  <data name="SystemInfoPage_ExportButton.Content" xml:space="preserve">
+    <value>تصدير</value>
+  </data>
+  <data name="Shell_Startup.Content" xml:space="preserve">
+    <value>تطبيقات بدء التشغيل</value>
+  </data>
+  <data name="StartupPage_TotalApps.Text" xml:space="preserve">
+    <value>إجمالي تطبيقات البدء</value>
+  </data>
+  <data name="StartupPage_EnabledApps.Text" xml:space="preserve">
+    <value>مُمكّنة</value>
+  </data>
+  <data name="StartupPage_DisabledApps.Text" xml:space="preserve">
+    <value>معطّلة</value>
+  </data>
+  <data name="StartupPage_HighImpactApps.Text" xml:space="preserve">
+    <value>تأثير عالٍ</value>
+  </data>
+  <data name="StartupPage_SearchBox.PlaceholderText" xml:space="preserve">
+    <value>البحث في تطبيقات البدء حسب الاسم أو الأمر أو الناشر...</value>
+  </data>
+  <data name="StartupPage_FilterAll.Content" xml:space="preserve">
+    <value>جميع الحالات</value>
+  </data>
+  <data name="StartupPage_FilterEnabled.Content" xml:space="preserve">
+    <value>الممكنة فقط</value>
+  </data>
+  <data name="StartupPage_FilterDisabled.Content" xml:space="preserve">
+    <value>المعطلة فقط</value>
+  </data>
+  <data name="StartupPage_FilterHighImpact.Content" xml:space="preserve">
+    <value>تأثير عالٍ</value>
+  </data>
+  <data name="StartupPage_FilterBroken.Content" xml:space="preserve">
+    <value>مفقودة / تالفة</value>
+  </data>
+  <data name="StartupPage_FilterUser.Content" xml:space="preserve">
+    <value>نطاق المستخدم (HKCU)</value>
+  </data>
+  <data name="StartupPage_FilterSystem.Content" xml:space="preserve">
+    <value>نطاق النظام (HKLM)</value>
+  </data>
+  <data name="StartupPage_AddAppButton.Text" xml:space="preserve">
+    <value>إضافة تطبيق</value>
+  </data>
+  <data name="StartupPage_EnableAllButton.Text" xml:space="preserve">
+    <value>تمكين الكل</value>
+  </data>
+  <data name="StartupPage_DisableAllButton.Text" xml:space="preserve">
+    <value>تعطيل الكل</value>
+  </data>
+  <data name="StartupPage_RefreshButtonTooltip.ToolTipService.ToolTip" xml:space="preserve">
+    <value>تحديث قائمة تطبيقات البدء</value>
+  </data>
+  <data name="StartupPage_ColName.Text" xml:space="preserve">
+    <value>اسم التطبيق</value>
+  </data>
+  <data name="StartupPage_ColPublisher.Text" xml:space="preserve">
+    <value>الناشر</value>
+  </data>
+  <data name="StartupPage_ColLocation.Text" xml:space="preserve">
+    <value>الموقع</value>
+  </data>
+  <data name="StartupPage_ColImpact.Text" xml:space="preserve">
+    <value>التأثير</value>
+  </data>
+  <data name="StartupPage_ColStatus.Text" xml:space="preserve">
+    <value>الحالة</value>
+  </data>
+  <data name="StartupPage_ColActions.Text" xml:space="preserve">
+    <value>الإجراءات</value>
+  </data>
+  <data name="StartupPage_OpenFolderTooltip.ToolTipService.ToolTip" xml:space="preserve">
+    <value>فتح موقع الملف</value>
+  </data>
+  <data name="StartupPage_DetailsTooltip.ToolTipService.ToolTip" xml:space="preserve">
+    <value>عرض تفاصيل التطبيق</value>
+  </data>
+  <data name="StartupPage_DeleteTooltip.ToolTipService.ToolTip" xml:space="preserve">
+    <value>إزالة تطبيق البدء</value>
+  </data>
+  <data name="StartupPage_ResultsText" xml:space="preserve">
+    <value>عرض {0} من أصل {1} تطبيقات بدء</value>
+  </data>
+  <data name="StartupPage_Notification_ToggledMessage" xml:space="preserve">
+    <value>تم تمكين '{0}' عند بدء التشغيل</value>
+  </data>
+  <data name="StartupPage_Notification_ToggledMessageDisabled" xml:space="preserve">
+    <value>تم تعطيل '{0}' من بدء التشغيل</value>
+  </data>
+  <data name="StartupPage_Notification_AdminRequired" xml:space="preserve">
+    <value>تتطلب تعديلات تطبيقات بدء النظام صلاحيات المسؤول.</value>
+  </data>
+  <data name="StartupPage_Impact_High" xml:space="preserve">
+    <value>عالٍ</value>
+  </data>
+  <data name="StartupPage_Impact_Medium" xml:space="preserve">
+    <value>متوسط</value>
+  </data>
+  <data name="StartupPage_Impact_Low" xml:space="preserve">
+    <value>منخفض</value>
+  </data>
+  <data name="StartupPage_Impact_Broken" xml:space="preserve">
+    <value>ملف مفقود</value>
+  </data>
+  <data name="StartupPage_Title" xml:space="preserve">
+    <value>مدير بدء التشغيل</value>
+  </data>
+  <data name="StartupPage_AddDialog_Title" xml:space="preserve">
+    <value>إضافة تطبيق بدء تشغيل</value>
+  </data>
+  <data name="StartupPage_AddDialog_AppNameHeader" xml:space="preserve">
+    <value>اسم التطبيق</value>
+  </data>
+  <data name="StartupPage_AddDialog_AppPathHeader" xml:space="preserve">
+    <value>مسار الملف التنفيذي أو البرمجي</value>
+  </data>
+  <data name="StartupPage_AddDialog_ArgsHeader" xml:space="preserve">
+    <value>الوسائط (اختياري)</value>
+  </data>
+  <data name="StartupPage_AddDialog_BrowseButton" xml:space="preserve">
+    <value>استعراض...</value>
+  </data>
+  <data name="StartupPage_AddDialog_ScopeHeader" xml:space="preserve">
+    <value>نطاق بدء التشغيل:</value>
+  </data>
+  <data name="StartupPage_AddDialog_CurrentUser" xml:space="preserve">
+    <value>المستخدم الحالي (HKCU)</value>
+  </data>
+  <data name="StartupPage_AddDialog_AllUsers" xml:space="preserve">
+    <value>جميع المستخدمين (HKLM - يتطلب مسؤول)</value>
+  </data>
+  <data name="StartupPage_AddDialog_PrimaryButton" xml:space="preserve">
+    <value>إضافة إلى بدء التشغيل</value>
+  </data>
+  <data name="StartupPage_AddDialog_CancelButton" xml:space="preserve">
+    <value>إلغاء</value>
+  </data>
+  <data name="StartupPage_DetailsDialog_Title" xml:space="preserve">
+    <value>تفاصيل تطبيق بدء التشغيل</value>
+  </data>
+  <data name="StartupPage_DetailsDialog_CloseButton" xml:space="preserve">
+    <value>إغلاق</value>
+  </data>
+  <data name="StartupPage_DetailsDialog_Name" xml:space="preserve">
+    <value>الاسم:</value>
+  </data>
+  <data name="StartupPage_DetailsDialog_Publisher" xml:space="preserve">
+    <value>الناشر:</value>
+  </data>
+  <data name="StartupPage_DetailsDialog_Description" xml:space="preserve">
+    <value>الوصف:</value>
+  </data>
+  <data name="StartupPage_DetailsDialog_Command" xml:space="preserve">
+    <value>الأمر:</value>
+  </data>
+  <data name="StartupPage_DetailsDialog_TargetPath" xml:space="preserve">
+    <value>مسار الهدف:</value>
+  </data>
+  <data name="StartupPage_DetailsDialog_Location" xml:space="preserve">
+    <value>الموقع:</value>
+  </data>
+  <data name="StartupPage_DetailsDialog_Status" xml:space="preserve">
+    <value>الحالة:</value>
+  </data>
+  <data name="StartupPage_DetailsDialog_Impact" xml:space="preserve">
+    <value>التأثير:</value>
+  </data>
+  <data name="StartupPage_DetailsDialog_FileSize" xml:space="preserve">
+    <value>حجم الملف:</value>
+  </data>
+  <data name="StartupPage_DetailsDialog_FileExists" xml:space="preserve">
+    <value>الملف موجود:</value>
+  </data>
+  <data name="StartupPage_DetailsDialog_Yes" xml:space="preserve">
+    <value>نعم</value>
+  </data>
+  <data name="StartupPage_DetailsDialog_NoMissing" xml:space="preserve">
+    <value>لا (مفقود)</value>
+  </data>
+  <data name="StartupPage_RemoveDialog_Title" xml:space="preserve">
+    <value>إزالة تطبيق بدء التشغيل</value>
+  </data>
+  <data name="StartupPage_RemoveDialog_Content" xml:space="preserve">
+    <value>هل أنت تأكد من إزالة '{0}' من بدء التشغيل؟ سيتم حذف القيد.</value>
+  </data>
+  <data name="StartupPage_RemoveDialog_PrimaryButton" xml:space="preserve">
+    <value>إزالة</value>
+  </data>
+  <data name="StartupPage_RemoveDialog_CancelButton" xml:space="preserve">
+    <value>إلغاء</value>
+  </data>
+  <data name="StartupPage_Notification_ItemRemoved" xml:space="preserve">
+    <value>تم إزالة '{0}' من بدء التشغيل.</value>
+  </data>
+  <data name="StartupPage_Notification_RemoveFailed" xml:space="preserve">
+    <value>فشل إزالة القيد. قد تتطلب العملية صلاحيات المسؤول.</value>
+  </data>
+  <data name="StartupPage_Notification_EmptyAppError" xml:space="preserve">
+    <value>لا يمكن أن يكون اسم التطبيق والمسار فارغين.</value>
+  </data>
+  <data name="StartupPage_Notification_ItemAdded" xml:space="preserve">
+    <value>تم إضافة '{0}' إلى بدء التشغيل.</value>
+  </data>
+  <data name="StartupPage_Notification_AddFailed" xml:space="preserve">
+    <value>فشل إضافة قيد بدء التشغيل. قد تتطلب العملية صلاحيات المسؤول.</value>
+  </data>
+  <data name="StartupPage_Notification_EnabledCount" xml:space="preserve">
+    <value>تم تمكين {0} من تطبيقات بدء التشغيل.</value>
+  </data>
+  <data name="StartupPage_Notification_DisabledCount" xml:space="preserve">
+    <value>تم تعطيل {0} من تطبيقات بدء التشغيل.</value>
+  </data>
+
+  <data name="Intelligent_ScoreTitle" xml:space="preserve">
+    <value>درجة التحسين</value>
+  </data>
+  <data name="Intelligent_HealthGrade_Scanning" xml:space="preserve">
+    <value>جارٍ الفحص...</value>
+  </data>
+  <data name="Intelligent_HealthGrade_Excellent" xml:space="preserve">
+    <value>A+ ممتاز</value>
+  </data>
+  <data name="Intelligent_HealthGrade_Good" xml:space="preserve">
+    <value>B جيد</value>
+  </data>
+  <data name="Intelligent_HealthGrade_Fair" xml:space="preserve">
+    <value>C مقبول</value>
+  </data>
+  <data name="Intelligent_HealthGrade_NeedsTuning" xml:space="preserve">
+    <value>D بحاجة إلى ضبط</value>
+  </data>
+  <data name="Intelligent_HealthGrade_Unoptimized" xml:space="preserve">
+    <value>F غير محسن</value>
+  </data>
+  <data name="Intelligent_Domain_GlobalTitle" xml:space="preserve">
+    <value>مركز التشخيص الذكي</value>
+  </data>
+  <data name="Intelligent_Domain_GlobalDesc" xml:space="preserve">
+    <value>اختر فئة لمعاينة التوصيات الذكية، وتقليل زمن استجابة النظام، وضبط إعداداتك بدقة.</value>
+  </data>
+  <data name="Intelligent_Domain_PerfTitle" xml:space="preserve">
+    <value>محرك الأداء</value>
+  </data>
+  <data name="Intelligent_Domain_PerfDesc" xml:space="preserve">
+    <value>يحسن جدولة عتاد GPU، وتقسيم وقت وحدة المعالجة المركزية، وفهرسة مخازن NTFS، ويزيل تأخيرات قوائم سطح المكتب.</value>
+  </data>
+  <data name="Intelligent_Domain_PrivTitle" xml:space="preserve">
+    <value>درع الخصوصية والقياس عن بعد</value>
+  </data>
+  <data name="Intelligent_Domain_PrivDesc" xml:space="preserve">
+    <value>يحظر القياس التشخيصي في الخلفية، وجمع بيانات الذكاء الاصطناعي في Windows، ولقطات شاشة Recall، وتحميل النشاط إلى السحابة.</value>
+  </data>
+  <data name="Intelligent_Domain_FeatTitle" xml:space="preserve">
+    <value>سهولة الاستخدام وميزات الواجهة</value>
+  </data>
+  <data name="Intelligent_Domain_FeatDesc" xml:space="preserve">
+    <value>يستعيد قوائم النقر بزر الماوس الأيمن الكلاسيكية، ويفعل 'إنهاء المهمة' على شريط المهام، ويظهر الملفات والامتدادات المخفية، وينظف قائمة ابدأ.</value>
+  </data>
+  <data name="Intelligent_ActiveCount" xml:space="preserve">
+    <value>النشط: {0} / {1}</value>
+  </data>
+  <data name="Intelligent_OptimizationsActive" xml:space="preserve">
+    <value>التحسينات النشطة: {0} / {1}</value>
+  </data>
+  <data name="Intelligent_PotentialGain" xml:space="preserve">
+    <value>المكسب: +{0} نقطة</value>
+  </data>
+  <data name="Intelligent_RecommendedCount" xml:space="preserve">
+    <value>الموصى به: {0}</value>
+  </data>
+  <data name="Intelligent_RollbacksCount" xml:space="preserve">
+    <value>نقاط التراجع: {0}</value>
+  </data>
+  <data name="Intelligent_Metric_LowLatency" xml:space="preserve">
+    <value>استجابة سريعة وتأخير منخفض</value>
+  </data>
+  <data name="Intelligent_Metric_DataShield" xml:space="preserve">
+    <value>حماية البيانات والصوت</value>
+  </data>
+  <data name="Intelligent_Metric_Productivity" xml:space="preserve">
+    <value>إنتاجية بنقرة واحدة</value>
+  </data>
+  <data name="Intelligent_Category_Performance" xml:space="preserve">
+    <value>الأداء</value>
+  </data>
+  <data name="Intelligent_Category_Privacy" xml:space="preserve">
+    <value>الخصوصية</value>
+  </data>
+  <data name="Intelligent_Category_Usability" xml:space="preserve">
+    <value>سهولة الاستخدام</value>
+  </data>
+  <data name="Intelligent_Mode_Rec" xml:space="preserve">
+    <value>موصى به</value>
+  </data>
+  <data name="Intelligent_Mode_Rec_Tooltip" xml:space="preserve">
+    <value>موصى به: تحسينات آمنة 100% وعالية التأثير</value>
+  </data>
+  <data name="Intelligent_Mode_Safe" xml:space="preserve">
+    <value>آمن</value>
+  </data>
+  <data name="Intelligent_Mode_Safe_Tooltip" xml:space="preserve">
+    <value>آمن بالكامل: جميع التحسينات الآمنة بنسبة 100% وغير المتطفلة</value>
+  </data>
+  <data name="Intelligent_Mode_Adv" xml:space="preserve">
+    <value>متقدم</value>
+  </data>
+  <data name="Intelligent_Mode_Adv_Tooltip" xml:space="preserve">
+    <value>متقدم: يتضمن تحسينات للمستخدمين المحترفين وتحسينات متوسطة</value>
+  </data>
+  <data name="Intelligent_Apply_Format" xml:space="preserve">
+    <value>تطبيق {0} ({1})</value>
+  </data>
+  <data name="Intelligent_Apply_Active" xml:space="preserve">
+    <value>{0} نشط ✓</value>
+  </data>
+  <data name="Intelligent_Btn_Preview" xml:space="preserve">
+    <value>معاينة</value>
+  </data>
+  <data name="Intelligent_Btn_Rollback" xml:space="preserve">
+    <value>تراجع</value>
+  </data>
+  <data name="Intelligent_TuneByDomain" xml:space="preserve">
+    <value>الضبط حسب المجال</value>
+  </data>
+  <data name="Intelligent_Preview_Title" xml:space="preserve">
+    <value>معاينة: {0}</value>
+  </data>
+  <data name="Intelligent_Preview_Desc" xml:space="preserve">
+    <value>راجع تغييرات التحسين المقترحة قبل التطبيق. سيتم حفظ نقاط التراجع تلقائياً قبل التطبيق.</value>
+  </data>
+  <data name="Intelligent_Preview_ApplyBtn" xml:space="preserve">
+    <value>تطبيق التحسينات المحددة</value>
+  </data>
+  <data name="Intelligent_Preview_CancelBtn" xml:space="preserve">
+    <value>إلغاء</value>
+  </data>
+  <data name="Intelligent_Preview_Empty" xml:space="preserve">
+    <value>جميع التحسينات في هذه الصفحة نشطة بالفعل! لا يوجد شيء لمعاينته.</value>
+  </data>
+  <data name="Intelligent_Status_Applying" xml:space="preserve">
+    <value>الخطوة 5 [تطبيق] ({0}/{1}): {2}</value>
+  </data>
+  <data name="Intelligent_Status_Verifying" xml:space="preserve">
+    <value>الخطوة 6 [التحقق]: الاستعلام عن حالة النظام الحالية...</value>
+  </data>
+  <data name="Intelligent_Status_Success" xml:space="preserve">
+    <value>تم تطبيق والتحقق من {0} تحسينات بنجاح!</value>
+  </data>
+  <data name="Intelligent_Status_AllActive" xml:space="preserve">
+    <value>جميع تحسينات {0} في هذه الصفحة نشطة بالفعل!</value>
+  </data>
+  <data name="Intelligent_Status_RollingBack" xml:space="preserve">
+    <value>جارٍ التراجع عن {0} عناصر في هذه الصفحة...</value>
+  </data>
+  <data name="Intelligent_Status_RollbackDone" xml:space="preserve">
+    <value>تم التراجع عن {0} عناصر إلى حالتها السابقة.</value>
+  </data>
+  <data name="Intelligent_Status_NoRollbacks" xml:space="preserve">
+    <value>لم يتم العثور على نسخ احتياطية للتراجع لهذه الصفحة.</value>
+  </data>
+  <data name="Intelligent_Badge_Optimal" xml:space="preserve">
+    <value>مثالي ✓</value>
+  </data>
+  <data name="Intelligent_Badge_Recommended" xml:space="preserve">
+    <value>موصى به</value>
+  </data>
+  <data name="Intelligent_Badge_Safe" xml:space="preserve">
+    <value>آمن</value>
+  </data>
+  <data name="Intelligent_Badge_Moderate" xml:space="preserve">
+    <value>متوسط</value>
+  </data>
+  <data name="Intelligent_Badge_Advanced" xml:space="preserve">
+    <value>متقدم</value>
+  </data>
+  <data name="Intelligent_Badge_Caution" xml:space="preserve">
+    <value>تنبيه</value>
+  </data>
+  <data name="Intelligent_PointsGain" xml:space="preserve">
+    <value>+{0} نقطة</value>
+  </data>
+  <data name="Intelligent_Flyout_TechnicalDetails" xml:space="preserve">
+    <value>التفاصيل التقنية</value>
+  </data>
+  <data name="Intelligent_Flyout_ScoreImpact" xml:space="preserve">
+    <value>تأثير النتيجة: +{0} نقطة ({1})</value>
+  </data>
+  <data name="Intelligent_Flyout_PreApplyBackup" xml:space="preserve">
+    <value>النسخة الاحتياطية السابقة: حُفظت في {0} (الحالة الأولية: {1})</value>
+  </data>
+  <data name="Intelligent_Flyout_NoBackup" xml:space="preserve">
+    <value>النسخة الاحتياطية السابقة: لا يوجد (قم بالتبديل لإنشاء نقطة تراجع)</value>
+  </data>
+  <data name="Intelligent_Flyout_Status" xml:space="preserve">
+    <value>الحالة الحالية: {0}</value>
+  </data>
+
+  <data name="Intelligent_Verification_Active" xml:space="preserve">
+    <value>تم التحقق (نشط) ✓</value>
+  </data>
+  <data name="Intelligent_Verification_Restart" xml:space="preserve">
+    <value>يتطلب إعادة التشغيل 🔄</value>
+  </data>
+  <data name="Intelligent_Verification_Failed" xml:space="preserve">
+    <value>فشل التحقق ⚠️</value>
+  </data>
+  <data name="Intelligent_Verification_NotVerified" xml:space="preserve">
+    <value>غير مؤكد</value>
+  </data>
+  <data name="Intelligent_General_Category" xml:space="preserve">
+    <value>عام</value>
+  </data>
+
+  <data name="Intelligent_Impact_BackgroundApps" xml:space="preserve">
+    <value>يحرر دورات وحدة المعالجة المركزية ويوفر أكثر من 200 ميغابايت من الذاكرة.</value>
+  </data>
+  <data name="Intelligent_Impact_SystemProfile" xml:space="preserve">
+    <value>يقلل التقطع الدقيق ويحسن ثبات معدل الإطارات.</value>
+  </data>
+  <data name="Intelligent_Impact_PrioritizeForegroundApplications" xml:space="preserve">
+    <value>يحسن استجابة التطبيق النشط أثناء تعدد المهام الثقيل في الخلفية.</value>
+  </data>
+  <data name="Feature_GamingMode.Header" xml:space="preserve">
+    <value>تفعيل وضع الألعاب في ويندوز</value>
+  </data>
+  <data name="Feature_GamingMode.Description" xml:space="preserve">
+    <value>يهيئ وضع الألعاب وجدولة أجهزة GPU للحصول على أدنى زمن استجابة.</value>
+  </data>
+  <data name="Intelligent_Impact_GamingMode" xml:space="preserve">
+    <value>يقفل أنوية وحدة المعالجة المركزية لعمليات الألعاب ويحسن جدولة الخيوط.</value>
+  </data>
+  <data name="Feature_FullscreenOptimizations.Header" xml:space="preserve">
+    <value>تفعيل تحسينات ملء الشاشة</value>
+  </data>
+  <data name="Feature_FullscreenOptimizations.Description" xml:space="preserve">
+    <value>يهيئ خط عرض ويندوز لعرض عالي الأداء بدون حدود.</value>
+  </data>
+  <data name="Intelligent_Impact_FullscreenOptimizations" xml:space="preserve">
+    <value>يقلل زمن استجابة العرض مع الحفاظ على التبديل السريع بـ Alt+Tab.</value>
+  </data>
+  <data name="Intelligent_Impact_GpuDriverTweaks" xml:space="preserve">
+    <value>يمنع تذبذب ساعة طاقة GPU أثناء الألعاب والتصيير ثلاثي الأبعاد.</value>
+  </data>
+  <data name="Intelligent_Impact_MenuShowDelay" xml:space="preserve">
+    <value>شعور بالتنقل الفوري في واجهة المستخدم عبر مستكشف الملفات وسطح المكتب.</value>
+  </data>
+  <data name="Intelligent_Impact_MouseHoverTime" xml:space="preserve">
+    <value>عرض فوري للتلميحات والصور المصغرة في شريط المهام.</value>
+  </data>
+  <data name="Intelligent_Impact_KeyboardLatency" xml:space="preserve">
+    <value>التعرف الفوري على إدخال المفاتيح وتكرار أسرع للأحرف.</value>
+  </data>
+  <data name="Feature_MouseAcceleration.Header" xml:space="preserve">
+    <value>تعطيل تسريع الفأرة (الإدخال الخام)</value>
+  </data>
+  <data name="Feature_MouseAcceleration.Description" xml:space="preserve">
+    <value>يعطل منحنى تسريع الفأرة في ويندوز للحصول على دقة 1:1 للمؤشر.</value>
+  </data>
+  <data name="Intelligent_Impact_MouseAcceleration" xml:space="preserve">
+    <value>اتساق تتبع المؤشر للألعاب والعمل التصميمي الدقيق.</value>
+  </data>
+  <data name="Intelligent_Impact_OptimizeNTFS" xml:space="preserve">
+    <value>يسرّع فهرسة دليل الملفات والبحث في البيانات الوصفية للقرص.</value>
+  </data>
+  <data name="Intelligent_Impact_ServiceHostSplitting" xml:space="preserve">
+    <value>يقلل عبء عدد العمليات الإجمالي بمقدار 30-50 عملية على الأنظمة ذات الذاكرة 8 جيجابايت وما فوق.</value>
+  </data>
+  <data name="Feature_UsbPowerSaving.Header" xml:space="preserve">
+    <value>تعطيل التعليق الانتقائي لـ USB</value>
+  </data>
+  <data name="Feature_UsbPowerSaving.Description" xml:space="preserve">
+    <value>يمنع ويندوز من إيقاف تشغيل متحكمات USB والأجهزة الطرفية لأوضاع الطاقة المنخفضة.</value>
+  </data>
+  <data name="Intelligent_Impact_UsbPowerSaving" xml:space="preserve">
+    <value>يمنع انقطاعات صوت USB وتأخر وحدة التحكم وانقطاع الاتصال بالماوس.</value>
+  </data>
+  <data name="Feature_PowerThrottling.Header" xml:space="preserve">
+    <value>تعطيل تقييد الطاقة</value>
+  </data>
+  <data name="Feature_PowerThrottling.Description" xml:space="preserve">
+    <value>يعطل خوارزمية تقييد الطاقة في ويندوز على خيوط التنفيذ الخلفية.</value>
+  </data>
+  <data name="Intelligent_Impact_PowerThrottling" xml:space="preserve">
+    <value>يضمن تشغيل عمليات العرض والترجمة في الخلفية بسرعات ساعة وحدة المعالجة المركزية الكاملة.</value>
+  </data>
+  <data name="Intelligent_Impact_LowDiskSpaceChecks" xml:space="preserve">
+    <value>يوقف مقاطعات استطلاع القرص المتكررة.</value>
+  </data>
+  <data name="Intelligent_Impact_LinkResolve" xml:space="preserve">
+    <value>يسرّع فتح الاختصارات المعطلة دون تجميد المستكشف.</value>
+  </data>
+  <data name="Intelligent_Impact_AutoComplete" xml:space="preserve">
+    <value>تنقل أسرع في مسار شريط العنوان.</value>
+  </data>
+  <data name="Feature_TelemetryServices.Header" xml:space="preserve">
+    <value>تعطيل القياس عن بعد والتشخيص في ويندوز</value>
+  </data>
+  <data name="Feature_TelemetryServices.Description" xml:space="preserve">
+    <value>يعطل تماماً خدمات DiagTrack وdmwappushservice لجمع التشخيصات في الخلفية.</value>
+  </data>
+  <data name="Intelligent_Impact_TelemetryServices" xml:space="preserve">
+    <value>يوقف التتبع التلقائي في الخلفية وتسجيل ضغطات المفاتيح وتحميل بيانات القياس.</value>
+  </data>
+  <data name="Feature_WindowsAI.Header" xml:space="preserve">
+    <value>تعطيل ميزات الذكاء الاصطناعي في ويندوز</value>
+  </data>
+  <data name="Feature_WindowsAI.Description" xml:space="preserve">
+    <value>يحظر تحليل الذكاء الاصطناعي في الخلفية وتكامل AI في المفكرة والرسام وإعداد التقارير.</value>
+  </data>
+  <data name="Intelligent_Impact_WindowsAI" xml:space="preserve">
+    <value>يحمي خصوصية الملفات المحلية ويوقف الاستخراج المستمر للذكاء الاصطناعي السحابي.</value>
+  </data>
+  <data name="Feature_WindowsRecall.Header" xml:space="preserve">
+    <value>تعطيل لقطات شاشة Windows Recall</value>
+  </data>
+  <data name="Feature_WindowsRecall.Description" xml:space="preserve">
+    <value>يحظر أخذ لقطات شاشة دورية مستمرة لأسطح المكتب النشطة وفهرسة OCR.</value>
+  </data>
+  <data name="Intelligent_Impact_WindowsRecall" xml:space="preserve">
+    <value>يضمن عدم تسجيل المعاملات المصرفية الحساسة وكلمات المرور والمستندات الخاصة.</value>
+  </data>
+  <data name="Feature_CoPilotAI.Header" xml:space="preserve">
+    <value>تعطيل مساعد Copilot الذكي</value>
+  </data>
+  <data name="Feature_CoPilotAI.Description" xml:space="preserve">
+    <value>يعطل الشريط الجانبي لـ Copilot وزر شريط المهام واستعلامات المزامنة السحابية المستمرة.</value>
+  </data>
+  <data name="Intelligent_Impact_CoPilotAI" xml:space="preserve">
+    <value>يحرر مساحة شريط المهام ويزيل عمليات عرض الويب الخلفية.</value>
+  </data>
+  <data name="Feature_AdvertisingID.Header" xml:space="preserve">
+    <value>تعطيل معرّف إعلانات ويندوز</value>
+  </data>
+  <data name="Feature_AdvertisingID.Description" xml:space="preserve">
+    <value>يمنع تطبيقات متجر ويندوز من تتبع نشاط المستخدم للإعلانات المخصصة.</value>
+  </data>
+  <data name="Intelligent_Impact_AdvertisingID" xml:space="preserve">
+    <value>يوقف تتبع ملف تعريف المعرف الإعلاني الفريد.</value>
+  </data>
+  <data name="Feature_ActivityUploads.Header" xml:space="preserve">
+    <value>تعطيل مزامنة سحابة سجل النشاط</value>
+  </data>
+  <data name="Feature_ActivityUploads.Description" xml:space="preserve">
+    <value>يمنع رفع سجل تشغيل التطبيقات وسجل التصفح إلى سحابة مايكروسوفت.</value>
+  </data>
+  <data name="Intelligent_Impact_ActivityUploads" xml:space="preserve">
+    <value>لا يتم بث تاريخ استخدام الجهاز أبداً عبر الحسابات السحابية المرتبطة.</value>
+  </data>
+  <data name="Feature_ClipboardSync.Header" xml:space="preserve">
+    <value>تعطيل مزامنة الحافظة السحابية عبر الأجهزة</value>
+  </data>
+  <data name="Feature_ClipboardSync.Description" xml:space="preserve">
+    <value>يوقف رفع مخزن نسخ الحافظة تلقائياً إلى الخوادم السحابية.</value>
+  </data>
+  <data name="Intelligent_Impact_ClipboardSync" xml:space="preserve">
+    <value>يحمي النصوص والكلمات المنسوخة الحساسة والرموز من التعرض السحابي.</value>
+  </data>
+  <data name="Feature_LocationAccess.Header" xml:space="preserve">
+    <value>تعطيل الوصول إلى الموقع والمستشعرات</value>
+  </data>
+  <data name="Feature_LocationAccess.Description" xml:space="preserve">
+    <value>يعطل خدمة موفر الموقع في ويندوز وواجهات برمجة تطبيقات مستشعر الموقع.</value>
+  </data>
+  <data name="Intelligent_Impact_LocationAccess" xml:space="preserve">
+    <value>يمنع متصفحات الويب والتطبيقات من تحديد الإحداثيات الفيزيائية.</value>
+  </data>
+  <data name="Feature_ClassicContextMenu.Header" xml:space="preserve">
+    <value>استعادة قائمة النقر بزر الماوس الأيمن الكلاسيكية</value>
+  </data>
+  <data name="Feature_ClassicContextMenu.Description" xml:space="preserve">
+    <value>يستعيد قائمة السياق الكاملة الفورية عند النقر بزر الماوس الأيمن في ويندوز 11 دون الحاجة للنقر على 'إظهار المزيد من الخيارات'.</value>
+  </data>
+  <data name="Intelligent_Impact_ClassicContextMenu" xml:space="preserve">
+    <value>يوفر نقرة واحدة في كل إجراء نقر بزر الماوس الأيمن في المستكشف.</value>
+  </data>
+  <data name="Feature_EndTask.Header" xml:space="preserve">
+    <value>تفعيل 'إنهاء المهمة' على أيقونات شريط المهام</value>
+  </data>
+  <data name="Feature_EndTask.Description" xml:space="preserve">
+    <value>يضيف إجراء 'إنهاء المهمة' المباشر بالنقر بزر الماوس الأيمن لعناصر شريط المهام لإنهاء العملية فوراً.</value>
+  </data>
+  <data name="Intelligent_Impact_EndTask" xml:space="preserve">
+    <value>إنهاء البرامج المجمدة أو المعلقة فوراً دون فتح إدارة المهام.</value>
+  </data>
+  <data name="Intelligent_Impact_FileExtensionsAndHiddenFiles" xml:space="preserve">
+    <value>يحمي من البرامج الضارة ذات الامتداد المزدوج المزيف (.pdf.exe).</value>
+  </data>
+  <data name="Feature_StickyKeys.Header" xml:space="preserve">
+    <value>تعطيل مطالبة المفاتيح اللاصقة</value>
+  </data>
+  <data name="Feature_StickyKeys.Description" xml:space="preserve">
+    <value>يعطل مربع الحوار المنبثق عند الضغط على Shift 5 مرات في الألعاب.</value>
+  </data>
+  <data name="Intelligent_Impact_StickyKeys" xml:space="preserve">
+    <value>يوقف مقاطعات الألعاب من النقر على مفتاح Shift.</value>
+  </data>
+  <data name="Feature_RecommendedSectionStartMenu.Header" xml:space="preserve">
+    <value>إخفاء القسم الموصى به في قائمة ابدأ</value>
+  </data>
+  <data name="Feature_RecommendedSectionStartMenu.Description" xml:space="preserve">
+    <value>يزيل جزء الملفات الأخيرة والموصى بها من قائمة ابدأ في ويندوز 11.</value>
+  </data>
+  <data name="Intelligent_Impact_RecommendedSectionStartMenu" xml:space="preserve">
+    <value>قائمة ابدأ أنظف وأكثر مساحة للتطبيقات المثبتة.</value>
+  </data>
+  <data name="Feature_TaskbarToLeft.Header" xml:space="preserve">
+    <value>محاذاة أيقونات شريط المهام إلى اليسار</value>
+  </data>
+  <data name="Feature_TaskbarToLeft.Description" xml:space="preserve">
+    <value>ينقل زر ابدأ وأيقونات شريط المهام في ويندوز 11 إلى الموضع الكلاسيكي في أسفل اليسار.</value>
+  </data>
+  <data name="Intelligent_Impact_TaskbarToLeft" xml:space="preserve">
+    <value>محاذاة ذاكرة عضلية كلاسيكية.</value>
+  </data>
+  <data name="Feature_FilesCompactMode.Header" xml:space="preserve">
+    <value>تفعيل العرض المضغوط في مستكشف الملفات</value>
+  </data>
+  <data name="Feature_FilesCompactMode.Description" xml:space="preserve">
+    <value>يقلل المساحة الرأسية بين الصفوف في مستكشف الملفات لكثافة أعلى من الملفات.</value>
+  </data>
+  <data name="Intelligent_Impact_FilesCompactMode" xml:space="preserve">
+    <value>عرض المزيد من الملفات لكل شاشة دون تمرير.</value>
+  </data>
+  <data name="Feature_CloudClipboard.Header" xml:space="preserve">
+    <value>تفعيل سجل الحافظة المحسّن</value>
+  </data>
+  <data name="Feature_CloudClipboard.Description" xml:space="preserve">
+    <value>يهيئ سجل حافظة Win+V المحلي بدون مزامنة سحابية.</value>
+  </data>
+  <data name="Intelligent_Impact_CloudClipboard" xml:space="preserve">
+    <value>سجل حافظة متعدد العناصر يمكن الوصول إليه بـ Win+V.</value>
+  </data>
+  <data name="Feature_EdgeDiscoverBar.Header" xml:space="preserve">
+    <value>تعطيل الشريط الجانبي وعناصر واجهة مستخدم Edge</value>
+  </data>
+  <data name="Feature_EdgeDiscoverBar.Description" xml:space="preserve">
+    <value>يعطل زر الشريط الجانبي لمتصفح Edge وأداة البحث العائمة.</value>
+  </data>
+  <data name="Intelligent_Impact_EdgeDiscoverBar" xml:space="preserve">
+    <value>يزيل الفوضى من متصفح Edge.</value>
+  </data>
+  <data name="Feature_BluetoothAdvertising.Header" xml:space="preserve">
+    <value>تعطيل إشارات إعلانات Bluetooth</value>
+  </data>
+  <data name="Feature_BluetoothAdvertising.Description" xml:space="preserve">
+    <value>يمنع ويندوز من بث إشارات إعلانات Bluetooth للأجهزة المجاورة.</value>
+  </data>
+  <data name="Intelligent_Impact_BluetoothAdvertising" xml:space="preserve">
+    <value>يحسن خصوصية الجهاز اللاسلكي في الأماكن العامة.</value>
+  </data>
+  <data name="Feature_SpotlightFeatures.Header" xml:space="preserve">
+    <value>تعطيل اقتراحات Windows Spotlight</value>
+  </data>
+  <data name="Feature_SpotlightFeatures.Description" xml:space="preserve">
+    <value>يعطل الاقتراحات الترويجية وتنزيلات الصور السحابية في الخلفية على شاشة القفل.</value>
+  </data>
+  <data name="Intelligent_Impact_SpotlightFeatures" xml:space="preserve">
+    <value>يوقف إعلانات شاشة القفل وحركة التنزيل في الخلفية.</value>
+  </data>
+  <data name="Feature_NvidiaTelemetry.Header" xml:space="preserve">
+    <value>تعطيل حاوية قياس NVIDIA</value>
+  </data>
+  <data name="Feature_NvidiaTelemetry.Description" xml:space="preserve">
+    <value>يعطل مهام قياس الخلفية لبرنامج تشغيل NVIDIA وخدمات التتبع.</value>
+  </data>
+  <data name="Intelligent_Impact_NvidiaTelemetry" xml:space="preserve">
+    <value>يوقف تحميلات تحليلات GPU ويحرر أكثر من 100 ميغابايت من ذاكرة الوصول العشوائي في الخلفية.</value>
+  </data>
+  <data name="Feature_EdgeTelemetry.Header" xml:space="preserve">
+    <value>تعطيل قياس Microsoft Edge</value>
+  </data>
+  <data name="Feature_EdgeTelemetry.Description" xml:space="preserve">
+    <value>يعطل تشخيصات متصفح Edge وإعداد تقارير الأعطال ودفعة بدء التشغيل في الخلفية.</value>
+  </data>
+  <data name="Intelligent_Impact_EdgeTelemetry" xml:space="preserve">
+    <value>يمنع Edge من إبقاء العمليات الخلفية الدائمة حية.</value>
+  </data>
+  <data name="Intelligent_Impact_RemoteRegistry" xml:space="preserve">
+    <value>يغلق ثغرة أمنية شبكية رئيسية تستغلها البرمجيات الخبيثة وبرامج الفدية.</value>
+  </data>
+  <data name="Feature_SMBv1.Header" xml:space="preserve">
+    <value>تعطيل بروتوكول SMBv1 القديم</value>
+  </data>
+  <data name="Feature_SMBv1.Description" xml:space="preserve">
+    <value>يعطل بروتوكول مشاركة الملفات القديم SMBv1 (ناقل هجوم EternalBlue / WannaCry).</value>
+  </data>
+  <data name="Intelligent_Impact_SMBv1" xml:space="preserve">
+    <value>تعزيز أمني حاسم ضد استغلال دودة الشبكة.</value>
+  </data>
+  <data name="Feature_Widgets.Header" xml:space="preserve">
+    <value>تعطيل لوحة عناصر واجهة المستخدم في ويندوز 11</value>
+  </data>
+  <data name="Feature_Widgets.Description" xml:space="preserve">
+    <value>يعطل خلاصة الأدوات في شريط المهام وعمليات Edge WebView الخلفية.</value>
+  </data>
+  <data name="Intelligent_Impact_Widgets" xml:space="preserve">
+    <value>يحرر أكثر من 300 ميغابايت من الذاكرة ويوقف عرض Edge الخلفي المستمر.</value>
+  </data>
+  <data name="Feature_SysMain.Header" xml:space="preserve">
+    <value>تحسين SysMain (Superfetch)</value>
+  </data>
+  <data name="Feature_SysMain.Description" xml:space="preserve">
+    <value>يضبط أو يعطل خدمة SysMain لإيقاف التحميل المسبق غير الضروري على محركات SSD.</value>
+  </data>
+  <data name="Intelligent_Impact_SysMain" xml:space="preserve">
+    <value>يزيل ارتفاعات استخدام القرص في الخلفية ودورات الكتابة غير الضرورية على SSD.</value>
+  </data>
+  <data name="Settings_RateAndReviewCard.Header" xml:space="preserve">
+    <value>تقييم ومراجعة</value>
   </data>
 </root>

@@ -3,6 +3,37 @@
 All notable changes to this branch will be documented in this file.
 
 
+## 1.7.1 - Released
+
+### Added
+
+- Added an Intelligent Optimization Engine with real-time system health scoring, category insights, and recommendation presets.
+- Added per-item rollback support to restore individual optimizations to their original state.
+- Added a new `Startup Apps` page to view, enable/disable, remove, and add startup apps.
+- Introduced new optimization toggles:
+  - `Disable Usb PowerSaving`
+  - `Disable Power Throttling`
+  - `Disable Keyboard Latency`
+  - `Disable Mouse Acceleration`
+  - `Enable Fullscreen Optimizations`
+  - `Gpu Driver Tweaks`
+
+### Fixes
+
+- Fixed broken dark/light theme in `SystemInfo` page #97.
+- Resolved numerous reported crashes from older versions.
+- Fixed text encoding problems in the Repair scanning results #99.
+- Minor bugs fixed in `Packages` page.
+
+### Changes
+
+- Redesigned the `Home` page with a new layout featuring real-time system stats cards, a System info section, and a Quick Actions section.
+- Prevented Quick Access History and Task View settings from interfering with each other #103.
+- Replaced legacy APIs with modern Windows methods in `SystemInfo` page to prevent incorrect behavior #105.
+- Reworked the Debloat logic to use the native Windows Deployment API instead of Powershell for app detection and removal.
+- All UI strings are now fully localized across all supported languages.
+- Replaced the 3 checkboxes in the `Repair` page with a single workflow for an enhanceed UX.
+
 ## 1.7.0 - Released
 
 ### Added

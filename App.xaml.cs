@@ -79,35 +79,65 @@ public partial class App : Application
     [return: MarshalAs(UnmanagedType.Bool)]
     private static extern bool SetWindowPos(IntPtr hWnd, IntPtr hWndInsertAfter, int X, int Y, int cx, int cy, uint uFlags);
 
+    private static MediaPlayer? _notificationPlayer;
+
     // Flashes the taskbar icon to alert the user that a background process is complete
     public static void NotifyTaskCompletion()
     {
-        try
+        void Execute()
         {
-            var hwnd = WindowNative.GetWindowHandle(MainWindow);
-            if (hwnd == IntPtr.Zero) return;
+            try
+            {
+                var hwnd = WindowNative.GetWindowHandle(MainWindow);
+                if (hwnd == IntPtr.Zero)
+                {
+                    return;
+                }
 
-            // Skip flash and sound when the window is already in the foreground
-            if (GetForegroundWindow() == hwnd) return;
+                // Skip flash and sound when the window is already in the foreground
+                if (GetForegroundWindow() == hwnd)
+                {
+                    return;
+                }
 
-            var fInfo = new FLASHWINFO();
-            fInfo.cbSize = (uint)Marshal.SizeOf(fInfo);
-            fInfo.hwnd = hwnd;
-            fInfo.dwFlags = FLASHW_ALL | FLASHW_TIMERNOFG;
-            fInfo.uCount = uint.MaxValue; // Flash until focused
-            fInfo.dwTimeout = 0;          // Use default cursor blink rate
+                var fInfo = new FLASHWINFO
+                {
+                    cbSize = (uint)Marshal.SizeOf<FLASHWINFO>(),
+                    hwnd = hwnd,
+                    dwFlags = FLASHW_ALL | FLASHW_TIMERNOFG,
+                    uCount = uint.MaxValue,
+                    dwTimeout = 0
+                };
 
-            FlashWindowEx(ref fInfo);
+                FlashWindowEx(ref fInfo);
 
-            // Play a system notification sound
-            var mediaPlayer = new MediaPlayer();
-            mediaPlayer.Source = MediaSource.CreateFromUri(new Uri("ms-winsoundevent:Notification.Default"));
-            mediaPlayer.Play();
-
+                try
+                {
+                    _notificationPlayer ??= new MediaPlayer();
+                    _notificationPlayer.Source = MediaSource.CreateFromUri(new Uri("ms-winsoundevent:Notification.Default"));
+                    _notificationPlayer.Play();
+                }
+                catch (Exception ex)
+                {
+                    _ = LogHelper.LogWarning($"Failed to play notification sound: {ex.Message}");
+                }
+            }
+            catch (Exception ex)
+            {
+                _ = LogHelper.LogError($"Failed to flash window: {ex.Message}");
+            }
         }
-        catch (Exception ex)
+
+        var dispatcher = MainWindow.DispatcherQueue;
+        if (dispatcher?.HasThreadAccess == true)
         {
-            _ = LogHelper.LogError($"Failed to flash window: {ex.Message}");
+            Execute();
+            return;
+        }
+
+        if (dispatcher is null || !dispatcher.TryEnqueue(Execute))
+        {
+            Execute();
         }
     }
 
@@ -129,11 +159,41 @@ public partial class App : Application
     public static void ShowNotification(string title, string message, Microsoft.UI.Xaml.Controls.InfoBarSeverity severity, int duration) =>
         ShellPage.ShowNotification(title, message, severity, duration);
 
-    public static WindowEx MainWindow { get; } = new MainWindow();
+    private static readonly object MainWindowLock = new();
+    private static WindowEx? _mainWindow;
+
+    public static WindowEx MainWindow
+    {
+        get
+        {
+            if (_mainWindow is not null)
+            {
+                return _mainWindow;
+            }
+
+            lock (MainWindowLock)
+            {
+                return _mainWindow ??= CreateMainWindow();
+            }
+        }
+    }
 
     public static UIElement? AppTitlebar
     {
         get; set;
+    }
+
+    private static WindowEx CreateMainWindow()
+    {
+        try
+        {
+            return new MainWindow();
+        }
+        catch (Exception ex)
+        {
+            LogHelper.LogCriticalSync($"MainWindow creation failed: {ex}");
+            throw;
+        }
     }
 
     public App()
@@ -155,48 +215,67 @@ public partial class App : Application
 
     protected async override void OnLaunched(LaunchActivatedEventArgs args)
     {
-        // Initialize the Host when needed
-        _host ??= BuildHost();
-
-        base.OnLaunched(args);
-
-        // Apply RTL window style BEFORE title bar setup so the framework
-        // calculates caption button positions in the correct coordinate space
-        if (FlowDirectionSetting == Microsoft.UI.Xaml.FlowDirection.RightToLeft)
+        try
         {
+            // Initialize the Host when needed
+            _host ??= BuildHost();
+
+            base.OnLaunched(args);
+
+            // Apply RTL window style BEFORE title bar setup so the framework
+            // calculates caption button positions in the correct coordinate space
+            if (FlowDirectionSetting == Microsoft.UI.Xaml.FlowDirection.RightToLeft)
+            {
+                try
+                {
+                    var hwnd = WindowNative.GetWindowHandle(MainWindow);
+                    var exStyle = GetWindowLongPtr(hwnd, GWL_EXSTYLE);
+                    SetWindowLongPtr(hwnd, GWL_EXSTYLE, exStyle | WS_EX_LAYOUTRTL);
+                    SetWindowPos(hwnd, IntPtr.Zero, 0, 0, 0, 0,
+                        SWP_NOMOVE | SWP_NOSIZE | SWP_NOZORDER | SWP_FRAMECHANGED);
+                }
+                catch (Exception ex)
+                {
+                    _ = LogHelper.LogError($"RTL caption buttons failed: {ex.Message}");
+                }
+            }
+
+            // setting custom title bar when the app starts to prevent it from briefly show the standard titlebar
             try
             {
-                var hwnd = WindowNative.GetWindowHandle(MainWindow);
-                var exStyle = GetWindowLongPtr(hwnd, GWL_EXSTYLE);
-                SetWindowLongPtr(hwnd, GWL_EXSTYLE, exStyle | WS_EX_LAYOUTRTL);
-                SetWindowPos(hwnd, IntPtr.Zero, 0, 0, 0, 0,
-                    SWP_NOMOVE | SWP_NOSIZE | SWP_NOZORDER | SWP_FRAMECHANGED);
+                MainWindow.AppWindow.TitleBar.ExtendsContentIntoTitleBar = true;
+                MainWindow.AppWindow.TitleBar.ButtonBackgroundColor = Microsoft.UI.Colors.Transparent;
             }
             catch (Exception ex)
             {
-                _ = LogHelper.LogError($"RTL caption buttons failed: {ex.Message}");
+                _ = LogHelper.LogError($"TitleBar init failed: {ex}");
             }
-        }
 
-        // setting custom title bar when the app starts to prevent it from briefly show the standard titlebar
-        try
-        {
-            MainWindow.AppWindow.TitleBar.ExtendsContentIntoTitleBar = true;
-            MainWindow.AppWindow.TitleBar.ButtonBackgroundColor = Microsoft.UI.Colors.Transparent;
+            await App.GetService<IActivationService>().ActivateAsync(args);
+            StartSystemStateSync();
         }
         catch (Exception ex)
         {
-            _ = LogHelper.LogError($"TitleBar init failed: {ex}");
+            LogHelper.LogCriticalSync($"OnLaunched failed: {ex}");
+            throw;
         }
-
-        // Detect actual system state and sync to RyTuneX registry before any page loads
-        await SyncSystemStateAsync();
-
-        await App.GetService<IActivationService>().ActivateAsync(args);
     }
 
     // Fires once at launch to seed the RyTuneX registry with the real system state.
-    private static Task SyncSystemStateAsync() => Task.Run(SystemStateDetector.SyncToRegistry);
+    private static void StartSystemStateSync()
+    {
+        _ = Task.Run(() =>
+        {
+            try
+            {
+                SystemStateDetector.SyncToRegistry();
+            }
+            catch (Exception ex)
+            {
+                LogHelper.LogCriticalSync($"System state sync failed: {ex}");
+            }
+        });
+    }
 
     private IHost BuildHost() => Microsoft.Extensions.Hosting.Host.
     CreateDefaultBuilder().
@@ -229,6 +308,7 @@ public partial class App : Application
            services.AddTransient<RepairPage>();
            services.AddTransient<ProcessesPage>();
            services.AddTransient<ServicesPage>();
+           services.AddTransient<StartupPage>();
            services.AddTransient<ShellPage>();
            services.AddTransient<ShellViewModel>();
 
@@ -248,15 +328,21 @@ public partial class App : Application
             // Fallback: Read from disk only once
             _flowDirectionCache = Microsoft.UI.Xaml.FlowDirection.LeftToRight;
 
-            if (ApplicationData.Current.LocalSettings.Values.TryGetValue("SelectedLanguage", out var langObj)
-                && langObj is string lang)
+            try
             {
-                if (lang.StartsWith("ar", StringComparison.OrdinalIgnoreCase) ||
-                    lang.StartsWith("he", StringComparison.OrdinalIgnoreCase))
+                if (ApplicationData.Current.LocalSettings.Values.TryGetValue("SelectedLanguage", out var langObj)
+                    && langObj is string lang
+                    && (lang.StartsWith("ar", StringComparison.OrdinalIgnoreCase) ||
+                        lang.StartsWith("he", StringComparison.OrdinalIgnoreCase)))
                 {
                     _flowDirectionCache = Microsoft.UI.Xaml.FlowDirection.RightToLeft;
                 }
             }
+            catch (Exception ex)
+            {
+                _ = LogHelper.LogWarning($"Failed to read flow direction setting: {ex.Message}");
+            }
+
             return _flowDirectionCache.Value;
         }
     }

@@ -9,11 +9,16 @@ public static class AppSearchService
     // Mapping of resource key prefix to their page, category, glyph (matching XAML), and toggle tag
     private static readonly List<(string ResourceKeyPrefix, Type PageType, string Category, string Glyph, string ToggleTag)> FeatureMap =
     [
+        ("IntelligentOptimizer", typeof(OptimizeSystemPage), "Optimize", "\uE9F5", "IntelligentOptimizer"),
         // OptimizeSystemPage - Basic (icons match OptimizeSystemPage.xaml)
         ("Feature_PowerMode", typeof(OptimizeSystemPage), "Optimize", "\uEBB7", "PowerMode"),
         ("Feature_AddUltimatePowerPlan", typeof(OptimizeSystemPage), "Optimize", "\uE945", "AddUltimatePowerPlan"),
+        ("Feature_DisableUsbPowerSaving", typeof(OptimizeSystemPage), "Optimize", "\uE945", "UsbPowerSaving"),
+        ("Feature_DisablePowerThrottling", typeof(OptimizeSystemPage), "Optimize", "\uECAD", "PowerThrottling"),
         ("Feature_MenuShowDelay", typeof(OptimizeSystemPage), "Optimize", "\uF182", "MenuShowDelay"),
         ("Feature_MouseHoverTime", typeof(OptimizeSystemPage), "Optimize", "\uE8B0", "MouseHoverTime"),
+        ("Feature_KeyboardLatency", typeof(OptimizeSystemPage), "Optimize", "\uE765", "KeyboardLatency"),
+        ("Feature_DisableMouseAcceleration", typeof(OptimizeSystemPage), "Optimize", "\uE962", "MouseAcceleration"),
         ("Feature_BackgroundApps", typeof(OptimizeSystemPage), "Optimize", "\uE8BE", "BackgroundApps"),
         ("Feature_AutoComplete", typeof(OptimizeSystemPage), "Optimize", "\uE8A1", "AutoComplete"),
         ("Feature_CrashDump", typeof(OptimizeSystemPage), "Optimize", "\uE74D", "CrashDump"),
@@ -31,6 +36,8 @@ public static class AppSearchService
         ("Feature_SystemProfile", typeof(OptimizeSystemPage), "Optimize", "\uE9F5", "SystemProfile"),
         ("Feature_DisableSysMain", typeof(OptimizeSystemPage), "Optimize", "\uEC4A", "SysMain"),
         ("Feature_EnableGamingMode", typeof(OptimizeSystemPage), "Optimize", "\uE7FC", "GamingMode"),
+        ("Feature_EnableFullscreenOptimizations", typeof(OptimizeSystemPage), "Optimize", "\uE740", "FullscreenOptimizations"),
+        ("Feature_GpuDriverTweaks", typeof(OptimizeSystemPage), "Optimize", "\uE950", "GpuDriverTweaks"),
         ("Feature_ExcludeDriversFromWindowsUpdates", typeof(OptimizeSystemPage), "Optimize", "\uE772", "Drivers"),
         ("OptimizePage_CompressOS", typeof(OptimizeSystemPage), "Optimize", "\uEB05", "CompressOS"),
         ("Feature_ServiceHostSplitting", typeof(OptimizeSystemPage), "Optimize", "\uE15E", "ServiceHostSplitting"),
@@ -97,7 +104,6 @@ public static class AppSearchService
         ("Feature_DisableGameBar", typeof(FeaturesPage), "Features", "\uE990", "GameBar"),
         ("Feature_DisableQuickAccessHistory", typeof(FeaturesPage), "Features", "\uE81C", "QuickAccessHistory"),
         ("Feature_DisableMyPeople", typeof(FeaturesPage), "Features", "\uE716", "MyPeople"),
-        ("Feature_DisableSensorServices", typeof(FeaturesPage), "Features", "\uE957", "SensorServices"),
         ("Feature_DisableWindowsInk", typeof(FeaturesPage), "Features", "\uEDC6", "WindowsInk"),
         ("Feature_DisableSpellingAndTypingFeatures", typeof(FeaturesPage), "Features", "\uF87B", "SpellingAndTypingFeatures"),
         ("Feature_DisableFaxService", typeof(FeaturesPage), "Features", "\uEF40", "FaxService"),
@@ -136,6 +142,7 @@ public static class AppSearchService
         ("Shell_GroupPolicy", typeof(PoliciesPage), "\uE9D5"),
         ("Shell_Processes", typeof(ProcessesPage), "\uECAA"),
         ("Shell_Services", typeof(ServicesPage), "\uEA86"),
+        ("Shell_Startup", typeof(StartupPage), "\uE7B8"),
         ("Shell_SystemInfo", typeof(SystemInfoPage), "\uE770"),
         ("Settings", typeof(SettingsPage), "\uE713")
     ];

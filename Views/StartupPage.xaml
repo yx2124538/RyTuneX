@@ -1,0 +1,263 @@
+﻿<Page
+    x:Class="RyTuneX.Views.StartupPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:models="using:RyTuneX.Models"
+    mc:Ignorable="d">
+    <Grid x:Name="ContentArea" Padding="24,14,24,0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Summary Cards -->
+        <Grid x:Name="SummaryPanel" Grid.Row="0" Margin="0,0,0,16">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- Total Startup Apps Card -->
+            <Border Grid.Column="0" Background="{ThemeResource CardBackgroundFillColorDefaultBrush}" 
+                    BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}" BorderThickness="1" 
+                    CornerRadius="6" Padding="16,12" Margin="0,0,6,0">
+                <StackPanel Orientation="Horizontal" Spacing="12">
+                    <FontIcon Glyph="&#xE7B8;" FontSize="24" Foreground="{ThemeResource AccentTextFillColorPrimaryBrush}"/>
+                    <StackPanel>
+                        <TextBlock x:Name="TotalAppsText" Text="0" FontSize="18" FontWeight="SemiBold"/>
+                        <TextBlock x:Uid="StartupPage_TotalApps" Text="Total Startup Apps" FontSize="12" Opacity="0.7"/>
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+
+            <!-- Enabled Apps Card -->
+            <Border Grid.Column="1" Background="{ThemeResource CardBackgroundFillColorDefaultBrush}" 
+                    BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}" BorderThickness="1" 
+                    CornerRadius="6" Padding="16,12" Margin="3,0">
+                <StackPanel Orientation="Horizontal" Spacing="12">
+                    <FontIcon Glyph="&#xE768;" FontSize="24" Foreground="{ThemeResource SystemFillColorSuccessBrush}"/>
+                    <StackPanel>
+                        <TextBlock x:Name="EnabledAppsText" Text="0" FontSize="18" FontWeight="SemiBold"/>
+                        <TextBlock x:Uid="StartupPage_EnabledApps" Text="Enabled" FontSize="12" Opacity="0.7"/>
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+
+            <!-- Disabled Apps Card -->
+            <Border Grid.Column="2" Background="{ThemeResource CardBackgroundFillColorDefaultBrush}" 
+                    BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}" BorderThickness="1" 
+                    CornerRadius="6" Padding="16,12" Margin="3,0">
+                <StackPanel Orientation="Horizontal" Spacing="12">
+                    <FontIcon Glyph="&#xE71A;" FontSize="24" Foreground="{ThemeResource SystemFillColorCautionBrush}"/>
+                    <StackPanel>
+                        <TextBlock x:Name="DisabledAppsText" Text="0" FontSize="18" FontWeight="SemiBold"/>
+                        <TextBlock x:Uid="StartupPage_DisabledApps" Text="Disabled" FontSize="12" Opacity="0.7"/>
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+
+            <!-- High Impact Card -->
+            <Border Grid.Column="3" Background="{ThemeResource CardBackgroundFillColorDefaultBrush}" 
+                    BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}" BorderThickness="1" 
+                    CornerRadius="6" Padding="16,12" Margin="6,0,0,0">
+                <StackPanel Orientation="Horizontal" Spacing="12">
+                    <FontIcon Glyph="&#xE7BA;" FontSize="24" Foreground="{ThemeResource SystemFillColorCriticalBrush}"/>
+                    <StackPanel>
+                        <TextBlock x:Name="HighImpactAppsText" Text="0" FontSize="18" FontWeight="SemiBold"/>
+                        <TextBlock x:Uid="StartupPage_HighImpactApps" Text="High Impact" FontSize="12" Opacity="0.7"/>
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+        </Grid>
+
+        <!-- Search and Action Toolbar -->
+        <Grid Grid.Row="1" Margin="0,0,0,12">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <AutoSuggestBox x:Name="SearchBox"
+                            x:Uid="StartupPage_SearchBox"
+                            QueryIcon="Find"
+                            TextChanged="SearchBox_TextChanged"/>
+
+            <ComboBox x:Name="FilterComboBox" Grid.Column="1" Margin="8,0,0,0" Width="150"
+                      SelectionChanged="FilterComboBox_SelectionChanged">
+                <ComboBoxItem x:Uid="StartupPage_FilterAll" Tag="All" IsSelected="True"/>
+                <ComboBoxItem x:Uid="StartupPage_FilterEnabled" Tag="Enabled"/>
+                <ComboBoxItem x:Uid="StartupPage_FilterDisabled" Tag="Disabled"/>
+                <ComboBoxItem x:Uid="StartupPage_FilterHighImpact" Tag="HighImpact"/>
+                <ComboBoxItem x:Uid="StartupPage_FilterBroken" Tag="Broken"/>
+                <ComboBoxItem x:Uid="StartupPage_FilterUser" Tag="UserScope"/>
+                <ComboBoxItem x:Uid="StartupPage_FilterSystem" Tag="SystemScope"/>
+            </ComboBox>
+
+            <Button x:Name="AddAppButton" Grid.Column="2" Margin="8,0,0,0" Click="AddAppButton_Click">
+                <StackPanel Orientation="Horizontal" Spacing="6">
+                    <FontIcon Glyph="&#xE710;" FontSize="12"/>
+                    <TextBlock x:Uid="StartupPage_AddAppButton" Text="Add App"/>
+                </StackPanel>
+            </Button>
+
+            <Button x:Name="EnableAllButton" Grid.Column="3" Margin="8,0,0,0" Click="EnableAllButton_Click">
+                <StackPanel Orientation="Horizontal" Spacing="6">
+                    <FontIcon Glyph="&#xE768;" FontSize="12"/>
+                    <TextBlock x:Uid="StartupPage_EnableAllButton" Text="Enable All"/>
+                </StackPanel>
+            </Button>
+
+            <Button x:Name="DisableAllButton" Grid.Column="4" Margin="8,0,0,0" Click="DisableAllButton_Click">
+                <StackPanel Orientation="Horizontal" Spacing="6">
+                    <FontIcon Glyph="&#xE71A;" FontSize="12"/>
+                    <TextBlock x:Uid="StartupPage_DisableAllButton" Text="Disable All"/>
+                </StackPanel>
+            </Button>
+
+            <Button x:Name="RefreshButton" Grid.Column="5" Margin="8,0,0,0" Click="RefreshButton_Click" x:Uid="StartupPage_RefreshButtonTooltip">
+                <FontIcon Glyph="&#xE72C;" FontSize="14"/>
+            </Button>
+        </Grid>
+
+        <!-- Results Count -->
+        <TextBlock x:Name="ResultsText" Grid.Row="2" FontSize="12" Opacity="0.7" Margin="0,0,0,8"/>
+
+        <!-- Column Headers -->
+        <Grid x:Name="HeaderGrid" Grid.Row="3" 
+              Background="{ThemeResource CardBackgroundFillColorSecondaryBrush}" 
+              Padding="12,8" CornerRadius="4" Margin="0,0,0,8">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2.2*"/>
+                <ColumnDefinition Width="1.5*"/>
+                <ColumnDefinition Width="1.2*"/>
+                <ColumnDefinition Width="0.9*"/>
+                <ColumnDefinition Width="1.1*"/>
+                <ColumnDefinition Width="Auto" MinWidth="110"/>
+            </Grid.ColumnDefinitions>
+
+            <Button x:Name="NameHeader" Tag="Name" Click="SortHeader_Click" 
+                    Background="Transparent" BorderThickness="0" Padding="0" HorizontalAlignment="Left">
+                <TextBlock x:Uid="StartupPage_ColName" Text="App Name" FontWeight="SemiBold" FontSize="13"/>
+            </Button>
+            <Button x:Name="PublisherHeader" Tag="Publisher" Grid.Column="1" Click="SortHeader_Click" 
+                    Background="Transparent" BorderThickness="0" Padding="0" HorizontalAlignment="Left">
+                <TextBlock x:Uid="StartupPage_ColPublisher" Text="Publisher" FontWeight="SemiBold" FontSize="13"/>
+            </Button>
+            <Button x:Name="LocationHeader" Tag="Location" Grid.Column="2" Click="SortHeader_Click" 
+                    Background="Transparent" BorderThickness="0" Padding="0" HorizontalAlignment="Center">
+                <TextBlock x:Uid="StartupPage_ColLocation" Text="Location" FontWeight="SemiBold" FontSize="13"/>
+            </Button>
+            <Button x:Name="ImpactHeader" Tag="Impact" Grid.Column="3" Click="SortHeader_Click" 
+                    Background="Transparent" BorderThickness="0" Padding="0" HorizontalAlignment="Center">
+                <TextBlock x:Uid="StartupPage_ColImpact" Text="Impact" FontWeight="SemiBold" FontSize="13"/>
+            </Button>
+            <Button x:Name="StatusHeader" Tag="Status" Grid.Column="4" Click="SortHeader_Click" 
+                    Background="Transparent" BorderThickness="0" Padding="0" HorizontalAlignment="Center">
+                <TextBlock x:Uid="StartupPage_ColStatus" Text="Status" FontWeight="SemiBold" FontSize="13"/>
+            </Button>
+            <TextBlock x:Uid="StartupPage_ColActions" Grid.Column="5" Text="Actions" FontWeight="SemiBold" FontSize="13" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </Grid>
+
+        <!-- Startup Items List -->
+        <Grid Grid.Row="4" Margin="0,0,0,24">
+            <ProgressRing x:Name="LoadingRing" IsActive="True" Width="48" Height="48" 
+                          HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <ListView x:Name="StartupListView" 
+                      SelectionMode="None"
+                      Visibility="Collapsed">
+                <ListView.ItemTemplate>
+                    <DataTemplate x:DataType="models:StartupItem">
+                        <Border Background="{ThemeResource CardBackgroundFillColorDefaultBrush}" 
+                                CornerRadius="4" Padding="12,10" Margin="0,2">
+                            <Grid ColumnSpacing="8">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="2.2*"/>
+                                    <ColumnDefinition Width="1.5*"/>
+                                    <ColumnDefinition Width="1.2*"/>
+                                    <ColumnDefinition Width="0.9*"/>
+                                    <ColumnDefinition Width="1.1*"/>
+                                    <ColumnDefinition Width="Auto" MinWidth="110"/>
+                                </Grid.ColumnDefinitions>
+
+                                <!-- Name & Command -->
+                                <Grid Grid.Column="0" VerticalAlignment="Center" ColumnSpacing="10">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <FontIcon Grid.Column="0" Glyph="{x:Bind StatusGlyph}" FontSize="16" Foreground="{ThemeResource AccentTextFillColorPrimaryBrush}" Opacity="0.8" VerticalAlignment="Center"/>
+                                    <StackPanel Grid.Column="1" Spacing="2" VerticalAlignment="Center">
+                                        <TextBlock Text="{x:Bind Name}" TextWrapping="Wrap" FontWeight="Medium" FontSize="13"/>
+                                        <TextBlock Text="{x:Bind Command}" FontSize="11" Opacity="0.5" TextWrapping="Wrap" MaxLines="2" TextTrimming="CharacterEllipsis"/>
+                                    </StackPanel>
+                                </Grid>
+
+                                <!-- Publisher & Description -->
+                                <StackPanel Grid.Column="1" VerticalAlignment="Center" Spacing="2" Margin="4,0">
+                                    <TextBlock Text="{x:Bind Publisher}" FontSize="12" Opacity="0.85" TextWrapping="Wrap"/>
+                                    <TextBlock Text="{x:Bind Description}" FontSize="10" Opacity="0.5" TextWrapping="Wrap" MaxLines="2" TextTrimming="CharacterEllipsis"/>
+                                </StackPanel>
+
+                                <!-- Location -->
+                                <Border Grid.Column="2" Background="{ThemeResource SubtleFillColorSecondaryBrush}" 
+                                        CornerRadius="4" Padding="8,4" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                    <TextBlock Text="{x:Bind LocationDisplay}" FontSize="11" Opacity="0.8" TextWrapping="Wrap" HorizontalAlignment="Center" TextAlignment="Center"/>
+                                </Border>
+
+                                <!-- Impact -->
+                                <StackPanel Grid.Column="3" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Spacing="4">
+                                    <FontIcon Glyph="{x:Bind ImpactGlyph}" FontSize="12" Opacity="0.8"/>
+                                    <TextBlock Text="{x:Bind ImpactText}" FontSize="11" FontWeight="SemiBold" TextWrapping="Wrap"/>
+                                </StackPanel>
+
+                                <!-- Status Toggle -->
+                                <ToggleSwitch Grid.Column="4" 
+                                              IsOn="{x:Bind IsEnabled, Mode=OneWay}"
+                                              Tag="{x:Bind}"
+                                              Toggled="ItemToggle_Toggled"
+                                              HorizontalAlignment="Center" 
+                                              VerticalAlignment="Center"
+                                              MinWidth="0"
+                                              Margin="0"
+                                              OnContent="" OffContent=""/>
+
+                                <!-- Actions -->
+                                <StackPanel Grid.Column="5" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Spacing="4">
+                                    <Button Tag="{x:Bind}" 
+                                            Click="ItemDetails_Click" 
+                                            x:Uid="StartupPage_DetailsTooltip"
+                                            Padding="8,6">
+                                        <FontIcon Glyph="&#xE946;" FontSize="12"/>
+                                    </Button>
+                                    <Button Tag="{x:Bind}" 
+                                            Click="OpenFolder_Click" 
+                                            x:Uid="StartupPage_OpenFolderTooltip"
+                                            Padding="8,6">
+                                        <FontIcon Glyph="&#xE8DA;" FontSize="12"/>
+                                    </Button>
+                                    <Button Tag="{x:Bind}" 
+                                            Click="RemoveItem_Click" 
+                                            x:Uid="StartupPage_DeleteTooltip"
+                                            Padding="8,6">
+                                        <FontIcon Glyph="&#xE74D;" FontSize="12" Foreground="{ThemeResource SystemFillColorCriticalBrush}"/>
+                                    </Button>
+                                </StackPanel>
+                            </Grid>
+                        </Border>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
+    </Grid>
+</Page>

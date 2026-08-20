@@ -55,6 +55,7 @@ public sealed partial class OptimizeSystemPage : Page
             await InitializeToggleSwitchesAsync();
             await InitializePowerModeAsync();
             await InitializeWindowsUpdatesAsync();
+            IntelligentCardEnhancer.EnhancePage(this);
 
             // Scroll to the target element if there's a pending scroll target
             if (!string.IsNullOrEmpty(_pendingScrollTarget))
@@ -654,7 +655,7 @@ public sealed partial class OptimizeSystemPage : Page
             {
                 var output = await StartTaskAsync("chcp", Console.OutputEncoding);
                 var match = Regex.Match(output, @"(\d+)");
-                if (match.Success && int.TryParse(match.Value, out code_page)) {;}
+                if (match.Success && int.TryParse(match.Value, out code_page)) {; }
             }
             if (code_page == 0)
                 code_page = GetFallbackOEMCodePage();
