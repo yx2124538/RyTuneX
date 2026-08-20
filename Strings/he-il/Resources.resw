@@ -2695,4 +2695,7 @@
   <data name="Intelligent_Impact_SysMain" xml:space="preserve">
     <value>מבטל ספייקים גבוהים של שימוש בדיסק ברקע ומחזורי כתיבה מיותרים ב-SSD.</value>
   </data>
+  <data name="Settings_RateAndReviewCard.Header" xml:space="preserve">
+    <value>דירוג וביקורת</value>
+  </data>
 </root>

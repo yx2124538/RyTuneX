@@ -2695,4 +2695,7 @@
   <data name="Intelligent_Impact_SysMain" xml:space="preserve">
     <value>消除高后台磁盘使用峰值和不必要的 SSD 写入周期。</value>
   </data>
+  <data name="Settings_RateAndReviewCard.Header" xml:space="preserve">
+    <value>评分与评价</value>
+  </data>
 </root>

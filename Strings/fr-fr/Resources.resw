@@ -2695,4 +2695,7 @@ Vérifiez votre ordinateur pour détecter d'éventuels problèmes de mémoire</v
   <data name="Intelligent_Impact_SysMain" xml:space="preserve">
     <value>Élimine les pics d'utilisation du disque en arrière-plan et les cycles d'écriture SSD inutiles.</value>
   </data>
+  <data name="Settings_RateAndReviewCard.Header" xml:space="preserve">
+    <value>Évaluer et donner un avis</value>
+  </data>
 </root>

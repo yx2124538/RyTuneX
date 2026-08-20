@@ -277,6 +277,8 @@ public sealed partial class DebloatSystemPage : Page
                     RyTuneX.Helpers.ResourceExtensions.GetLocalized("Debloat"),
                     RyTuneX.Helpers.ResourceExtensions.GetLocalized("UninstallationSuccess") + $":\n{successMessage}",
                     InfoBarSeverity.Success, 5000);
+
+                ReviewPromptHelper.NotifyOptimizationCompleted(XamlRoot);
             }
 
             if (failedUninstalls.Count > 0)
@@ -399,6 +401,8 @@ public sealed partial class DebloatSystemPage : Page
                     RyTuneX.Helpers.ResourceExtensions.GetLocalized("Debloat"),
                     string.Format(RyTuneX.Helpers.ResourceExtensions.GetLocalized("TempDelSucc")) + $" (Cleared: {sizeStr})",
                     InfoBarSeverity.Success, 5000);
+
+                ReviewPromptHelper.NotifyOptimizationCompleted(XamlRoot);
             }
             else
             {

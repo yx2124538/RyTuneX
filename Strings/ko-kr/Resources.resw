@@ -2695,4 +2695,7 @@
   <data name="Intelligent_Impact_SysMain" xml:space="preserve">
     <value>높은 백그라운드 디스크 사용 급증과 불필요한 SSD 쓰기 사이클을 제거합니다.</value>
   </data>
+  <data name="Settings_RateAndReviewCard.Header" xml:space="preserve">
+    <value>평가 및 리뷰</value>
+  </data>
 </root>

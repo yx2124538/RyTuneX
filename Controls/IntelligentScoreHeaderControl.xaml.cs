@@ -459,6 +459,9 @@ public sealed partial class IntelligentScoreHeaderControl : UserControl
             }
 
             StatusMessageText.Text = string.Format("Intelligent_Status_Success".GetLocalized(), items.Count);
+
+            // Notify completion to trigger review popup
+            ReviewPromptHelper.NotifyOptimizationCompleted(XamlRoot);
         }
         catch (Exception ex)
         {

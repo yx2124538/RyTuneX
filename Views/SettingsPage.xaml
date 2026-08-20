@@ -151,6 +151,14 @@
                         </controls:SettingsCard.HeaderIcon>
                         <FontIcon Glyph="&#xE8A7;" FontSize="14"/>
                     </controls:SettingsCard>
+                    <controls:SettingsCard x:Uid="Settings_RateAndReviewCard"
+                                   IsClickEnabled="True"
+                                   Click="RateAndReviewCard_Click">
+                        <controls:SettingsCard.HeaderIcon>
+                            <FontIcon Glyph="&#xE735;"/>
+                        </controls:SettingsCard.HeaderIcon>
+                        <FontIcon Glyph="&#xE8A7;" FontSize="14"/>
+                    </controls:SettingsCard>
                     <controls:SettingsCard x:Uid="Settings_SupportDeveloper"
                                    IsClickEnabled="True"
                                    Click="SupportDeveloperCard_Click">

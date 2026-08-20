@@ -2695,4 +2695,7 @@ Sind Sie sicher, dass Sie fortfahren möchten?</value>
   <data name="Intelligent_Impact_SysMain" xml:space="preserve">
     <value>Eliminiert hohe Hintergrund-Festplattenauslastungsspitzen und unnötige SSD-Schreibzyklen.</value>
   </data>
+  <data name="Settings_RateAndReviewCard.Header" xml:space="preserve">
+    <value>Bewerten &amp; Rezensieren</value>
+  </data>
 </root>

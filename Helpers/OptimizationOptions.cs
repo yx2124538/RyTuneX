@@ -829,6 +829,8 @@ internal partial class OptimizationOptions
         if (!await _toggleQueueLock.WaitAsync(0, ct).ConfigureAwait(false))
             return; // another process is running
 
+        int executedCount = 0;
+
         try
         {
             while (_toggleQueue.TryDequeue(out var work))
@@ -837,6 +839,7 @@ internal partial class OptimizationOptions
                 try
                 {
                     await work(ct).ConfigureAwait(false);
+                    executedCount++;
                 }
                 catch (OperationCanceledException) { break; }
                 catch (Exception ex)
@@ -852,6 +855,11 @@ internal partial class OptimizationOptions
         finally
         {
             _toggleQueueLock.Release();
+
+            if (executedCount > 0)
+            {
+                ReviewPromptHelper.NotifyOptimizationCompleted();
+            }
         }
     }
 

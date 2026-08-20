@@ -2693,4 +2693,7 @@
   <data name="Intelligent_Impact_SysMain" xml:space="preserve">
     <value>Menghilangkan lonjakan penggunaan disk latar belakang yang tinggi dan siklus tulis SSD yang tidak perlu.</value>
   </data>
+  <data name="Settings_RateAndReviewCard.Header" xml:space="preserve">
+    <value>Beri Nilai &amp; Ulasan</value>
+  </data>
 </root>

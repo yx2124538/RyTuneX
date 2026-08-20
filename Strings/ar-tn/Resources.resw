@@ -2695,4 +2695,7 @@
   <data name="Intelligent_Impact_SysMain" xml:space="preserve">
     <value>يزيل ارتفاعات استخدام القرص في الخلفية ودورات الكتابة غير الضرورية على SSD.</value>
   </data>
+  <data name="Settings_RateAndReviewCard.Header" xml:space="preserve">
+    <value>تقييم ومراجعة</value>
+  </data>
 </root>

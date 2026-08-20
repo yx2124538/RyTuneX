@@ -2695,4 +2695,7 @@ Check your computer for memory problems</value>
   <data name="Intelligent_Impact_SysMain" xml:space="preserve">
     <value>Eliminates high background disk usage spikes and unnecessary SSD write cycles.</value>
   </data>
+  <data name="Settings_RateAndReviewCard.Header" xml:space="preserve">
+    <value>Rate &amp; Review</value>
+  </data>
 </root>

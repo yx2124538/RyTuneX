@@ -2695,4 +2695,7 @@ Bilgisayarınızda bellek sorunları olup olmadığını kontrol edin</value>
   <data name="Intelligent_Impact_SysMain" xml:space="preserve">
     <value>Yüksek arka plan disk kullanım artışlarını ve gereksiz SSD yazma döngülerini ortadan kaldırır.</value>
   </data>
+  <data name="Settings_RateAndReviewCard.Header" xml:space="preserve">
+    <value>Puanla ve Değerlendir</value>
+  </data>
 </root>

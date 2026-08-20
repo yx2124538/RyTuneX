@@ -2691,4 +2691,7 @@
   <data name="Intelligent_Impact_SysMain" xml:space="preserve">
     <value>消除高後台磁碟使用峰值和不必要的 SSD 寫入週期。</value>
   </data>
+  <data name="Settings_RateAndReviewCard.Header" xml:space="preserve">
+    <value>評分與評論</value>
+  </data>
 </root>

@@ -2695,4 +2695,7 @@ Controlla se il computer presenta problemi di memoria</value>
   <data name="Intelligent_Impact_SysMain" xml:space="preserve">
     <value>Elimina i picchi elevati di utilizzo del disco in background e i cicli di scrittura SSD non necessari.</value>
   </data>
+  <data name="Settings_RateAndReviewCard.Header" xml:space="preserve">
+    <value>Valuta e recensisci</value>
+  </data>
 </root>

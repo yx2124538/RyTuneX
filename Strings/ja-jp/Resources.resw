@@ -2695,4 +2695,7 @@
   <data name="Intelligent_Impact_SysMain" xml:space="preserve">
     <value>バックグラウンドの高いディスク使用スパイクと不要な SSD 書き込みサイクルを解消します。</value>
   </data>
+  <data name="Settings_RateAndReviewCard.Header" xml:space="preserve">
+    <value>評価とレビュー</value>
+  </data>
 </root>

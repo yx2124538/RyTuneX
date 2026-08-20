@@ -2692,4 +2692,7 @@
   <data name="Intelligent_Impact_SysMain" xml:space="preserve">
     <value>Устраняет высокие всплески фоновой нагрузки диска и ненужные циклы записи SSD.</value>
   </data>
+  <data name="Settings_RateAndReviewCard.Header" xml:space="preserve">
+    <value>Оценить и оставить отзыв</value>
+  </data>
 </root>

@@ -369,6 +369,9 @@ public sealed partial class RepairPage : Page
                         {
                             SetState(anyIssues ? RepairState.IssuesFound : RepairState.RepairCompleted,
                                 note: capturedChkdskScheduled ? "RepairPage_ChkdskScheduledNote".GetLocalized() : null);
+
+                            // Notify optimization completion to trigger review popup
+                            ReviewPromptHelper.NotifyOptimizationCompleted(XamlRoot);
                         }
                         else
                         {

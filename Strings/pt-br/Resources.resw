@@ -2695,4 +2695,7 @@ Verifique se há problemas de memória em seu computador</value>
   <data name="Intelligent_Impact_SysMain" xml:space="preserve">
     <value>Elimina picos elevados de uso de disco em segundo plano e ciclos de gravação desnecessários em SSDs.</value>
   </data>
+  <data name="Settings_RateAndReviewCard.Header" xml:space="preserve">
+    <value>Avaliar e comentar</value>
+  </data>
 </root>
