@@ -2197,4 +2197,499 @@
   <data name="StartupPage_Notification_DisabledCount" xml:space="preserve">
     <value>Отключено {0} приложений автозагрузки.</value>
   </data>
+
+  <data name="Intelligent_ScoreTitle" xml:space="preserve">
+    <value>Оценка оптимизации</value>
+  </data>
+  <data name="Intelligent_HealthGrade_Scanning" xml:space="preserve">
+    <value>Сканирование...</value>
+  </data>
+  <data name="Intelligent_HealthGrade_Excellent" xml:space="preserve">
+    <value>A+ Отлично</value>
+  </data>
+  <data name="Intelligent_HealthGrade_Good" xml:space="preserve">
+    <value>B Хорошо</value>
+  </data>
+  <data name="Intelligent_HealthGrade_Fair" xml:space="preserve">
+    <value>C Удовлетворительно</value>
+  </data>
+  <data name="Intelligent_HealthGrade_NeedsTuning" xml:space="preserve">
+    <value>D Требуется настройка</value>
+  </data>
+  <data name="Intelligent_HealthGrade_Unoptimized" xml:space="preserve">
+    <value>F Не оптимизировано</value>
+  </data>
+  <data name="Intelligent_Domain_GlobalTitle" xml:space="preserve">
+    <value>Интеллектуальный центр диагностики</value>
+  </data>
+  <data name="Intelligent_Domain_GlobalDesc" xml:space="preserve">
+    <value>Выберите категорию для предварительного просмотра умных рекомендаций, снижения задержки системы и точной настройки конфигурации.</value>
+  </data>
+  <data name="Intelligent_Domain_PerfTitle" xml:space="preserve">
+    <value>Движок производительности</value>
+  </data>
+  <data name="Intelligent_Domain_PerfDesc" xml:space="preserve">
+    <value>Оптимизирует аппаратное планирование GPU, квантование времени ЦП, буферизацию NTFS и устраняет задержки контекстных меню рабочего стола.</value>
+  </data>
+  <data name="Intelligent_Domain_PrivTitle" xml:space="preserve">
+    <value>Защита конфиденциальности и телеметрии</value>
+  </data>
+  <data name="Intelligent_Domain_PrivDesc" xml:space="preserve">
+    <value>Блокирует фоновую диагностическую телеметрию, сбор данных Windows AI, снимки экрана Recall и отправку активности в облако.</value>
+  </data>
+  <data name="Intelligent_Domain_FeatTitle" xml:space="preserve">
+    <value>Удобство и функции интерфейса</value>
+  </data>
+  <data name="Intelligent_Domain_FeatDesc" xml:space="preserve">
+    <value>Восстанавливает классическое контекстное меню, включает 'Снять задачу' на панели задач, отображает скрытые файлы и расширения и очищает меню 'Пуск'.</value>
+  </data>
+  <data name="Intelligent_ActiveCount" xml:space="preserve">
+    <value>Активно: {0} / {1}</value>
+  </data>
+  <data name="Intelligent_OptimizationsActive" xml:space="preserve">
+    <value>Активных оптимизаций: {0} / {1}</value>
+  </data>
+  <data name="Intelligent_PotentialGain" xml:space="preserve">
+    <value>Прирост: +{0} очков</value>
+  </data>
+  <data name="Intelligent_RecommendedCount" xml:space="preserve">
+    <value>Рекомендовано: {0}</value>
+  </data>
+  <data name="Intelligent_RollbacksCount" xml:space="preserve">
+    <value>Откатов доступно: {0}</value>
+  </data>
+  <data name="Intelligent_Metric_LowLatency" xml:space="preserve">
+    <value>Низкая задержка и быстрый интерфейс</value>
+  </data>
+  <data name="Intelligent_Metric_DataShield" xml:space="preserve">
+    <value>Защита данных и голоса</value>
+  </data>
+  <data name="Intelligent_Metric_Productivity" xml:space="preserve">
+    <value>Продуктивность в 1 клик</value>
+  </data>
+  <data name="Intelligent_Category_Performance" xml:space="preserve">
+    <value>Производительность</value>
+  </data>
+  <data name="Intelligent_Category_Privacy" xml:space="preserve">
+    <value>Конфиденциальность</value>
+  </data>
+  <data name="Intelligent_Category_Usability" xml:space="preserve">
+    <value>Удобство</value>
+  </data>
+  <data name="Intelligent_Mode_Rec" xml:space="preserve">
+    <value>Рек.</value>
+  </data>
+  <data name="Intelligent_Mode_Rec_Tooltip" xml:space="preserve">
+    <value>Рекомендовано: Высокоэффективные и на 100% безопасные твики</value>
+  </data>
+  <data name="Intelligent_Mode_Safe" xml:space="preserve">
+    <value>Безопасно</value>
+  </data>
+  <data name="Intelligent_Mode_Safe_Tooltip" xml:space="preserve">
+    <value>Все безопасные: Все 100% безопасные и ненавязчивые настройки</value>
+  </data>
+  <data name="Intelligent_Mode_Adv" xml:space="preserve">
+    <value>Расш.</value>
+  </data>
+  <data name="Intelligent_Mode_Adv_Tooltip" xml:space="preserve">
+    <value>Расширенный: Включает умеренные твики и настройки для опытных пользователей</value>
+  </data>
+  <data name="Intelligent_Apply_Format" xml:space="preserve">
+    <value>Применить {0} ({1})</value>
+  </data>
+  <data name="Intelligent_Apply_Active" xml:space="preserve">
+    <value>{0} активно ✓</value>
+  </data>
+  <data name="Intelligent_Btn_Preview" xml:space="preserve">
+    <value>Просмотр</value>
+  </data>
+  <data name="Intelligent_Btn_Rollback" xml:space="preserve">
+    <value>Откат</value>
+  </data>
+  <data name="Intelligent_TuneByDomain" xml:space="preserve">
+    <value>Настройка по разделам</value>
+  </data>
+  <data name="Intelligent_Preview_Title" xml:space="preserve">
+    <value>Предпросмотр: {0}</value>
+  </data>
+  <data name="Intelligent_Preview_Desc" xml:space="preserve">
+    <value>Проверьте предлагаемые изменения перед применением. Точки отката будут сохранены автоматически.</value>
+  </data>
+  <data name="Intelligent_Preview_ApplyBtn" xml:space="preserve">
+    <value>Применить выбранные оптимизации</value>
+  </data>
+  <data name="Intelligent_Preview_CancelBtn" xml:space="preserve">
+    <value>Отмена</value>
+  </data>
+  <data name="Intelligent_Preview_Empty" xml:space="preserve">
+    <value>Все оптимизации на этой странице уже активны! Нечего просматривать.</value>
+  </data>
+  <data name="Intelligent_Status_Applying" xml:space="preserve">
+    <value>Шаг 5 [Применение] ({0}/{1}): {2}</value>
+  </data>
+  <data name="Intelligent_Status_Verifying" xml:space="preserve">
+    <value>Шаг 6 [Проверка]: Запрос состояния системы в реальном времени...</value>
+  </data>
+  <data name="Intelligent_Status_Success" xml:space="preserve">
+    <value>Успешно применено и проверено {0} оптимизаций!</value>
+  </data>
+  <data name="Intelligent_Status_AllActive" xml:space="preserve">
+    <value>Все настройки режима «{0}» на этой странице уже активны!</value>
+  </data>
+  <data name="Intelligent_Status_RollingBack" xml:space="preserve">
+    <value>Откат {0} параметров на этой странице...</value>
+  </data>
+  <data name="Intelligent_Status_RollbackDone" xml:space="preserve">
+    <value>{0} параметров возвращены в исходное состояние.</value>
+  </data>
+  <data name="Intelligent_Status_NoRollbacks" xml:space="preserve">
+    <value>Точки отката для этой страницы не найдены.</value>
+  </data>
+  <data name="Intelligent_Badge_Optimal" xml:space="preserve">
+    <value>Оптимально ✓</value>
+  </data>
+  <data name="Intelligent_Badge_Recommended" xml:space="preserve">
+    <value>Рекомендовано</value>
+  </data>
+  <data name="Intelligent_Badge_Safe" xml:space="preserve">
+    <value>Безопасно</value>
+  </data>
+  <data name="Intelligent_Badge_Moderate" xml:space="preserve">
+    <value>Умеренно</value>
+  </data>
+  <data name="Intelligent_Badge_Advanced" xml:space="preserve">
+    <value>Расширенный</value>
+  </data>
+  <data name="Intelligent_Badge_Caution" xml:space="preserve">
+    <value>Осторожно</value>
+  </data>
+  <data name="Intelligent_PointsGain" xml:space="preserve">
+    <value>+{0} очков</value>
+  </data>
+  <data name="Intelligent_Flyout_TechnicalDetails" xml:space="preserve">
+    <value>Технические сведения</value>
+  </data>
+  <data name="Intelligent_Flyout_ScoreImpact" xml:space="preserve">
+    <value>Влияние на оценку: +{0} очков ({1})</value>
+  </data>
+  <data name="Intelligent_Flyout_PreApplyBackup" xml:space="preserve">
+    <value>Резервная копия: Сохранена {0} (Исходное состояние: {1})</value>
+  </data>
+  <data name="Intelligent_Flyout_NoBackup" xml:space="preserve">
+    <value>Резервная копия: Отсутствует (Переключите для создания точки отката)</value>
+  </data>
+  <data name="Intelligent_Flyout_Status" xml:space="preserve">
+    <value>Текущее состояние: {0}</value>
+  </data>
+
+  <data name="Intelligent_Verification_Active" xml:space="preserve">
+    <value>Проверено (активно) ✓</value>
+  </data>
+  <data name="Intelligent_Verification_Restart" xml:space="preserve">
+    <value>Требуется перезагрузка 🔄</value>
+  </data>
+  <data name="Intelligent_Verification_Failed" xml:space="preserve">
+    <value>Проверка не пройдена ⚠️</value>
+  </data>
+  <data name="Intelligent_Verification_NotVerified" xml:space="preserve">
+    <value>Не проверено</value>
+  </data>
+  <data name="Intelligent_General_Category" xml:space="preserve">
+    <value>Общие</value>
+  </data>
+
+  <data name="Intelligent_Impact_BackgroundApps" xml:space="preserve">
+    <value>Освобождает фоновые циклы ЦП и экономит 200+ МБ ОЗУ.</value>
+  </data>
+  <data name="Intelligent_Impact_SystemProfile" xml:space="preserve">
+    <value>Снижает микрозависания и улучшает стабильность FPS.</value>
+  </data>
+  <data name="Intelligent_Impact_PrioritizeForegroundApplications" xml:space="preserve">
+    <value>Повышает отзывчивость активного приложения при тяжёлой многозадачности.</value>
+  </data>
+  <data name="Feature_GamingMode.Header" xml:space="preserve">
+    <value>Включить игровой режим Windows</value>
+  </data>
+  <data name="Feature_GamingMode.Description" xml:space="preserve">
+    <value>Настраивает игровой режим Windows и аппаратное планирование GPU для ультра-низкой задержки.</value>
+  </data>
+  <data name="Intelligent_Impact_GamingMode" xml:space="preserve">
+    <value>Закрепляет ядра ЦП за игровыми процессами и оптимизирует планирование потоков.</value>
+  </data>
+  <data name="Feature_FullscreenOptimizations.Header" xml:space="preserve">
+    <value>Включить оптимизации полноэкранного режима</value>
+  </data>
+  <data name="Feature_FullscreenOptimizations.Description" xml:space="preserve">
+    <value>Настраивает конвейер отображения Windows для безрамочного рендеринга высокой производительности.</value>
+  </data>
+  <data name="Intelligent_Impact_FullscreenOptimizations" xml:space="preserve">
+    <value>Минимизирует задержку отображения при быстром переключении Alt+Tab.</value>
+  </data>
+  <data name="Intelligent_Impact_GpuDriverTweaks" xml:space="preserve">
+    <value>Предотвращает колебания тактовой частоты GPU во время игр и 3D-рендеринга.</value>
+  </data>
+  <data name="Intelligent_Impact_MenuShowDelay" xml:space="preserve">
+    <value>Мгновенное ощущение навигации в Проводнике и на рабочем столе.</value>
+  </data>
+  <data name="Intelligent_Impact_MouseHoverTime" xml:space="preserve">
+    <value>Мгновенные подсказки и превью миниатюр на панели задач.</value>
+  </data>
+  <data name="Intelligent_Impact_KeyboardLatency" xml:space="preserve">
+    <value>Мгновенное распознавание нажатий и ускоренный повтор символов.</value>
+  </data>
+  <data name="Feature_MouseAcceleration.Header" xml:space="preserve">
+    <value>Отключить ускорение мыши (Raw Input)</value>
+  </data>
+  <data name="Feature_MouseAcceleration.Description" xml:space="preserve">
+    <value>Отключает кривую ускорения мыши Windows для чистой точности курсора 1:1.</value>
+  </data>
+  <data name="Intelligent_Impact_MouseAcceleration" xml:space="preserve">
+    <value>Идеальная согласованность отслеживания курсора для игр и точных работ.</value>
+  </data>
+  <data name="Intelligent_Impact_OptimizeNTFS" xml:space="preserve">
+    <value>Ускоряет индексацию каталогов и поиск метаданных диска.</value>
+  </data>
+  <data name="Intelligent_Impact_ServiceHostSplitting" xml:space="preserve">
+    <value>Снижает накладные расходы процессов на 30-50 единиц на системах с 8 ГБ+ ОЗУ.</value>
+  </data>
+  <data name="Feature_UsbPowerSaving.Header" xml:space="preserve">
+    <value>Отключить выборочное приостановление USB</value>
+  </data>
+  <data name="Feature_UsbPowerSaving.Description" xml:space="preserve">
+    <value>Предотвращает переход Windows к переводу USB-контроллеров в режим низкого энергопотребления.</value>
+  </data>
+  <data name="Intelligent_Impact_UsbPowerSaving" xml:space="preserve">
+    <value>Предотвращает прерывания аудио USB, лаг контроллера и отключение мыши.</value>
+  </data>
+  <data name="Feature_PowerThrottling.Header" xml:space="preserve">
+    <value>Отключить ограничение потребления энергии</value>
+  </data>
+  <data name="Feature_PowerThrottling.Description" xml:space="preserve">
+    <value>Отключает алгоритм ограничения мощности Windows для фоновых потоков выполнения.</value>
+  </data>
+  <data name="Intelligent_Impact_PowerThrottling" xml:space="preserve">
+    <value>Гарантирует, что фоновые рендеры и компиляции работают на максимальной частоте ЦП.</value>
+  </data>
+  <data name="Intelligent_Impact_LowDiskSpaceChecks" xml:space="preserve">
+    <value>Останавливает повторяющиеся прерывания опроса диска.</value>
+  </data>
+  <data name="Intelligent_Impact_LinkResolve" xml:space="preserve">
+    <value>Ускоряет открытие неработающих ярлыков без зависания Проводника.</value>
+  </data>
+  <data name="Intelligent_Impact_AutoComplete" xml:space="preserve">
+    <value>Более быстрая навигация по пути в адресной строке.</value>
+  </data>
+  <data name="Feature_TelemetryServices.Header" xml:space="preserve">
+    <value>Отключить телеметрию и диагностику Windows</value>
+  </data>
+  <data name="Feature_TelemetryServices.Description" xml:space="preserve">
+    <value>Полностью отключает DiagTrack и dmwappushservice для фоновой диагностической сборки данных.</value>
+  </data>
+  <data name="Intelligent_Impact_TelemetryServices" xml:space="preserve">
+    <value>Прекращает автоматическое фоновое отслеживание, запись нажатий клавиш и загрузку телеметрии.</value>
+  </data>
+  <data name="Feature_WindowsAI.Header" xml:space="preserve">
+    <value>Отключить функции ИИ Windows</value>
+  </data>
+  <data name="Feature_WindowsAI.Description" xml:space="preserve">
+    <value>Блокирует фоновый анализ ИИ Windows, интеграции ИИ в Блокноте/Paint и отчёты запросов модели.</value>
+  </data>
+  <data name="Intelligent_Impact_WindowsAI" xml:space="preserve">
+    <value>Защищает конфиденциальность локальных файлов и прекращает непрерывный сбор данных облачным ИИ.</value>
+  </data>
+  <data name="Feature_WindowsRecall.Header" xml:space="preserve">
+    <value>Отключить снимки экрана Windows Recall</value>
+  </data>
+  <data name="Feature_WindowsRecall.Description" xml:space="preserve">
+    <value>Блокирует периодические непрерывные снимки экрана активных рабочих столов и индексацию OCR.</value>
+  </data>
+  <data name="Intelligent_Impact_WindowsRecall" xml:space="preserve">
+    <value>Гарантирует, что конфиденциальные банковские данные, пароли и личные документы никогда не записываются.</value>
+  </data>
+  <data name="Feature_CoPilotAI.Header" xml:space="preserve">
+    <value>Отключить ИИ-ассистент Copilot</value>
+  </data>
+  <data name="Feature_CoPilotAI.Description" xml:space="preserve">
+    <value>Отключает боковую панель Copilot, кнопку на панели задач и непрерывные запросы облачной синхронизации.</value>
+  </data>
+  <data name="Intelligent_Impact_CoPilotAI" xml:space="preserve">
+    <value>Освобождает место на панели задач и устраняет фоновые процессы веб-просмотра.</value>
+  </data>
+  <data name="Feature_AdvertisingID.Header" xml:space="preserve">
+    <value>Отключить рекламный идентификатор Windows</value>
+  </data>
+  <data name="Feature_AdvertisingID.Description" xml:space="preserve">
+    <value>Запрещает приложениям Windows Store отслеживать активность пользователя для персонализированной рекламы.</value>
+  </data>
+  <data name="Intelligent_Impact_AdvertisingID" xml:space="preserve">
+    <value>Прекращает отслеживание уникального рекламного идентификатора.</value>
+  </data>
+  <data name="Feature_ActivityUploads.Header" xml:space="preserve">
+    <value>Отключить синхронизацию истории активности с облаком</value>
+  </data>
+  <data name="Feature_ActivityUploads.Description" xml:space="preserve">
+    <value>Предотвращает загрузку истории запуска приложений и истории просмотра в облако Microsoft.</value>
+  </data>
+  <data name="Intelligent_Impact_ActivityUploads" xml:space="preserve">
+    <value>История использования устройства никогда не передаётся в связанные облачные аккаунты.</value>
+  </data>
+  <data name="Feature_ClipboardSync.Header" xml:space="preserve">
+    <value>Отключить межустройственную синхронизацию буфера обмена</value>
+  </data>
+  <data name="Feature_ClipboardSync.Description" xml:space="preserve">
+    <value>Прекращает автоматическую загрузку содержимого буфера обмена на облачные серверы.</value>
+  </data>
+  <data name="Intelligent_Impact_ClipboardSync" xml:space="preserve">
+    <value>Защищает скопированные конфиденциальные тексты, пароли и токены от облачного раскрытия.</value>
+  </data>
+  <data name="Feature_LocationAccess.Header" xml:space="preserve">
+    <value>Отключить доступ к местоположению и датчикам</value>
+  </data>
+  <data name="Feature_LocationAccess.Description" xml:space="preserve">
+    <value>Отключает службу провайдера местоположения Windows и API датчиков местоположения.</value>
+  </data>
+  <data name="Intelligent_Impact_LocationAccess" xml:space="preserve">
+    <value>Предотвращает определение физических координат браузерами и приложениями.</value>
+  </data>
+  <data name="Feature_ClassicContextMenu.Header" xml:space="preserve">
+    <value>Восстановить классическое контекстное меню Windows 10</value>
+  </data>
+  <data name="Feature_ClassicContextMenu.Description" xml:space="preserve">
+    <value>Восстанавливает полное мгновенное контекстное меню правой кнопки в Windows 11 без нажатия «Показать дополнительные параметры».</value>
+  </data>
+  <data name="Intelligent_Impact_ClassicContextMenu" xml:space="preserve">
+    <value>Экономит 1 клик при каждом действии правой кнопки в Проводнике.</value>
+  </data>
+  <data name="Feature_EndTask.Header" xml:space="preserve">
+    <value>Включить «Снять задачу» на иконках в панели задач</value>
+  </data>
+  <data name="Feature_EndTask.Description" xml:space="preserve">
+    <value>Добавляет прямое действие «Снять задачу» в контекстное меню панели задач для мгновенного завершения процессов.</value>
+  </data>
+  <data name="Intelligent_Impact_EndTask" xml:space="preserve">
+    <value>Мгновенно завершайте зависшие программы без открытия Диспетчера задач.</value>
+  </data>
+  <data name="Intelligent_Impact_FileExtensionsAndHiddenFiles" xml:space="preserve">
+    <value>Защищает от вредоносного ПО с поддельным двойным расширением (.pdf.exe).</value>
+  </data>
+  <data name="Feature_StickyKeys.Header" xml:space="preserve">
+    <value>Отключить запрос залипания клавиш</value>
+  </data>
+  <data name="Feature_StickyKeys.Description" xml:space="preserve">
+    <value>Отключает всплывающее окно при нажатии Shift 5 раз в играх.</value>
+  </data>
+  <data name="Intelligent_Impact_StickyKeys" xml:space="preserve">
+    <value>Прекращает прерывания игр при нажатии клавиши Shift.</value>
+  </data>
+  <data name="Feature_RecommendedSectionStartMenu.Header" xml:space="preserve">
+    <value>Скрыть раздел «Рекомендуемые» в меню «Пуск»</value>
+  </data>
+  <data name="Feature_RecommendedSectionStartMenu.Description" xml:space="preserve">
+    <value>Удаляет панель недавних и рекомендованных файлов в меню «Пуск» Windows 11.</value>
+  </data>
+  <data name="Intelligent_Impact_RecommendedSectionStartMenu" xml:space="preserve">
+    <value>Более чистое меню «Пуск» с дополнительным пространством для закреплённых приложений.</value>
+  </data>
+  <data name="Feature_TaskbarToLeft.Header" xml:space="preserve">
+    <value>Выравнять иконки панели задач по левому краю</value>
+  </data>
+  <data name="Feature_TaskbarToLeft.Description" xml:space="preserve">
+    <value>Перемещает кнопку «Пуск» и иконки панели задач Windows 11 в классическое положение в левом нижнем углу.</value>
+  </data>
+  <data name="Intelligent_Impact_TaskbarToLeft" xml:space="preserve">
+    <value>Классическое размещение для мышечной памяти.</value>
+  </data>
+  <data name="Feature_FilesCompactMode.Header" xml:space="preserve">
+    <value>Включить компактный вид в Проводнике</value>
+  </data>
+  <data name="Feature_FilesCompactMode.Description" xml:space="preserve">
+    <value>Уменьшает вертикальные отступы между строками в Проводнике для отображения большего количества файлов.</value>
+  </data>
+  <data name="Intelligent_Impact_FilesCompactMode" xml:space="preserve">
+    <value>Просматривайте больше файлов на экране без прокрутки.</value>
+  </data>
+  <data name="Feature_CloudClipboard.Header" xml:space="preserve">
+    <value>Включить расширенную историю буфера обмена</value>
+  </data>
+  <data name="Feature_CloudClipboard.Description" xml:space="preserve">
+    <value>Настраивает локальную историю буфера обмена Win+V без синхронизации с облаком.</value>
+  </data>
+  <data name="Intelligent_Impact_CloudClipboard" xml:space="preserve">
+    <value>Многоэлементная история буфера обмена, доступная через Win+V.</value>
+  </data>
+  <data name="Feature_EdgeDiscoverBar.Header" xml:space="preserve">
+    <value>Отключить боковую панель Discover и виджеты Edge</value>
+  </data>
+  <data name="Feature_EdgeDiscoverBar.Description" xml:space="preserve">
+    <value>Отключает кнопку боковой панели браузера Edge и плавающий виджет поиска.</value>
+  </data>
+  <data name="Intelligent_Impact_EdgeDiscoverBar" xml:space="preserve">
+    <value>Убирает лишние элементы в браузере Edge.</value>
+  </data>
+  <data name="Feature_BluetoothAdvertising.Header" xml:space="preserve">
+    <value>Отключить рекламные маяки Bluetooth</value>
+  </data>
+  <data name="Feature_BluetoothAdvertising.Description" xml:space="preserve">
+    <value>Предотвращает широковещательную передачу рекламных маяков Bluetooth.</value>
+  </data>
+  <data name="Intelligent_Impact_BluetoothAdvertising" xml:space="preserve">
+    <value>Повышает конфиденциальность беспроводных устройств в общественных местах.</value>
+  </data>
+  <data name="Feature_SpotlightFeatures.Header" xml:space="preserve">
+    <value>Отключить предложения Windows Spotlight</value>
+  </data>
+  <data name="Feature_SpotlightFeatures.Description" xml:space="preserve">
+    <value>Отключает рекламные предложения и фоновые загрузки облачных изображений на экране блокировки.</value>
+  </data>
+  <data name="Intelligent_Impact_SpotlightFeatures" xml:space="preserve">
+    <value>Прекращает рекламу на экране блокировки и фоновые загрузки.</value>
+  </data>
+  <data name="Feature_NvidiaTelemetry.Header" xml:space="preserve">
+    <value>Отключить контейнер телеметрии NVIDIA</value>
+  </data>
+  <data name="Feature_NvidiaTelemetry.Description" xml:space="preserve">
+    <value>Отключает фоновые задачи телеметрии драйвера NVIDIA и службы отслеживания.</value>
+  </data>
+  <data name="Intelligent_Impact_NvidiaTelemetry" xml:space="preserve">
+    <value>Прекращает загрузку аналитики GPU и освобождает 100+ МБ фоновой ОЗУ.</value>
+  </data>
+  <data name="Feature_EdgeTelemetry.Header" xml:space="preserve">
+    <value>Отключить телеметрию Microsoft Edge</value>
+  </data>
+  <data name="Feature_EdgeTelemetry.Description" xml:space="preserve">
+    <value>Отключает диагностику браузера Edge, отчёты о сбоях и фоновое ускорение запуска.</value>
+  </data>
+  <data name="Intelligent_Impact_EdgeTelemetry" xml:space="preserve">
+    <value>Предотвращает поддержание Edge постоянных фоновых процессов.</value>
+  </data>
+  <data name="Intelligent_Impact_RemoteRegistry" xml:space="preserve">
+    <value>Закрывает крупную сетевую уязвимость, эксплуатируемую вредоносным ПО и программами-вымогателями.</value>
+  </data>
+  <data name="Feature_SMBv1.Header" xml:space="preserve">
+    <value>Отключить устаревший сетевой протокол SMBv1</value>
+  </data>
+  <data name="Feature_SMBv1.Description" xml:space="preserve">
+    <value>Отключает небезопасный 30-летний протокол общего доступа SMBv1 (вектор атаки EternalBlue/WannaCry).</value>
+  </data>
+  <data name="Intelligent_Impact_SMBv1" xml:space="preserve">
+    <value>Критическое усиление безопасности против эксплойтов сетевых червей.</value>
+  </data>
+  <data name="Feature_Widgets.Header" xml:space="preserve">
+    <value>Отключить доску виджетов Windows 11</value>
+  </data>
+  <data name="Feature_Widgets.Description" xml:space="preserve">
+    <value>Отключает ленту виджетов на панели задач и фоновые процессы Edge WebView.</value>
+  </data>
+  <data name="Intelligent_Impact_Widgets" xml:space="preserve">
+    <value>Освобождает 300+ МБ ОЗУ и прекращает постоянный фоновый рендеринг Edge.</value>
+  </data>
+  <data name="Feature_SysMain.Header" xml:space="preserve">
+    <value>Оптимизировать SysMain (Superfetch)</value>
+  </data>
+  <data name="Feature_SysMain.Description" xml:space="preserve">
+    <value>Регулирует или отключает службу SysMain для прекращения ненужного предварительного кэширования на SSD.</value>
+  </data>
+  <data name="Intelligent_Impact_SysMain" xml:space="preserve">
+    <value>Устраняет высокие всплески фоновой нагрузки диска и ненужные циклы записи SSD.</value>
+  </data>
 </root>

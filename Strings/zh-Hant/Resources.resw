@@ -2196,4 +2196,499 @@
   <data name="StartupPage_Notification_DisabledCount" xml:space="preserve">
     <value>已禁用 {0} 個啟動應用程式。</value>
   </data>
+
+  <data name="Intelligent_ScoreTitle" xml:space="preserve">
+    <value>最佳化得分</value>
+  </data>
+  <data name="Intelligent_HealthGrade_Scanning" xml:space="preserve">
+    <value>正在掃描...</value>
+  </data>
+  <data name="Intelligent_HealthGrade_Excellent" xml:space="preserve">
+    <value>A+ 極佳</value>
+  </data>
+  <data name="Intelligent_HealthGrade_Good" xml:space="preserve">
+    <value>B 良好</value>
+  </data>
+  <data name="Intelligent_HealthGrade_Fair" xml:space="preserve">
+    <value>C 普通</value>
+  </data>
+  <data name="Intelligent_HealthGrade_NeedsTuning" xml:space="preserve">
+    <value>D 需要調整</value>
+  </data>
+  <data name="Intelligent_HealthGrade_Unoptimized" xml:space="preserve">
+    <value>F 未最佳化</value>
+  </data>
+  <data name="Intelligent_Domain_GlobalTitle" xml:space="preserve">
+    <value>智慧診斷中心</value>
+  </data>
+  <data name="Intelligent_Domain_GlobalDesc" xml:space="preserve">
+    <value>選擇一個類別以預覽智慧建議、降低系統延遲並微調您的設定。</value>
+  </data>
+  <data name="Intelligent_Domain_PerfTitle" xml:space="preserve">
+    <value>效能引擎</value>
+  </data>
+  <data name="Intelligent_Domain_PerfDesc" xml:space="preserve">
+    <value>最佳化 GPU 硬體排程、CPU 時間配額、NTFS 緩衝區索引，並消除桌面功能表延遲。</value>
+  </data>
+  <data name="Intelligent_Domain_PrivTitle" xml:space="preserve">
+    <value>隱私與遙測防護</value>
+  </data>
+  <data name="Intelligent_Domain_PrivDesc" xml:space="preserve">
+    <value>封鎖背景診斷遙測、Windows AI 資料擷取、Recall 螢幕快照以及雲端活動上傳。</value>
+  </data>
+  <data name="Intelligent_Domain_FeatTitle" xml:space="preserve">
+    <value>易用性與殼層功能</value>
+  </data>
+  <data name="Intelligent_Domain_FeatDesc" xml:space="preserve">
+    <value>還原傳統快顯功能表、啟用工作列「結束工作」、顯示隱藏檔案和副檔名，並精簡「開始」功能表。</value>
+  </data>
+  <data name="Intelligent_ActiveCount" xml:space="preserve">
+    <value>已啟用: {0} / {1}</value>
+  </data>
+  <data name="Intelligent_OptimizationsActive" xml:space="preserve">
+    <value>已啟用的最佳化: {0} / {1}</value>
+  </data>
+  <data name="Intelligent_PotentialGain" xml:space="preserve">
+    <value>可提升: +{0} 分</value>
+  </data>
+  <data name="Intelligent_RecommendedCount" xml:space="preserve">
+    <value>建議項目: {0}</value>
+  </data>
+  <data name="Intelligent_RollbacksCount" xml:space="preserve">
+    <value>可復原項目: {0}</value>
+  </data>
+  <data name="Intelligent_Metric_LowLatency" xml:space="preserve">
+    <value>低延遲與流暢介面</value>
+  </data>
+  <data name="Intelligent_Metric_DataShield" xml:space="preserve">
+    <value>資料與語音防護</value>
+  </data>
+  <data name="Intelligent_Metric_Productivity" xml:space="preserve">
+    <value>一鍵提升生產力</value>
+  </data>
+  <data name="Intelligent_Category_Performance" xml:space="preserve">
+    <value>效能</value>
+  </data>
+  <data name="Intelligent_Category_Privacy" xml:space="preserve">
+    <value>隱私</value>
+  </data>
+  <data name="Intelligent_Category_Usability" xml:space="preserve">
+    <value>易用性</value>
+  </data>
+  <data name="Intelligent_Mode_Rec" xml:space="preserve">
+    <value>建議</value>
+  </data>
+  <data name="Intelligent_Mode_Rec_Tooltip" xml:space="preserve">
+    <value>建議: 高效益且 100% 安全的最佳化項目</value>
+  </data>
+  <data name="Intelligent_Mode_Safe" xml:space="preserve">
+    <value>安全</value>
+  </data>
+  <data name="Intelligent_Mode_Safe_Tooltip" xml:space="preserve">
+    <value>全部安全: 所有 100% 安全無衝突的最佳化項目</value>
+  </data>
+  <data name="Intelligent_Mode_Adv" xml:space="preserve">
+    <value>進階</value>
+  </data>
+  <data name="Intelligent_Mode_Adv_Tooltip" xml:space="preserve">
+    <value>進階: 包含進階使用者專屬及適度最佳化項目</value>
+  </data>
+  <data name="Intelligent_Apply_Format" xml:space="preserve">
+    <value>套用 {0} ({1})</value>
+  </data>
+  <data name="Intelligent_Apply_Active" xml:space="preserve">
+    <value>{0} 已啟用 ✓</value>
+  </data>
+  <data name="Intelligent_Btn_Preview" xml:space="preserve">
+    <value>預覽</value>
+  </data>
+  <data name="Intelligent_Btn_Rollback" xml:space="preserve">
+    <value>復原</value>
+  </data>
+  <data name="Intelligent_TuneByDomain" xml:space="preserve">
+    <value>按領域最佳化</value>
+  </data>
+  <data name="Intelligent_Preview_Title" xml:space="preserve">
+    <value>預覽: {0}</value>
+  </data>
+  <data name="Intelligent_Preview_Desc" xml:space="preserve">
+    <value>在套用前檢視擬進行的最佳化變更。系統將自動儲存套用前的復原備份點。</value>
+  </data>
+  <data name="Intelligent_Preview_ApplyBtn" xml:space="preserve">
+    <value>套用所選最佳化</value>
+  </data>
+  <data name="Intelligent_Preview_CancelBtn" xml:space="preserve">
+    <value>取消</value>
+  </data>
+  <data name="Intelligent_Preview_Empty" xml:space="preserve">
+    <value>此頁面上的所有最佳化均已處於啟用狀態！無需預覽。</value>
+  </data>
+  <data name="Intelligent_Status_Applying" xml:space="preserve">
+    <value>步驟 5 [套用中] ({0}/{1}): {2}</value>
+  </data>
+  <data name="Intelligent_Status_Verifying" xml:space="preserve">
+    <value>步驟 6 [驗證中]: 正在查詢即時系統狀態...</value>
+  </data>
+  <data name="Intelligent_Status_Success" xml:space="preserve">
+    <value>已成功套用並驗證 {0} 項最佳化！</value>
+  </data>
+  <data name="Intelligent_Status_AllActive" xml:space="preserve">
+    <value>此頁面上的所有 {0} 最佳化均已處於啟用狀態！</value>
+  </data>
+  <data name="Intelligent_Status_RollingBack" xml:space="preserve">
+    <value>正在復原此頁面上的 {0} 個項目...</value>
+  </data>
+  <data name="Intelligent_Status_RollbackDone" xml:space="preserve">
+    <value>已將 {0} 個頁面項目還原至套用前狀態。</value>
+  </data>
+  <data name="Intelligent_Status_NoRollbacks" xml:space="preserve">
+    <value>未找到此頁面的單項復原備份。</value>
+  </data>
+  <data name="Intelligent_Badge_Optimal" xml:space="preserve">
+    <value>最佳 ✓</value>
+  </data>
+  <data name="Intelligent_Badge_Recommended" xml:space="preserve">
+    <value>建議</value>
+  </data>
+  <data name="Intelligent_Badge_Safe" xml:space="preserve">
+    <value>安全</value>
+  </data>
+  <data name="Intelligent_Badge_Moderate" xml:space="preserve">
+    <value>適度</value>
+  </data>
+  <data name="Intelligent_Badge_Advanced" xml:space="preserve">
+    <value>進階</value>
+  </data>
+  <data name="Intelligent_Badge_Caution" xml:space="preserve">
+    <value>注意</value>
+  </data>
+  <data name="Intelligent_PointsGain" xml:space="preserve">
+    <value>+{0} 分</value>
+  </data>
+  <data name="Intelligent_Flyout_TechnicalDetails" xml:space="preserve">
+    <value>技術詳細資料</value>
+  </data>
+  <data name="Intelligent_Flyout_ScoreImpact" xml:space="preserve">
+    <value>評分影響: +{0} 分 ({1})</value>
+  </data>
+  <data name="Intelligent_Flyout_PreApplyBackup" xml:space="preserve">
+    <value>套用前備份: 儲存於 {0} (初始狀態: {1})</value>
+  </data>
+  <data name="Intelligent_Flyout_NoBackup" xml:space="preserve">
+    <value>套用前備份: 無 (切換開關以建立復原點)</value>
+  </data>
+  <data name="Intelligent_Flyout_Status" xml:space="preserve">
+    <value>目前狀態: {0}</value>
+  </data>
+
+  <data name="Intelligent_Verification_Active" xml:space="preserve">
+    <value>已驗證啟用 ✓</value>
+  </data>
+  <data name="Intelligent_Verification_Restart" xml:space="preserve">
+    <value>需要重新啟動 🔄</value>
+  </data>
+  <data name="Intelligent_Verification_Failed" xml:space="preserve">
+    <value>驗證失敗 ⚠️</value>
+  </data>
+  <data name="Intelligent_Verification_NotVerified" xml:space="preserve">
+    <value>未驗證</value>
+  </data>
+  <data name="Intelligent_General_Category" xml:space="preserve">
+    <value>一般</value>
+  </data>
+
+  <data name="Intelligent_Impact_BackgroundApps" xml:space="preserve">
+    <value>釋放背景 CPU 週期，節省 200MB 以上 RAM。</value>
+  </data>
+  <data name="Intelligent_Impact_SystemProfile" xml:space="preserve">
+    <value>減少微卡頓，提升幀率穩定性。</value>
+  </data>
+  <data name="Intelligent_Impact_PrioritizeForegroundApplications" xml:space="preserve">
+    <value>在繁重背景多工下也能提升前台應用程式的響應速度。</value>
+  </data>
+  <data name="Feature_GamingMode.Header" xml:space="preserve">
+    <value>啟用 Windows 遊戲模式</value>
+  </data>
+  <data name="Feature_GamingMode.Description" xml:space="preserve">
+    <value>為超低延遲配置 Windows 遊戲模式和 GPU 硬體排程。</value>
+  </data>
+  <data name="Intelligent_Impact_GamingMode" xml:space="preserve">
+    <value>將 CPU 核心鎖定至遊戲進程並最佳化執行緒排程。</value>
+  </data>
+  <data name="Feature_FullscreenOptimizations.Header" xml:space="preserve">
+    <value>啟用全螢幕最佳化</value>
+  </data>
+  <data name="Feature_FullscreenOptimizations.Description" xml:space="preserve">
+    <value>為高效能無邊框顯示配置 Windows 顯示管道。</value>
+  </data>
+  <data name="Intelligent_Impact_FullscreenOptimizations" xml:space="preserve">
+    <value>最小化顯示延遲，同時保留快速 Alt+Tab 切換功能。</value>
+  </data>
+  <data name="Intelligent_Impact_GpuDriverTweaks" xml:space="preserve">
+    <value>防止遊戲和 3D 渲染期間 GPU 電源頻率波動。</value>
+  </data>
+  <data name="Intelligent_Impact_MenuShowDelay" xml:space="preserve">
+    <value>在檔案總管和桌面上實現即時的 UI 導覽體驗。</value>
+  </data>
+  <data name="Intelligent_Impact_MouseHoverTime" xml:space="preserve">
+    <value>即時顯示工具提示和工作列縮圖預覽。</value>
+  </data>
+  <data name="Intelligent_Impact_KeyboardLatency" xml:space="preserve">
+    <value>實現即時按鍵識別和更快的字元重複。</value>
+  </data>
+  <data name="Feature_MouseAcceleration.Header" xml:space="preserve">
+    <value>停用滑鼠加速（原始輸入）</value>
+  </data>
+  <data name="Feature_MouseAcceleration.Description" xml:space="preserve">
+    <value>停用 Windows 滑鼠曲線加速，實現純粹 1:1 硬體游標精度。</value>
+  </data>
+  <data name="Intelligent_Impact_MouseAcceleration" xml:space="preserve">
+    <value>為遊戲和精確設計工作提供完美的游標追蹤一致性。</value>
+  </data>
+  <data name="Intelligent_Impact_OptimizeNTFS" xml:space="preserve">
+    <value>加速檔案目錄索引和磁碟中繼資料查詢。</value>
+  </data>
+  <data name="Intelligent_Impact_ServiceHostSplitting" xml:space="preserve">
+    <value>在 8GB 以上記憶體的系統上減少 30-50 個進程的總數開銷。</value>
+  </data>
+  <data name="Feature_UsbPowerSaving.Header" xml:space="preserve">
+    <value>停用 USB 選擇性暫停</value>
+  </data>
+  <data name="Feature_UsbPowerSaving.Description" xml:space="preserve">
+    <value>防止 Windows 將 USB 控制器和外設切換到低電量狀態。</value>
+  </data>
+  <data name="Intelligent_Impact_UsbPowerSaving" xml:space="preserve">
+    <value>防止 USB 音訊中斷、控制器延遲和滑鼠斷連。</value>
+  </data>
+  <data name="Feature_PowerThrottling.Header" xml:space="preserve">
+    <value>停用電源節流</value>
+  </data>
+  <data name="Feature_PowerThrottling.Description" xml:space="preserve">
+    <value>停用 Windows 對背景執行緒的電源節流算法。</value>
+  </data>
+  <data name="Intelligent_Impact_PowerThrottling" xml:space="preserve">
+    <value>確保背景渲染和編譯任務以完整 CPU 時鐘頻率運行。</value>
+  </data>
+  <data name="Intelligent_Impact_LowDiskSpaceChecks" xml:space="preserve">
+    <value>停止定期磁碟輪詢中斷。</value>
+  </data>
+  <data name="Intelligent_Impact_LinkResolve" xml:space="preserve">
+    <value>加快打開損壞的捷徑，而不會凍結檔案總管。</value>
+  </data>
+  <data name="Intelligent_Impact_AutoComplete" xml:space="preserve">
+    <value>加快地址列路徑導覽速度。</value>
+  </data>
+  <data name="Feature_TelemetryServices.Header" xml:space="preserve">
+    <value>停用 Windows 遙測與診斷</value>
+  </data>
+  <data name="Feature_TelemetryServices.Description" xml:space="preserve">
+    <value>完全停用 DiagTrack 和 dmwappushservice 的背景診斷資料收集。</value>
+  </data>
+  <data name="Intelligent_Impact_TelemetryServices" xml:space="preserve">
+    <value>停止自動背景追蹤、按鍵記錄和遙測資料上傳。</value>
+  </data>
+  <data name="Feature_WindowsAI.Header" xml:space="preserve">
+    <value>停用 Windows AI 功能</value>
+  </data>
+  <data name="Feature_WindowsAI.Description" xml:space="preserve">
+    <value>阻止 Windows 背景 AI 分析、記事本/小畫家 AI 整合和模型查詢報告。</value>
+  </data>
+  <data name="Intelligent_Impact_WindowsAI" xml:space="preserve">
+    <value>保護本機檔案隱私，停止持續的雲端 AI 資料抓取。</value>
+  </data>
+  <data name="Feature_WindowsRecall.Header" xml:space="preserve">
+    <value>停用 Windows Recall 截圖功能</value>
+  </data>
+  <data name="Feature_WindowsRecall.Description" xml:space="preserve">
+    <value>阻止對活動桌面進行週期性連續截圖和 OCR 索引。</value>
+  </data>
+  <data name="Intelligent_Impact_WindowsRecall" xml:space="preserve">
+    <value>保證敏感的銀行資訊、密碼和私人文件永遠不會被記錄。</value>
+  </data>
+  <data name="Feature_CoPilotAI.Header" xml:space="preserve">
+    <value>停用 Copilot AI 助手</value>
+  </data>
+  <data name="Feature_CoPilotAI.Description" xml:space="preserve">
+    <value>停用 Windows Copilot 側邊欄、工作列按鈕和持續的雲端同步查詢。</value>
+  </data>
+  <data name="Intelligent_Impact_CoPilotAI" xml:space="preserve">
+    <value>釋放工作列空間並消除背景 Web 視圖進程。</value>
+  </data>
+  <data name="Feature_AdvertisingID.Header" xml:space="preserve">
+    <value>停用 Windows 廣告 ID</value>
+  </data>
+  <data name="Feature_AdvertisingID.Description" xml:space="preserve">
+    <value>防止 Windows 市集應用程式追蹤使用者活動以投放個人化廣告。</value>
+  </data>
+  <data name="Intelligent_Impact_AdvertisingID" xml:space="preserve">
+    <value>停止唯一廣告識別碼設定檔追蹤。</value>
+  </data>
+  <data name="Feature_ActivityUploads.Header" xml:space="preserve">
+    <value>停用活動歷程記錄雲端同步</value>
+  </data>
+  <data name="Feature_ActivityUploads.Description" xml:space="preserve">
+    <value>阻止將使用者應用啟動歷程和瀏覽歷程上傳到 Microsoft 雲端。</value>
+  </data>
+  <data name="Intelligent_Impact_ActivityUploads" xml:space="preserve">
+    <value>裝置使用歷程記錄永遠不會在關聯的雲端帳戶之間廣播。</value>
+  </data>
+  <data name="Feature_ClipboardSync.Header" xml:space="preserve">
+    <value>停用跨裝置剪貼簿雲端同步</value>
+  </data>
+  <data name="Feature_ClipboardSync.Description" xml:space="preserve">
+    <value>阻止剪貼簿複製緩衝區自動上傳到雲端伺服器。</value>
+  </data>
+  <data name="Intelligent_Impact_ClipboardSync" xml:space="preserve">
+    <value>保護敏感複製文字、密碼和令牌不被雲端暴露。</value>
+  </data>
+  <data name="Feature_LocationAccess.Header" xml:space="preserve">
+    <value>停用位置存取和感測器</value>
+  </data>
+  <data name="Feature_LocationAccess.Description" xml:space="preserve">
+    <value>停用 Windows 位置提供者服務和位置感測器 API。</value>
+  </data>
+  <data name="Intelligent_Impact_LocationAccess" xml:space="preserve">
+    <value>防止 Web 瀏覽器和桌面應用程式確定物理座標。</value>
+  </data>
+  <data name="Feature_ClassicContextMenu.Header" xml:space="preserve">
+    <value>還原 Windows 10 傳統右鍵功能表</value>
+  </data>
+  <data name="Feature_ClassicContextMenu.Description" xml:space="preserve">
+    <value>在 Windows 11 中還原完整的即時右鍵快顯功能表，無需點擊「顯示更多選項」。</value>
+  </data>
+  <data name="Intelligent_Impact_ClassicContextMenu" xml:space="preserve">
+    <value>在檔案總管的每次右鍵操作中節省 1 次點擊。</value>
+  </data>
+  <data name="Feature_EndTask.Header" xml:space="preserve">
+    <value>在工作列應用程式圖示上啟用「結束工作」</value>
+  </data>
+  <data name="Feature_EndTask.Description" xml:space="preserve">
+    <value>為工作列項目新增直接右鍵「結束工作」動作，實現即時進程終止。</value>
+  </data>
+  <data name="Intelligent_Impact_EndTask" xml:space="preserve">
+    <value>無需開啟工作管理員即可立即終止凍結或無回應的程式。</value>
+  </data>
+  <data name="Intelligent_Impact_FileExtensionsAndHiddenFiles" xml:space="preserve">
+    <value>防止偽裝的雙副檔名惡意軟體（.pdf.exe）。</value>
+  </data>
+  <data name="Feature_StickyKeys.Header" xml:space="preserve">
+    <value>停用粘滯鍵提示</value>
+  </data>
+  <data name="Feature_StickyKeys.Description" xml:space="preserve">
+    <value>停用在遊戲中按 5 次 Shift 時彈出的對話方塊。</value>
+  </data>
+  <data name="Intelligent_Impact_StickyKeys" xml:space="preserve">
+    <value>阻止按 Shift 鍵導致的遊戲中斷。</value>
+  </data>
+  <data name="Feature_RecommendedSectionStartMenu.Header" xml:space="preserve">
+    <value>在開始功能表中隱藏推薦部分</value>
+  </data>
+  <data name="Feature_RecommendedSectionStartMenu.Description" xml:space="preserve">
+    <value>從 Windows 11 開始功能表中刪除最近的檔案和推薦窗格。</value>
+  </data>
+  <data name="Intelligent_Impact_RecommendedSectionStartMenu" xml:space="preserve">
+    <value>開始功能表更整潔，為釘選應用程式提供更多空間。</value>
+  </data>
+  <data name="Feature_TaskbarToLeft.Header" xml:space="preserve">
+    <value>將工作列圖示左對齊</value>
+  </data>
+  <data name="Feature_TaskbarToLeft.Description" xml:space="preserve">
+    <value>將 Windows 11 開始按鈕和工作列圖示移至傳統的左下角位置。</value>
+  </data>
+  <data name="Intelligent_Impact_TaskbarToLeft" xml:space="preserve">
+    <value>經典肌肉記憶對齊方式。</value>
+  </data>
+  <data name="Feature_FilesCompactMode.Header" xml:space="preserve">
+    <value>在檔案總管中啟用緊湊檢視</value>
+  </data>
+  <data name="Feature_FilesCompactMode.Description" xml:space="preserve">
+    <value>減少檔案總管行間的垂直間距，提高檔案密度。</value>
+  </data>
+  <data name="Intelligent_Impact_FilesCompactMode" xml:space="preserve">
+    <value>無需捲動即可在每個螢幕上查看更多檔案。</value>
+  </data>
+  <data name="Feature_CloudClipboard.Header" xml:space="preserve">
+    <value>啟用增強剪貼簿記錄</value>
+  </data>
+  <data name="Feature_CloudClipboard.Description" xml:space="preserve">
+    <value>在不進行雲端同步的情況下配置本機 Win+V 剪貼簿記錄。</value>
+  </data>
+  <data name="Intelligent_Impact_CloudClipboard" xml:space="preserve">
+    <value>可透過 Win+V 存取的多項目剪貼簿記錄。</value>
+  </data>
+  <data name="Feature_EdgeDiscoverBar.Header" xml:space="preserve">
+    <value>停用 Edge 探索側邊欄和 Widget</value>
+  </data>
+  <data name="Feature_EdgeDiscoverBar.Description" xml:space="preserve">
+    <value>停用 Edge 瀏覽器側邊欄按鈕和浮動搜尋 Widget。</value>
+  </data>
+  <data name="Intelligent_Impact_EdgeDiscoverBar" xml:space="preserve">
+    <value>消除 Edge 瀏覽器中的雜亂元素。</value>
+  </data>
+  <data name="Feature_BluetoothAdvertising.Header" xml:space="preserve">
+    <value>停用藍牙廣告信標</value>
+  </data>
+  <data name="Feature_BluetoothAdvertising.Description" xml:space="preserve">
+    <value>防止 Windows 向附近的硬體廣播藍牙廣告信標。</value>
+  </data>
+  <data name="Intelligent_Impact_BluetoothAdvertising" xml:space="preserve">
+    <value>提升在公共場所無線裝置的隱私性。</value>
+  </data>
+  <data name="Feature_SpotlightFeatures.Header" xml:space="preserve">
+    <value>停用 Windows Spotlight 建議</value>
+  </data>
+  <data name="Feature_SpotlightFeatures.Description" xml:space="preserve">
+    <value>停用鎖定螢幕上的促銷建議和後台雲端圖片下載。</value>
+  </data>
+  <data name="Intelligent_Impact_SpotlightFeatures" xml:space="preserve">
+    <value>停止鎖定螢幕廣告和後台下載流量。</value>
+  </data>
+  <data name="Feature_NvidiaTelemetry.Header" xml:space="preserve">
+    <value>停用 NVIDIA 遙測容器</value>
+  </data>
+  <data name="Feature_NvidiaTelemetry.Description" xml:space="preserve">
+    <value>停用 NVIDIA 驅動程式後台遙測任務和追蹤服務。</value>
+  </data>
+  <data name="Intelligent_Impact_NvidiaTelemetry" xml:space="preserve">
+    <value>停止 GPU 分析上傳，釋放 100MB 以上的後台 RAM。</value>
+  </data>
+  <data name="Feature_EdgeTelemetry.Header" xml:space="preserve">
+    <value>停用 Microsoft Edge 遙測</value>
+  </data>
+  <data name="Feature_EdgeTelemetry.Description" xml:space="preserve">
+    <value>停用 Edge 瀏覽器診斷、崩潰報告和啟動後台加速。</value>
+  </data>
+  <data name="Intelligent_Impact_EdgeTelemetry" xml:space="preserve">
+    <value>防止 Edge 保持持久後台進程活躍。</value>
+  </data>
+  <data name="Intelligent_Impact_RemoteRegistry" xml:space="preserve">
+    <value>關閉被惡意軟體和勒索軟體利用的主要網路漏洞。</value>
+  </data>
+  <data name="Feature_SMBv1.Header" xml:space="preserve">
+    <value>停用舊版 SMBv1 網路通訊協定</value>
+  </data>
+  <data name="Feature_SMBv1.Description" xml:space="preserve">
+    <value>停用存在 30 年的不安全 SMBv1 檔案共享通訊協定（EternalBlue/WannaCry 攻擊向量）。</value>
+  </data>
+  <data name="Intelligent_Impact_SMBv1" xml:space="preserve">
+    <value>針對網路蠕蟲漏洞利用的關鍵安全加固。</value>
+  </data>
+  <data name="Feature_Widgets.Header" xml:space="preserve">
+    <value>停用 Windows 11 小工具面板</value>
+  </data>
+  <data name="Feature_Widgets.Description" xml:space="preserve">
+    <value>停用工作列小工具資訊流和後台 Edge WebView 進程。</value>
+  </data>
+  <data name="Intelligent_Impact_Widgets" xml:space="preserve">
+    <value>釋放 300MB 以上 RAM，停止 Edge 持續的後台渲染。</value>
+  </data>
+  <data name="Feature_SysMain.Header" xml:space="preserve">
+    <value>最佳化 SysMain（超級預取）</value>
+  </data>
+  <data name="Feature_SysMain.Description" xml:space="preserve">
+    <value>調整或停用 SysMain 服務以停止 SSD 上不必要的預加載。</value>
+  </data>
+  <data name="Intelligent_Impact_SysMain" xml:space="preserve">
+    <value>消除高後台磁碟使用峰值和不必要的 SSD 寫入週期。</value>
+  </data>
 </root>

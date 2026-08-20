@@ -2200,4 +2200,499 @@
   <data name="StartupPage_Notification_DisabledCount" xml:space="preserve">
     <value>נוטרלו {0} אפליקציות הפעלה.</value>
   </data>
+
+  <data name="Intelligent_ScoreTitle" xml:space="preserve">
+    <value>ציון מיטוב</value>
+  </data>
+  <data name="Intelligent_HealthGrade_Scanning" xml:space="preserve">
+    <value>סורק...</value>
+  </data>
+  <data name="Intelligent_HealthGrade_Excellent" xml:space="preserve">
+    <value>A+ מצוין</value>
+  </data>
+  <data name="Intelligent_HealthGrade_Good" xml:space="preserve">
+    <value>B טוב</value>
+  </data>
+  <data name="Intelligent_HealthGrade_Fair" xml:space="preserve">
+    <value>C בינוני</value>
+  </data>
+  <data name="Intelligent_HealthGrade_NeedsTuning" xml:space="preserve">
+    <value>D דורש כוונון</value>
+  </data>
+  <data name="Intelligent_HealthGrade_Unoptimized" xml:space="preserve">
+    <value>F לא ממוטב</value>
+  </data>
+  <data name="Intelligent_Domain_GlobalTitle" xml:space="preserve">
+    <value>מרכז אבחון חכם</value>
+  </data>
+  <data name="Intelligent_Domain_GlobalDesc" xml:space="preserve">
+    <value>בחר קטגוריה כדי לצפות בהמלצות חכמות, להפחית את השהיית המערכת ולכוונן את התצורה שלך.</value>
+  </data>
+  <data name="Intelligent_Domain_PerfTitle" xml:space="preserve">
+    <value>מנוע ביצועים</value>
+  </data>
+  <data name="Intelligent_Domain_PerfDesc" xml:space="preserve">
+    <value>ממטב תזמון חומרת GPU, חלוקת זמן של ה-CPU, אינדוקס מאגרי NTFS ומבטל השהיות בתפריטי שולחן העבודה.</value>
+  </data>
+  <data name="Intelligent_Domain_PrivTitle" xml:space="preserve">
+    <value>מגן פרטיות וטלמטריה</value>
+  </data>
+  <data name="Intelligent_Domain_PrivDesc" xml:space="preserve">
+    <value>חוסם טלמטריית אבחון ברקע, איסוף נתוני AI של Windows, צילומי מסך של Recall והעלאת פעילות לענן.</value>
+  </data>
+  <data name="Intelligent_Domain_FeatTitle" xml:space="preserve">
+    <value>שימושיות ותכונות המעטפת</value>
+  </data>
+  <data name="Intelligent_Domain_FeatDesc" xml:space="preserve">
+    <value>משחזר תפריטי קליק ימני קלאסיים, מפעיל 'סיים משימה' בשורת המשימות, חושף קבצים וסיומות מוסתרים ומסדר את תפריט התחל.</value>
+  </data>
+  <data name="Intelligent_ActiveCount" xml:space="preserve">
+    <value>פעיל: {0} / {1}</value>
+  </data>
+  <data name="Intelligent_OptimizationsActive" xml:space="preserve">
+    <value>מיטובים פעילים: {0} / {1}</value>
+  </data>
+  <data name="Intelligent_PotentialGain" xml:space="preserve">
+    <value>רווח: ‎+{0} נק'</value>
+  </data>
+  <data name="Intelligent_RecommendedCount" xml:space="preserve">
+    <value>מומלץ: {0}</value>
+  </data>
+  <data name="Intelligent_RollbacksCount" xml:space="preserve">
+    <value>שחזורים: {0}</value>
+  </data>
+  <data name="Intelligent_Metric_LowLatency" xml:space="preserve">
+    <value>זמן אחזור נמוך וממשק מהיר</value>
+  </data>
+  <data name="Intelligent_Metric_DataShield" xml:space="preserve">
+    <value>הגנת נתונים וקול</value>
+  </data>
+  <data name="Intelligent_Metric_Productivity" xml:space="preserve">
+    <value>פרודוקטיביות בלחיצה אחת</value>
+  </data>
+  <data name="Intelligent_Category_Performance" xml:space="preserve">
+    <value>ביצועים</value>
+  </data>
+  <data name="Intelligent_Category_Privacy" xml:space="preserve">
+    <value>פרטיות</value>
+  </data>
+  <data name="Intelligent_Category_Usability" xml:space="preserve">
+    <value>שימושיות</value>
+  </data>
+  <data name="Intelligent_Mode_Rec" xml:space="preserve">
+    <value>מומלץ</value>
+  </data>
+  <data name="Intelligent_Mode_Rec_Tooltip" xml:space="preserve">
+    <value>מומלץ: כוונונים בעלי השפעה גבוהה ובטוחים ב-100%</value>
+  </data>
+  <data name="Intelligent_Mode_Safe" xml:space="preserve">
+    <value>בטוח</value>
+  </data>
+  <data name="Intelligent_Mode_Safe_Tooltip" xml:space="preserve">
+    <value>הכל בטוח: כל המיטובים הבטוחים ב-100% שאינם פולשניים</value>
+  </data>
+  <data name="Intelligent_Mode_Adv" xml:space="preserve">
+    <value>מתקדם</value>
+  </data>
+  <data name="Intelligent_Mode_Adv_Tooltip" xml:space="preserve">
+    <value>מתקדם: כולל כוונונים למשתמשים מתקדמים וכוונונים מתונים</value>
+  </data>
+  <data name="Intelligent_Apply_Format" xml:space="preserve">
+    <value>החל {0} ({1})</value>
+  </data>
+  <data name="Intelligent_Apply_Active" xml:space="preserve">
+    <value>{0} פעיל ✓</value>
+  </data>
+  <data name="Intelligent_Btn_Preview" xml:space="preserve">
+    <value>תצוגה מקדימה</value>
+  </data>
+  <data name="Intelligent_Btn_Rollback" xml:space="preserve">
+    <value>שחזור</value>
+  </data>
+  <data name="Intelligent_TuneByDomain" xml:space="preserve">
+    <value>כוונון לפי תחום</value>
+  </data>
+  <data name="Intelligent_Preview_Title" xml:space="preserve">
+    <value>תצוגה מקדימה: {0}</value>
+  </data>
+  <data name="Intelligent_Preview_Desc" xml:space="preserve">
+    <value>בדוק את שינויי המיטוב המוצעים לפני ההחלה. נקודות שחזור יישמרו אוטומטית לפני ביצוע השינויים.</value>
+  </data>
+  <data name="Intelligent_Preview_ApplyBtn" xml:space="preserve">
+    <value>החל מיטובים שנבחרו</value>
+  </data>
+  <data name="Intelligent_Preview_CancelBtn" xml:space="preserve">
+    <value>ביטול</value>
+  </data>
+  <data name="Intelligent_Preview_Empty" xml:space="preserve">
+    <value>כל המיטובים בדף זה כבר פעילים! אין מה להציג בתצוגה מקדימה.</value>
+  </data>
+  <data name="Intelligent_Status_Applying" xml:space="preserve">
+    <value>שלב 5 [החלה] ({0}/{1}): {2}</value>
+  </data>
+  <data name="Intelligent_Status_Verifying" xml:space="preserve">
+    <value>שלב 6 [אימות]: בודק מצב מערכת בזמן אמת...</value>
+  </data>
+  <data name="Intelligent_Status_Success" xml:space="preserve">
+    <value>הוחלו ואומתו בהצלחה {0} מיטובים!</value>
+  </data>
+  <data name="Intelligent_Status_AllActive" xml:space="preserve">
+    <value>כל {0} המיטובים בדף זה כבר פעילים!</value>
+  </data>
+  <data name="Intelligent_Status_RollingBack" xml:space="preserve">
+    <value>משחזר {0} פריטים בדף זה...</value>
+  </data>
+  <data name="Intelligent_Status_RollbackDone" xml:space="preserve">
+    <value>שוחזרו {0} פריטים למצבם לפני ההחלה.</value>
+  </data>
+  <data name="Intelligent_Status_NoRollbacks" xml:space="preserve">
+    <value>לא נמצאו גיבויי שחזור עבור דף זה.</value>
+  </data>
+  <data name="Intelligent_Badge_Optimal" xml:space="preserve">
+    <value>מיטבי ✓</value>
+  </data>
+  <data name="Intelligent_Badge_Recommended" xml:space="preserve">
+    <value>מומלץ</value>
+  </data>
+  <data name="Intelligent_Badge_Safe" xml:space="preserve">
+    <value>בטוח</value>
+  </data>
+  <data name="Intelligent_Badge_Moderate" xml:space="preserve">
+    <value>מתון</value>
+  </data>
+  <data name="Intelligent_Badge_Advanced" xml:space="preserve">
+    <value>מתקדם</value>
+  </data>
+  <data name="Intelligent_Badge_Caution" xml:space="preserve">
+    <value>זהירות</value>
+  </data>
+  <data name="Intelligent_PointsGain" xml:space="preserve">
+    <value>‎+{0} נק'</value>
+  </data>
+  <data name="Intelligent_Flyout_TechnicalDetails" xml:space="preserve">
+    <value>פרטים טכניים</value>
+  </data>
+  <data name="Intelligent_Flyout_ScoreImpact" xml:space="preserve">
+    <value>השפעה על הציון: ‎+{0} נקודות ({1})</value>
+  </data>
+  <data name="Intelligent_Flyout_PreApplyBackup" xml:space="preserve">
+    <value>גיבוי לפני החלה: נשמר ב-{0} (מצב ראשוני: {1})</value>
+  </data>
+  <data name="Intelligent_Flyout_NoBackup" xml:space="preserve">
+    <value>גיבוי לפני החלה: אין (הפעל כדי ליצור נקודת שחזור)</value>
+  </data>
+  <data name="Intelligent_Flyout_Status" xml:space="preserve">
+    <value>מצב נוכחי: {0}</value>
+  </data>
+
+  <data name="Intelligent_Verification_Active" xml:space="preserve">
+    <value>מאומת כפעיל ✓</value>
+  </data>
+  <data name="Intelligent_Verification_Restart" xml:space="preserve">
+    <value>נדרשת הפעלה מחדש 🔄</value>
+  </data>
+  <data name="Intelligent_Verification_Failed" xml:space="preserve">
+    <value>האימות נכשל ⚠️</value>
+  </data>
+  <data name="Intelligent_Verification_NotVerified" xml:space="preserve">
+    <value>לא מאומת</value>
+  </data>
+  <data name="Intelligent_General_Category" xml:space="preserve">
+    <value>כללי</value>
+  </data>
+
+  <data name="Intelligent_Impact_BackgroundApps" xml:space="preserve">
+    <value>משחרר מחזורי מעבד ברקע וחוסך יותר מ-200 מגה-בייט זיכרון RAM.</value>
+  </data>
+  <data name="Intelligent_Impact_SystemProfile" xml:space="preserve">
+    <value>מפחית גמגומים קטנים ומשפר את עקביות קצב הפריימים.</value>
+  </data>
+  <data name="Intelligent_Impact_PrioritizeForegroundApplications" xml:space="preserve">
+    <value>משפר את תגובתיות האפליקציה הפעילה תחת ריבוי משימות כבד ברקע.</value>
+  </data>
+  <data name="Feature_GamingMode.Header" xml:space="preserve">
+    <value>הפעל מצב משחקים של Windows</value>
+  </data>
+  <data name="Feature_GamingMode.Description" xml:space="preserve">
+    <value>מגדיר את מצב המשחקים ואת תזמון חומרת GPU לזמן אחזור אולטרה נמוך.</value>
+  </data>
+  <data name="Intelligent_Impact_GamingMode" xml:space="preserve">
+    <value>נועל גרעינים של מעבד לתהליכי משחק ומייעל את תזמון השרשורים.</value>
+  </data>
+  <data name="Feature_FullscreenOptimizations.Header" xml:space="preserve">
+    <value>הפעל אופטימיזציות מסך מלא</value>
+  </data>
+  <data name="Feature_FullscreenOptimizations.Description" xml:space="preserve">
+    <value>מגדיר את קו צינור התצוגה של Windows לתצוגה ללא גבולות בביצועים גבוהים.</value>
+  </data>
+  <data name="Intelligent_Impact_FullscreenOptimizations" xml:space="preserve">
+    <value>ממזער את זמן האחזור של התצוגה תוך שמירה על מיתוג מהיר של Alt+Tab.</value>
+  </data>
+  <data name="Intelligent_Impact_GpuDriverTweaks" xml:space="preserve">
+    <value>מונע תנודות בשעון ה-GPU במהלך משחקים ועיבוד תלת-ממד.</value>
+  </data>
+  <data name="Intelligent_Impact_MenuShowDelay" xml:space="preserve">
+    <value>תחושת ניווט מיידי בסייר הקבצים ובשולחן העבודה.</value>
+  </data>
+  <data name="Intelligent_Impact_MouseHoverTime" xml:space="preserve">
+    <value>הצגה מיידית של תיבות כלים ותצוגות מקדימות של שורת המשימות.</value>
+  </data>
+  <data name="Intelligent_Impact_KeyboardLatency" xml:space="preserve">
+    <value>זיהוי קלט מקשים מיידי וחזרה מהירה יותר על תווים.</value>
+  </data>
+  <data name="Feature_MouseAcceleration.Header" xml:space="preserve">
+    <value>השבת האצת עכבר (קלט גולמי)</value>
+  </data>
+  <data name="Feature_MouseAcceleration.Description" xml:space="preserve">
+    <value>משבית את עקומת האצת העכבר של Windows לדיוק מצביע 1:1 טהור.</value>
+  </data>
+  <data name="Intelligent_Impact_MouseAcceleration" xml:space="preserve">
+    <value>עקביות מושלמת של מעקב מצביע למשחקים ועבודת עיצוב מדויקת.</value>
+  </data>
+  <data name="Intelligent_Impact_OptimizeNTFS" xml:space="preserve">
+    <value>מאיץ אינדוקס ספריות קבצים ובדיקות מטה-נתונים של הדיסק.</value>
+  </data>
+  <data name="Intelligent_Impact_ServiceHostSplitting" xml:space="preserve">
+    <value>מפחית את עומס ספירת תהליכים ב-30-50 תהליכים במערכות עם 8GB+ זיכרון.</value>
+  </data>
+  <data name="Feature_UsbPowerSaving.Header" xml:space="preserve">
+    <value>השבת השעיה סלקטיבית של USB</value>
+  </data>
+  <data name="Feature_UsbPowerSaving.Description" xml:space="preserve">
+    <value>מונע מ-Windows להכניס בקרי USB ואביזרים לצריכת חשמל נמוכה.</value>
+  </data>
+  <data name="Intelligent_Impact_UsbPowerSaving" xml:space="preserve">
+    <value>מונע נשירות שמע USB, פיגור בבקר ונתקי עכבר.</value>
+  </data>
+  <data name="Feature_PowerThrottling.Header" xml:space="preserve">
+    <value>השבת מגבלת צריכת חשמל</value>
+  </data>
+  <data name="Feature_PowerThrottling.Description" xml:space="preserve">
+    <value>משבית את אלגוריתם מגבלת הצריכה של Windows על שרשורי ביצוע ברקע.</value>
+  </data>
+  <data name="Intelligent_Impact_PowerThrottling" xml:space="preserve">
+    <value>מבטיח שמשימות עיבוד וקימפול ברקע יפעלו במהירויות שעון מעבד מלאות.</value>
+  </data>
+  <data name="Intelligent_Impact_LowDiskSpaceChecks" xml:space="preserve">
+    <value>עוצר הפרעות סריקת דיסק חוזרות.</value>
+  </data>
+  <data name="Intelligent_Impact_LinkResolve" xml:space="preserve">
+    <value>מאיץ פתיחת קיצורי דרך שבורים מבלי להקפיא את סייר הקבצים.</value>
+  </data>
+  <data name="Intelligent_Impact_AutoComplete" xml:space="preserve">
+    <value>ניווט מהיר יותר בנתיב שורת הכתובת.</value>
+  </data>
+  <data name="Feature_TelemetryServices.Header" xml:space="preserve">
+    <value>השבת טלמטריה ואבחון של Windows</value>
+  </data>
+  <data name="Feature_TelemetryServices.Description" xml:space="preserve">
+    <value>משבית לחלוטין את DiagTrack ו-dmwappushservice לאיסוף אבחון ברקע.</value>
+  </data>
+  <data name="Intelligent_Impact_TelemetryServices" xml:space="preserve">
+    <value>עוצר מעקב אוטומטי ברקע, רישום הקשות ועלאות נתוני טלמטריה.</value>
+  </data>
+  <data name="Feature_WindowsAI.Header" xml:space="preserve">
+    <value>השבת תכונות AI ופעילות כרייה של Windows</value>
+  </data>
+  <data name="Feature_WindowsAI.Description" xml:space="preserve">
+    <value>חוסם ניתוח AI ברקע, שילובי AI במחברת/צייר ודיווחי שאילתות מודל.</value>
+  </data>
+  <data name="Intelligent_Impact_WindowsAI" xml:space="preserve">
+    <value>מגן על פרטיות קבצים מקומיים ועוצר גריטת AI סחבה מהענן.</value>
+  </data>
+  <data name="Feature_WindowsRecall.Header" xml:space="preserve">
+    <value>השבת צילומי מסך של Windows Recall</value>
+  </data>
+  <data name="Feature_WindowsRecall.Description" xml:space="preserve">
+    <value>חוסם צילומי מסך רציפים ותקופתיים של שולחנות עבודה פעילים ואינדוקס OCR.</value>
+  </data>
+  <data name="Intelligent_Impact_WindowsRecall" xml:space="preserve">
+    <value>מבטיח שנתוני בנקאות רגישים, סיסמאות ומסמכים פרטיים לעולם לא יוקלטו.</value>
+  </data>
+  <data name="Feature_CoPilotAI.Header" xml:space="preserve">
+    <value>השבת עוזר AI Copilot</value>
+  </data>
+  <data name="Feature_CoPilotAI.Description" xml:space="preserve">
+    <value>משבית את הסרגל הצדדי של Copilot, לחצן שורת המשימות ושאילתות סינכרון ענן רציפות.</value>
+  </data>
+  <data name="Intelligent_Impact_CoPilotAI" xml:space="preserve">
+    <value>משחרר מקום בשורת המשימות ומסיר תהליכי תצוגת אינטרנט ברקע.</value>
+  </data>
+  <data name="Feature_AdvertisingID.Header" xml:space="preserve">
+    <value>השבת מזהה פרסום Windows</value>
+  </data>
+  <data name="Feature_AdvertisingID.Description" xml:space="preserve">
+    <value>מונע מיישומי Windows Store לעקוב אחר פעילות המשתמש לצורך פרסום מותאם אישית.</value>
+  </data>
+  <data name="Intelligent_Impact_AdvertisingID" xml:space="preserve">
+    <value>עוצר מעקב פרופיל מזהה פרסום ייחודי.</value>
+  </data>
+  <data name="Feature_ActivityUploads.Header" xml:space="preserve">
+    <value>השבת סינכרון ענן של היסטוריית פעילות</value>
+  </data>
+  <data name="Feature_ActivityUploads.Description" xml:space="preserve">
+    <value>מונע העלאה של היסטוריית הפעלת יישומים וגלישה לענן של Microsoft.</value>
+  </data>
+  <data name="Intelligent_Impact_ActivityUploads" xml:space="preserve">
+    <value>היסטוריית השימוש בהתקן לעולם לא מסורגת על פני חשבונות ענן מקושרים.</value>
+  </data>
+  <data name="Feature_ClipboardSync.Header" xml:space="preserve">
+    <value>השבת סינכרון ענן של לוח גזירים בין מכשירים</value>
+  </data>
+  <data name="Feature_ClipboardSync.Description" xml:space="preserve">
+    <value>עוצר העלאה אוטומטית של חוצץ ההעתקה של לוח הגזירים לשרתי ענן.</value>
+  </data>
+  <data name="Intelligent_Impact_ClipboardSync" xml:space="preserve">
+    <value>מגן על טקסט מועתק רגיש, סיסמאות ואסימונים מחשיפת ענן.</value>
+  </data>
+  <data name="Feature_LocationAccess.Header" xml:space="preserve">
+    <value>השבת גישה למיקום ולחיישנים</value>
+  </data>
+  <data name="Feature_LocationAccess.Description" xml:space="preserve">
+    <value>משבית את שירות ספק המיקום של Windows וממשקי API של חיישן מיקום.</value>
+  </data>
+  <data name="Intelligent_Impact_LocationAccess" xml:space="preserve">
+    <value>מונע ממדפדפני אינטרנט ואפליקציות שולחן עבודה לאתר קואורדינטות פיזיות.</value>
+  </data>
+  <data name="Feature_ClassicContextMenu.Header" xml:space="preserve">
+    <value>שחזר את תפריט הקליק הימני הקלאסי של Windows 10</value>
+  </data>
+  <data name="Feature_ClassicContextMenu.Description" xml:space="preserve">
+    <value>משחזר את תפריט ההקשר המלא והמיידי בלחיצה ימנית ב-Windows 11 ללא לחיצה על 'הצג אפשרויות נוספות'.</value>
+  </data>
+  <data name="Intelligent_Impact_ClassicContextMenu" xml:space="preserve">
+    <value>חוסך לחיצה אחת בכל פעולת קליק ימני בסייר.</value>
+  </data>
+  <data name="Feature_EndTask.Header" xml:space="preserve">
+    <value>הפעל 'סיים משימה' על אייקוני שורת המשימות</value>
+  </data>
+  <data name="Feature_EndTask.Description" xml:space="preserve">
+    <value>מוסיף פעולת 'סיים משימה' ישירה בלחיצה ימנית לפריטי שורת המשימות לסיום מיידי של תהליך.</value>
+  </data>
+  <data name="Intelligent_Impact_EndTask" xml:space="preserve">
+    <value>סיים מיידי תוכניות קפואות מבלי לפתוח את מנהל המשימות.</value>
+  </data>
+  <data name="Intelligent_Impact_FileExtensionsAndHiddenFiles" xml:space="preserve">
+    <value>מגן מפני תוכנות זדוניות עם סיומת כפולה מזויפת (.pdf.exe).</value>
+  </data>
+  <data name="Feature_StickyKeys.Header" xml:space="preserve">
+    <value>השבת הנחיית מקשים דביקים</value>
+  </data>
+  <data name="Feature_StickyKeys.Description" xml:space="preserve">
+    <value>משבית תיבת הדו-שיח המוקפצת בלחיצה על Shift 5 פעמים במשחקים.</value>
+  </data>
+  <data name="Intelligent_Impact_StickyKeys" xml:space="preserve">
+    <value>עוצר הפרעות משחק מהקשה על מקש Shift.</value>
+  </data>
+  <data name="Feature_RecommendedSectionStartMenu.Header" xml:space="preserve">
+    <value>הסתר קטע מומלץ בתפריט התחל</value>
+  </data>
+  <data name="Feature_RecommendedSectionStartMenu.Description" xml:space="preserve">
+    <value>מסיר את חלונית הקבצים האחרונים והמומלצים בתפריט התחל של Windows 11.</value>
+  </data>
+  <data name="Intelligent_Impact_RecommendedSectionStartMenu" xml:space="preserve">
+    <value>תפריט התחל נקי יותר עם יותר מקום לאפליקציות מוצמדות.</value>
+  </data>
+  <data name="Feature_TaskbarToLeft.Header" xml:space="preserve">
+    <value>יישר אייקוני שורת המשימות לשמאל</value>
+  </data>
+  <data name="Feature_TaskbarToLeft.Description" xml:space="preserve">
+    <value>מעביר את לחצן התחל ואייקוני שורת המשימות של Windows 11 למיקום הקלאסי בפינה השמאלית התחתונה.</value>
+  </data>
+  <data name="Intelligent_Impact_TaskbarToLeft" xml:space="preserve">
+    <value>יישור זיכרון שריר קלאסי.</value>
+  </data>
+  <data name="Feature_FilesCompactMode.Header" xml:space="preserve">
+    <value>הפעל תצוגה קומפקטית בסייר הקבצים</value>
+  </data>
+  <data name="Feature_FilesCompactMode.Description" xml:space="preserve">
+    <value>מפחית את הריפוד האנכי בין שורות בסייר הקבצים לצפיפות קבצים גבוהה יותר.</value>
+  </data>
+  <data name="Intelligent_Impact_FilesCompactMode" xml:space="preserve">
+    <value>צפה בקבצים רבים יותר לכל מסך ללא גלילה.</value>
+  </data>
+  <data name="Feature_CloudClipboard.Header" xml:space="preserve">
+    <value>הפעל היסטוריית לוח גזירים משופרת</value>
+  </data>
+  <data name="Feature_CloudClipboard.Description" xml:space="preserve">
+    <value>מגדיר היסטוריית לוח גזירים מקומית Win+V ללא סינכרון ענן.</value>
+  </data>
+  <data name="Intelligent_Impact_CloudClipboard" xml:space="preserve">
+    <value>היסטוריית לוח גזירים מרובת פריטים נגישה עם Win+V.</value>
+  </data>
+  <data name="Feature_EdgeDiscoverBar.Header" xml:space="preserve">
+    <value>השבת את הסרגל הצדדי ואת הווידג'טים של Edge</value>
+  </data>
+  <data name="Feature_EdgeDiscoverBar.Description" xml:space="preserve">
+    <value>משבית את לחצן הסרגל הצדדי של דפדפן Edge ואת ווידג'ט החיפוש הצף.</value>
+  </data>
+  <data name="Intelligent_Impact_EdgeDiscoverBar" xml:space="preserve">
+    <value>מסיר עומס מדפדפן Edge.</value>
+  </data>
+  <data name="Feature_BluetoothAdvertising.Header" xml:space="preserve">
+    <value>השבת משואות פרסום Bluetooth</value>
+  </data>
+  <data name="Feature_BluetoothAdvertising.Description" xml:space="preserve">
+    <value>מונע מ-Windows לשדר משואות פרסום Bluetooth לחומרה סמוכה.</value>
+  </data>
+  <data name="Intelligent_Impact_BluetoothAdvertising" xml:space="preserve">
+    <value>משפר פרטיות התקן אלחוטי במקומות ציבוריים.</value>
+  </data>
+  <data name="Feature_SpotlightFeatures.Header" xml:space="preserve">
+    <value>השבת הצעות Windows Spotlight</value>
+  </data>
+  <data name="Feature_SpotlightFeatures.Description" xml:space="preserve">
+    <value>משבית הצעות קידום ומורידות תמונות ענן ברקע במסך הנעילה.</value>
+  </data>
+  <data name="Intelligent_Impact_SpotlightFeatures" xml:space="preserve">
+    <value>עוצר פרסומות מסך הנעילה ותעבורת הורדה ברקע.</value>
+  </data>
+  <data name="Feature_NvidiaTelemetry.Header" xml:space="preserve">
+    <value>השבת מיכל הטלמטריה של NVIDIA</value>
+  </data>
+  <data name="Feature_NvidiaTelemetry.Description" xml:space="preserve">
+    <value>משבית משימות טלמטריה ברקע של מנהל NVIDIA ושירותי מעקב.</value>
+  </data>
+  <data name="Intelligent_Impact_NvidiaTelemetry" xml:space="preserve">
+    <value>עוצר העלאות ניתוח GPU ומשחרר יותר מ-100 מגה-בייט RAM ברקע.</value>
+  </data>
+  <data name="Feature_EdgeTelemetry.Header" xml:space="preserve">
+    <value>השבת טלמטריה של Microsoft Edge</value>
+  </data>
+  <data name="Feature_EdgeTelemetry.Description" xml:space="preserve">
+    <value>משבית אבחון דפדפן Edge, דיווחי קריסה ודחיפת הפעלת הרקע.</value>
+  </data>
+  <data name="Intelligent_Impact_EdgeTelemetry" xml:space="preserve">
+    <value>מונע מ-Edge להשאיר תהליכי רקע קבועים חיים.</value>
+  </data>
+  <data name="Intelligent_Impact_RemoteRegistry" xml:space="preserve">
+    <value>סוגר פגיעות רשת מרכזית המנוצלת על ידי תוכנות זדוניות ותוכנות כופר.</value>
+  </data>
+  <data name="Feature_SMBv1.Header" xml:space="preserve">
+    <value>השבת פרוטוקול רשת SMBv1 מורשה</value>
+  </data>
+  <data name="Feature_SMBv1.Description" xml:space="preserve">
+    <value>משבית את פרוטוקול שיתוף הקבצים הלא בטוח SMBv1 בן 30 שנה (וקטור התקפה EternalBlue/WannaCry).</value>
+  </data>
+  <data name="Intelligent_Impact_SMBv1" xml:space="preserve">
+    <value>התקשות אבטחה קריטית נגד ניצולי תולעת רשת.</value>
+  </data>
+  <data name="Feature_Widgets.Header" xml:space="preserve">
+    <value>השבת לוח ה-Widgets של Windows 11</value>
+  </data>
+  <data name="Feature_Widgets.Description" xml:space="preserve">
+    <value>משבית את פיד ה-Widgets בשורת המשימות ותהליכי Edge WebView ברקע.</value>
+  </data>
+  <data name="Intelligent_Impact_Widgets" xml:space="preserve">
+    <value>משחרר יותר מ-300 מגה-בייט RAM ועוצר עיבוד רקע רציף של Edge.</value>
+  </data>
+  <data name="Feature_SysMain.Header" xml:space="preserve">
+    <value>אופטימיזציה ל-SysMain (Superfetch)</value>
+  </data>
+  <data name="Feature_SysMain.Description" xml:space="preserve">
+    <value>מכוונן או משבית את שירות SysMain כדי לעצור טעינה מוקדמת מיותרת על כוני SSD.</value>
+  </data>
+  <data name="Intelligent_Impact_SysMain" xml:space="preserve">
+    <value>מבטל ספייקים גבוהים של שימוש בדיסק ברקע ומחזורי כתיבה מיותרים ב-SSD.</value>
+  </data>
 </root>

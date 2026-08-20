@@ -2200,4 +2200,499 @@ Kiểm tra máy tính để phát hiện sự cố bộ nhớ.</value>
   <data name="StartupPage_Notification_DisabledCount" xml:space="preserve">
     <value>Đã tắt {0} ứng dụng khởi động.</value>
   </data>
+
+  <data name="Intelligent_ScoreTitle" xml:space="preserve">
+    <value>Điểm tối ưu hóa</value>
+  </data>
+  <data name="Intelligent_HealthGrade_Scanning" xml:space="preserve">
+    <value>Đang quét...</value>
+  </data>
+  <data name="Intelligent_HealthGrade_Excellent" xml:space="preserve">
+    <value>A+ Xuất sắc</value>
+  </data>
+  <data name="Intelligent_HealthGrade_Good" xml:space="preserve">
+    <value>B Tốt</value>
+  </data>
+  <data name="Intelligent_HealthGrade_Fair" xml:space="preserve">
+    <value>C Trung bình</value>
+  </data>
+  <data name="Intelligent_HealthGrade_NeedsTuning" xml:space="preserve">
+    <value>D Cần tinh chỉnh</value>
+  </data>
+  <data name="Intelligent_HealthGrade_Unoptimized" xml:space="preserve">
+    <value>F Chưa tối ưu</value>
+  </data>
+  <data name="Intelligent_Domain_GlobalTitle" xml:space="preserve">
+    <value>Trung tâm chẩn đoán thông minh</value>
+  </data>
+  <data name="Intelligent_Domain_GlobalDesc" xml:space="preserve">
+    <value>Chọn một danh mục để xem trước các đề xuất thông minh, giảm độ trễ hệ thống và tinh chỉnh cấu hình của bạn.</value>
+  </data>
+  <data name="Intelligent_Domain_PerfTitle" xml:space="preserve">
+    <value>Động cơ hiệu năng</value>
+  </data>
+  <data name="Intelligent_Domain_PerfDesc" xml:space="preserve">
+    <value>Tối ưu hóa lập lịch phần cứng GPU, phân chia thời gian CPU, lập chỉ mục bộ đệm NTFS và loại bỏ độ trễ menu màn hình.</value>
+  </data>
+  <data name="Intelligent_Domain_PrivTitle" xml:space="preserve">
+    <value>Lá chắn quyền riêng tư &amp; đo từ xa</value>
+  </data>
+  <data name="Intelligent_Domain_PrivDesc" xml:space="preserve">
+    <value>Chặn đo từ xa chẩn đoán nền, thu thập dữ liệu Windows AI, ảnh chụp màn hình Recall và tải lên hoạt động đám mây.</value>
+  </data>
+  <data name="Intelligent_Domain_FeatTitle" xml:space="preserve">
+    <value>Khả năng sử dụng &amp; tính năng Shell</value>
+  </data>
+  <data name="Intelligent_Domain_FeatDesc" xml:space="preserve">
+    <value>Khôi phục menu chuột phải cổ điển, bật 'Kết thúc tác vụ' trên thanh tác vụ, hiển thị tệp/phần mở rộng ẩn và dọn dẹp Menu Bắt đầu.</value>
+  </data>
+  <data name="Intelligent_ActiveCount" xml:space="preserve">
+    <value>Đang bật: {0} / {1}</value>
+  </data>
+  <data name="Intelligent_OptimizationsActive" xml:space="preserve">
+    <value>Tối ưu hóa đang bật: {0} / {1}</value>
+  </data>
+  <data name="Intelligent_PotentialGain" xml:space="preserve">
+    <value>Tiềm năng: +{0} điểm</value>
+  </data>
+  <data name="Intelligent_RecommendedCount" xml:space="preserve">
+    <value>Đề xuất: {0}</value>
+  </data>
+  <data name="Intelligent_RollbacksCount" xml:space="preserve">
+    <value>Khôi phục: {0}</value>
+  </data>
+  <data name="Intelligent_Metric_LowLatency" xml:space="preserve">
+    <value>Độ trễ thấp &amp; UI nhanh</value>
+  </data>
+  <data name="Intelligent_Metric_DataShield" xml:space="preserve">
+    <value>Bảo vệ dữ liệu &amp; giọng nói</value>
+  </data>
+  <data name="Intelligent_Metric_Productivity" xml:space="preserve">
+    <value>Năng suất 1 cú nhấp</value>
+  </data>
+  <data name="Intelligent_Category_Performance" xml:space="preserve">
+    <value>Hiệu năng</value>
+  </data>
+  <data name="Intelligent_Category_Privacy" xml:space="preserve">
+    <value>Quyền riêng tư</value>
+  </data>
+  <data name="Intelligent_Category_Usability" xml:space="preserve">
+    <value>Khả năng sử dụng</value>
+  </data>
+  <data name="Intelligent_Mode_Rec" xml:space="preserve">
+    <value>Đề xuất</value>
+  </data>
+  <data name="Intelligent_Mode_Rec_Tooltip" xml:space="preserve">
+    <value>Đề xuất: Tinh chỉnh tác động cao &amp; an toàn 100%</value>
+  </data>
+  <data name="Intelligent_Mode_Safe" xml:space="preserve">
+    <value>An toàn</value>
+  </data>
+  <data name="Intelligent_Mode_Safe_Tooltip" xml:space="preserve">
+    <value>Tất cả an toàn: Mọi tối ưu hóa an toàn 100% và không xâm lấn</value>
+  </data>
+  <data name="Intelligent_Mode_Adv" xml:space="preserve">
+    <value>Nâng cao</value>
+  </data>
+  <data name="Intelligent_Mode_Adv_Tooltip" xml:space="preserve">
+    <value>Nâng cao: Bao gồm tinh chỉnh vừa phải &amp; cho người dùng chuyên sâu</value>
+  </data>
+  <data name="Intelligent_Apply_Format" xml:space="preserve">
+    <value>Áp dụng {0} ({1})</value>
+  </data>
+  <data name="Intelligent_Apply_Active" xml:space="preserve">
+    <value>{0} đã bật ✓</value>
+  </data>
+  <data name="Intelligent_Btn_Preview" xml:space="preserve">
+    <value>Xem trước</value>
+  </data>
+  <data name="Intelligent_Btn_Rollback" xml:space="preserve">
+    <value>Khôi phục</value>
+  </data>
+  <data name="Intelligent_TuneByDomain" xml:space="preserve">
+    <value>Tinh chỉnh theo lĩnh vực</value>
+  </data>
+  <data name="Intelligent_Preview_Title" xml:space="preserve">
+    <value>Xem trước: {0}</value>
+  </data>
+  <data name="Intelligent_Preview_Desc" xml:space="preserve">
+    <value>Xem lại các thay đổi tối ưu hóa được đề xuất trước khi áp dụng. Các điểm khôi phục sẽ được lưu tự động.</value>
+  </data>
+  <data name="Intelligent_Preview_ApplyBtn" xml:space="preserve">
+    <value>Áp dụng tối ưu hóa đã chọn</value>
+  </data>
+  <data name="Intelligent_Preview_CancelBtn" xml:space="preserve">
+    <value>Hủy</value>
+  </data>
+  <data name="Intelligent_Preview_Empty" xml:space="preserve">
+    <value>Mọi tối ưu hóa trên trang này đã được bật! Không có gì để xem trước.</value>
+  </data>
+  <data name="Intelligent_Status_Applying" xml:space="preserve">
+    <value>Bước 5 [Áp dụng] ({0}/{1}): {2}</value>
+  </data>
+  <data name="Intelligent_Status_Verifying" xml:space="preserve">
+    <value>Bước 6 [Xác minh]: Đang truy vấn trạng thái hệ thống theo thời gian thực...</value>
+  </data>
+  <data name="Intelligent_Status_Success" xml:space="preserve">
+    <value>Đã áp dụng và xác minh thành công {0} tối ưu hóa!</value>
+  </data>
+  <data name="Intelligent_Status_AllActive" xml:space="preserve">
+    <value>Mọi tối ưu hóa {0} trên trang này đã được bật!</value>
+  </data>
+  <data name="Intelligent_Status_RollingBack" xml:space="preserve">
+    <value>Đang khôi phục {0} mục trên trang này...</value>
+  </data>
+  <data name="Intelligent_Status_RollbackDone" xml:space="preserve">
+    <value>Đã khôi phục {0} mục về trạng thái trước khi áp dụng.</value>
+  </data>
+  <data name="Intelligent_Status_NoRollbacks" xml:space="preserve">
+    <value>Không tìm thấy bản sao lưu khôi phục cho trang này.</value>
+  </data>
+  <data name="Intelligent_Badge_Optimal" xml:space="preserve">
+    <value>Tối ưu ✓</value>
+  </data>
+  <data name="Intelligent_Badge_Recommended" xml:space="preserve">
+    <value>Đề xuất</value>
+  </data>
+  <data name="Intelligent_Badge_Safe" xml:space="preserve">
+    <value>An toàn</value>
+  </data>
+  <data name="Intelligent_Badge_Moderate" xml:space="preserve">
+    <value>Vừa phải</value>
+  </data>
+  <data name="Intelligent_Badge_Advanced" xml:space="preserve">
+    <value>Nâng cao</value>
+  </data>
+  <data name="Intelligent_Badge_Caution" xml:space="preserve">
+    <value>Cẩn trọng</value>
+  </data>
+  <data name="Intelligent_PointsGain" xml:space="preserve">
+    <value>+{0} điểm</value>
+  </data>
+  <data name="Intelligent_Flyout_TechnicalDetails" xml:space="preserve">
+    <value>Chi tiết kỹ thuật</value>
+  </data>
+  <data name="Intelligent_Flyout_ScoreImpact" xml:space="preserve">
+    <value>Tác động điểm: +{0} điểm ({1})</value>
+  </data>
+  <data name="Intelligent_Flyout_PreApplyBackup" xml:space="preserve">
+    <value>Sao lưu trước áp dụng: Đã lưu lúc {0} (Trạng thái ban đầu: {1})</value>
+  </data>
+  <data name="Intelligent_Flyout_NoBackup" xml:space="preserve">
+    <value>Sao lưu trước áp dụng: Không có (Bật/tắt để tạo điểm khôi phục)</value>
+  </data>
+  <data name="Intelligent_Flyout_Status" xml:space="preserve">
+    <value>Trạng thái hiện tại: {0}</value>
+  </data>
+
+  <data name="Intelligent_Verification_Active" xml:space="preserve">
+    <value>Đã xác minh đang bật ✓</value>
+  </data>
+  <data name="Intelligent_Verification_Restart" xml:space="preserve">
+    <value>Yêu cầu khởi động lại 🔄</value>
+  </data>
+  <data name="Intelligent_Verification_Failed" xml:space="preserve">
+    <value>Xác minh thất bại ⚠️</value>
+  </data>
+  <data name="Intelligent_Verification_NotVerified" xml:space="preserve">
+    <value>Chưa xác minh</value>
+  </data>
+  <data name="Intelligent_General_Category" xml:space="preserve">
+    <value>Chung</value>
+  </data>
+
+  <data name="Intelligent_Impact_BackgroundApps" xml:space="preserve">
+    <value>Giải phóng chu kỳ CPU nền và tiết kiệm hơn 200MB RAM.</value>
+  </data>
+  <data name="Intelligent_Impact_SystemProfile" xml:space="preserve">
+    <value>Giảm micro-stutter và cải thiện độ ổn định framerate.</value>
+  </data>
+  <data name="Intelligent_Impact_PrioritizeForegroundApplications" xml:space="preserve">
+    <value>Cải thiện khả năng phản hồi của ứng dụng đang dùng khi đa nhiệm nặng.</value>
+  </data>
+  <data name="Feature_GamingMode.Header" xml:space="preserve">
+    <value>Bật chế độ Gaming của Windows</value>
+  </data>
+  <data name="Feature_GamingMode.Description" xml:space="preserve">
+    <value>Cấu hình chế độ Game Mode và GPU Hardware Scheduling cho độ trễ siêu thấp.</value>
+  </data>
+  <data name="Intelligent_Impact_GamingMode" xml:space="preserve">
+    <value>Khóa các lõi CPU cho tiến trình game và tối ưu hóa lập lịch luồng.</value>
+  </data>
+  <data name="Feature_FullscreenOptimizations.Header" xml:space="preserve">
+    <value>Bật tối ưu hóa toàn màn hình</value>
+  </data>
+  <data name="Feature_FullscreenOptimizations.Description" xml:space="preserve">
+    <value>Cấu hình đường dẫn hiển thị Windows cho trình chiếu không viền hiệu năng cao.</value>
+  </data>
+  <data name="Intelligent_Impact_FullscreenOptimizations" xml:space="preserve">
+    <value>Giảm thiểu độ trễ hiển thị trong khi vẫn chuyển đổi Alt+Tab nhanh.</value>
+  </data>
+  <data name="Intelligent_Impact_GpuDriverTweaks" xml:space="preserve">
+    <value>Ngăn chặn dao động xung nhịp nguồn GPU trong khi chơi game và render 3D.</value>
+  </data>
+  <data name="Intelligent_Impact_MenuShowDelay" xml:space="preserve">
+    <value>Cảm giác điều hướng UI tức thì trong File Explorer và màn hình nền.</value>
+  </data>
+  <data name="Intelligent_Impact_MouseHoverTime" xml:space="preserve">
+    <value>Tooltip và bản xem trước thumbnail thanh tác vụ ngay lập tức.</value>
+  </data>
+  <data name="Intelligent_Impact_KeyboardLatency" xml:space="preserve">
+    <value>Nhận dạng nhập phím tức thì và lặp ký tự nhanh hơn.</value>
+  </data>
+  <data name="Feature_MouseAcceleration.Header" xml:space="preserve">
+    <value>Tắt tăng tốc chuột (Raw Input)</value>
+  </data>
+  <data name="Feature_MouseAcceleration.Description" xml:space="preserve">
+    <value>Vô hiệu hóa đường cong tăng tốc chuột Windows để có độ chính xác con trỏ phần cứng 1:1 thuần túy.</value>
+  </data>
+  <data name="Intelligent_Impact_MouseAcceleration" xml:space="preserve">
+    <value>Độ nhất quán theo dõi con trỏ hoàn hảo cho chơi game và công việc thiết kế chính xác.</value>
+  </data>
+  <data name="Intelligent_Impact_OptimizeNTFS" xml:space="preserve">
+    <value>Tăng tốc lập chỉ mục thư mục tệp và tra cứu siêu dữ liệu đĩa.</value>
+  </data>
+  <data name="Intelligent_Impact_ServiceHostSplitting" xml:space="preserve">
+    <value>Giảm tổng số tiến trình 30-50 tiến trình trên hệ thống có RAM 8GB+.</value>
+  </data>
+  <data name="Feature_UsbPowerSaving.Header" xml:space="preserve">
+    <value>Tắt USB Selective Suspend</value>
+  </data>
+  <data name="Feature_UsbPowerSaving.Description" xml:space="preserve">
+    <value>Ngăn Windows tắt các bộ điều khiển USB và thiết bị ngoại vi ở trạng thái tiêu thụ điện thấp.</value>
+  </data>
+  <data name="Intelligent_Impact_UsbPowerSaving" xml:space="preserve">
+    <value>Ngăn mất âm thanh USB, lag bộ điều khiển và ngắt kết nối chuột.</value>
+  </data>
+  <data name="Feature_PowerThrottling.Header" xml:space="preserve">
+    <value>Tắt giới hạn điện năng</value>
+  </data>
+  <data name="Feature_PowerThrottling.Description" xml:space="preserve">
+    <value>Vô hiệu hóa thuật toán giới hạn điện năng Windows trên các luồng thực thi nền.</value>
+  </data>
+  <data name="Intelligent_Impact_PowerThrottling" xml:space="preserve">
+    <value>Đảm bảo các công việc render và biên dịch nền chạy ở tốc độ xung nhịp CPU đầy đủ.</value>
+  </data>
+  <data name="Intelligent_Impact_LowDiskSpaceChecks" xml:space="preserve">
+    <value>Dừng các ngắt kiểm tra đĩa định kỳ.</value>
+  </data>
+  <data name="Intelligent_Impact_LinkResolve" xml:space="preserve">
+    <value>Tăng tốc mở lối tắt bị hỏng mà không đóng băng Explorer.</value>
+  </data>
+  <data name="Intelligent_Impact_AutoComplete" xml:space="preserve">
+    <value>Điều hướng đường dẫn trong thanh địa chỉ nhanh hơn.</value>
+  </data>
+  <data name="Feature_TelemetryServices.Header" xml:space="preserve">
+    <value>Tắt Telemetry &amp; Chẩn đoán Windows</value>
+  </data>
+  <data name="Feature_TelemetryServices.Description" xml:space="preserve">
+    <value>Vô hiệu hóa hoàn toàn DiagTrack và dmwappushservice để thu thập chẩn đoán nền.</value>
+  </data>
+  <data name="Intelligent_Impact_TelemetryServices" xml:space="preserve">
+    <value>Dừng theo dõi nền tự động, ghi nhật ký tổ hợp phím và tải lên dữ liệu đo lường từ xa.</value>
+  </data>
+  <data name="Feature_WindowsAI.Header" xml:space="preserve">
+    <value>Tắt tính năng AI &amp; khai thác của Windows</value>
+  </data>
+  <data name="Feature_WindowsAI.Description" xml:space="preserve">
+    <value>Chặn phân tích AI nền của Windows, tích hợp AI trong Notepad/Paint và báo cáo truy vấn mô hình.</value>
+  </data>
+  <data name="Intelligent_Impact_WindowsAI" xml:space="preserve">
+    <value>Bảo vệ quyền riêng tư tệp cục bộ và dừng thu thập AI đám mây liên tục.</value>
+  </data>
+  <data name="Feature_WindowsRecall.Header" xml:space="preserve">
+    <value>Tắt chụp màn hình Windows Recall</value>
+  </data>
+  <data name="Feature_WindowsRecall.Description" xml:space="preserve">
+    <value>Chặn chụp màn hình liên tục định kỳ của màn hình nền đang hoạt động và lập chỉ mục OCR.</value>
+  </data>
+  <data name="Intelligent_Impact_WindowsRecall" xml:space="preserve">
+    <value>Đảm bảo dữ liệu ngân hàng nhạy cảm, mật khẩu và tài liệu riêng tư không bao giờ bị ghi lại.</value>
+  </data>
+  <data name="Feature_CoPilotAI.Header" xml:space="preserve">
+    <value>Tắt trợ lý AI Copilot</value>
+  </data>
+  <data name="Feature_CoPilotAI.Description" xml:space="preserve">
+    <value>Vô hiệu hóa thanh bên Copilot, nút thanh tác vụ và các truy vấn đồng bộ hóa đám mây liên tục.</value>
+  </data>
+  <data name="Intelligent_Impact_CoPilotAI" xml:space="preserve">
+    <value>Giải phóng không gian thanh tác vụ và loại bỏ các tiến trình xem web nền.</value>
+  </data>
+  <data name="Feature_AdvertisingID.Header" xml:space="preserve">
+    <value>Tắt ID quảng cáo Windows</value>
+  </data>
+  <data name="Feature_AdvertisingID.Description" xml:space="preserve">
+    <value>Ngăn các ứng dụng Windows Store theo dõi hoạt động người dùng để quảng cáo được cá nhân hóa.</value>
+  </data>
+  <data name="Intelligent_Impact_AdvertisingID" xml:space="preserve">
+    <value>Dừng theo dõi hồ sơ định danh quảng cáo duy nhất.</value>
+  </data>
+  <data name="Feature_ActivityUploads.Header" xml:space="preserve">
+    <value>Tắt đồng bộ hóa đám mây lịch sử hoạt động</value>
+  </data>
+  <data name="Feature_ActivityUploads.Description" xml:space="preserve">
+    <value>Ngăn tải lịch sử khởi chạy ứng dụng và lịch sử duyệt web lên đám mây Microsoft.</value>
+  </data>
+  <data name="Intelligent_Impact_ActivityUploads" xml:space="preserve">
+    <value>Lịch sử sử dụng thiết bị không bao giờ được phát đến các tài khoản đám mây được liên kết.</value>
+  </data>
+  <data name="Feature_ClipboardSync.Header" xml:space="preserve">
+    <value>Tắt đồng bộ hóa đám mây clipboard giữa các thiết bị</value>
+  </data>
+  <data name="Feature_ClipboardSync.Description" xml:space="preserve">
+    <value>Dừng bộ đệm sao chép clipboard tự động tải lên máy chủ đám mây.</value>
+  </data>
+  <data name="Intelligent_Impact_ClipboardSync" xml:space="preserve">
+    <value>Bảo vệ văn bản đã sao chép nhạy cảm, mật khẩu và token khỏi bị lộ trên đám mây.</value>
+  </data>
+  <data name="Feature_LocationAccess.Header" xml:space="preserve">
+    <value>Tắt quyền truy cập vị trí &amp; cảm biến</value>
+  </data>
+  <data name="Feature_LocationAccess.Description" xml:space="preserve">
+    <value>Vô hiệu hóa dịch vụ nhà cung cấp vị trí Windows và các API cảm biến vị trí.</value>
+  </data>
+  <data name="Intelligent_Impact_LocationAccess" xml:space="preserve">
+    <value>Ngăn trình duyệt web và ứng dụng máy tính xác định tọa độ vật lý.</value>
+  </data>
+  <data name="Feature_ClassicContextMenu.Header" xml:space="preserve">
+    <value>Khôi phục menu chuột phải Windows 10 cổ điển</value>
+  </data>
+  <data name="Feature_ClassicContextMenu.Description" xml:space="preserve">
+    <value>Khôi phục menu ngữ cảnh chuột phải đầy đủ và ngay lập tức trong Windows 11 mà không cần nhấp 'Hiển thị thêm tùy chọn'.</value>
+  </data>
+  <data name="Intelligent_Impact_ClassicContextMenu" xml:space="preserve">
+    <value>Tiết kiệm 1 cú nhấp cho mỗi thao tác chuột phải trong Explorer.</value>
+  </data>
+  <data name="Feature_EndTask.Header" xml:space="preserve">
+    <value>Bật 'Kết thúc tác vụ' trên các biểu tượng ứng dụng thanh tác vụ</value>
+  </data>
+  <data name="Feature_EndTask.Description" xml:space="preserve">
+    <value>Thêm hành động 'Kết thúc tác vụ' trực tiếp vào chuột phải cho các mục thanh tác vụ để kết thúc tiến trình tức thì.</value>
+  </data>
+  <data name="Intelligent_Impact_EndTask" xml:space="preserve">
+    <value>Kết thúc ngay lập tức các chương trình bị treo mà không cần mở Trình quản lý tác vụ.</value>
+  </data>
+  <data name="Intelligent_Impact_FileExtensionsAndHiddenFiles" xml:space="preserve">
+    <value>Bảo vệ khỏi phần mềm độc hại với phần mở rộng kép giả mạo (.pdf.exe).</value>
+  </data>
+  <data name="Feature_StickyKeys.Header" xml:space="preserve">
+    <value>Tắt thông báo Sticky Keys</value>
+  </data>
+  <data name="Feature_StickyKeys.Description" xml:space="preserve">
+    <value>Vô hiệu hóa hộp thoại bật lên khi nhấn Shift 5 lần trong trò chơi.</value>
+  </data>
+  <data name="Intelligent_Impact_StickyKeys" xml:space="preserve">
+    <value>Dừng các gián đoạn chơi game do nhấn phím Shift.</value>
+  </data>
+  <data name="Feature_RecommendedSectionStartMenu.Header" xml:space="preserve">
+    <value>Ẩn phần Đề xuất trong menu Bắt đầu</value>
+  </data>
+  <data name="Feature_RecommendedSectionStartMenu.Description" xml:space="preserve">
+    <value>Xóa ngăn tệp gần đây và được đề xuất trong menu Bắt đầu Windows 11.</value>
+  </data>
+  <data name="Intelligent_Impact_RecommendedSectionStartMenu" xml:space="preserve">
+    <value>Menu Bắt đầu gọn gàng hơn với nhiều không gian hơn cho ứng dụng đã ghim.</value>
+  </data>
+  <data name="Feature_TaskbarToLeft.Header" xml:space="preserve">
+    <value>Căn chỉnh biểu tượng thanh tác vụ sang trái</value>
+  </data>
+  <data name="Feature_TaskbarToLeft.Description" xml:space="preserve">
+    <value>Di chuyển nút Bắt đầu và biểu tượng thanh tác vụ Windows 11 về vị trí cổ điển ở góc dưới bên trái.</value>
+  </data>
+  <data name="Intelligent_Impact_TaskbarToLeft" xml:space="preserve">
+    <value>Căn chỉnh theo trí nhớ cơ bắp cổ điển.</value>
+  </data>
+  <data name="Feature_FilesCompactMode.Header" xml:space="preserve">
+    <value>Bật chế độ xem nhỏ gọn trong File Explorer</value>
+  </data>
+  <data name="Feature_FilesCompactMode.Description" xml:space="preserve">
+    <value>Giảm khoảng cách dọc giữa các hàng trong File Explorer để có mật độ tệp cao hơn.</value>
+  </data>
+  <data name="Intelligent_Impact_FilesCompactMode" xml:space="preserve">
+    <value>Xem nhiều tệp hơn trên mỗi màn hình mà không cần cuộn.</value>
+  </data>
+  <data name="Feature_CloudClipboard.Header" xml:space="preserve">
+    <value>Bật lịch sử Clipboard nâng cao</value>
+  </data>
+  <data name="Feature_CloudClipboard.Description" xml:space="preserve">
+    <value>Cấu hình lịch sử clipboard cục bộ Win+V mà không đồng bộ hóa đám mây.</value>
+  </data>
+  <data name="Intelligent_Impact_CloudClipboard" xml:space="preserve">
+    <value>Lịch sử clipboard nhiều mục có thể truy cập bằng Win+V.</value>
+  </data>
+  <data name="Feature_EdgeDiscoverBar.Header" xml:space="preserve">
+    <value>Tắt thanh bên Discover &amp; Widget của Edge</value>
+  </data>
+  <data name="Feature_EdgeDiscoverBar.Description" xml:space="preserve">
+    <value>Vô hiệu hóa nút thanh bên trình duyệt Edge và widget tìm kiếm nổi.</value>
+  </data>
+  <data name="Intelligent_Impact_EdgeDiscoverBar" xml:space="preserve">
+    <value>Loại bỏ sự lộn xộn trong trình duyệt Edge.</value>
+  </data>
+  <data name="Feature_BluetoothAdvertising.Header" xml:space="preserve">
+    <value>Tắt beacon quảng cáo Bluetooth</value>
+  </data>
+  <data name="Feature_BluetoothAdvertising.Description" xml:space="preserve">
+    <value>Ngăn Windows phát beacon quảng cáo Bluetooth đến phần cứng gần đó.</value>
+  </data>
+  <data name="Intelligent_Impact_BluetoothAdvertising" xml:space="preserve">
+    <value>Tăng cường quyền riêng tư thiết bị không dây ở nơi công cộng.</value>
+  </data>
+  <data name="Feature_SpotlightFeatures.Header" xml:space="preserve">
+    <value>Tắt gợi ý Windows Spotlight</value>
+  </data>
+  <data name="Feature_SpotlightFeatures.Description" xml:space="preserve">
+    <value>Vô hiệu hóa các gợi ý quảng cáo và tải xuống hình ảnh đám mây nền trên màn hình khóa.</value>
+  </data>
+  <data name="Intelligent_Impact_SpotlightFeatures" xml:space="preserve">
+    <value>Dừng quảng cáo trên màn hình khóa và lưu lượng tải xuống nền.</value>
+  </data>
+  <data name="Feature_NvidiaTelemetry.Header" xml:space="preserve">
+    <value>Tắt NVIDIA Telemetry Container</value>
+  </data>
+  <data name="Feature_NvidiaTelemetry.Description" xml:space="preserve">
+    <value>Vô hiệu hóa các tác vụ đo từ xa nền của driver NVIDIA và dịch vụ theo dõi.</value>
+  </data>
+  <data name="Intelligent_Impact_NvidiaTelemetry" xml:space="preserve">
+    <value>Dừng tải lên phân tích GPU và giải phóng hơn 100MB RAM nền.</value>
+  </data>
+  <data name="Feature_EdgeTelemetry.Header" xml:space="preserve">
+    <value>Tắt telemetry của Microsoft Edge</value>
+  </data>
+  <data name="Feature_EdgeTelemetry.Description" xml:space="preserve">
+    <value>Vô hiệu hóa chẩn đoán trình duyệt Edge, báo cáo sự cố và tăng cường nền khi khởi động.</value>
+  </data>
+  <data name="Intelligent_Impact_EdgeTelemetry" xml:space="preserve">
+    <value>Ngăn Edge duy trì các tiến trình nền liên tục hoạt động.</value>
+  </data>
+  <data name="Intelligent_Impact_RemoteRegistry" xml:space="preserve">
+    <value>Đóng lỗ hổng mạng chính bị khai thác bởi phần mềm độc hại và ransomware.</value>
+  </data>
+  <data name="Feature_SMBv1.Header" xml:space="preserve">
+    <value>Tắt giao thức mạng SMBv1 cũ</value>
+  </data>
+  <data name="Feature_SMBv1.Description" xml:space="preserve">
+    <value>Vô hiệu hóa giao thức chia sẻ file SMBv1 30 tuổi không an toàn (vectơ tấn công EternalBlue/WannaCry).</value>
+  </data>
+  <data name="Intelligent_Impact_SMBv1" xml:space="preserve">
+    <value>Tăng cường bảo mật quan trọng chống lại khai thác sâu mạng.</value>
+  </data>
+  <data name="Feature_Widgets.Header" xml:space="preserve">
+    <value>Tắt bảng Widget Windows 11</value>
+  </data>
+  <data name="Feature_Widgets.Description" xml:space="preserve">
+    <value>Vô hiệu hóa nguồn cấp Widget trên thanh tác vụ và các tiến trình Edge WebView nền.</value>
+  </data>
+  <data name="Intelligent_Impact_Widgets" xml:space="preserve">
+    <value>Giải phóng hơn 300MB RAM và dừng kết xuất nền Edge liên tục.</value>
+  </data>
+  <data name="Feature_SysMain.Header" xml:space="preserve">
+    <value>Tối ưu hóa SysMain (Superfetch)</value>
+  </data>
+  <data name="Feature_SysMain.Description" xml:space="preserve">
+    <value>Điều chỉnh hoặc vô hiệu hóa dịch vụ SysMain để dừng tải trước không cần thiết trên SSD.</value>
+  </data>
+  <data name="Intelligent_Impact_SysMain" xml:space="preserve">
+    <value>Loại bỏ các đợt tăng đột biến sử dụng đĩa nền cao và các chu kỳ ghi SSD không cần thiết.</value>
+  </data>
 </root>

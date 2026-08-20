@@ -2200,4 +2200,499 @@ Bilgisayarınızda bellek sorunları olup olmadığını kontrol edin</value>
   <data name="StartupPage_Notification_DisabledCount" xml:space="preserve">
     <value>{0} başlangıç uygulaması devre dışı bırakıldı.</value>
   </data>
+
+  <data name="Intelligent_ScoreTitle" xml:space="preserve">
+    <value>Optimizasyon Puanı</value>
+  </data>
+  <data name="Intelligent_HealthGrade_Scanning" xml:space="preserve">
+    <value>Taranıyor...</value>
+  </data>
+  <data name="Intelligent_HealthGrade_Excellent" xml:space="preserve">
+    <value>A+ Mükemmel</value>
+  </data>
+  <data name="Intelligent_HealthGrade_Good" xml:space="preserve">
+    <value>B İyi</value>
+  </data>
+  <data name="Intelligent_HealthGrade_Fair" xml:space="preserve">
+    <value>C Orta</value>
+  </data>
+  <data name="Intelligent_HealthGrade_NeedsTuning" xml:space="preserve">
+    <value>D Ayar Gerekiyor</value>
+  </data>
+  <data name="Intelligent_HealthGrade_Unoptimized" xml:space="preserve">
+    <value>F Optimize Edilmemiş</value>
+  </data>
+  <data name="Intelligent_Domain_GlobalTitle" xml:space="preserve">
+    <value>Akıllı Tanılama Merkezi</value>
+  </data>
+  <data name="Intelligent_Domain_GlobalDesc" xml:space="preserve">
+    <value>Akıllı önerileri önizlemek, sistem gecikmesini azaltmak ve yapılandırmanızı optimize etmek için bir kategori seçin.</value>
+  </data>
+  <data name="Intelligent_Domain_PerfTitle" xml:space="preserve">
+    <value>Performans Motoru</value>
+  </data>
+  <data name="Intelligent_Domain_PerfDesc" xml:space="preserve">
+    <value>GPU donanım zamanlamasını, CPU kuantum dilimlemeyi, NTFS arabellek dizinlemeyi optimize eder ve masaüstü menü gecikmelerini ortadan kaldırır.</value>
+  </data>
+  <data name="Intelligent_Domain_PrivTitle" xml:space="preserve">
+    <value>Gizlilik ve Telemetri Kalkanı</value>
+  </data>
+  <data name="Intelligent_Domain_PrivDesc" xml:space="preserve">
+    <value>Arka plan tanılama telemetrisini, Windows AI veri toplamayı, Recall ekran görüntülerini ve buluta etkinlik yüklemelerini engeller.</value>
+  </data>
+  <data name="Intelligent_Domain_FeatTitle" xml:space="preserve">
+    <value>Kullanılabilirlik ve Kabuk Özellikleri</value>
+  </data>
+  <data name="Intelligent_Domain_FeatDesc" xml:space="preserve">
+    <value>Klasik sağ tık menülerini geri yükler, görev çubuğunda 'Görevi Sonlandır'ı etkinleştirir, gizli dosya ve uzantıları gösterir ve Başlat Menüsünü sadeleştirir.</value>
+  </data>
+  <data name="Intelligent_ActiveCount" xml:space="preserve">
+    <value>Etkin: {0} / {1}</value>
+  </data>
+  <data name="Intelligent_OptimizationsActive" xml:space="preserve">
+    <value>Etkin Optimizasyonlar: {0} / {1}</value>
+  </data>
+  <data name="Intelligent_PotentialGain" xml:space="preserve">
+    <value>Kazanç: +{0} puan</value>
+  </data>
+  <data name="Intelligent_RecommendedCount" xml:space="preserve">
+    <value>Önerilen: {0}</value>
+  </data>
+  <data name="Intelligent_RollbacksCount" xml:space="preserve">
+    <value>Geri Alma Noktaları: {0}</value>
+  </data>
+  <data name="Intelligent_Metric_LowLatency" xml:space="preserve">
+    <value>Düşük Gecikme ve Hızlı Arayüz</value>
+  </data>
+  <data name="Intelligent_Metric_DataShield" xml:space="preserve">
+    <value>Veri ve Ses Kalkanı</value>
+  </data>
+  <data name="Intelligent_Metric_Productivity" xml:space="preserve">
+    <value>Tek Tıkla Verimlilik</value>
+  </data>
+  <data name="Intelligent_Category_Performance" xml:space="preserve">
+    <value>Performans</value>
+  </data>
+  <data name="Intelligent_Category_Privacy" xml:space="preserve">
+    <value>Gizlilik</value>
+  </data>
+  <data name="Intelligent_Category_Usability" xml:space="preserve">
+    <value>Kullanılabilirlik</value>
+  </data>
+  <data name="Intelligent_Mode_Rec" xml:space="preserve">
+    <value>Önerilen</value>
+  </data>
+  <data name="Intelligent_Mode_Rec_Tooltip" xml:space="preserve">
+    <value>Önerilen: Yüksek etkili, %100 güvenli optimizasyonlar</value>
+  </data>
+  <data name="Intelligent_Mode_Safe" xml:space="preserve">
+    <value>Güvenli</value>
+  </data>
+  <data name="Intelligent_Mode_Safe_Tooltip" xml:space="preserve">
+    <value>Tümü Güvenli: %100 güvenli ve sorunsuz tüm optimizasyonlar</value>
+  </data>
+  <data name="Intelligent_Mode_Adv" xml:space="preserve">
+    <value>Gelişmiş</value>
+  </data>
+  <data name="Intelligent_Mode_Adv_Tooltip" xml:space="preserve">
+    <value>Gelişmiş: İleri düzey kullanıcılar için ve orta seviye ayarları içerir</value>
+  </data>
+  <data name="Intelligent_Apply_Format" xml:space="preserve">
+    <value>{0} Uygula ({1})</value>
+  </data>
+  <data name="Intelligent_Apply_Active" xml:space="preserve">
+    <value>{0} Etkin ✓</value>
+  </data>
+  <data name="Intelligent_Btn_Preview" xml:space="preserve">
+    <value>Önizleme</value>
+  </data>
+  <data name="Intelligent_Btn_Rollback" xml:space="preserve">
+    <value>Geri Al</value>
+  </data>
+  <data name="Intelligent_TuneByDomain" xml:space="preserve">
+    <value>Alana Göre Ayarla</value>
+  </data>
+  <data name="Intelligent_Preview_Title" xml:space="preserve">
+    <value>Önizleme: {0}</value>
+  </data>
+  <data name="Intelligent_Preview_Desc" xml:space="preserve">
+    <value>Uygulamadan önce önerilen optimizasyon değişikliklerini inceleyin. Uygulama öncesi geri alma noktaları otomatik kaydedilecektir.</value>
+  </data>
+  <data name="Intelligent_Preview_ApplyBtn" xml:space="preserve">
+    <value>Seçilen Optimizasyonları Uygula</value>
+  </data>
+  <data name="Intelligent_Preview_CancelBtn" xml:space="preserve">
+    <value>İptal</value>
+  </data>
+  <data name="Intelligent_Preview_Empty" xml:space="preserve">
+    <value>Bu sayfadaki tüm optimizasyonlar zaten etkin! Önizlenecek bir şey yok.</value>
+  </data>
+  <data name="Intelligent_Status_Applying" xml:space="preserve">
+    <value>Adım 5 [Uygulama] ({0}/{1}): {2}</value>
+  </data>
+  <data name="Intelligent_Status_Verifying" xml:space="preserve">
+    <value>Adım 6 [Doğrulama]: Gerçek zamanlı sistem durumu sorgulanıyor...</value>
+  </data>
+  <data name="Intelligent_Status_Success" xml:space="preserve">
+    <value>{0} optimizasyon başarıyla uygulandı ve doğrulandı!</value>
+  </data>
+  <data name="Intelligent_Status_AllActive" xml:space="preserve">
+    <value>Bu sayfadaki tüm {0} optimizasyonları zaten etkin!</value>
+  </data>
+  <data name="Intelligent_Status_RollingBack" xml:space="preserve">
+    <value>Bu sayfadaki {0} öğe geri alınıyor...</value>
+  </data>
+  <data name="Intelligent_Status_RollbackDone" xml:space="preserve">
+    <value>{0} öğe uygulama öncesi durumuna geri alındı.</value>
+  </data>
+  <data name="Intelligent_Status_NoRollbacks" xml:space="preserve">
+    <value>Bu sayfa için geri alma yedeği bulunamadı.</value>
+  </data>
+  <data name="Intelligent_Badge_Optimal" xml:space="preserve">
+    <value>Optimal ✓</value>
+  </data>
+  <data name="Intelligent_Badge_Recommended" xml:space="preserve">
+    <value>Önerilen</value>
+  </data>
+  <data name="Intelligent_Badge_Safe" xml:space="preserve">
+    <value>Güvenli</value>
+  </data>
+  <data name="Intelligent_Badge_Moderate" xml:space="preserve">
+    <value>Orta</value>
+  </data>
+  <data name="Intelligent_Badge_Advanced" xml:space="preserve">
+    <value>Gelişmiş</value>
+  </data>
+  <data name="Intelligent_Badge_Caution" xml:space="preserve">
+    <value>Dikkat</value>
+  </data>
+  <data name="Intelligent_PointsGain" xml:space="preserve">
+    <value>+{0} puan</value>
+  </data>
+  <data name="Intelligent_Flyout_TechnicalDetails" xml:space="preserve">
+    <value>Teknik Ayrıntılar</value>
+  </data>
+  <data name="Intelligent_Flyout_ScoreImpact" xml:space="preserve">
+    <value>Puan Etkisi: +{0} puan ({1})</value>
+  </data>
+  <data name="Intelligent_Flyout_PreApplyBackup" xml:space="preserve">
+    <value>Uygulama Öncesi Yedek: {0} tarihinde kaydedildi (İlk durum: {1})</value>
+  </data>
+  <data name="Intelligent_Flyout_NoBackup" xml:space="preserve">
+    <value>Uygulama Öncesi Yedek: Yok (Geri alma noktası oluşturmak için düğmeyi değiştirin)</value>
+  </data>
+  <data name="Intelligent_Flyout_Status" xml:space="preserve">
+    <value>Geçerli Durum: {0}</value>
+  </data>
+
+  <data name="Intelligent_Verification_Active" xml:space="preserve">
+    <value>Etkin Olduğu Doğrulandı ✓</value>
+  </data>
+  <data name="Intelligent_Verification_Restart" xml:space="preserve">
+    <value>Yeniden Başlatma Gerekli 🔄</value>
+  </data>
+  <data name="Intelligent_Verification_Failed" xml:space="preserve">
+    <value>Doğrulama Başarısız ⚠️</value>
+  </data>
+  <data name="Intelligent_Verification_NotVerified" xml:space="preserve">
+    <value>Doğrulanmadı</value>
+  </data>
+  <data name="Intelligent_General_Category" xml:space="preserve">
+    <value>Genel</value>
+  </data>
+
+  <data name="Intelligent_Impact_BackgroundApps" xml:space="preserve">
+    <value>Arka planda CPU döngüleri serbest kalır ve 200 MB+ RAM tasarrufu sağlanır.</value>
+  </data>
+  <data name="Intelligent_Impact_SystemProfile" xml:space="preserve">
+    <value>Mikro takılmaları azaltır ve kare hızı tutarlılığını iyileştirir.</value>
+  </data>
+  <data name="Intelligent_Impact_PrioritizeForegroundApplications" xml:space="preserve">
+    <value>Yoğun arka plan çoklu görevi sırasında aktif uygulamanın yanıt hızını artırır.</value>
+  </data>
+  <data name="Feature_GamingMode.Header" xml:space="preserve">
+    <value>Windows Oyun Modunu Etkinleştir</value>
+  </data>
+  <data name="Feature_GamingMode.Description" xml:space="preserve">
+    <value>Ultra düşük gecikme için Windows Oyun Modu ve GPU Donanım Zamanlamasını yapılandırır.</value>
+  </data>
+  <data name="Intelligent_Impact_GamingMode" xml:space="preserve">
+    <value>CPU çekirdeklerini oyun işlemlerine kilitler ve iş parçacığı zamanlamasını optimize eder.</value>
+  </data>
+  <data name="Feature_FullscreenOptimizations.Header" xml:space="preserve">
+    <value>Tam Ekran Optimizasyonlarını Etkinleştir</value>
+  </data>
+  <data name="Feature_FullscreenOptimizations.Description" xml:space="preserve">
+    <value>Yüksek performanslı kenarsız sunum için Windows görüntüleme ardışık düzenini yapılandırır.</value>
+  </data>
+  <data name="Intelligent_Impact_FullscreenOptimizations" xml:space="preserve">
+    <value>Hızlı Alt+Tab geçişini korurken ekran gecikmesini en aza indirir.</value>
+  </data>
+  <data name="Intelligent_Impact_GpuDriverTweaks" xml:space="preserve">
+    <value>Oyun ve 3D render sırasında GPU güç saati dalgalanmalarını önler.</value>
+  </data>
+  <data name="Intelligent_Impact_MenuShowDelay" xml:space="preserve">
+    <value>Dosya Gezgini ve masaüstünde anlık UI navigasyon hissi.</value>
+  </data>
+  <data name="Intelligent_Impact_MouseHoverTime" xml:space="preserve">
+    <value>Anında araç ipucu ve görev çubuğu küçük resim önizlemeleri.</value>
+  </data>
+  <data name="Intelligent_Impact_KeyboardLatency" xml:space="preserve">
+    <value>Anında tuş girişi tanıma ve daha hızlı karakter tekrarı.</value>
+  </data>
+  <data name="Feature_MouseAcceleration.Header" xml:space="preserve">
+    <value>Mouse Hızlandırmasını Devre Dışı Bırak (Raw Input)</value>
+  </data>
+  <data name="Feature_MouseAcceleration.Description" xml:space="preserve">
+    <value>Saf 1:1 donanım imleç hassasiyeti için Windows mouse hız ivmesi eğrisini devre dışı bırakır.</value>
+  </data>
+  <data name="Intelligent_Impact_MouseAcceleration" xml:space="preserve">
+    <value>Oyun ve hassas tasarım çalışmaları için kusursuz imleç takip tutarlılığı.</value>
+  </data>
+  <data name="Intelligent_Impact_OptimizeNTFS" xml:space="preserve">
+    <value>Dosya dizini indeksleme ve disk meta veri aramalarını hızlandırır.</value>
+  </data>
+  <data name="Intelligent_Impact_ServiceHostSplitting" xml:space="preserve">
+    <value>8GB+ RAM'li sistemlerde toplam işlem sayısı yükünü 30-50 işlem azaltır.</value>
+  </data>
+  <data name="Feature_UsbPowerSaving.Header" xml:space="preserve">
+    <value>USB Seçici Askıya Almayı Devre Dışı Bırak</value>
+  </data>
+  <data name="Feature_UsbPowerSaving.Description" xml:space="preserve">
+    <value>Windows'un USB denetleyicilerini ve çevre birimlerini düşük güç durumlarına geçirmesini engeller.</value>
+  </data>
+  <data name="Intelligent_Impact_UsbPowerSaving" xml:space="preserve">
+    <value>USB ses kesintilerini, denetleyici gecikmelerini ve mouse bağlantı kopuklukları önler.</value>
+  </data>
+  <data name="Feature_PowerThrottling.Header" xml:space="preserve">
+    <value>Güç Kısıtlamasını Devre Dışı Bırak</value>
+  </data>
+  <data name="Feature_PowerThrottling.Description" xml:space="preserve">
+    <value>Arka plan yürütme iş parçacıkları için Windows güç kısıtlama algoritmasını devre dışı bırakır.</value>
+  </data>
+  <data name="Intelligent_Impact_PowerThrottling" xml:space="preserve">
+    <value>Arka plan render ve derleme işlerinin tam CPU saat hızlarında çalışmasını sağlar.</value>
+  </data>
+  <data name="Intelligent_Impact_LowDiskSpaceChecks" xml:space="preserve">
+    <value>Tekrarlayan disk yoklama kesintilerini durdurur.</value>
+  </data>
+  <data name="Intelligent_Impact_LinkResolve" xml:space="preserve">
+    <value>Explorer'ı dondurmadan bozuk kısayol açmayı hızlandırır.</value>
+  </data>
+  <data name="Intelligent_Impact_AutoComplete" xml:space="preserve">
+    <value>Adres çubuğunda daha hızlı yol gezintisi.</value>
+  </data>
+  <data name="Feature_TelemetryServices.Header" xml:space="preserve">
+    <value>Windows Telemetri ve Tanılamayı Devre Dışı Bırak</value>
+  </data>
+  <data name="Feature_TelemetryServices.Description" xml:space="preserve">
+    <value>Arka plan tanılama koleksiyonu için DiagTrack ve dmwappushservice'i tamamen devre dışı bırakır.</value>
+  </data>
+  <data name="Intelligent_Impact_TelemetryServices" xml:space="preserve">
+    <value>Otomatik arka plan izlemeyi, tuş vuruşu günlüğünü ve telemetri yüklemelerini durdurur.</value>
+  </data>
+  <data name="Feature_WindowsAI.Header" xml:space="preserve">
+    <value>Windows AI Özelliklerini ve Madenciliği Devre Dışı Bırak</value>
+  </data>
+  <data name="Feature_WindowsAI.Description" xml:space="preserve">
+    <value>Windows arka plan AI analizini, Not Defteri/Paint AI entegrasyonlarını ve model sorgu raporlamayı engeller.</value>
+  </data>
+  <data name="Intelligent_Impact_WindowsAI" xml:space="preserve">
+    <value>Yerel dosya gizliliğini korur ve sürekli bulut AI kazımayı durdurur.</value>
+  </data>
+  <data name="Feature_WindowsRecall.Header" xml:space="preserve">
+    <value>Windows Recall Ekran Anlık Görüntülerini Devre Dışı Bırak</value>
+  </data>
+  <data name="Feature_WindowsRecall.Description" xml:space="preserve">
+    <value>Aktif masaüstlerinin periyodik sürekli ekran görüntüsü alımını ve OCR indekslemesini engeller.</value>
+  </data>
+  <data name="Intelligent_Impact_WindowsRecall" xml:space="preserve">
+    <value>Hassas bankacılık bilgilerinin, şifrelerin ve özel belgelerin asla kaydedilmeyeceğini garanti eder.</value>
+  </data>
+  <data name="Feature_CoPilotAI.Header" xml:space="preserve">
+    <value>Copilot AI Asistanını Devre Dışı Bırak</value>
+  </data>
+  <data name="Feature_CoPilotAI.Description" xml:space="preserve">
+    <value>Windows Copilot kenar çubuğunu, görev çubuğu düğmesini ve sürekli bulut senkronizasyon sorgularını devre dışı bırakır.</value>
+  </data>
+  <data name="Intelligent_Impact_CoPilotAI" xml:space="preserve">
+    <value>Görev çubuğu alanını serbest bırakır ve arka plan web görünümü süreçlerini ortadan kaldırır.</value>
+  </data>
+  <data name="Feature_AdvertisingID.Header" xml:space="preserve">
+    <value>Windows Reklam Kimliğini Devre Dışı Bırak</value>
+  </data>
+  <data name="Feature_AdvertisingID.Description" xml:space="preserve">
+    <value>Windows Store uygulamalarının kişiselleştirilmiş reklamlar için kullanıcı etkinliğini izlemesini engeller.</value>
+  </data>
+  <data name="Intelligent_Impact_AdvertisingID" xml:space="preserve">
+    <value>Benzersiz reklam tanımlayıcı profil izlemeyi durdurur.</value>
+  </data>
+  <data name="Feature_ActivityUploads.Header" xml:space="preserve">
+    <value>Etkinlik Geçmişi Bulut Senkronizasyonunu Devre Dışı Bırak</value>
+  </data>
+  <data name="Feature_ActivityUploads.Description" xml:space="preserve">
+    <value>Kullanıcı uygulama başlatma geçmişinin ve gezinme geçmişinin Microsoft bulutuna yüklenmesini engeller.</value>
+  </data>
+  <data name="Intelligent_Impact_ActivityUploads" xml:space="preserve">
+    <value>Cihaz kullanım geçmişi bağlantılı bulut hesaplarına asla yayınlanmaz.</value>
+  </data>
+  <data name="Feature_ClipboardSync.Header" xml:space="preserve">
+    <value>Cihazlar Arası Pano Bulut Senkronizasyonunu Devre Dışı Bırak</value>
+  </data>
+  <data name="Feature_ClipboardSync.Description" xml:space="preserve">
+    <value>Pano kopyalama arabelleğinin bulut sunucularına otomatik olarak yüklenmesini durdurur.</value>
+  </data>
+  <data name="Intelligent_Impact_ClipboardSync" xml:space="preserve">
+    <value>Hassas kopyalanmış metinleri, şifreleri ve belirteçleri bulut maruziyetinden korur.</value>
+  </data>
+  <data name="Feature_LocationAccess.Header" xml:space="preserve">
+    <value>Konum Erişimini ve Sensörleri Devre Dışı Bırak</value>
+  </data>
+  <data name="Feature_LocationAccess.Description" xml:space="preserve">
+    <value>Windows konum sağlayıcı hizmetini ve konum sensörü API'lerini devre dışı bırakır.</value>
+  </data>
+  <data name="Intelligent_Impact_LocationAccess" xml:space="preserve">
+    <value>Web tarayıcıların ve masaüstü uygulamaların fiziksel koordinatları belirlemesini engeller.</value>
+  </data>
+  <data name="Feature_ClassicContextMenu.Header" xml:space="preserve">
+    <value>Klasik Windows 10 Sağ Tık Menüsünü Geri Yükle</value>
+  </data>
+  <data name="Feature_ClassicContextMenu.Description" xml:space="preserve">
+    <value>'Daha fazla seçenek göster'e tıklamadan Windows 11'de tam ve anlık sağ tık bağlam menüsünü geri yükler.</value>
+  </data>
+  <data name="Intelligent_Impact_ClassicContextMenu" xml:space="preserve">
+    <value>Explorer'daki her sağ tık işleminde 1 tıklamadan tasarruf sağlar.</value>
+  </data>
+  <data name="Feature_EndTask.Header" xml:space="preserve">
+    <value>Görev Çubuğu Uygulama Simgelerinde 'Görevi Sonlandır'ı Etkinleştir</value>
+  </data>
+  <data name="Feature_EndTask.Description" xml:space="preserve">
+    <value>Anlık işlem sonlandırma için görev çubuğu öğelerine doğrudan sağ tık 'Görevi Sonlandır' eylemi ekler.</value>
+  </data>
+  <data name="Intelligent_Impact_EndTask" xml:space="preserve">
+    <value>Görev Yöneticisi'ni açmadan donmuş veya yanıt vermeyen programları anında sonlandırın.</value>
+  </data>
+  <data name="Intelligent_Impact_FileExtensionsAndHiddenFiles" xml:space="preserve">
+    <value>Sahte çift uzantılı kötü amaçlı yazılımlara (.pdf.exe) karşı korur.</value>
+  </data>
+  <data name="Feature_StickyKeys.Header" xml:space="preserve">
+    <value>Yapışkan Tuşlar İstemini Devre Dışı Bırak</value>
+  </data>
+  <data name="Feature_StickyKeys.Description" xml:space="preserve">
+    <value>Oyunlarda Shift tuşuna 5 kez basıldığında çıkan açılır iletişim kutusunu devre dışı bırakır.</value>
+  </data>
+  <data name="Intelligent_Impact_StickyKeys" xml:space="preserve">
+    <value>Shift tuşuna basmaktan kaynaklanan oyun kesintilerini durdurur.</value>
+  </data>
+  <data name="Feature_RecommendedSectionStartMenu.Header" xml:space="preserve">
+    <value>Başlat Menüsünde Önerilen Bölümü Gizle</value>
+  </data>
+  <data name="Feature_RecommendedSectionStartMenu.Description" xml:space="preserve">
+    <value>Windows 11 Başlat Menüsündeki son dosyaları ve önerilenler bölmesini kaldırır.</value>
+  </data>
+  <data name="Intelligent_Impact_RecommendedSectionStartMenu" xml:space="preserve">
+    <value>Sabitlenmiş uygulamalar için daha fazla alan sağlayan, daha temiz bir Başlat Menüsü.</value>
+  </data>
+  <data name="Feature_TaskbarToLeft.Header" xml:space="preserve">
+    <value>Görev Çubuğu Simgelerini Sola Hizala</value>
+  </data>
+  <data name="Feature_TaskbarToLeft.Description" xml:space="preserve">
+    <value>Windows 11 Başlat düğmesini ve görev çubuğu simgelerini klasik sol alt konuma taşır.</value>
+  </data>
+  <data name="Intelligent_Impact_TaskbarToLeft" xml:space="preserve">
+    <value>Klasik kas belleği hizalaması.</value>
+  </data>
+  <data name="Feature_FilesCompactMode.Header" xml:space="preserve">
+    <value>Dosya Gezgini'nde Kompakt Görünümü Etkinleştir</value>
+  </data>
+  <data name="Feature_FilesCompactMode.Description" xml:space="preserve">
+    <value>Daha yüksek dosya yoğunluğu için Dosya Gezgini'ndeki satırlar arasındaki dikey dolguyu azaltır.</value>
+  </data>
+  <data name="Intelligent_Impact_FilesCompactMode" xml:space="preserve">
+    <value>Kaydırmadan ekran başına daha fazla dosya görüntüleyin.</value>
+  </data>
+  <data name="Feature_CloudClipboard.Header" xml:space="preserve">
+    <value>Gelişmiş Pano Geçmişini Etkinleştir</value>
+  </data>
+  <data name="Feature_CloudClipboard.Description" xml:space="preserve">
+    <value>Bulut senkronizasyonu olmadan yerel Win+V pano geçmişini yapılandırır.</value>
+  </data>
+  <data name="Intelligent_Impact_CloudClipboard" xml:space="preserve">
+    <value>Win+V ile erişilebilen çok öğeli pano geçmişi.</value>
+  </data>
+  <data name="Feature_EdgeDiscoverBar.Header" xml:space="preserve">
+    <value>Edge Kenar Çubuğunu ve Widget'larını Devre Dışı Bırak</value>
+  </data>
+  <data name="Feature_EdgeDiscoverBar.Description" xml:space="preserve">
+    <value>Edge tarayıcısı kenar çubuğu düğmesini ve kayan arama widget'ını devre dışı bırakır.</value>
+  </data>
+  <data name="Intelligent_Impact_EdgeDiscoverBar" xml:space="preserve">
+    <value>Edge tarayıcısındaki karmaşayı giderir.</value>
+  </data>
+  <data name="Feature_BluetoothAdvertising.Header" xml:space="preserve">
+    <value>Bluetooth Reklam İşaretlerini Devre Dışı Bırak</value>
+  </data>
+  <data name="Feature_BluetoothAdvertising.Description" xml:space="preserve">
+    <value>Windows'un yakındaki donanıma Bluetooth reklam işaretleri yayınlamasını engeller.</value>
+  </data>
+  <data name="Intelligent_Impact_BluetoothAdvertising" xml:space="preserve">
+    <value>Halka açık yerlerde kablosuz cihaz gizliliğini artırır.</value>
+  </data>
+  <data name="Feature_SpotlightFeatures.Header" xml:space="preserve">
+    <value>Windows Spotlight Önerilerini Devre Dışı Bırak</value>
+  </data>
+  <data name="Feature_SpotlightFeatures.Description" xml:space="preserve">
+    <value>Kilit ekranında promosyon önerilerini ve arka plan bulut görüntü indirmelerini devre dışı bırakır.</value>
+  </data>
+  <data name="Intelligent_Impact_SpotlightFeatures" xml:space="preserve">
+    <value>Kilit ekranı reklamlarını ve arka plan indirme trafiğini durdurur.</value>
+  </data>
+  <data name="Feature_NvidiaTelemetry.Header" xml:space="preserve">
+    <value>NVIDIA Telemetri Konteynerini Devre Dışı Bırak</value>
+  </data>
+  <data name="Feature_NvidiaTelemetry.Description" xml:space="preserve">
+    <value>NVIDIA sürücüsü arka plan telemetri görevlerini ve izleme hizmetlerini devre dışı bırakır.</value>
+  </data>
+  <data name="Intelligent_Impact_NvidiaTelemetry" xml:space="preserve">
+    <value>GPU analitik yüklemelerini durdurur ve 100MB+ arka plan RAM'i serbest bırakır.</value>
+  </data>
+  <data name="Feature_EdgeTelemetry.Header" xml:space="preserve">
+    <value>Microsoft Edge Telemetrisini Devre Dışı Bırak</value>
+  </data>
+  <data name="Feature_EdgeTelemetry.Description" xml:space="preserve">
+    <value>Edge tarayıcısı tanılamalarını, kilitlenme raporlarını ve başlangıç arka plan geliştirmesini devre dışı bırakır.</value>
+  </data>
+  <data name="Intelligent_Impact_EdgeTelemetry" xml:space="preserve">
+    <value>Edge'in kalıcı arka plan süreçlerini canlı tutmasını engeller.</value>
+  </data>
+  <data name="Intelligent_Impact_RemoteRegistry" xml:space="preserve">
+    <value>Kötü amaçlı yazılım ve fidye yazılımı tarafından istismar edilen önemli ağ güvenlik açığını kapatır.</value>
+  </data>
+  <data name="Feature_SMBv1.Header" xml:space="preserve">
+    <value>Eski SMBv1 Ağ Protokolünü Devre Dışı Bırak</value>
+  </data>
+  <data name="Feature_SMBv1.Description" xml:space="preserve">
+    <value>30 yıllık güvensiz SMBv1 dosya paylaşım protokolünü devre dışı bırakır (EternalBlue/WannaCry saldırı vektörü).</value>
+  </data>
+  <data name="Intelligent_Impact_SMBv1" xml:space="preserve">
+    <value>Ağ solucanı açıklarına karşı kritik güvenlik sertleştirmesi.</value>
+  </data>
+  <data name="Feature_Widgets.Header" xml:space="preserve">
+    <value>Windows 11 Widget Panosunu Devre Dışı Bırak</value>
+  </data>
+  <data name="Feature_Widgets.Description" xml:space="preserve">
+    <value>Görev çubuğu Widget akışını ve arka plan Edge WebView işlemlerini devre dışı bırakır.</value>
+  </data>
+  <data name="Intelligent_Impact_Widgets" xml:space="preserve">
+    <value>300MB+ RAM serbest bırakır ve sürekli Edge arka plan renderını durdurur.</value>
+  </data>
+  <data name="Feature_SysMain.Header" xml:space="preserve">
+    <value>SysMain'i (Superfetch) Optimize Et</value>
+  </data>
+  <data name="Feature_SysMain.Description" xml:space="preserve">
+    <value>SSD'lerde gereksiz ön yüklemeyi durdurmak için SysMain hizmetini ayarlar veya devre dışı bırakır.</value>
+  </data>
+  <data name="Intelligent_Impact_SysMain" xml:space="preserve">
+    <value>Yüksek arka plan disk kullanım artışlarını ve gereksiz SSD yazma döngülerini ortadan kaldırır.</value>
+  </data>
 </root>

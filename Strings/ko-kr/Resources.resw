@@ -2200,4 +2200,499 @@
   <data name="StartupPage_Notification_DisabledCount" xml:space="preserve">
     <value>{0}개의 시작 앱을 사용 안 함으로 설정했습니다.</value>
   </data>
+
+  <data name="Intelligent_ScoreTitle" xml:space="preserve">
+    <value>최적화 점수</value>
+  </data>
+  <data name="Intelligent_HealthGrade_Scanning" xml:space="preserve">
+    <value>스캔 중...</value>
+  </data>
+  <data name="Intelligent_HealthGrade_Excellent" xml:space="preserve">
+    <value>A+ 매우 우수</value>
+  </data>
+  <data name="Intelligent_HealthGrade_Good" xml:space="preserve">
+    <value>B 좋음</value>
+  </data>
+  <data name="Intelligent_HealthGrade_Fair" xml:space="preserve">
+    <value>C 보통</value>
+  </data>
+  <data name="Intelligent_HealthGrade_NeedsTuning" xml:space="preserve">
+    <value>D 튜닝 필요</value>
+  </data>
+  <data name="Intelligent_HealthGrade_Unoptimized" xml:space="preserve">
+    <value>F 최적화되지 않음</value>
+  </data>
+  <data name="Intelligent_Domain_GlobalTitle" xml:space="preserve">
+    <value>지능형 진단 센터</value>
+  </data>
+  <data name="Intelligent_Domain_GlobalDesc" xml:space="preserve">
+    <value>카테고리를 선택하여 스마트 추천 항목을 확인하고, 시스템 지연 시간을 줄이며 구성을 미세 조정하세요.</value>
+  </data>
+  <data name="Intelligent_Domain_PerfTitle" xml:space="preserve">
+    <value>성능 엔진</value>
+  </data>
+  <data name="Intelligent_Domain_PerfDesc" xml:space="preserve">
+    <value>GPU 하드웨어 스케줄링, CPU 퀀텀 분할, NTFS 버퍼 인덱싱을 최적화하고 바탕화면 메뉴 지연을 제거합니다.</value>
+  </data>
+  <data name="Intelligent_Domain_PrivTitle" xml:space="preserve">
+    <value>개인 정보 및 원격 측정 보호</value>
+  </data>
+  <data name="Intelligent_Domain_PrivDesc" xml:space="preserve">
+    <value>백그라운드 진단 원격 측정, Windows AI 데이터 수집, Recall 화면 스냅샷 및 클라우드 활동 업로드를 차단합니다.</value>
+  </data>
+  <data name="Intelligent_Domain_FeatTitle" xml:space="preserve">
+    <value>사용성 및 셸 기능</value>
+  </data>
+  <data name="Intelligent_Domain_FeatDesc" xml:space="preserve">
+    <value>클래식 마우스 오른쪽 버튼 메뉴를 복원하고, 작업 표시줄 '작업 끝내기'를 활성화하며, 숨김 파일/확장자를 표시하고 시작 메뉴를 정리합니다.</value>
+  </data>
+  <data name="Intelligent_ActiveCount" xml:space="preserve">
+    <value>활성: {0} / {1}</value>
+  </data>
+  <data name="Intelligent_OptimizationsActive" xml:space="preserve">
+    <value>활성화된 최적화: {0} / {1}</value>
+  </data>
+  <data name="Intelligent_PotentialGain" xml:space="preserve">
+    <value>상승 가능: +{0}점</value>
+  </data>
+  <data name="Intelligent_RecommendedCount" xml:space="preserve">
+    <value>추천: {0}</value>
+  </data>
+  <data name="Intelligent_RollbacksCount" xml:space="preserve">
+    <value>롤백 가능: {0}</value>
+  </data>
+  <data name="Intelligent_Metric_LowLatency" xml:space="preserve">
+    <value>낮은 지연 시간 및 빠른 UI</value>
+  </data>
+  <data name="Intelligent_Metric_DataShield" xml:space="preserve">
+    <value>데이터 및 음성 보호</value>
+  </data>
+  <data name="Intelligent_Metric_Productivity" xml:space="preserve">
+    <value>원클릭 생산성</value>
+  </data>
+  <data name="Intelligent_Category_Performance" xml:space="preserve">
+    <value>성능</value>
+  </data>
+  <data name="Intelligent_Category_Privacy" xml:space="preserve">
+    <value>개인 정보</value>
+  </data>
+  <data name="Intelligent_Category_Usability" xml:space="preserve">
+    <value>사용성</value>
+  </data>
+  <data name="Intelligent_Mode_Rec" xml:space="preserve">
+    <value>추천</value>
+  </data>
+  <data name="Intelligent_Mode_Rec_Tooltip" xml:space="preserve">
+    <value>추천: 효과가 뛰어나며 100% 안전한 최적화 항목</value>
+  </data>
+  <data name="Intelligent_Mode_Safe" xml:space="preserve">
+    <value>안전</value>
+  </data>
+  <data name="Intelligent_Mode_Safe_Tooltip" xml:space="preserve">
+    <value>모두 안전: 100% 안전하고 시스템에 무리가 없는 모든 최적화</value>
+  </data>
+  <data name="Intelligent_Mode_Adv" xml:space="preserve">
+    <value>고급</value>
+  </data>
+  <data name="Intelligent_Mode_Adv_Tooltip" xml:space="preserve">
+    <value>고급: 파워 유저 및 일반 조정 항목 포함</value>
+  </data>
+  <data name="Intelligent_Apply_Format" xml:space="preserve">
+    <value>{0} 적용 ({1})</value>
+  </data>
+  <data name="Intelligent_Apply_Active" xml:space="preserve">
+    <value>{0} 활성 상태 ✓</value>
+  </data>
+  <data name="Intelligent_Btn_Preview" xml:space="preserve">
+    <value>미리보기</value>
+  </data>
+  <data name="Intelligent_Btn_Rollback" xml:space="preserve">
+    <value>롤백</value>
+  </data>
+  <data name="Intelligent_TuneByDomain" xml:space="preserve">
+    <value>영역별 튜닝</value>
+  </data>
+  <data name="Intelligent_Preview_Title" xml:space="preserve">
+    <value>미리보기: {0}</value>
+  </data>
+  <data name="Intelligent_Preview_Desc" xml:space="preserve">
+    <value>적용하기 전에 제안된 최적화 변경 사항을 검토하세요. 적용 전 롤백 지점이 자동으로 저장됩니다.</value>
+  </data>
+  <data name="Intelligent_Preview_ApplyBtn" xml:space="preserve">
+    <value>선택한 최적화 적용</value>
+  </data>
+  <data name="Intelligent_Preview_CancelBtn" xml:space="preserve">
+    <value>취소</value>
+  </data>
+  <data name="Intelligent_Preview_Empty" xml:space="preserve">
+    <value>이 페이지의 모든 최적화가 이미 활성화되어 있습니다! 미리 볼 항목이 없습니다.</value>
+  </data>
+  <data name="Intelligent_Status_Applying" xml:space="preserve">
+    <value>5단계 [적용 중] ({0}/{1}): {2}</value>
+  </data>
+  <data name="Intelligent_Status_Verifying" xml:space="preserve">
+    <value>6단계 [검증 중]: 실시간 시스템 상태 확인 중...</value>
+  </data>
+  <data name="Intelligent_Status_Success" xml:space="preserve">
+    <value>{0}개 최적화가 성공적으로 적용 및 검증되었습니다!</value>
+  </data>
+  <data name="Intelligent_Status_AllActive" xml:space="preserve">
+    <value>이 페이지의 모든 {0} 최적화가 이미 활성화되어 있습니다!</value>
+  </data>
+  <data name="Intelligent_Status_RollingBack" xml:space="preserve">
+    <value>이 페이지의 {0}개 항목을 롤백하는 중...</value>
+  </data>
+  <data name="Intelligent_Status_RollbackDone" xml:space="preserve">
+    <value>{0}개 항목이 적용 전 상태로 롤백되었습니다.</value>
+  </data>
+  <data name="Intelligent_Status_NoRollbacks" xml:space="preserve">
+    <value>이 페이지에 대한 롤백 백업을 찾을 수 없습니다.</value>
+  </data>
+  <data name="Intelligent_Badge_Optimal" xml:space="preserve">
+    <value>최적 ✓</value>
+  </data>
+  <data name="Intelligent_Badge_Recommended" xml:space="preserve">
+    <value>추천</value>
+  </data>
+  <data name="Intelligent_Badge_Safe" xml:space="preserve">
+    <value>안전</value>
+  </data>
+  <data name="Intelligent_Badge_Moderate" xml:space="preserve">
+    <value>보통</value>
+  </data>
+  <data name="Intelligent_Badge_Advanced" xml:space="preserve">
+    <value>고급</value>
+  </data>
+  <data name="Intelligent_Badge_Caution" xml:space="preserve">
+    <value>주의</value>
+  </data>
+  <data name="Intelligent_PointsGain" xml:space="preserve">
+    <value>+{0}점</value>
+  </data>
+  <data name="Intelligent_Flyout_TechnicalDetails" xml:space="preserve">
+    <value>기술 세부 정보</value>
+  </data>
+  <data name="Intelligent_Flyout_ScoreImpact" xml:space="preserve">
+    <value>점수 영향: +{0}점 ({1})</value>
+  </data>
+  <data name="Intelligent_Flyout_PreApplyBackup" xml:space="preserve">
+    <value>적용 전 백업: {0}에 저장됨 (초기 상태: {1})</value>
+  </data>
+  <data name="Intelligent_Flyout_NoBackup" xml:space="preserve">
+    <value>적용 전 백업: 없음 (토글하여 롤백 지점 생성)</value>
+  </data>
+  <data name="Intelligent_Flyout_Status" xml:space="preserve">
+    <value>현재 상태: {0}</value>
+  </data>
+
+  <data name="Intelligent_Verification_Active" xml:space="preserve">
+    <value>활성 상태 확인됨 ✓</value>
+  </data>
+  <data name="Intelligent_Verification_Restart" xml:space="preserve">
+    <value>재부팅 필요 🔄</value>
+  </data>
+  <data name="Intelligent_Verification_Failed" xml:space="preserve">
+    <value>검증 실패 ⚠️</value>
+  </data>
+  <data name="Intelligent_Verification_NotVerified" xml:space="preserve">
+    <value>확인되지 않음</value>
+  </data>
+  <data name="Intelligent_General_Category" xml:space="preserve">
+    <value>일반</value>
+  </data>
+
+  <data name="Intelligent_Impact_BackgroundApps" xml:space="preserve">
+    <value>백그라운드 CPU 사이클을 확보하고 200MB 이상의 RAM을 절약합니다.</value>
+  </data>
+  <data name="Intelligent_Impact_SystemProfile" xml:space="preserve">
+    <value>미세 끊김 현상을 줄이고 프레임 속도 일관성을 향상시킵니다.</value>
+  </data>
+  <data name="Intelligent_Impact_PrioritizeForegroundApplications" xml:space="preserve">
+    <value>무거운 백그라운드 멀티태스킹 중에도 활성 앱 반응성을 향상시킵니다.</value>
+  </data>
+  <data name="Feature_GamingMode.Header" xml:space="preserve">
+    <value>Windows 게임 모드 활성화</value>
+  </data>
+  <data name="Feature_GamingMode.Description" xml:space="preserve">
+    <value>Windows 게임 모드와 GPU 하드웨어 스케줄링을 초저지연으로 구성합니다.</value>
+  </data>
+  <data name="Intelligent_Impact_GamingMode" xml:space="preserve">
+    <value>게임 프로세스에 CPU 코어를 고정하고 스레드 스케줄링을 최적화합니다.</value>
+  </data>
+  <data name="Feature_FullscreenOptimizations.Header" xml:space="preserve">
+    <value>전체 화면 최적화 활성화</value>
+  </data>
+  <data name="Feature_FullscreenOptimizations.Description" xml:space="preserve">
+    <value>고성능 무테두리 프레젠테이션을 위해 Windows 디스플레이 파이프라인을 구성합니다.</value>
+  </data>
+  <data name="Intelligent_Impact_FullscreenOptimizations" xml:space="preserve">
+    <value>빠른 Alt+Tab 전환을 유지하면서 디스플레이 지연을 최소화합니다.</value>
+  </data>
+  <data name="Intelligent_Impact_GpuDriverTweaks" xml:space="preserve">
+    <value>게임 및 3D 렌더링 중 GPU 전원 클록 변동을 방지합니다.</value>
+  </data>
+  <data name="Intelligent_Impact_MenuShowDelay" xml:space="preserve">
+    <value>파일 탐색기와 바탕화면에서 즉각적인 UI 탐색 느낌을 제공합니다.</value>
+  </data>
+  <data name="Intelligent_Impact_MouseHoverTime" xml:space="preserve">
+    <value>즉각적인 툴팁 및 작업 표시줄 썸네일 미리보기.</value>
+  </data>
+  <data name="Intelligent_Impact_KeyboardLatency" xml:space="preserve">
+    <value>즉각적인 키 입력 인식과 빠른 문자 반복.</value>
+  </data>
+  <data name="Feature_MouseAcceleration.Header" xml:space="preserve">
+    <value>마우스 가속 비활성화 (Raw 입력)</value>
+  </data>
+  <data name="Feature_MouseAcceleration.Description" xml:space="preserve">
+    <value>순수한 1:1 하드웨어 커서 정밀도를 위해 Windows 마우스 곡선 가속을 비활성화합니다.</value>
+  </data>
+  <data name="Intelligent_Impact_MouseAcceleration" xml:space="preserve">
+    <value>게임 및 정밀 디자인 작업을 위한 완벽한 커서 추적 일관성.</value>
+  </data>
+  <data name="Intelligent_Impact_OptimizeNTFS" xml:space="preserve">
+    <value>파일 디렉터리 인덱싱 및 디스크 메타데이터 조회를 가속화합니다.</value>
+  </data>
+  <data name="Intelligent_Impact_ServiceHostSplitting" xml:space="preserve">
+    <value>8GB 이상 RAM 시스템에서 총 프로세스 수 오버헤드를 30-50개 줄입니다.</value>
+  </data>
+  <data name="Feature_UsbPowerSaving.Header" xml:space="preserve">
+    <value>USB 선택적 일시 중단 비활성화</value>
+  </data>
+  <data name="Feature_UsbPowerSaving.Description" xml:space="preserve">
+    <value>Windows가 USB 컨트롤러와 주변 장치를 저전력 상태로 전환하는 것을 방지합니다.</value>
+  </data>
+  <data name="Intelligent_Impact_UsbPowerSaving" xml:space="preserve">
+    <value>USB 오디오 끊김, 컨트롤러 지연, 마우스 연결 끊김을 방지합니다.</value>
+  </data>
+  <data name="Feature_PowerThrottling.Header" xml:space="preserve">
+    <value>전원 스로틀링 비활성화</value>
+  </data>
+  <data name="Feature_PowerThrottling.Description" xml:space="preserve">
+    <value>백그라운드 실행 스레드에 대한 Windows 전원 스로틀링 알고리즘을 비활성화합니다.</value>
+  </data>
+  <data name="Intelligent_Impact_PowerThrottling" xml:space="preserve">
+    <value>백그라운드 렌더링 및 컴파일 작업이 최대 CPU 클록 속도로 실행되도록 보장합니다.</value>
+  </data>
+  <data name="Intelligent_Impact_LowDiskSpaceChecks" xml:space="preserve">
+    <value>반복적인 디스크 폴링 인터럽트를 중지합니다.</value>
+  </data>
+  <data name="Intelligent_Impact_LinkResolve" xml:space="preserve">
+    <value>탐색기를 멈추지 않고 끊어진 바로 가기 열기를 빠르게 합니다.</value>
+  </data>
+  <data name="Intelligent_Impact_AutoComplete" xml:space="preserve">
+    <value>주소 표시줄 경로 탐색이 빨라집니다.</value>
+  </data>
+  <data name="Feature_TelemetryServices.Header" xml:space="preserve">
+    <value>Windows 원격 측정 및 진단 비활성화</value>
+  </data>
+  <data name="Feature_TelemetryServices.Description" xml:space="preserve">
+    <value>백그라운드 진단 수집을 위한 DiagTrack 및 dmwappushservice를 완전히 비활성화합니다.</value>
+  </data>
+  <data name="Intelligent_Impact_TelemetryServices" xml:space="preserve">
+    <value>자동 백그라운드 추적, 키스트로크 로깅, 원격 측정 업로드를 중지합니다.</value>
+  </data>
+  <data name="Feature_WindowsAI.Header" xml:space="preserve">
+    <value>Windows AI 기능 비활성화</value>
+  </data>
+  <data name="Feature_WindowsAI.Description" xml:space="preserve">
+    <value>Windows 백그라운드 AI 분석, 메모장/그림판 AI 통합 및 모델 쿼리 보고를 차단합니다.</value>
+  </data>
+  <data name="Intelligent_Impact_WindowsAI" xml:space="preserve">
+    <value>로컬 파일 개인 정보를 보호하고 지속적인 클라우드 AI 스크래핑을 중지합니다.</value>
+  </data>
+  <data name="Feature_WindowsRecall.Header" xml:space="preserve">
+    <value>Windows Recall 화면 스냅샷 비활성화</value>
+  </data>
+  <data name="Feature_WindowsRecall.Description" xml:space="preserve">
+    <value>활성 데스크탑의 주기적인 연속 스크린샷 및 OCR 인덱싱을 차단합니다.</value>
+  </data>
+  <data name="Intelligent_Impact_WindowsRecall" xml:space="preserve">
+    <value>민감한 뱅킹 정보, 비밀번호, 개인 문서가 절대 기록되지 않음을 보장합니다.</value>
+  </data>
+  <data name="Feature_CoPilotAI.Header" xml:space="preserve">
+    <value>Copilot AI 어시스턴트 비활성화</value>
+  </data>
+  <data name="Feature_CoPilotAI.Description" xml:space="preserve">
+    <value>Windows Copilot 사이드바, 작업 표시줄 버튼 및 지속적인 클라우드 동기화 쿼리를 비활성화합니다.</value>
+  </data>
+  <data name="Intelligent_Impact_CoPilotAI" xml:space="preserve">
+    <value>작업 표시줄 공간을 확보하고 백그라운드 웹 뷰 프로세스를 제거합니다.</value>
+  </data>
+  <data name="Feature_AdvertisingID.Header" xml:space="preserve">
+    <value>Windows 광고 ID 비활성화</value>
+  </data>
+  <data name="Feature_AdvertisingID.Description" xml:space="preserve">
+    <value>Windows 스토어 애플리케이션이 개인화 광고를 위해 사용자 활동을 추적하는 것을 방지합니다.</value>
+  </data>
+  <data name="Intelligent_Impact_AdvertisingID" xml:space="preserve">
+    <value>고유 광고 식별자 프로필 추적을 중지합니다.</value>
+  </data>
+  <data name="Feature_ActivityUploads.Header" xml:space="preserve">
+    <value>활동 기록 클라우드 동기화 비활성화</value>
+  </data>
+  <data name="Feature_ActivityUploads.Description" xml:space="preserve">
+    <value>사용자 앱 실행 기록 및 검색 기록이 Microsoft 클라우드에 업로드되는 것을 방지합니다.</value>
+  </data>
+  <data name="Intelligent_Impact_ActivityUploads" xml:space="preserve">
+    <value>장치 사용 기록이 연결된 클라우드 계정에 절대 전송되지 않습니다.</value>
+  </data>
+  <data name="Feature_ClipboardSync.Header" xml:space="preserve">
+    <value>장치 간 클립보드 클라우드 동기화 비활성화</value>
+  </data>
+  <data name="Feature_ClipboardSync.Description" xml:space="preserve">
+    <value>클립보드 복사 버퍼가 클라우드 서버에 자동으로 업로드되는 것을 중지합니다.</value>
+  </data>
+  <data name="Intelligent_Impact_ClipboardSync" xml:space="preserve">
+    <value>복사된 민감한 텍스트, 비밀번호 및 토큰을 클라우드 노출로부터 보호합니다.</value>
+  </data>
+  <data name="Feature_LocationAccess.Header" xml:space="preserve">
+    <value>위치 액세스 및 센서 비활성화</value>
+  </data>
+  <data name="Feature_LocationAccess.Description" xml:space="preserve">
+    <value>Windows 위치 공급자 서비스와 위치 센서 API를 비활성화합니다.</value>
+  </data>
+  <data name="Intelligent_Impact_LocationAccess" xml:space="preserve">
+    <value>웹 브라우저 및 데스크탑 앱이 물리적 좌표를 확인하는 것을 방지합니다.</value>
+  </data>
+  <data name="Feature_ClassicContextMenu.Header" xml:space="preserve">
+    <value>Windows 10 클래식 마우스 오른쪽 메뉴 복원</value>
+  </data>
+  <data name="Feature_ClassicContextMenu.Description" xml:space="preserve">
+    <value>'추가 옵션 표시'를 클릭하지 않고도 Windows 11에서 전체 즉각적인 마우스 오른쪽 클릭 컨텍스트 메뉴를 복원합니다.</value>
+  </data>
+  <data name="Intelligent_Impact_ClassicContextMenu" xml:space="preserve">
+    <value>탐색기에서 모든 마우스 오른쪽 클릭 동작 시 1번의 클릭을 절약합니다.</value>
+  </data>
+  <data name="Feature_EndTask.Header" xml:space="preserve">
+    <value>작업 표시줄 앱 아이콘에 '작업 끝내기' 활성화</value>
+  </data>
+  <data name="Feature_EndTask.Description" xml:space="preserve">
+    <value>즉각적인 프로세스 종료를 위해 작업 표시줄 항목에 직접 마우스 오른쪽 '작업 끝내기' 동작을 추가합니다.</value>
+  </data>
+  <data name="Intelligent_Impact_EndTask" xml:space="preserve">
+    <value>작업 관리자를 열지 않고 동결되거나 응답 없는 프로그램을 즉시 종료합니다.</value>
+  </data>
+  <data name="Intelligent_Impact_FileExtensionsAndHiddenFiles" xml:space="preserve">
+    <value>위장된 이중 확장자 악성코드(.pdf.exe)로부터 보호합니다.</value>
+  </data>
+  <data name="Feature_StickyKeys.Header" xml:space="preserve">
+    <value>고정 키 프롬프트 비활성화</value>
+  </data>
+  <data name="Feature_StickyKeys.Description" xml:space="preserve">
+    <value>게임에서 Shift를 5번 누를 때 나타나는 팝업 대화 상자를 비활성화합니다.</value>
+  </data>
+  <data name="Intelligent_Impact_StickyKeys" xml:space="preserve">
+    <value>Shift 키 연타로 인한 게임 중단을 중지합니다.</value>
+  </data>
+  <data name="Feature_RecommendedSectionStartMenu.Header" xml:space="preserve">
+    <value>시작 메뉴에서 추천 섹션 숨기기</value>
+  </data>
+  <data name="Feature_RecommendedSectionStartMenu.Description" xml:space="preserve">
+    <value>Windows 11 시작 메뉴에서 최근 파일 및 추천 창을 제거합니다.</value>
+  </data>
+  <data name="Intelligent_Impact_RecommendedSectionStartMenu" xml:space="preserve">
+    <value>고정된 앱을 위한 더 많은 공간이 있는 깔끔한 시작 메뉴.</value>
+  </data>
+  <data name="Feature_TaskbarToLeft.Header" xml:space="preserve">
+    <value>작업 표시줄 아이콘을 왼쪽으로 정렬</value>
+  </data>
+  <data name="Feature_TaskbarToLeft.Description" xml:space="preserve">
+    <value>Windows 11 시작 버튼과 작업 표시줄 아이콘을 클래식 왼쪽 하단 위치로 이동합니다.</value>
+  </data>
+  <data name="Intelligent_Impact_TaskbarToLeft" xml:space="preserve">
+    <value>클래식 근육 기억 정렬.</value>
+  </data>
+  <data name="Feature_FilesCompactMode.Header" xml:space="preserve">
+    <value>파일 탐색기에서 컴팩트 보기 활성화</value>
+  </data>
+  <data name="Feature_FilesCompactMode.Description" xml:space="preserve">
+    <value>파일 탐색기에서 행 사이의 수직 패딩을 줄여 파일 밀도를 높입니다.</value>
+  </data>
+  <data name="Intelligent_Impact_FilesCompactMode" xml:space="preserve">
+    <value>스크롤 없이 화면당 더 많은 파일을 볼 수 있습니다.</value>
+  </data>
+  <data name="Feature_CloudClipboard.Header" xml:space="preserve">
+    <value>향상된 클립보드 기록 활성화</value>
+  </data>
+  <data name="Feature_CloudClipboard.Description" xml:space="preserve">
+    <value>클라우드 동기화 없이 로컬 Win+V 클립보드 기록을 구성합니다.</value>
+  </data>
+  <data name="Intelligent_Impact_CloudClipboard" xml:space="preserve">
+    <value>Win+V로 접근할 수 있는 다중 항목 클립보드 기록.</value>
+  </data>
+  <data name="Feature_EdgeDiscoverBar.Header" xml:space="preserve">
+    <value>Edge Discover 사이드바 및 위젯 비활성화</value>
+  </data>
+  <data name="Feature_EdgeDiscoverBar.Description" xml:space="preserve">
+    <value>Edge 브라우저 사이드바 버튼 및 부동 검색 위젯을 비활성화합니다.</value>
+  </data>
+  <data name="Intelligent_Impact_EdgeDiscoverBar" xml:space="preserve">
+    <value>Edge 브라우저의 불필요한 요소를 제거합니다.</value>
+  </data>
+  <data name="Feature_BluetoothAdvertising.Header" xml:space="preserve">
+    <value>Bluetooth 광고 비콘 비활성화</value>
+  </data>
+  <data name="Feature_BluetoothAdvertising.Description" xml:space="preserve">
+    <value>Windows가 주변 하드웨어에 Bluetooth 광고 비콘을 브로드캐스트하는 것을 방지합니다.</value>
+  </data>
+  <data name="Intelligent_Impact_BluetoothAdvertising" xml:space="preserve">
+    <value>공공장소에서 무선 장치 개인 정보를 향상시킵니다.</value>
+  </data>
+  <data name="Feature_SpotlightFeatures.Header" xml:space="preserve">
+    <value>Windows Spotlight 제안 비활성화</value>
+  </data>
+  <data name="Feature_SpotlightFeatures.Description" xml:space="preserve">
+    <value>잠금 화면에서 프로모션 제안 및 백그라운드 클라우드 이미지 다운로드를 비활성화합니다.</value>
+  </data>
+  <data name="Intelligent_Impact_SpotlightFeatures" xml:space="preserve">
+    <value>잠금 화면 광고 및 백그라운드 다운로드 트래픽을 중지합니다.</value>
+  </data>
+  <data name="Feature_NvidiaTelemetry.Header" xml:space="preserve">
+    <value>NVIDIA 원격 측정 컨테이너 비활성화</value>
+  </data>
+  <data name="Feature_NvidiaTelemetry.Description" xml:space="preserve">
+    <value>NVIDIA 드라이버 백그라운드 원격 측정 작업 및 추적 서비스를 비활성화합니다.</value>
+  </data>
+  <data name="Intelligent_Impact_NvidiaTelemetry" xml:space="preserve">
+    <value>GPU 분석 업로드를 중지하고 백그라운드 RAM 100MB 이상을 확보합니다.</value>
+  </data>
+  <data name="Feature_EdgeTelemetry.Header" xml:space="preserve">
+    <value>Microsoft Edge 원격 측정 비활성화</value>
+  </data>
+  <data name="Feature_EdgeTelemetry.Description" xml:space="preserve">
+    <value>Edge 브라우저 진단, 충돌 보고 및 시작 백그라운드 부스트를 비활성화합니다.</value>
+  </data>
+  <data name="Intelligent_Impact_EdgeTelemetry" xml:space="preserve">
+    <value>Edge가 지속적인 백그라운드 프로세스를 유지하는 것을 방지합니다.</value>
+  </data>
+  <data name="Intelligent_Impact_RemoteRegistry" xml:space="preserve">
+    <value>악성코드와 랜섬웨어가 악용하는 주요 네트워크 취약점을 차단합니다.</value>
+  </data>
+  <data name="Feature_SMBv1.Header" xml:space="preserve">
+    <value>레거시 SMBv1 네트워크 프로토콜 비활성화</value>
+  </data>
+  <data name="Feature_SMBv1.Description" xml:space="preserve">
+    <value>30년 된 불안전한 SMBv1 파일 공유 프로토콜(EternalBlue/WannaCry 공격 벡터)을 비활성화합니다.</value>
+  </data>
+  <data name="Intelligent_Impact_SMBv1" xml:space="preserve">
+    <value>네트워크 웜 익스플로잇에 대한 중요한 보안 강화.</value>
+  </data>
+  <data name="Feature_Widgets.Header" xml:space="preserve">
+    <value>Windows 11 위젯 보드 비활성화</value>
+  </data>
+  <data name="Feature_Widgets.Description" xml:space="preserve">
+    <value>작업 표시줄 위젯 피드와 백그라운드 Edge WebView 프로세스를 비활성화합니다.</value>
+  </data>
+  <data name="Intelligent_Impact_Widgets" xml:space="preserve">
+    <value>300MB 이상의 RAM을 확보하고 지속적인 Edge 백그라운드 렌더링을 중지합니다.</value>
+  </data>
+  <data name="Feature_SysMain.Header" xml:space="preserve">
+    <value>SysMain (Superfetch) 최적화</value>
+  </data>
+  <data name="Feature_SysMain.Description" xml:space="preserve">
+    <value>SSD에 대한 불필요한 사전 로딩을 중지하기 위해 SysMain 서비스를 조정하거나 비활성화합니다.</value>
+  </data>
+  <data name="Intelligent_Impact_SysMain" xml:space="preserve">
+    <value>높은 백그라운드 디스크 사용 급증과 불필요한 SSD 쓰기 사이클을 제거합니다.</value>
+  </data>
 </root>

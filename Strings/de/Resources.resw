@@ -2200,4 +2200,499 @@ Sind Sie sicher, dass Sie fortfahren möchten?</value>
   <data name="StartupPage_Notification_DisabledCount" xml:space="preserve">
     <value>{0} Autostart-Apps deaktiviert.</value>
   </data>
+
+  <data name="Intelligent_ScoreTitle" xml:space="preserve">
+    <value>Optimierungswert</value>
+  </data>
+  <data name="Intelligent_HealthGrade_Scanning" xml:space="preserve">
+    <value>Wird gescannt...</value>
+  </data>
+  <data name="Intelligent_HealthGrade_Excellent" xml:space="preserve">
+    <value>A+ Hervorragend</value>
+  </data>
+  <data name="Intelligent_HealthGrade_Good" xml:space="preserve">
+    <value>B Gut</value>
+  </data>
+  <data name="Intelligent_HealthGrade_Fair" xml:space="preserve">
+    <value>C Ausreichend</value>
+  </data>
+  <data name="Intelligent_HealthGrade_NeedsTuning" xml:space="preserve">
+    <value>D Tuning erforderlich</value>
+  </data>
+  <data name="Intelligent_HealthGrade_Unoptimized" xml:space="preserve">
+    <value>F Nicht optimiert</value>
+  </data>
+  <data name="Intelligent_Domain_GlobalTitle" xml:space="preserve">
+    <value>Intelligentes Diagnosezentrum</value>
+  </data>
+  <data name="Intelligent_Domain_GlobalDesc" xml:space="preserve">
+    <value>Wählen Sie eine Kategorie, um intelligente Empfehlungen anzuzeigen, Systemlatenzen zu reduzieren und Ihre Konfiguration anzupassen.</value>
+  </data>
+  <data name="Intelligent_Domain_PerfTitle" xml:space="preserve">
+    <value>Leistungs-Engine</value>
+  </data>
+  <data name="Intelligent_Domain_PerfDesc" xml:space="preserve">
+    <value>Optimiert GPU-Hardwareplanung, CPU-Zeitscheiben, NTFS-Pufferindizierung und beseitigt Verzögerungen bei Desktop-Menüs.</value>
+  </data>
+  <data name="Intelligent_Domain_PrivTitle" xml:space="preserve">
+    <value>Privatsphäre- &amp; Telemetrie-Schild</value>
+  </data>
+  <data name="Intelligent_Domain_PrivDesc" xml:space="preserve">
+    <value>Blockiert Hintergrund-Diagnosetelemetrie, Windows-KI-Datenerfassung, Recall-Bildschirm-Snapshots und Cloud-Aktivitäts-Uploads.</value>
+  </data>
+  <data name="Intelligent_Domain_FeatTitle" xml:space="preserve">
+    <value>Benutzerfreundlichkeit &amp; Shell-Funktionen</value>
+  </data>
+  <data name="Intelligent_Domain_FeatDesc" xml:space="preserve">
+    <value>Stellt klassische Kontextmenüs wieder her, aktiviert 'Task beenden' in der Taskleiste, zeigt versteckte Dateien/Erweiterungen an und entrümpelt das Startmenü.</value>
+  </data>
+  <data name="Intelligent_ActiveCount" xml:space="preserve">
+    <value>Aktiv: {0} / {1}</value>
+  </data>
+  <data name="Intelligent_OptimizationsActive" xml:space="preserve">
+    <value>Optimierungen aktiv: {0} / {1}</value>
+  </data>
+  <data name="Intelligent_PotentialGain" xml:space="preserve">
+    <value>Gewinn: +{0} Pkt</value>
+  </data>
+  <data name="Intelligent_RecommendedCount" xml:space="preserve">
+    <value>Empfohlen: {0}</value>
+  </data>
+  <data name="Intelligent_RollbacksCount" xml:space="preserve">
+    <value>Wiederherstellungen: {0}</value>
+  </data>
+  <data name="Intelligent_Metric_LowLatency" xml:space="preserve">
+    <value>Geringe Latenz &amp; schnelle UI</value>
+  </data>
+  <data name="Intelligent_Metric_DataShield" xml:space="preserve">
+    <value>Daten- &amp; Sprachschutz</value>
+  </data>
+  <data name="Intelligent_Metric_Productivity" xml:space="preserve">
+    <value>1-Klick-Produktivität</value>
+  </data>
+  <data name="Intelligent_Category_Performance" xml:space="preserve">
+    <value>Leistung</value>
+  </data>
+  <data name="Intelligent_Category_Privacy" xml:space="preserve">
+    <value>Privatsphäre</value>
+  </data>
+  <data name="Intelligent_Category_Usability" xml:space="preserve">
+    <value>Benutzerfreundlichkeit</value>
+  </data>
+  <data name="Intelligent_Mode_Rec" xml:space="preserve">
+    <value>Empf.</value>
+  </data>
+  <data name="Intelligent_Mode_Rec_Tooltip" xml:space="preserve">
+    <value>Empfohlen: Sehr wirksame, 100% sichere Optimierungen</value>
+  </data>
+  <data name="Intelligent_Mode_Safe" xml:space="preserve">
+    <value>Sicher</value>
+  </data>
+  <data name="Intelligent_Mode_Safe_Tooltip" xml:space="preserve">
+    <value>Alles sicher: Alle 100% sicheren, unaufdringlichen Optimierungen</value>
+  </data>
+  <data name="Intelligent_Mode_Adv" xml:space="preserve">
+    <value>Erw.</value>
+  </data>
+  <data name="Intelligent_Mode_Adv_Tooltip" xml:space="preserve">
+    <value>Erweitert: Beinhaltet Power-User- &amp; moderate Optimierungen</value>
+  </data>
+  <data name="Intelligent_Apply_Format" xml:space="preserve">
+    <value>{0} anwenden ({1})</value>
+  </data>
+  <data name="Intelligent_Apply_Active" xml:space="preserve">
+    <value>{0} aktiv ✓</value>
+  </data>
+  <data name="Intelligent_Btn_Preview" xml:space="preserve">
+    <value>Vorschau</value>
+  </data>
+  <data name="Intelligent_Btn_Rollback" xml:space="preserve">
+    <value>Zurücksetzen</value>
+  </data>
+  <data name="Intelligent_TuneByDomain" xml:space="preserve">
+    <value>Nach Bereich anpassen</value>
+  </data>
+  <data name="Intelligent_Preview_Title" xml:space="preserve">
+    <value>Vorschau: {0}</value>
+  </data>
+  <data name="Intelligent_Preview_Desc" xml:space="preserve">
+    <value>Überprüfen Sie die vorgeschlagenen Optimierungen vor dem Anwenden. Sicherungspunkte werden automatisch erstellt.</value>
+  </data>
+  <data name="Intelligent_Preview_ApplyBtn" xml:space="preserve">
+    <value>Ausgewählte Optimierungen anwenden</value>
+  </data>
+  <data name="Intelligent_Preview_CancelBtn" xml:space="preserve">
+    <value>Abbrechen</value>
+  </data>
+  <data name="Intelligent_Preview_Empty" xml:space="preserve">
+    <value>Alle Optimierungen auf dieser Seite sind bereits aktiv! Nichts zur Vorschau.</value>
+  </data>
+  <data name="Intelligent_Status_Applying" xml:space="preserve">
+    <value>Schritt 5 [Anwenden] ({0}/{1}): {2}</value>
+  </data>
+  <data name="Intelligent_Status_Verifying" xml:space="preserve">
+    <value>Schritt 6 [Überprüfen]: Echtzeit-Systemstatus wird abgefragt...</value>
+  </data>
+  <data name="Intelligent_Status_Success" xml:space="preserve">
+    <value>{0} Optimierungen erfolgreich angewendet und überprüft!</value>
+  </data>
+  <data name="Intelligent_Status_AllActive" xml:space="preserve">
+    <value>Alle {0}-Optimierungen auf dieser Seite sind bereits aktiv!</value>
+  </data>
+  <data name="Intelligent_Status_RollingBack" xml:space="preserve">
+    <value>{0} Elemente auf dieser Seite werden zurückgesetzt...</value>
+  </data>
+  <data name="Intelligent_Status_RollbackDone" xml:space="preserve">
+    <value>{0} Elemente wurden auf den vorherigen Zustand zurückgesetzt.</value>
+  </data>
+  <data name="Intelligent_Status_NoRollbacks" xml:space="preserve">
+    <value>Keine Wiederherstellungspunkte für diese Seite gefunden.</value>
+  </data>
+  <data name="Intelligent_Badge_Optimal" xml:space="preserve">
+    <value>Optimal ✓</value>
+  </data>
+  <data name="Intelligent_Badge_Recommended" xml:space="preserve">
+    <value>Empfohlen</value>
+  </data>
+  <data name="Intelligent_Badge_Safe" xml:space="preserve">
+    <value>Sicher</value>
+  </data>
+  <data name="Intelligent_Badge_Moderate" xml:space="preserve">
+    <value>Moderat</value>
+  </data>
+  <data name="Intelligent_Badge_Advanced" xml:space="preserve">
+    <value>Erweitert</value>
+  </data>
+  <data name="Intelligent_Badge_Caution" xml:space="preserve">
+    <value>Vorsicht</value>
+  </data>
+  <data name="Intelligent_PointsGain" xml:space="preserve">
+    <value>+{0} Pkt</value>
+  </data>
+  <data name="Intelligent_Flyout_TechnicalDetails" xml:space="preserve">
+    <value>Technische Details</value>
+  </data>
+  <data name="Intelligent_Flyout_ScoreImpact" xml:space="preserve">
+    <value>Wertungs-Einfluss: +{0} Punkte ({1})</value>
+  </data>
+  <data name="Intelligent_Flyout_PreApplyBackup" xml:space="preserve">
+    <value>Sicherung vor Anwendung: Gespeichert am {0} (Ausgangszustand: {1})</value>
+  </data>
+  <data name="Intelligent_Flyout_NoBackup" xml:space="preserve">
+    <value>Sicherung vor Anwendung: Keine (Umschalten, um Sicherungspunkt zu erstellen)</value>
+  </data>
+  <data name="Intelligent_Flyout_Status" xml:space="preserve">
+    <value>Aktueller Status: {0}</value>
+  </data>
+
+  <data name="Intelligent_Verification_Active" xml:space="preserve">
+    <value>Aktiv verifiziert ✓</value>
+  </data>
+  <data name="Intelligent_Verification_Restart" xml:space="preserve">
+    <value>Neustart erforderlich 🔄</value>
+  </data>
+  <data name="Intelligent_Verification_Failed" xml:space="preserve">
+    <value>Überprüfung fehlgeschlagen ⚠️</value>
+  </data>
+  <data name="Intelligent_Verification_NotVerified" xml:space="preserve">
+    <value>Nicht überprüft</value>
+  </data>
+  <data name="Intelligent_General_Category" xml:space="preserve">
+    <value>Allgemein</value>
+  </data>
+
+  <data name="Intelligent_Impact_BackgroundApps" xml:space="preserve">
+    <value>Entlastet die CPU und spart 200MB+ RAM.</value>
+  </data>
+  <data name="Intelligent_Impact_SystemProfile" xml:space="preserve">
+    <value>Verringert Mikroruckler und verbessert die Framerate-Konsistenz.</value>
+  </data>
+  <data name="Intelligent_Impact_PrioritizeForegroundApplications" xml:space="preserve">
+    <value>Verbessert die Reaktionsfähigkeit aktiver Apps bei starkem Multitasking.</value>
+  </data>
+  <data name="Feature_GamingMode.Header" xml:space="preserve">
+    <value>Windows Gaming Mode aktivieren</value>
+  </data>
+  <data name="Feature_GamingMode.Description" xml:space="preserve">
+    <value>Konfiguriert Windows Game Mode und GPU Hardware Scheduling für ultra-niedrige Latenz.</value>
+  </data>
+  <data name="Intelligent_Impact_GamingMode" xml:space="preserve">
+    <value>Reserviert CPU-Kerne für Spielprozesse und optimiert die Thread-Planung.</value>
+  </data>
+  <data name="Feature_FullscreenOptimizations.Header" xml:space="preserve">
+    <value>Vollbild-Optimierungen aktivieren</value>
+  </data>
+  <data name="Feature_FullscreenOptimizations.Description" xml:space="preserve">
+    <value>Konfiguriert die Windows-Anzeigestrecke für randloses Hochleistungs-Rendering.</value>
+  </data>
+  <data name="Intelligent_Impact_FullscreenOptimizations" xml:space="preserve">
+    <value>Minimiert die Anzeigelatenz bei schnellem Alt+Tab-Wechsel.</value>
+  </data>
+  <data name="Intelligent_Impact_GpuDriverTweaks" xml:space="preserve">
+    <value>Verhindert GPU-Taktschwankungen beim Spielen und 3D-Rendering.</value>
+  </data>
+  <data name="Intelligent_Impact_MenuShowDelay" xml:space="preserve">
+    <value>Sofortiges Navigationsgefühl im Datei-Explorer und auf dem Desktop.</value>
+  </data>
+  <data name="Intelligent_Impact_MouseHoverTime" xml:space="preserve">
+    <value>Sofortige Tooltips und Taskleisten-Miniaturvorschauen.</value>
+  </data>
+  <data name="Intelligent_Impact_KeyboardLatency" xml:space="preserve">
+    <value>Sofortige Tasteneingabeerkennung und schnellere Zeichenwiederholung.</value>
+  </data>
+  <data name="Feature_MouseAcceleration.Header" xml:space="preserve">
+    <value>Mausbeschleunigung deaktivieren (Raw Input)</value>
+  </data>
+  <data name="Feature_MouseAcceleration.Description" xml:space="preserve">
+    <value>Deaktiviert die Windows-Mausbeschleunigungskurve für präzise 1:1-Hardware-Cursorsteuerung.</value>
+  </data>
+  <data name="Intelligent_Impact_MouseAcceleration" xml:space="preserve">
+    <value>Makellose Cursor-Tracking-Konsistenz für Gaming und präzise Designarbeit.</value>
+  </data>
+  <data name="Intelligent_Impact_OptimizeNTFS" xml:space="preserve">
+    <value>Beschleunigt die Dateiverzeichnisindizierung und Disk-Metadatenzugriffe.</value>
+  </data>
+  <data name="Intelligent_Impact_ServiceHostSplitting" xml:space="preserve">
+    <value>Reduziert den Prozesszahl-Overhead um 30-50 Prozesse auf Systemen mit 8GB+ RAM.</value>
+  </data>
+  <data name="Feature_UsbPowerSaving.Header" xml:space="preserve">
+    <value>USB-Selektivsuspend deaktivieren</value>
+  </data>
+  <data name="Feature_UsbPowerSaving.Description" xml:space="preserve">
+    <value>Verhindert, dass Windows USB-Controller und Peripheriegeräte in Energiesparmodi versetzt.</value>
+  </data>
+  <data name="Intelligent_Impact_UsbPowerSaving" xml:space="preserve">
+    <value>Verhindert USB-Audio-Aussetzer, Controller-Lag und Maus-Verbindungsabbrüche.</value>
+  </data>
+  <data name="Feature_PowerThrottling.Header" xml:space="preserve">
+    <value>Energiedrosselung deaktivieren</value>
+  </data>
+  <data name="Feature_PowerThrottling.Description" xml:space="preserve">
+    <value>Deaktiviert den Windows Power-Throttling-Algorithmus für Hintergrund-Ausführungsthreads.</value>
+  </data>
+  <data name="Intelligent_Impact_PowerThrottling" xml:space="preserve">
+    <value>Stellt sicher, dass Hintergrund-Renders und Compile-Jobs mit voller CPU-Taktrate laufen.</value>
+  </data>
+  <data name="Intelligent_Impact_LowDiskSpaceChecks" xml:space="preserve">
+    <value>Stoppt wiederkehrende Festplatten-Polling-Interrupts.</value>
+  </data>
+  <data name="Intelligent_Impact_LinkResolve" xml:space="preserve">
+    <value>Beschleunigt das Öffnen defekter Verknüpfungen ohne Einfrieren des Explorers.</value>
+  </data>
+  <data name="Intelligent_Impact_AutoComplete" xml:space="preserve">
+    <value>Schnellere Pfadnavigation in der Adressleiste.</value>
+  </data>
+  <data name="Feature_TelemetryServices.Header" xml:space="preserve">
+    <value>Windows-Telemetrie &amp; Diagnose deaktivieren</value>
+  </data>
+  <data name="Feature_TelemetryServices.Description" xml:space="preserve">
+    <value>Deaktiviert vollständig DiagTrack und dmwappushservice für die Hintergrund-Diagnoseerfassung.</value>
+  </data>
+  <data name="Intelligent_Impact_TelemetryServices" xml:space="preserve">
+    <value>Stoppt automatisches Hintergrund-Tracking, Tastatureingabeprotokollierung und Telemetrie-Uploads.</value>
+  </data>
+  <data name="Feature_WindowsAI.Header" xml:space="preserve">
+    <value>Windows-KI-Funktionen &amp; Mining deaktivieren</value>
+  </data>
+  <data name="Feature_WindowsAI.Description" xml:space="preserve">
+    <value>Blockiert Windows-Hintergrund-KI-Analyse, Notepad/Paint-KI-Integrationen und Modellabfrage-Berichte.</value>
+  </data>
+  <data name="Intelligent_Impact_WindowsAI" xml:space="preserve">
+    <value>Schützt die lokale Dateivertraulichkeit und stoppt kontinuierliches Cloud-KI-Scraping.</value>
+  </data>
+  <data name="Feature_WindowsRecall.Header" xml:space="preserve">
+    <value>Windows Recall Bildschirm-Snapshots deaktivieren</value>
+  </data>
+  <data name="Feature_WindowsRecall.Description" xml:space="preserve">
+    <value>Blockiert die regelmäßige kontinuierliche Bildschirmaufnahme aktiver Desktops und OCR-Indizierung.</value>
+  </data>
+  <data name="Intelligent_Impact_WindowsRecall" xml:space="preserve">
+    <value>Garantiert, dass sensible Banking-Daten, Passwörter und private Dokumente nie aufgezeichnet werden.</value>
+  </data>
+  <data name="Feature_CoPilotAI.Header" xml:space="preserve">
+    <value>Copilot KI-Assistent deaktivieren</value>
+  </data>
+  <data name="Feature_CoPilotAI.Description" xml:space="preserve">
+    <value>Deaktiviert die Windows Copilot-Seitenleiste, die Taskleistenschaltfläche und kontinuierliche Cloud-Sync-Abfragen.</value>
+  </data>
+  <data name="Intelligent_Impact_CoPilotAI" xml:space="preserve">
+    <value>Gibt Taskleistenplatz frei und eliminiert Hintergrund-Webview-Prozesse.</value>
+  </data>
+  <data name="Feature_AdvertisingID.Header" xml:space="preserve">
+    <value>Windows-Werbe-ID deaktivieren</value>
+  </data>
+  <data name="Feature_AdvertisingID.Description" xml:space="preserve">
+    <value>Verhindert, dass Windows Store-Anwendungen Benutzeraktivitäten für personalisierte Werbung verfolgen.</value>
+  </data>
+  <data name="Intelligent_Impact_AdvertisingID" xml:space="preserve">
+    <value>Stoppt die Verfolgung des eindeutigen Werbe-ID-Profils.</value>
+  </data>
+  <data name="Feature_ActivityUploads.Header" xml:space="preserve">
+    <value>Aktivitäts-Verlauf-Cloud-Sync deaktivieren</value>
+  </data>
+  <data name="Feature_ActivityUploads.Description" xml:space="preserve">
+    <value>Verhindert das Hochladen des App-Start-Verlaufs und des Browser-Verlaufs in die Microsoft-Cloud.</value>
+  </data>
+  <data name="Intelligent_Impact_ActivityUploads" xml:space="preserve">
+    <value>Die Gerätenutzungshistorie wird nie auf verknüpfte Cloud-Konten übertragen.</value>
+  </data>
+  <data name="Feature_ClipboardSync.Header" xml:space="preserve">
+    <value>Geräteübergreifende Zwischenablage-Cloud-Sync deaktivieren</value>
+  </data>
+  <data name="Feature_ClipboardSync.Description" xml:space="preserve">
+    <value>Verhindert, dass der Zwischenablagen-Kopierpuffer automatisch in die Cloud hochgeladen wird.</value>
+  </data>
+  <data name="Intelligent_Impact_ClipboardSync" xml:space="preserve">
+    <value>Schützt sensible kopierten Texte, Passwörter und Token vor Cloud-Exposition.</value>
+  </data>
+  <data name="Feature_LocationAccess.Header" xml:space="preserve">
+    <value>Standortzugriff &amp; Sensoren deaktivieren</value>
+  </data>
+  <data name="Feature_LocationAccess.Description" xml:space="preserve">
+    <value>Deaktiviert den Windows-Standortanbieter-Dienst und die Standortsensor-APIs.</value>
+  </data>
+  <data name="Intelligent_Impact_LocationAccess" xml:space="preserve">
+    <value>Verhindert, dass Webbrowser und Desktop-Apps den physischen Standort ermitteln.</value>
+  </data>
+  <data name="Feature_ClassicContextMenu.Header" xml:space="preserve">
+    <value>Klassisches Windows 10 Rechtsklick-Menü wiederherstellen</value>
+  </data>
+  <data name="Feature_ClassicContextMenu.Description" xml:space="preserve">
+    <value>Stellt das vollständige Sofort-Rechtsklick-Kontextmenü in Windows 11 ohne 'Weitere Optionen anzeigen' wieder her.</value>
+  </data>
+  <data name="Intelligent_Impact_ClassicContextMenu" xml:space="preserve">
+    <value>Spart 1 Klick bei jeder Rechtsklick-Aktion im Explorer.</value>
+  </data>
+  <data name="Feature_EndTask.Header" xml:space="preserve">
+    <value>'Aufgabe beenden' auf Taskleisten-App-Symbolen aktivieren</value>
+  </data>
+  <data name="Feature_EndTask.Description" xml:space="preserve">
+    <value>Fügt die direkte Rechtsklick-Aktion 'Aufgabe beenden' zu Taskleistenelementen für sofortige Prozessbeendigung hinzu.</value>
+  </data>
+  <data name="Intelligent_Impact_EndTask" xml:space="preserve">
+    <value>Hängende Programme sofort beenden ohne Task-Manager zu öffnen.</value>
+  </data>
+  <data name="Intelligent_Impact_FileExtensionsAndHiddenFiles" xml:space="preserve">
+    <value>Schützt vor getarnter Doppelendungs-Malware (.pdf.exe).</value>
+  </data>
+  <data name="Feature_StickyKeys.Header" xml:space="preserve">
+    <value>Sticky Keys-Aufforderung deaktivieren</value>
+  </data>
+  <data name="Feature_StickyKeys.Description" xml:space="preserve">
+    <value>Deaktiviert das Popup-Dialogfeld beim 5-maligen Drücken der Umschalttaste in Spielen.</value>
+  </data>
+  <data name="Intelligent_Impact_StickyKeys" xml:space="preserve">
+    <value>Stoppt Spielunterbrechungen durch Umschalttasten-Tippen.</value>
+  </data>
+  <data name="Feature_RecommendedSectionStartMenu.Header" xml:space="preserve">
+    <value>Empfohlenen Abschnitt im Startmenü ausblenden</value>
+  </data>
+  <data name="Feature_RecommendedSectionStartMenu.Description" xml:space="preserve">
+    <value>Entfernt den Bereich für zuletzt verwendete und empfohlene Dateien im Windows 11 Startmenü.</value>
+  </data>
+  <data name="Intelligent_Impact_RecommendedSectionStartMenu" xml:space="preserve">
+    <value>Übersichtlicheres Startmenü mit mehr Platz für angeheftete Apps.</value>
+  </data>
+  <data name="Feature_TaskbarToLeft.Header" xml:space="preserve">
+    <value>Taskleistensymbole nach links ausrichten</value>
+  </data>
+  <data name="Feature_TaskbarToLeft.Description" xml:space="preserve">
+    <value>Verschiebt Windows 11 Start-Schaltfläche und Taskleistensymbole an die klassische untere linke Position.</value>
+  </data>
+  <data name="Intelligent_Impact_TaskbarToLeft" xml:space="preserve">
+    <value>Klassische Muskelerinnerungsausrichtung.</value>
+  </data>
+  <data name="Feature_FilesCompactMode.Header" xml:space="preserve">
+    <value>Kompakte Ansicht im Datei-Explorer aktivieren</value>
+  </data>
+  <data name="Feature_FilesCompactMode.Description" xml:space="preserve">
+    <value>Reduziert den vertikalen Abstand zwischen Zeilen im Datei-Explorer für höhere Dateidichte.</value>
+  </data>
+  <data name="Intelligent_Impact_FilesCompactMode" xml:space="preserve">
+    <value>Mehr Dateien pro Bildschirm ohne Scrollen.</value>
+  </data>
+  <data name="Feature_CloudClipboard.Header" xml:space="preserve">
+    <value>Erweiterten Zwischenablagen-Verlauf aktivieren</value>
+  </data>
+  <data name="Feature_CloudClipboard.Description" xml:space="preserve">
+    <value>Konfiguriert den lokalen Win+V-Zwischenablagenverlauf ohne Cloud-Sync.</value>
+  </data>
+  <data name="Intelligent_Impact_CloudClipboard" xml:space="preserve">
+    <value>Mehrfach-Element-Zwischenablagenverlauf, zugänglich mit Win+V.</value>
+  </data>
+  <data name="Feature_EdgeDiscoverBar.Header" xml:space="preserve">
+    <value>Edge Discover-Seitenleiste &amp; Widgets deaktivieren</value>
+  </data>
+  <data name="Feature_EdgeDiscoverBar.Description" xml:space="preserve">
+    <value>Deaktiviert die Edge-Browser-Seitenleistenschaltfläche und das schwebende Suchwidget.</value>
+  </data>
+  <data name="Intelligent_Impact_EdgeDiscoverBar" xml:space="preserve">
+    <value>Entfernt Unordnung im Edge-Browser.</value>
+  </data>
+  <data name="Feature_BluetoothAdvertising.Header" xml:space="preserve">
+    <value>Bluetooth-Werbefunkfeuer deaktivieren</value>
+  </data>
+  <data name="Feature_BluetoothAdvertising.Description" xml:space="preserve">
+    <value>Verhindert, dass Windows Bluetooth-Werbefunkfeuer an nahegelegene Hardware sendet.</value>
+  </data>
+  <data name="Intelligent_Impact_BluetoothAdvertising" xml:space="preserve">
+    <value>Verbessert die Datenschutz von Drahtlosgeräten an öffentlichen Orten.</value>
+  </data>
+  <data name="Feature_SpotlightFeatures.Header" xml:space="preserve">
+    <value>Windows Spotlight-Vorschläge deaktivieren</value>
+  </data>
+  <data name="Feature_SpotlightFeatures.Description" xml:space="preserve">
+    <value>Deaktiviert Werbevorschläge und Cloud-Bild-Downloads im Hintergrund auf dem Sperrbildschirm.</value>
+  </data>
+  <data name="Intelligent_Impact_SpotlightFeatures" xml:space="preserve">
+    <value>Stoppt Sperrbildschirm-Werbung und Hintergrund-Download-Traffic.</value>
+  </data>
+  <data name="Feature_NvidiaTelemetry.Header" xml:space="preserve">
+    <value>NVIDIA-Telemetriecontainer deaktivieren</value>
+  </data>
+  <data name="Feature_NvidiaTelemetry.Description" xml:space="preserve">
+    <value>Deaktiviert NVIDIA-Treiber-Hintergrundtelemetrieaufgaben und Tracking-Dienste.</value>
+  </data>
+  <data name="Intelligent_Impact_NvidiaTelemetry" xml:space="preserve">
+    <value>Stoppt GPU-Analyse-Uploads und gibt 100MB+ Hintergrund-RAM frei.</value>
+  </data>
+  <data name="Feature_EdgeTelemetry.Header" xml:space="preserve">
+    <value>Microsoft Edge-Telemetrie deaktivieren</value>
+  </data>
+  <data name="Feature_EdgeTelemetry.Description" xml:space="preserve">
+    <value>Deaktiviert Edge-Browser-Diagnose, Absturzberichte und Hintergrund-Startverstärkung.</value>
+  </data>
+  <data name="Intelligent_Impact_EdgeTelemetry" xml:space="preserve">
+    <value>Verhindert, dass Edge dauerhaft Hintergrundprozesse am Laufen hält.</value>
+  </data>
+  <data name="Intelligent_Impact_RemoteRegistry" xml:space="preserve">
+    <value>Schließt eine wichtige Netzwerksicherheitslücke, die von Malware und Ransomware ausgenutzt wird.</value>
+  </data>
+  <data name="Feature_SMBv1.Header" xml:space="preserve">
+    <value>Veraltetes SMBv1-Netzwerkprotokoll deaktivieren</value>
+  </data>
+  <data name="Feature_SMBv1.Description" xml:space="preserve">
+    <value>Deaktiviert das unsichere 30 Jahre alte SMBv1-Dateifreigabeprotokoll (EternalBlue / WannaCry-Angriffsvektor).</value>
+  </data>
+  <data name="Intelligent_Impact_SMBv1" xml:space="preserve">
+    <value>Kritische Sicherheitshärtung gegen Netzwerkwurm-Exploits.</value>
+  </data>
+  <data name="Feature_Widgets.Header" xml:space="preserve">
+    <value>Windows 11 Widgets-Board deaktivieren</value>
+  </data>
+  <data name="Feature_Widgets.Description" xml:space="preserve">
+    <value>Deaktiviert den Taskleisten-Widget-Feed und Edge-WebView-Hintergrundprozesse.</value>
+  </data>
+  <data name="Intelligent_Impact_Widgets" xml:space="preserve">
+    <value>Gibt 300MB+ RAM frei und stoppt kontinuierliches Edge-Hintergrund-Rendering.</value>
+  </data>
+  <data name="Feature_SysMain.Header" xml:space="preserve">
+    <value>SysMain (Superfetch) optimieren</value>
+  </data>
+  <data name="Feature_SysMain.Description" xml:space="preserve">
+    <value>Passt den SysMain-Dienst an oder deaktiviert ihn, um unnötiges Vorladen auf SSDs zu stoppen.</value>
+  </data>
+  <data name="Intelligent_Impact_SysMain" xml:space="preserve">
+    <value>Eliminiert hohe Hintergrund-Festplattenauslastungsspitzen und unnötige SSD-Schreibzyklen.</value>
+  </data>
 </root>

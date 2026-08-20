@@ -55,6 +55,7 @@ public sealed partial class OptimizeSystemPage : Page
             await InitializeToggleSwitchesAsync();
             await InitializePowerModeAsync();
             await InitializeWindowsUpdatesAsync();
+            IntelligentCardEnhancer.EnhancePage(this);
 
             // Scroll to the target element if there's a pending scroll target
             if (!string.IsNullOrEmpty(_pendingScrollTarget))

@@ -34,6 +34,7 @@ public sealed partial class PrivacyPage : Page
     private async void PrivacyPage_Loaded(object sender, RoutedEventArgs e)
     {
         await InitializeToggleSwitchesAsync();
+        IntelligentCardEnhancer.EnhancePage(this);
 
         if (!string.IsNullOrEmpty(_pendingScrollTarget))
         {

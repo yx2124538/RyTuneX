@@ -5,6 +5,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:controls="using:CommunityToolkit.WinUI.Controls"
+    xmlns:localControls="using:RyTuneX.Controls"
     mc:Ignorable="d">
     <Page.Resources>
         <x:Double x:Key="SettingsCardSpacing">4</x:Double>
@@ -19,6 +20,9 @@
     <Grid x:Name="ContentArea">
         <ScrollViewer Padding="24,14,24,0">
             <StackPanel Margin="0,0,0,38" Spacing="{StaticResource SettingsCardSpacing}">
+
+                <!-- Intelligent Score Header -->
+                <localControls:IntelligentScoreHeaderControl x:Name="ScoreHeader" TargetCategory="PrivacyAndTelemetry"/>
 
                 <!-- Advertising Section -->
                 <TextBlock Margin="6"

@@ -94,10 +94,14 @@
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
 
-                <!-- System Overview (Row 0) -->
-                <Grid Grid.Row="0">
+                <!-- Intelligent Score Header -->
+                <local:IntelligentScoreHeaderControl x:Name="ScoreHeader" TargetCategory="All" Grid.Row="0"/>
+
+                <!-- System Overview (Row 1) -->
+                <Grid Grid.Row="1">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="Auto"/>
@@ -165,8 +169,8 @@
                     </Grid>
                 </Grid>
 
-                <!-- System and Quick Actions (Row 1) -->
-                <Grid Grid.Row="1" ColumnSpacing="12">
+                <!-- System and Quick Actions (Row 2) -->
+                <Grid Grid.Row="2" ColumnSpacing="12">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*" />
                         <ColumnDefinition Width="*" />

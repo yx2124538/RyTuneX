@@ -235,6 +235,7 @@ public sealed partial class HomePage : Page
     private void Services_Click(object sender, RoutedEventArgs e) => App.GetService<INavigationService>().NavigateTo(typeof(ServicesPage).FullName!);
 
     // Navigation handlers — Quick Actions section
+    private void LaunchIntelligentOptimizer_Click(object sender, RoutedEventArgs e) => App.GetService<INavigationService>().NavigateTo(typeof(OptimizeSystemPage).FullName!);
     private void OptimizeSystem_Click(object sender, RoutedEventArgs e) => App.GetService<INavigationService>().NavigateTo(typeof(OptimizeSystemPage).FullName!);
     private void RepairIssues_Click(object sender, RoutedEventArgs e) => App.GetService<INavigationService>().NavigateTo(typeof(RepairPage).FullName!);
     private void CleanTemporaryFiles_Click(object sender, RoutedEventArgs e) => App.GetService<INavigationService>().NavigateTo(typeof(DebloatSystemPage).FullName!);

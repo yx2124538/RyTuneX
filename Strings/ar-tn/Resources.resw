@@ -2200,4 +2200,499 @@
   <data name="StartupPage_Notification_DisabledCount" xml:space="preserve">
     <value>تم تعطيل {0} من تطبيقات بدء التشغيل.</value>
   </data>
+
+  <data name="Intelligent_ScoreTitle" xml:space="preserve">
+    <value>درجة التحسين</value>
+  </data>
+  <data name="Intelligent_HealthGrade_Scanning" xml:space="preserve">
+    <value>جارٍ الفحص...</value>
+  </data>
+  <data name="Intelligent_HealthGrade_Excellent" xml:space="preserve">
+    <value>A+ ممتاز</value>
+  </data>
+  <data name="Intelligent_HealthGrade_Good" xml:space="preserve">
+    <value>B جيد</value>
+  </data>
+  <data name="Intelligent_HealthGrade_Fair" xml:space="preserve">
+    <value>C مقبول</value>
+  </data>
+  <data name="Intelligent_HealthGrade_NeedsTuning" xml:space="preserve">
+    <value>D بحاجة إلى ضبط</value>
+  </data>
+  <data name="Intelligent_HealthGrade_Unoptimized" xml:space="preserve">
+    <value>F غير محسن</value>
+  </data>
+  <data name="Intelligent_Domain_GlobalTitle" xml:space="preserve">
+    <value>مركز التشخيص الذكي</value>
+  </data>
+  <data name="Intelligent_Domain_GlobalDesc" xml:space="preserve">
+    <value>اختر فئة لمعاينة التوصيات الذكية، وتقليل زمن استجابة النظام، وضبط إعداداتك بدقة.</value>
+  </data>
+  <data name="Intelligent_Domain_PerfTitle" xml:space="preserve">
+    <value>محرك الأداء</value>
+  </data>
+  <data name="Intelligent_Domain_PerfDesc" xml:space="preserve">
+    <value>يحسن جدولة عتاد GPU، وتقسيم وقت وحدة المعالجة المركزية، وفهرسة مخازن NTFS، ويزيل تأخيرات قوائم سطح المكتب.</value>
+  </data>
+  <data name="Intelligent_Domain_PrivTitle" xml:space="preserve">
+    <value>درع الخصوصية والقياس عن بعد</value>
+  </data>
+  <data name="Intelligent_Domain_PrivDesc" xml:space="preserve">
+    <value>يحظر القياس التشخيصي في الخلفية، وجمع بيانات الذكاء الاصطناعي في Windows، ولقطات شاشة Recall، وتحميل النشاط إلى السحابة.</value>
+  </data>
+  <data name="Intelligent_Domain_FeatTitle" xml:space="preserve">
+    <value>سهولة الاستخدام وميزات الواجهة</value>
+  </data>
+  <data name="Intelligent_Domain_FeatDesc" xml:space="preserve">
+    <value>يستعيد قوائم النقر بزر الماوس الأيمن الكلاسيكية، ويفعل 'إنهاء المهمة' على شريط المهام، ويظهر الملفات والامتدادات المخفية، وينظف قائمة ابدأ.</value>
+  </data>
+  <data name="Intelligent_ActiveCount" xml:space="preserve">
+    <value>النشط: {0} / {1}</value>
+  </data>
+  <data name="Intelligent_OptimizationsActive" xml:space="preserve">
+    <value>التحسينات النشطة: {0} / {1}</value>
+  </data>
+  <data name="Intelligent_PotentialGain" xml:space="preserve">
+    <value>المكسب: +{0} نقطة</value>
+  </data>
+  <data name="Intelligent_RecommendedCount" xml:space="preserve">
+    <value>الموصى به: {0}</value>
+  </data>
+  <data name="Intelligent_RollbacksCount" xml:space="preserve">
+    <value>نقاط التراجع: {0}</value>
+  </data>
+  <data name="Intelligent_Metric_LowLatency" xml:space="preserve">
+    <value>استجابة سريعة وتأخير منخفض</value>
+  </data>
+  <data name="Intelligent_Metric_DataShield" xml:space="preserve">
+    <value>حماية البيانات والصوت</value>
+  </data>
+  <data name="Intelligent_Metric_Productivity" xml:space="preserve">
+    <value>إنتاجية بنقرة واحدة</value>
+  </data>
+  <data name="Intelligent_Category_Performance" xml:space="preserve">
+    <value>الأداء</value>
+  </data>
+  <data name="Intelligent_Category_Privacy" xml:space="preserve">
+    <value>الخصوصية</value>
+  </data>
+  <data name="Intelligent_Category_Usability" xml:space="preserve">
+    <value>سهولة الاستخدام</value>
+  </data>
+  <data name="Intelligent_Mode_Rec" xml:space="preserve">
+    <value>موصى به</value>
+  </data>
+  <data name="Intelligent_Mode_Rec_Tooltip" xml:space="preserve">
+    <value>موصى به: تحسينات آمنة 100% وعالية التأثير</value>
+  </data>
+  <data name="Intelligent_Mode_Safe" xml:space="preserve">
+    <value>آمن</value>
+  </data>
+  <data name="Intelligent_Mode_Safe_Tooltip" xml:space="preserve">
+    <value>آمن بالكامل: جميع التحسينات الآمنة بنسبة 100% وغير المتطفلة</value>
+  </data>
+  <data name="Intelligent_Mode_Adv" xml:space="preserve">
+    <value>متقدم</value>
+  </data>
+  <data name="Intelligent_Mode_Adv_Tooltip" xml:space="preserve">
+    <value>متقدم: يتضمن تحسينات للمستخدمين المحترفين وتحسينات متوسطة</value>
+  </data>
+  <data name="Intelligent_Apply_Format" xml:space="preserve">
+    <value>تطبيق {0} ({1})</value>
+  </data>
+  <data name="Intelligent_Apply_Active" xml:space="preserve">
+    <value>{0} نشط ✓</value>
+  </data>
+  <data name="Intelligent_Btn_Preview" xml:space="preserve">
+    <value>معاينة</value>
+  </data>
+  <data name="Intelligent_Btn_Rollback" xml:space="preserve">
+    <value>تراجع</value>
+  </data>
+  <data name="Intelligent_TuneByDomain" xml:space="preserve">
+    <value>الضبط حسب المجال</value>
+  </data>
+  <data name="Intelligent_Preview_Title" xml:space="preserve">
+    <value>معاينة: {0}</value>
+  </data>
+  <data name="Intelligent_Preview_Desc" xml:space="preserve">
+    <value>راجع تغييرات التحسين المقترحة قبل التطبيق. سيتم حفظ نقاط التراجع تلقائياً قبل التطبيق.</value>
+  </data>
+  <data name="Intelligent_Preview_ApplyBtn" xml:space="preserve">
+    <value>تطبيق التحسينات المحددة</value>
+  </data>
+  <data name="Intelligent_Preview_CancelBtn" xml:space="preserve">
+    <value>إلغاء</value>
+  </data>
+  <data name="Intelligent_Preview_Empty" xml:space="preserve">
+    <value>جميع التحسينات في هذه الصفحة نشطة بالفعل! لا يوجد شيء لمعاينته.</value>
+  </data>
+  <data name="Intelligent_Status_Applying" xml:space="preserve">
+    <value>الخطوة 5 [تطبيق] ({0}/{1}): {2}</value>
+  </data>
+  <data name="Intelligent_Status_Verifying" xml:space="preserve">
+    <value>الخطوة 6 [التحقق]: الاستعلام عن حالة النظام الحالية...</value>
+  </data>
+  <data name="Intelligent_Status_Success" xml:space="preserve">
+    <value>تم تطبيق والتحقق من {0} تحسينات بنجاح!</value>
+  </data>
+  <data name="Intelligent_Status_AllActive" xml:space="preserve">
+    <value>جميع تحسينات {0} في هذه الصفحة نشطة بالفعل!</value>
+  </data>
+  <data name="Intelligent_Status_RollingBack" xml:space="preserve">
+    <value>جارٍ التراجع عن {0} عناصر في هذه الصفحة...</value>
+  </data>
+  <data name="Intelligent_Status_RollbackDone" xml:space="preserve">
+    <value>تم التراجع عن {0} عناصر إلى حالتها السابقة.</value>
+  </data>
+  <data name="Intelligent_Status_NoRollbacks" xml:space="preserve">
+    <value>لم يتم العثور على نسخ احتياطية للتراجع لهذه الصفحة.</value>
+  </data>
+  <data name="Intelligent_Badge_Optimal" xml:space="preserve">
+    <value>مثالي ✓</value>
+  </data>
+  <data name="Intelligent_Badge_Recommended" xml:space="preserve">
+    <value>موصى به</value>
+  </data>
+  <data name="Intelligent_Badge_Safe" xml:space="preserve">
+    <value>آمن</value>
+  </data>
+  <data name="Intelligent_Badge_Moderate" xml:space="preserve">
+    <value>متوسط</value>
+  </data>
+  <data name="Intelligent_Badge_Advanced" xml:space="preserve">
+    <value>متقدم</value>
+  </data>
+  <data name="Intelligent_Badge_Caution" xml:space="preserve">
+    <value>تنبيه</value>
+  </data>
+  <data name="Intelligent_PointsGain" xml:space="preserve">
+    <value>+{0} نقطة</value>
+  </data>
+  <data name="Intelligent_Flyout_TechnicalDetails" xml:space="preserve">
+    <value>التفاصيل التقنية</value>
+  </data>
+  <data name="Intelligent_Flyout_ScoreImpact" xml:space="preserve">
+    <value>تأثير النتيجة: +{0} نقطة ({1})</value>
+  </data>
+  <data name="Intelligent_Flyout_PreApplyBackup" xml:space="preserve">
+    <value>النسخة الاحتياطية السابقة: حُفظت في {0} (الحالة الأولية: {1})</value>
+  </data>
+  <data name="Intelligent_Flyout_NoBackup" xml:space="preserve">
+    <value>النسخة الاحتياطية السابقة: لا يوجد (قم بالتبديل لإنشاء نقطة تراجع)</value>
+  </data>
+  <data name="Intelligent_Flyout_Status" xml:space="preserve">
+    <value>الحالة الحالية: {0}</value>
+  </data>
+
+  <data name="Intelligent_Verification_Active" xml:space="preserve">
+    <value>تم التحقق (نشط) ✓</value>
+  </data>
+  <data name="Intelligent_Verification_Restart" xml:space="preserve">
+    <value>يتطلب إعادة التشغيل 🔄</value>
+  </data>
+  <data name="Intelligent_Verification_Failed" xml:space="preserve">
+    <value>فشل التحقق ⚠️</value>
+  </data>
+  <data name="Intelligent_Verification_NotVerified" xml:space="preserve">
+    <value>غير مؤكد</value>
+  </data>
+  <data name="Intelligent_General_Category" xml:space="preserve">
+    <value>عام</value>
+  </data>
+
+  <data name="Intelligent_Impact_BackgroundApps" xml:space="preserve">
+    <value>يحرر دورات وحدة المعالجة المركزية ويوفر أكثر من 200 ميغابايت من الذاكرة.</value>
+  </data>
+  <data name="Intelligent_Impact_SystemProfile" xml:space="preserve">
+    <value>يقلل التقطع الدقيق ويحسن ثبات معدل الإطارات.</value>
+  </data>
+  <data name="Intelligent_Impact_PrioritizeForegroundApplications" xml:space="preserve">
+    <value>يحسن استجابة التطبيق النشط أثناء تعدد المهام الثقيل في الخلفية.</value>
+  </data>
+  <data name="Feature_GamingMode.Header" xml:space="preserve">
+    <value>تفعيل وضع الألعاب في ويندوز</value>
+  </data>
+  <data name="Feature_GamingMode.Description" xml:space="preserve">
+    <value>يهيئ وضع الألعاب وجدولة أجهزة GPU للحصول على أدنى زمن استجابة.</value>
+  </data>
+  <data name="Intelligent_Impact_GamingMode" xml:space="preserve">
+    <value>يقفل أنوية وحدة المعالجة المركزية لعمليات الألعاب ويحسن جدولة الخيوط.</value>
+  </data>
+  <data name="Feature_FullscreenOptimizations.Header" xml:space="preserve">
+    <value>تفعيل تحسينات ملء الشاشة</value>
+  </data>
+  <data name="Feature_FullscreenOptimizations.Description" xml:space="preserve">
+    <value>يهيئ خط عرض ويندوز لعرض عالي الأداء بدون حدود.</value>
+  </data>
+  <data name="Intelligent_Impact_FullscreenOptimizations" xml:space="preserve">
+    <value>يقلل زمن استجابة العرض مع الحفاظ على التبديل السريع بـ Alt+Tab.</value>
+  </data>
+  <data name="Intelligent_Impact_GpuDriverTweaks" xml:space="preserve">
+    <value>يمنع تذبذب ساعة طاقة GPU أثناء الألعاب والتصيير ثلاثي الأبعاد.</value>
+  </data>
+  <data name="Intelligent_Impact_MenuShowDelay" xml:space="preserve">
+    <value>شعور بالتنقل الفوري في واجهة المستخدم عبر مستكشف الملفات وسطح المكتب.</value>
+  </data>
+  <data name="Intelligent_Impact_MouseHoverTime" xml:space="preserve">
+    <value>عرض فوري للتلميحات والصور المصغرة في شريط المهام.</value>
+  </data>
+  <data name="Intelligent_Impact_KeyboardLatency" xml:space="preserve">
+    <value>التعرف الفوري على إدخال المفاتيح وتكرار أسرع للأحرف.</value>
+  </data>
+  <data name="Feature_MouseAcceleration.Header" xml:space="preserve">
+    <value>تعطيل تسريع الفأرة (الإدخال الخام)</value>
+  </data>
+  <data name="Feature_MouseAcceleration.Description" xml:space="preserve">
+    <value>يعطل منحنى تسريع الفأرة في ويندوز للحصول على دقة 1:1 للمؤشر.</value>
+  </data>
+  <data name="Intelligent_Impact_MouseAcceleration" xml:space="preserve">
+    <value>اتساق تتبع المؤشر للألعاب والعمل التصميمي الدقيق.</value>
+  </data>
+  <data name="Intelligent_Impact_OptimizeNTFS" xml:space="preserve">
+    <value>يسرّع فهرسة دليل الملفات والبحث في البيانات الوصفية للقرص.</value>
+  </data>
+  <data name="Intelligent_Impact_ServiceHostSplitting" xml:space="preserve">
+    <value>يقلل عبء عدد العمليات الإجمالي بمقدار 30-50 عملية على الأنظمة ذات الذاكرة 8 جيجابايت وما فوق.</value>
+  </data>
+  <data name="Feature_UsbPowerSaving.Header" xml:space="preserve">
+    <value>تعطيل التعليق الانتقائي لـ USB</value>
+  </data>
+  <data name="Feature_UsbPowerSaving.Description" xml:space="preserve">
+    <value>يمنع ويندوز من إيقاف تشغيل متحكمات USB والأجهزة الطرفية لأوضاع الطاقة المنخفضة.</value>
+  </data>
+  <data name="Intelligent_Impact_UsbPowerSaving" xml:space="preserve">
+    <value>يمنع انقطاعات صوت USB وتأخر وحدة التحكم وانقطاع الاتصال بالماوس.</value>
+  </data>
+  <data name="Feature_PowerThrottling.Header" xml:space="preserve">
+    <value>تعطيل تقييد الطاقة</value>
+  </data>
+  <data name="Feature_PowerThrottling.Description" xml:space="preserve">
+    <value>يعطل خوارزمية تقييد الطاقة في ويندوز على خيوط التنفيذ الخلفية.</value>
+  </data>
+  <data name="Intelligent_Impact_PowerThrottling" xml:space="preserve">
+    <value>يضمن تشغيل عمليات العرض والترجمة في الخلفية بسرعات ساعة وحدة المعالجة المركزية الكاملة.</value>
+  </data>
+  <data name="Intelligent_Impact_LowDiskSpaceChecks" xml:space="preserve">
+    <value>يوقف مقاطعات استطلاع القرص المتكررة.</value>
+  </data>
+  <data name="Intelligent_Impact_LinkResolve" xml:space="preserve">
+    <value>يسرّع فتح الاختصارات المعطلة دون تجميد المستكشف.</value>
+  </data>
+  <data name="Intelligent_Impact_AutoComplete" xml:space="preserve">
+    <value>تنقل أسرع في مسار شريط العنوان.</value>
+  </data>
+  <data name="Feature_TelemetryServices.Header" xml:space="preserve">
+    <value>تعطيل القياس عن بعد والتشخيص في ويندوز</value>
+  </data>
+  <data name="Feature_TelemetryServices.Description" xml:space="preserve">
+    <value>يعطل تماماً خدمات DiagTrack وdmwappushservice لجمع التشخيصات في الخلفية.</value>
+  </data>
+  <data name="Intelligent_Impact_TelemetryServices" xml:space="preserve">
+    <value>يوقف التتبع التلقائي في الخلفية وتسجيل ضغطات المفاتيح وتحميل بيانات القياس.</value>
+  </data>
+  <data name="Feature_WindowsAI.Header" xml:space="preserve">
+    <value>تعطيل ميزات الذكاء الاصطناعي في ويندوز</value>
+  </data>
+  <data name="Feature_WindowsAI.Description" xml:space="preserve">
+    <value>يحظر تحليل الذكاء الاصطناعي في الخلفية وتكامل AI في المفكرة والرسام وإعداد التقارير.</value>
+  </data>
+  <data name="Intelligent_Impact_WindowsAI" xml:space="preserve">
+    <value>يحمي خصوصية الملفات المحلية ويوقف الاستخراج المستمر للذكاء الاصطناعي السحابي.</value>
+  </data>
+  <data name="Feature_WindowsRecall.Header" xml:space="preserve">
+    <value>تعطيل لقطات شاشة Windows Recall</value>
+  </data>
+  <data name="Feature_WindowsRecall.Description" xml:space="preserve">
+    <value>يحظر أخذ لقطات شاشة دورية مستمرة لأسطح المكتب النشطة وفهرسة OCR.</value>
+  </data>
+  <data name="Intelligent_Impact_WindowsRecall" xml:space="preserve">
+    <value>يضمن عدم تسجيل المعاملات المصرفية الحساسة وكلمات المرور والمستندات الخاصة.</value>
+  </data>
+  <data name="Feature_CoPilotAI.Header" xml:space="preserve">
+    <value>تعطيل مساعد Copilot الذكي</value>
+  </data>
+  <data name="Feature_CoPilotAI.Description" xml:space="preserve">
+    <value>يعطل الشريط الجانبي لـ Copilot وزر شريط المهام واستعلامات المزامنة السحابية المستمرة.</value>
+  </data>
+  <data name="Intelligent_Impact_CoPilotAI" xml:space="preserve">
+    <value>يحرر مساحة شريط المهام ويزيل عمليات عرض الويب الخلفية.</value>
+  </data>
+  <data name="Feature_AdvertisingID.Header" xml:space="preserve">
+    <value>تعطيل معرّف إعلانات ويندوز</value>
+  </data>
+  <data name="Feature_AdvertisingID.Description" xml:space="preserve">
+    <value>يمنع تطبيقات متجر ويندوز من تتبع نشاط المستخدم للإعلانات المخصصة.</value>
+  </data>
+  <data name="Intelligent_Impact_AdvertisingID" xml:space="preserve">
+    <value>يوقف تتبع ملف تعريف المعرف الإعلاني الفريد.</value>
+  </data>
+  <data name="Feature_ActivityUploads.Header" xml:space="preserve">
+    <value>تعطيل مزامنة سحابة سجل النشاط</value>
+  </data>
+  <data name="Feature_ActivityUploads.Description" xml:space="preserve">
+    <value>يمنع رفع سجل تشغيل التطبيقات وسجل التصفح إلى سحابة مايكروسوفت.</value>
+  </data>
+  <data name="Intelligent_Impact_ActivityUploads" xml:space="preserve">
+    <value>لا يتم بث تاريخ استخدام الجهاز أبداً عبر الحسابات السحابية المرتبطة.</value>
+  </data>
+  <data name="Feature_ClipboardSync.Header" xml:space="preserve">
+    <value>تعطيل مزامنة الحافظة السحابية عبر الأجهزة</value>
+  </data>
+  <data name="Feature_ClipboardSync.Description" xml:space="preserve">
+    <value>يوقف رفع مخزن نسخ الحافظة تلقائياً إلى الخوادم السحابية.</value>
+  </data>
+  <data name="Intelligent_Impact_ClipboardSync" xml:space="preserve">
+    <value>يحمي النصوص والكلمات المنسوخة الحساسة والرموز من التعرض السحابي.</value>
+  </data>
+  <data name="Feature_LocationAccess.Header" xml:space="preserve">
+    <value>تعطيل الوصول إلى الموقع والمستشعرات</value>
+  </data>
+  <data name="Feature_LocationAccess.Description" xml:space="preserve">
+    <value>يعطل خدمة موفر الموقع في ويندوز وواجهات برمجة تطبيقات مستشعر الموقع.</value>
+  </data>
+  <data name="Intelligent_Impact_LocationAccess" xml:space="preserve">
+    <value>يمنع متصفحات الويب والتطبيقات من تحديد الإحداثيات الفيزيائية.</value>
+  </data>
+  <data name="Feature_ClassicContextMenu.Header" xml:space="preserve">
+    <value>استعادة قائمة النقر بزر الماوس الأيمن الكلاسيكية</value>
+  </data>
+  <data name="Feature_ClassicContextMenu.Description" xml:space="preserve">
+    <value>يستعيد قائمة السياق الكاملة الفورية عند النقر بزر الماوس الأيمن في ويندوز 11 دون الحاجة للنقر على 'إظهار المزيد من الخيارات'.</value>
+  </data>
+  <data name="Intelligent_Impact_ClassicContextMenu" xml:space="preserve">
+    <value>يوفر نقرة واحدة في كل إجراء نقر بزر الماوس الأيمن في المستكشف.</value>
+  </data>
+  <data name="Feature_EndTask.Header" xml:space="preserve">
+    <value>تفعيل 'إنهاء المهمة' على أيقونات شريط المهام</value>
+  </data>
+  <data name="Feature_EndTask.Description" xml:space="preserve">
+    <value>يضيف إجراء 'إنهاء المهمة' المباشر بالنقر بزر الماوس الأيمن لعناصر شريط المهام لإنهاء العملية فوراً.</value>
+  </data>
+  <data name="Intelligent_Impact_EndTask" xml:space="preserve">
+    <value>إنهاء البرامج المجمدة أو المعلقة فوراً دون فتح إدارة المهام.</value>
+  </data>
+  <data name="Intelligent_Impact_FileExtensionsAndHiddenFiles" xml:space="preserve">
+    <value>يحمي من البرامج الضارة ذات الامتداد المزدوج المزيف (.pdf.exe).</value>
+  </data>
+  <data name="Feature_StickyKeys.Header" xml:space="preserve">
+    <value>تعطيل مطالبة المفاتيح اللاصقة</value>
+  </data>
+  <data name="Feature_StickyKeys.Description" xml:space="preserve">
+    <value>يعطل مربع الحوار المنبثق عند الضغط على Shift 5 مرات في الألعاب.</value>
+  </data>
+  <data name="Intelligent_Impact_StickyKeys" xml:space="preserve">
+    <value>يوقف مقاطعات الألعاب من النقر على مفتاح Shift.</value>
+  </data>
+  <data name="Feature_RecommendedSectionStartMenu.Header" xml:space="preserve">
+    <value>إخفاء القسم الموصى به في قائمة ابدأ</value>
+  </data>
+  <data name="Feature_RecommendedSectionStartMenu.Description" xml:space="preserve">
+    <value>يزيل جزء الملفات الأخيرة والموصى بها من قائمة ابدأ في ويندوز 11.</value>
+  </data>
+  <data name="Intelligent_Impact_RecommendedSectionStartMenu" xml:space="preserve">
+    <value>قائمة ابدأ أنظف وأكثر مساحة للتطبيقات المثبتة.</value>
+  </data>
+  <data name="Feature_TaskbarToLeft.Header" xml:space="preserve">
+    <value>محاذاة أيقونات شريط المهام إلى اليسار</value>
+  </data>
+  <data name="Feature_TaskbarToLeft.Description" xml:space="preserve">
+    <value>ينقل زر ابدأ وأيقونات شريط المهام في ويندوز 11 إلى الموضع الكلاسيكي في أسفل اليسار.</value>
+  </data>
+  <data name="Intelligent_Impact_TaskbarToLeft" xml:space="preserve">
+    <value>محاذاة ذاكرة عضلية كلاسيكية.</value>
+  </data>
+  <data name="Feature_FilesCompactMode.Header" xml:space="preserve">
+    <value>تفعيل العرض المضغوط في مستكشف الملفات</value>
+  </data>
+  <data name="Feature_FilesCompactMode.Description" xml:space="preserve">
+    <value>يقلل المساحة الرأسية بين الصفوف في مستكشف الملفات لكثافة أعلى من الملفات.</value>
+  </data>
+  <data name="Intelligent_Impact_FilesCompactMode" xml:space="preserve">
+    <value>عرض المزيد من الملفات لكل شاشة دون تمرير.</value>
+  </data>
+  <data name="Feature_CloudClipboard.Header" xml:space="preserve">
+    <value>تفعيل سجل الحافظة المحسّن</value>
+  </data>
+  <data name="Feature_CloudClipboard.Description" xml:space="preserve">
+    <value>يهيئ سجل حافظة Win+V المحلي بدون مزامنة سحابية.</value>
+  </data>
+  <data name="Intelligent_Impact_CloudClipboard" xml:space="preserve">
+    <value>سجل حافظة متعدد العناصر يمكن الوصول إليه بـ Win+V.</value>
+  </data>
+  <data name="Feature_EdgeDiscoverBar.Header" xml:space="preserve">
+    <value>تعطيل الشريط الجانبي وعناصر واجهة مستخدم Edge</value>
+  </data>
+  <data name="Feature_EdgeDiscoverBar.Description" xml:space="preserve">
+    <value>يعطل زر الشريط الجانبي لمتصفح Edge وأداة البحث العائمة.</value>
+  </data>
+  <data name="Intelligent_Impact_EdgeDiscoverBar" xml:space="preserve">
+    <value>يزيل الفوضى من متصفح Edge.</value>
+  </data>
+  <data name="Feature_BluetoothAdvertising.Header" xml:space="preserve">
+    <value>تعطيل إشارات إعلانات Bluetooth</value>
+  </data>
+  <data name="Feature_BluetoothAdvertising.Description" xml:space="preserve">
+    <value>يمنع ويندوز من بث إشارات إعلانات Bluetooth للأجهزة المجاورة.</value>
+  </data>
+  <data name="Intelligent_Impact_BluetoothAdvertising" xml:space="preserve">
+    <value>يحسن خصوصية الجهاز اللاسلكي في الأماكن العامة.</value>
+  </data>
+  <data name="Feature_SpotlightFeatures.Header" xml:space="preserve">
+    <value>تعطيل اقتراحات Windows Spotlight</value>
+  </data>
+  <data name="Feature_SpotlightFeatures.Description" xml:space="preserve">
+    <value>يعطل الاقتراحات الترويجية وتنزيلات الصور السحابية في الخلفية على شاشة القفل.</value>
+  </data>
+  <data name="Intelligent_Impact_SpotlightFeatures" xml:space="preserve">
+    <value>يوقف إعلانات شاشة القفل وحركة التنزيل في الخلفية.</value>
+  </data>
+  <data name="Feature_NvidiaTelemetry.Header" xml:space="preserve">
+    <value>تعطيل حاوية قياس NVIDIA</value>
+  </data>
+  <data name="Feature_NvidiaTelemetry.Description" xml:space="preserve">
+    <value>يعطل مهام قياس الخلفية لبرنامج تشغيل NVIDIA وخدمات التتبع.</value>
+  </data>
+  <data name="Intelligent_Impact_NvidiaTelemetry" xml:space="preserve">
+    <value>يوقف تحميلات تحليلات GPU ويحرر أكثر من 100 ميغابايت من ذاكرة الوصول العشوائي في الخلفية.</value>
+  </data>
+  <data name="Feature_EdgeTelemetry.Header" xml:space="preserve">
+    <value>تعطيل قياس Microsoft Edge</value>
+  </data>
+  <data name="Feature_EdgeTelemetry.Description" xml:space="preserve">
+    <value>يعطل تشخيصات متصفح Edge وإعداد تقارير الأعطال ودفعة بدء التشغيل في الخلفية.</value>
+  </data>
+  <data name="Intelligent_Impact_EdgeTelemetry" xml:space="preserve">
+    <value>يمنع Edge من إبقاء العمليات الخلفية الدائمة حية.</value>
+  </data>
+  <data name="Intelligent_Impact_RemoteRegistry" xml:space="preserve">
+    <value>يغلق ثغرة أمنية شبكية رئيسية تستغلها البرمجيات الخبيثة وبرامج الفدية.</value>
+  </data>
+  <data name="Feature_SMBv1.Header" xml:space="preserve">
+    <value>تعطيل بروتوكول SMBv1 القديم</value>
+  </data>
+  <data name="Feature_SMBv1.Description" xml:space="preserve">
+    <value>يعطل بروتوكول مشاركة الملفات القديم SMBv1 (ناقل هجوم EternalBlue / WannaCry).</value>
+  </data>
+  <data name="Intelligent_Impact_SMBv1" xml:space="preserve">
+    <value>تعزيز أمني حاسم ضد استغلال دودة الشبكة.</value>
+  </data>
+  <data name="Feature_Widgets.Header" xml:space="preserve">
+    <value>تعطيل لوحة عناصر واجهة المستخدم في ويندوز 11</value>
+  </data>
+  <data name="Feature_Widgets.Description" xml:space="preserve">
+    <value>يعطل خلاصة الأدوات في شريط المهام وعمليات Edge WebView الخلفية.</value>
+  </data>
+  <data name="Intelligent_Impact_Widgets" xml:space="preserve">
+    <value>يحرر أكثر من 300 ميغابايت من الذاكرة ويوقف عرض Edge الخلفي المستمر.</value>
+  </data>
+  <data name="Feature_SysMain.Header" xml:space="preserve">
+    <value>تحسين SysMain (Superfetch)</value>
+  </data>
+  <data name="Feature_SysMain.Description" xml:space="preserve">
+    <value>يضبط أو يعطل خدمة SysMain لإيقاف التحميل المسبق غير الضروري على محركات SSD.</value>
+  </data>
+  <data name="Intelligent_Impact_SysMain" xml:space="preserve">
+    <value>يزيل ارتفاعات استخدام القرص في الخلفية ودورات الكتابة غير الضرورية على SSD.</value>
+  </data>
 </root>

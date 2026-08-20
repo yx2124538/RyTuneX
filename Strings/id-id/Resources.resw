@@ -2198,4 +2198,499 @@
   <data name="StartupPage_Notification_DisabledCount" xml:space="preserve">
     <value>Menonaktifkan {0} aplikasi startup.</value>
   </data>
+
+  <data name="Intelligent_ScoreTitle" xml:space="preserve">
+    <value>Skor Optimasi</value>
+  </data>
+  <data name="Intelligent_HealthGrade_Scanning" xml:space="preserve">
+    <value>Memindai...</value>
+  </data>
+  <data name="Intelligent_HealthGrade_Excellent" xml:space="preserve">
+    <value>A+ Luar Biasa</value>
+  </data>
+  <data name="Intelligent_HealthGrade_Good" xml:space="preserve">
+    <value>B Bagus</value>
+  </data>
+  <data name="Intelligent_HealthGrade_Fair" xml:space="preserve">
+    <value>C Cukup</value>
+  </data>
+  <data name="Intelligent_HealthGrade_NeedsTuning" xml:space="preserve">
+    <value>D Perlu Penyesuaian</value>
+  </data>
+  <data name="Intelligent_HealthGrade_Unoptimized" xml:space="preserve">
+    <value>F Belum Dioptimalkan</value>
+  </data>
+  <data name="Intelligent_Domain_GlobalTitle" xml:space="preserve">
+    <value>Pusat Diagnostik Cerdas</value>
+  </data>
+  <data name="Intelligent_Domain_GlobalDesc" xml:space="preserve">
+    <value>Pilih kategori untuk melihat rekomendasi cerdas, mengurangi latensi sistem, dan menyesuaikan konfigurasi Anda.</value>
+  </data>
+  <data name="Intelligent_Domain_PerfTitle" xml:space="preserve">
+    <value>Mesin Performa</value>
+  </data>
+  <data name="Intelligent_Domain_PerfDesc" xml:space="preserve">
+    <value>Mengoptimalkan penjadwalan perangkat keras GPU, pembagian waktu CPU, pengindeksan buffer NTFS, dan menghilangkan keterlambatan menu desktop.</value>
+  </data>
+  <data name="Intelligent_Domain_PrivTitle" xml:space="preserve">
+    <value>Perisai Privasi &amp; Telemetri</value>
+  </data>
+  <data name="Intelligent_Domain_PrivDesc" xml:space="preserve">
+    <value>Memblokir telemetri diagnostik latar belakang, pengumpulan data AI Windows, tangkapan layar Recall, dan pengunggahan aktivitas cloud.</value>
+  </data>
+  <data name="Intelligent_Domain_FeatTitle" xml:space="preserve">
+    <value>Kegunaan &amp; Fitur Shell</value>
+  </data>
+  <data name="Intelligent_Domain_FeatDesc" xml:space="preserve">
+    <value>Memulihkan menu klik kanan klasik, mengaktifkan 'End Task' di taskbar, menampilkan file/ekstensi tersembunyi, dan merapikan Menu Mulai.</value>
+  </data>
+  <data name="Intelligent_ActiveCount" xml:space="preserve">
+    <value>Aktif: {0} / {1}</value>
+  </data>
+  <data name="Intelligent_OptimizationsActive" xml:space="preserve">
+    <value>Optimasi Aktif: {0} / {1}</value>
+  </data>
+  <data name="Intelligent_PotentialGain" xml:space="preserve">
+    <value>Potensi: +{0} poin</value>
+  </data>
+  <data name="Intelligent_RecommendedCount" xml:space="preserve">
+    <value>Direkomendasikan: {0}</value>
+  </data>
+  <data name="Intelligent_RollbacksCount" xml:space="preserve">
+    <value>Cadangan Rollback: {0}</value>
+  </data>
+  <data name="Intelligent_Metric_LowLatency" xml:space="preserve">
+    <value>Latensi Rendah &amp; UI Cepat</value>
+  </data>
+  <data name="Intelligent_Metric_DataShield" xml:space="preserve">
+    <value>Pelindung Data &amp; Suara</value>
+  </data>
+  <data name="Intelligent_Metric_Productivity" xml:space="preserve">
+    <value>Produktivitas 1-Klik</value>
+  </data>
+  <data name="Intelligent_Category_Performance" xml:space="preserve">
+    <value>Performa</value>
+  </data>
+  <data name="Intelligent_Category_Privacy" xml:space="preserve">
+    <value>Privasi</value>
+  </data>
+  <data name="Intelligent_Category_Usability" xml:space="preserve">
+    <value>Kegunaan</value>
+  </data>
+  <data name="Intelligent_Mode_Rec" xml:space="preserve">
+    <value>Rek.</value>
+  </data>
+  <data name="Intelligent_Mode_Rec_Tooltip" xml:space="preserve">
+    <value>Direkomendasikan: Penyesuaian berdampak tinggi &amp; 100% aman</value>
+  </data>
+  <data name="Intelligent_Mode_Safe" xml:space="preserve">
+    <value>Aman</value>
+  </data>
+  <data name="Intelligent_Mode_Safe_Tooltip" xml:space="preserve">
+    <value>Semua Aman: Semua optimasi 100% aman dan tidak mengganggu</value>
+  </data>
+  <data name="Intelligent_Mode_Adv" xml:space="preserve">
+    <value>Lanjutan</value>
+  </data>
+  <data name="Intelligent_Mode_Adv_Tooltip" xml:space="preserve">
+    <value>Lanjutan: Termasuk penyesuaian untuk pengguna mahir &amp; moderat</value>
+  </data>
+  <data name="Intelligent_Apply_Format" xml:space="preserve">
+    <value>Terapkan {0} ({1})</value>
+  </data>
+  <data name="Intelligent_Apply_Active" xml:space="preserve">
+    <value>{0} Aktif ✓</value>
+  </data>
+  <data name="Intelligent_Btn_Preview" xml:space="preserve">
+    <value>Pratinjau</value>
+  </data>
+  <data name="Intelligent_Btn_Rollback" xml:space="preserve">
+    <value>Rollback</value>
+  </data>
+  <data name="Intelligent_TuneByDomain" xml:space="preserve">
+    <value>Atur Berdasarkan Domain</value>
+  </data>
+  <data name="Intelligent_Preview_Title" xml:space="preserve">
+    <value>Pratinjau: {0}</value>
+  </data>
+  <data name="Intelligent_Preview_Desc" xml:space="preserve">
+    <value>Tinjau perubahan optimasi yang diusulkan sebelum menerapkan. Titik pemulihan rollback akan disimpan secara otomatis.</value>
+  </data>
+  <data name="Intelligent_Preview_ApplyBtn" xml:space="preserve">
+    <value>Terapkan Optimasi Terpilih</value>
+  </data>
+  <data name="Intelligent_Preview_CancelBtn" xml:space="preserve">
+    <value>Batal</value>
+  </data>
+  <data name="Intelligent_Preview_Empty" xml:space="preserve">
+    <value>Semua optimasi di halaman ini sudah aktif! Tidak ada yang perlu dipratinjau.</value>
+  </data>
+  <data name="Intelligent_Status_Applying" xml:space="preserve">
+    <value>Langkah 5 [Terapkan] ({0}/{1}): {2}</value>
+  </data>
+  <data name="Intelligent_Status_Verifying" xml:space="preserve">
+    <value>Langkah 6 [Verifikasi]: Memeriksa status sistem waktu nyata...</value>
+  </data>
+  <data name="Intelligent_Status_Success" xml:space="preserve">
+    <value>Berhasil menerapkan dan memverifikasi {0} optimasi!</value>
+  </data>
+  <data name="Intelligent_Status_AllActive" xml:space="preserve">
+    <value>Semua optimasi {0} di halaman ini sudah aktif!</value>
+  </data>
+  <data name="Intelligent_Status_RollingBack" xml:space="preserve">
+    <value>Mengembalikan {0} item di halaman ini...</value>
+  </data>
+  <data name="Intelligent_Status_RollbackDone" xml:space="preserve">
+    <value>Berhasil mengembalikan {0} item ke kondisi sebelum diterapkan.</value>
+  </data>
+  <data name="Intelligent_Status_NoRollbacks" xml:space="preserve">
+    <value>Tidak ada cadangan pemulihan yang ditemukan untuk halaman ini.</value>
+  </data>
+  <data name="Intelligent_Badge_Optimal" xml:space="preserve">
+    <value>Optimal ✓</value>
+  </data>
+  <data name="Intelligent_Badge_Recommended" xml:space="preserve">
+    <value>Direkomendasikan</value>
+  </data>
+  <data name="Intelligent_Badge_Safe" xml:space="preserve">
+    <value>Aman</value>
+  </data>
+  <data name="Intelligent_Badge_Moderate" xml:space="preserve">
+    <value>Moderat</value>
+  </data>
+  <data name="Intelligent_Badge_Advanced" xml:space="preserve">
+    <value>Lanjutan</value>
+  </data>
+  <data name="Intelligent_Badge_Caution" xml:space="preserve">
+    <value>Perhatian</value>
+  </data>
+  <data name="Intelligent_PointsGain" xml:space="preserve">
+    <value>+{0} poin</value>
+  </data>
+  <data name="Intelligent_Flyout_TechnicalDetails" xml:space="preserve">
+    <value>Detail Teknis</value>
+  </data>
+  <data name="Intelligent_Flyout_ScoreImpact" xml:space="preserve">
+    <value>Dampak Skor: +{0} poin ({1})</value>
+  </data>
+  <data name="Intelligent_Flyout_PreApplyBackup" xml:space="preserve">
+    <value>Cadangan Pra-Terapkan: Disimpan pada {0} (Status awal: {1})</value>
+  </data>
+  <data name="Intelligent_Flyout_NoBackup" xml:space="preserve">
+    <value>Cadangan Pra-Terapkan: Tidak ada (Alihkan untuk membuat titik pemulihan)</value>
+  </data>
+  <data name="Intelligent_Flyout_Status" xml:space="preserve">
+    <value>Status Saat Ini: {0}</value>
+  </data>
+
+  <data name="Intelligent_Verification_Active" xml:space="preserve">
+    <value>Terverifikasi Aktif ✓</value>
+  </data>
+  <data name="Intelligent_Verification_Restart" xml:space="preserve">
+    <value>Perlu Mulai Ulang 🔄</value>
+  </data>
+  <data name="Intelligent_Verification_Failed" xml:space="preserve">
+    <value>Verifikasi Gagal ⚠️</value>
+  </data>
+  <data name="Intelligent_Verification_NotVerified" xml:space="preserve">
+    <value>Belum Diverifikasi</value>
+  </data>
+  <data name="Intelligent_General_Category" xml:space="preserve">
+    <value>Umum</value>
+  </data>
+
+  <data name="Intelligent_Impact_BackgroundApps" xml:space="preserve">
+    <value>Membebaskan siklus CPU latar belakang dan menghemat 200MB+ RAM.</value>
+  </data>
+  <data name="Intelligent_Impact_SystemProfile" xml:space="preserve">
+    <value>Mengurangi micro-stuttering dan meningkatkan konsistensi framerate.</value>
+  </data>
+  <data name="Intelligent_Impact_PrioritizeForegroundApplications" xml:space="preserve">
+    <value>Meningkatkan responsivitas aplikasi aktif saat multitasking berat.</value>
+  </data>
+  <data name="Feature_GamingMode.Header" xml:space="preserve">
+    <value>Aktifkan Mode Gaming Windows</value>
+  </data>
+  <data name="Feature_GamingMode.Description" xml:space="preserve">
+    <value>Mengonfigurasi Mode Game Windows dan Penjadwalan Perangkat Keras GPU untuk latensi sangat rendah.</value>
+  </data>
+  <data name="Intelligent_Impact_GamingMode" xml:space="preserve">
+    <value>Mengunci inti CPU ke proses gaming dan mengoptimalkan penjadwalan thread.</value>
+  </data>
+  <data name="Feature_FullscreenOptimizations.Header" xml:space="preserve">
+    <value>Aktifkan Optimasi Layar Penuh</value>
+  </data>
+  <data name="Feature_FullscreenOptimizations.Description" xml:space="preserve">
+    <value>Mengonfigurasi pipeline tampilan Windows untuk presentasi tanpa bingkai berkinerja tinggi.</value>
+  </data>
+  <data name="Intelligent_Impact_FullscreenOptimizations" xml:space="preserve">
+    <value>Meminimalkan latensi tampilan sambil mempertahankan pergantian Alt+Tab yang cepat.</value>
+  </data>
+  <data name="Intelligent_Impact_GpuDriverTweaks" xml:space="preserve">
+    <value>Mencegah fluktuasi jam daya GPU selama gaming dan rendering 3D.</value>
+  </data>
+  <data name="Intelligent_Impact_MenuShowDelay" xml:space="preserve">
+    <value>Navigasi UI yang terasa instan di File Explorer dan desktop.</value>
+  </data>
+  <data name="Intelligent_Impact_MouseHoverTime" xml:space="preserve">
+    <value>Pratinjau tooltip dan thumbnail taskbar yang segera.</value>
+  </data>
+  <data name="Intelligent_Impact_KeyboardLatency" xml:space="preserve">
+    <value>Pengenalan input tombol yang instan dan pengulangan karakter yang lebih cepat.</value>
+  </data>
+  <data name="Feature_MouseAcceleration.Header" xml:space="preserve">
+    <value>Nonaktifkan Akselerasi Mouse (Raw Input)</value>
+  </data>
+  <data name="Feature_MouseAcceleration.Description" xml:space="preserve">
+    <value>Menonaktifkan kurva akselerasi mouse Windows untuk presisi kursor hardware 1:1 murni.</value>
+  </data>
+  <data name="Intelligent_Impact_MouseAcceleration" xml:space="preserve">
+    <value>Konsistensi pelacakan kursor yang sempurna untuk gaming dan pekerjaan desain presisi.</value>
+  </data>
+  <data name="Intelligent_Impact_OptimizeNTFS" xml:space="preserve">
+    <value>Mempercepat pengindeksan direktori file dan pencarian metadata disk.</value>
+  </data>
+  <data name="Intelligent_Impact_ServiceHostSplitting" xml:space="preserve">
+    <value>Mengurangi overhead jumlah proses sebesar 30-50 proses pada sistem dengan RAM 8GB+.</value>
+  </data>
+  <data name="Feature_UsbPowerSaving.Header" xml:space="preserve">
+    <value>Nonaktifkan USB Selective Suspend</value>
+  </data>
+  <data name="Feature_UsbPowerSaving.Description" xml:space="preserve">
+    <value>Mencegah Windows mematikan pengontrol USB dan periferal ke status daya rendah.</value>
+  </data>
+  <data name="Intelligent_Impact_UsbPowerSaving" xml:space="preserve">
+    <value>Mencegah dropout audio USB, lag pengontrol, dan pemutusan koneksi mouse.</value>
+  </data>
+  <data name="Feature_PowerThrottling.Header" xml:space="preserve">
+    <value>Nonaktifkan Power Throttling</value>
+  </data>
+  <data name="Feature_PowerThrottling.Description" xml:space="preserve">
+    <value>Menonaktifkan algoritma power throttling Windows pada thread eksekusi latar belakang.</value>
+  </data>
+  <data name="Intelligent_Impact_PowerThrottling" xml:space="preserve">
+    <value>Memastikan render latar belakang dan tugas kompilasi berjalan pada kecepatan clock CPU penuh.</value>
+  </data>
+  <data name="Intelligent_Impact_LowDiskSpaceChecks" xml:space="preserve">
+    <value>Menghentikan interupsi polling disk yang berulang.</value>
+  </data>
+  <data name="Intelligent_Impact_LinkResolve" xml:space="preserve">
+    <value>Mempercepat pembukaan pintasan rusak tanpa membekukan Explorer.</value>
+  </data>
+  <data name="Intelligent_Impact_AutoComplete" xml:space="preserve">
+    <value>Navigasi jalur bilah alamat yang lebih cepat.</value>
+  </data>
+  <data name="Feature_TelemetryServices.Header" xml:space="preserve">
+    <value>Nonaktifkan Telemetri &amp; Diagnostik Windows</value>
+  </data>
+  <data name="Feature_TelemetryServices.Description" xml:space="preserve">
+    <value>Sepenuhnya menonaktifkan DiagTrack dan dmwappushservice untuk pengumpulan diagnostik latar belakang.</value>
+  </data>
+  <data name="Intelligent_Impact_TelemetryServices" xml:space="preserve">
+    <value>Menghentikan pelacakan latar belakang otomatis, pencatatan keystroke, dan pengunggahan telemetri.</value>
+  </data>
+  <data name="Feature_WindowsAI.Header" xml:space="preserve">
+    <value>Nonaktifkan Fitur AI &amp; Mining Windows</value>
+  </data>
+  <data name="Feature_WindowsAI.Description" xml:space="preserve">
+    <value>Memblokir analisis AI latar belakang Windows, integrasi AI Notepad/Paint, dan pelaporan kueri model.</value>
+  </data>
+  <data name="Intelligent_Impact_WindowsAI" xml:space="preserve">
+    <value>Melindungi privasi file lokal dan menghentikan pengumpulan AI cloud yang berkelanjutan.</value>
+  </data>
+  <data name="Feature_WindowsRecall.Header" xml:space="preserve">
+    <value>Nonaktifkan Snapshot Layar Windows Recall</value>
+  </data>
+  <data name="Feature_WindowsRecall.Description" xml:space="preserve">
+    <value>Memblokir pengambilan screenshot berkesinambungan secara berkala dari desktop aktif dan pengindeksan OCR.</value>
+  </data>
+  <data name="Intelligent_Impact_WindowsRecall" xml:space="preserve">
+    <value>Menjamin data perbankan sensitif, kata sandi, dan dokumen pribadi tidak pernah direkam.</value>
+  </data>
+  <data name="Feature_CoPilotAI.Header" xml:space="preserve">
+    <value>Nonaktifkan Asisten AI Copilot</value>
+  </data>
+  <data name="Feature_CoPilotAI.Description" xml:space="preserve">
+    <value>Menonaktifkan sidebar Copilot Windows, tombol taskbar, dan kueri sinkronisasi cloud yang terus-menerus.</value>
+  </data>
+  <data name="Intelligent_Impact_CoPilotAI" xml:space="preserve">
+    <value>Membebaskan ruang taskbar dan menghilangkan proses tampilan web latar belakang.</value>
+  </data>
+  <data name="Feature_AdvertisingID.Header" xml:space="preserve">
+    <value>Nonaktifkan ID Iklan Windows</value>
+  </data>
+  <data name="Feature_AdvertisingID.Description" xml:space="preserve">
+    <value>Mencegah aplikasi Windows Store melacak aktivitas pengguna untuk iklan yang dipersonalisasi.</value>
+  </data>
+  <data name="Intelligent_Impact_AdvertisingID" xml:space="preserve">
+    <value>Menghentikan pelacakan profil pengidentifikasi iklan unik.</value>
+  </data>
+  <data name="Feature_ActivityUploads.Header" xml:space="preserve">
+    <value>Nonaktifkan Sinkronisasi Cloud Riwayat Aktivitas</value>
+  </data>
+  <data name="Feature_ActivityUploads.Description" xml:space="preserve">
+    <value>Mencegah pengunggahan riwayat peluncuran aplikasi dan riwayat penelusuran ke cloud Microsoft.</value>
+  </data>
+  <data name="Intelligent_Impact_ActivityUploads" xml:space="preserve">
+    <value>Riwayat penggunaan perangkat tidak pernah disiarkan ke akun cloud yang tertaut.</value>
+  </data>
+  <data name="Feature_ClipboardSync.Header" xml:space="preserve">
+    <value>Nonaktifkan Sinkronisasi Cloud Clipboard Lintas Perangkat</value>
+  </data>
+  <data name="Feature_ClipboardSync.Description" xml:space="preserve">
+    <value>Menghentikan buffer salinan clipboard agar tidak otomatis diunggah ke server cloud.</value>
+  </data>
+  <data name="Intelligent_Impact_ClipboardSync" xml:space="preserve">
+    <value>Melindungi teks yang disalin sensitif, kata sandi, dan token dari paparan cloud.</value>
+  </data>
+  <data name="Feature_LocationAccess.Header" xml:space="preserve">
+    <value>Nonaktifkan Akses Lokasi &amp; Sensor</value>
+  </data>
+  <data name="Feature_LocationAccess.Description" xml:space="preserve">
+    <value>Menonaktifkan layanan penyedia lokasi Windows dan API sensor lokasi.</value>
+  </data>
+  <data name="Intelligent_Impact_LocationAccess" xml:space="preserve">
+    <value>Mencegah browser web dan aplikasi desktop menentukan koordinat fisik.</value>
+  </data>
+  <data name="Feature_ClassicContextMenu.Header" xml:space="preserve">
+    <value>Kembalikan Menu Klik Kanan Klasik Windows 10</value>
+  </data>
+  <data name="Feature_ClassicContextMenu.Description" xml:space="preserve">
+    <value>Mengembalikan menu konteks klik kanan penuh yang instan di Windows 11 tanpa mengklik 'Tampilkan lebih banyak opsi'.</value>
+  </data>
+  <data name="Intelligent_Impact_ClassicContextMenu" xml:space="preserve">
+    <value>Menghemat 1 klik untuk setiap tindakan klik kanan di Explorer.</value>
+  </data>
+  <data name="Feature_EndTask.Header" xml:space="preserve">
+    <value>Aktifkan 'End Task' pada Ikon Aplikasi Taskbar</value>
+  </data>
+  <data name="Feature_EndTask.Description" xml:space="preserve">
+    <value>Menambahkan tindakan 'End Task' langsung klik kanan ke item taskbar untuk penghentian proses instan.</value>
+  </data>
+  <data name="Intelligent_Impact_EndTask" xml:space="preserve">
+    <value>Hentikan program yang membeku atau hang secara instan tanpa membuka Task Manager.</value>
+  </data>
+  <data name="Intelligent_Impact_FileExtensionsAndHiddenFiles" xml:space="preserve">
+    <value>Melindungi terhadap malware ekstensi ganda palsu (.pdf.exe).</value>
+  </data>
+  <data name="Feature_StickyKeys.Header" xml:space="preserve">
+    <value>Nonaktifkan Prompt Sticky Keys</value>
+  </data>
+  <data name="Feature_StickyKeys.Description" xml:space="preserve">
+    <value>Menonaktifkan dialog popup saat menekan Shift 5 kali dalam game.</value>
+  </data>
+  <data name="Intelligent_Impact_StickyKeys" xml:space="preserve">
+    <value>Menghentikan gangguan gaming dari ketukan tombol Shift.</value>
+  </data>
+  <data name="Feature_RecommendedSectionStartMenu.Header" xml:space="preserve">
+    <value>Sembunyikan Bagian Rekomendasi di Menu Mulai</value>
+  </data>
+  <data name="Feature_RecommendedSectionStartMenu.Description" xml:space="preserve">
+    <value>Menghapus panel file terbaru dan yang direkomendasikan di Menu Mulai Windows 11.</value>
+  </data>
+  <data name="Intelligent_Impact_RecommendedSectionStartMenu" xml:space="preserve">
+    <value>Menu Mulai yang lebih bersih dengan lebih banyak ruang untuk aplikasi yang disematkan.</value>
+  </data>
+  <data name="Feature_TaskbarToLeft.Header" xml:space="preserve">
+    <value>Ratakan Ikon Taskbar ke Kiri</value>
+  </data>
+  <data name="Feature_TaskbarToLeft.Description" xml:space="preserve">
+    <value>Memindahkan tombol Start dan ikon taskbar Windows 11 ke posisi kiri bawah yang klasik.</value>
+  </data>
+  <data name="Intelligent_Impact_TaskbarToLeft" xml:space="preserve">
+    <value>Penyelarasan memori otot klasik.</value>
+  </data>
+  <data name="Feature_FilesCompactMode.Header" xml:space="preserve">
+    <value>Aktifkan Tampilan Kompak di File Explorer</value>
+  </data>
+  <data name="Feature_FilesCompactMode.Description" xml:space="preserve">
+    <value>Mengurangi padding vertikal antar baris di File Explorer untuk kepadatan file yang lebih tinggi.</value>
+  </data>
+  <data name="Intelligent_Impact_FilesCompactMode" xml:space="preserve">
+    <value>Lihat lebih banyak file per layar tanpa menggulir.</value>
+  </data>
+  <data name="Feature_CloudClipboard.Header" xml:space="preserve">
+    <value>Aktifkan Riwayat Clipboard yang Ditingkatkan</value>
+  </data>
+  <data name="Feature_CloudClipboard.Description" xml:space="preserve">
+    <value>Mengonfigurasi riwayat clipboard lokal Win+V tanpa sinkronisasi cloud.</value>
+  </data>
+  <data name="Intelligent_Impact_CloudClipboard" xml:space="preserve">
+    <value>Riwayat clipboard multi-item yang dapat diakses dengan Win+V.</value>
+  </data>
+  <data name="Feature_EdgeDiscoverBar.Header" xml:space="preserve">
+    <value>Nonaktifkan Sidebar &amp; Widget Edge</value>
+  </data>
+  <data name="Feature_EdgeDiscoverBar.Description" xml:space="preserve">
+    <value>Menonaktifkan tombol sidebar browser Edge dan widget pencarian mengambang.</value>
+  </data>
+  <data name="Intelligent_Impact_EdgeDiscoverBar" xml:space="preserve">
+    <value>Menghilangkan kekacauan di browser Edge.</value>
+  </data>
+  <data name="Feature_BluetoothAdvertising.Header" xml:space="preserve">
+    <value>Nonaktifkan Sinyal Iklan Bluetooth</value>
+  </data>
+  <data name="Feature_BluetoothAdvertising.Description" xml:space="preserve">
+    <value>Mencegah Windows menyiarkan sinyal iklan Bluetooth ke perangkat keras terdekat.</value>
+  </data>
+  <data name="Intelligent_Impact_BluetoothAdvertising" xml:space="preserve">
+    <value>Meningkatkan privasi perangkat nirkabel di tempat umum.</value>
+  </data>
+  <data name="Feature_SpotlightFeatures.Header" xml:space="preserve">
+    <value>Nonaktifkan Saran Windows Spotlight</value>
+  </data>
+  <data name="Feature_SpotlightFeatures.Description" xml:space="preserve">
+    <value>Menonaktifkan saran promosi dan unduhan gambar cloud latar belakang di layar kunci.</value>
+  </data>
+  <data name="Intelligent_Impact_SpotlightFeatures" xml:space="preserve">
+    <value>Menghentikan iklan layar kunci dan lalu lintas unduhan latar belakang.</value>
+  </data>
+  <data name="Feature_NvidiaTelemetry.Header" xml:space="preserve">
+    <value>Nonaktifkan Kontainer Telemetri NVIDIA</value>
+  </data>
+  <data name="Feature_NvidiaTelemetry.Description" xml:space="preserve">
+    <value>Menonaktifkan tugas telemetri latar belakang driver NVIDIA dan layanan pelacakan.</value>
+  </data>
+  <data name="Intelligent_Impact_NvidiaTelemetry" xml:space="preserve">
+    <value>Menghentikan pengunggahan analitik GPU dan membebaskan 100MB+ RAM latar belakang.</value>
+  </data>
+  <data name="Feature_EdgeTelemetry.Header" xml:space="preserve">
+    <value>Nonaktifkan Telemetri Microsoft Edge</value>
+  </data>
+  <data name="Feature_EdgeTelemetry.Description" xml:space="preserve">
+    <value>Menonaktifkan diagnostik browser Edge, pelaporan crash, dan dorongan latar belakang saat startup.</value>
+  </data>
+  <data name="Intelligent_Impact_EdgeTelemetry" xml:space="preserve">
+    <value>Mencegah Edge mempertahankan proses latar belakang yang persisten.</value>
+  </data>
+  <data name="Intelligent_Impact_RemoteRegistry" xml:space="preserve">
+    <value>Menutup kerentanan jaringan utama yang dieksploitasi oleh malware dan ransomware.</value>
+  </data>
+  <data name="Feature_SMBv1.Header" xml:space="preserve">
+    <value>Nonaktifkan Protokol Jaringan SMBv1 Lama</value>
+  </data>
+  <data name="Feature_SMBv1.Description" xml:space="preserve">
+    <value>Menonaktifkan protokol berbagi file SMBv1 yang tidak aman berusia 30 tahun (vektor serangan EternalBlue/WannaCry).</value>
+  </data>
+  <data name="Intelligent_Impact_SMBv1" xml:space="preserve">
+    <value>Pengerasan keamanan kritis terhadap eksploit worm jaringan.</value>
+  </data>
+  <data name="Feature_Widgets.Header" xml:space="preserve">
+    <value>Nonaktifkan Papan Widget Windows 11</value>
+  </data>
+  <data name="Feature_Widgets.Description" xml:space="preserve">
+    <value>Menonaktifkan umpan Widget taskbar dan proses Edge WebView latar belakang.</value>
+  </data>
+  <data name="Intelligent_Impact_Widgets" xml:space="preserve">
+    <value>Membebaskan 300MB+ RAM dan menghentikan rendering latar belakang Edge yang konstan.</value>
+  </data>
+  <data name="Feature_SysMain.Header" xml:space="preserve">
+    <value>Optimalkan SysMain (Superfetch)</value>
+  </data>
+  <data name="Feature_SysMain.Description" xml:space="preserve">
+    <value>Menyesuaikan atau menonaktifkan layanan SysMain untuk menghentikan pemuat awal yang tidak perlu pada SSD.</value>
+  </data>
+  <data name="Intelligent_Impact_SysMain" xml:space="preserve">
+    <value>Menghilangkan lonjakan penggunaan disk latar belakang yang tinggi dan siklus tulis SSD yang tidak perlu.</value>
+  </data>
 </root>

@@ -9,6 +9,7 @@ public static class AppSearchService
     // Mapping of resource key prefix to their page, category, glyph (matching XAML), and toggle tag
     private static readonly List<(string ResourceKeyPrefix, Type PageType, string Category, string Glyph, string ToggleTag)> FeatureMap =
     [
+        ("IntelligentOptimizer", typeof(OptimizeSystemPage), "Optimize", "\uE9F5", "IntelligentOptimizer"),
         // OptimizeSystemPage - Basic (icons match OptimizeSystemPage.xaml)
         ("Feature_PowerMode", typeof(OptimizeSystemPage), "Optimize", "\uEBB7", "PowerMode"),
         ("Feature_AddUltimatePowerPlan", typeof(OptimizeSystemPage), "Optimize", "\uE945", "AddUltimatePowerPlan"),

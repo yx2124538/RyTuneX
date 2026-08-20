@@ -2200,4 +2200,499 @@
   <data name="StartupPage_Notification_DisabledCount" xml:space="preserve">
     <value>{0} 個のスタートアップ アプリを無効にしました。</value>
   </data>
+
+  <data name="Intelligent_ScoreTitle" xml:space="preserve">
+    <value>最適化スコア</value>
+  </data>
+  <data name="Intelligent_HealthGrade_Scanning" xml:space="preserve">
+    <value>スキャン中...</value>
+  </data>
+  <data name="Intelligent_HealthGrade_Excellent" xml:space="preserve">
+    <value>A+ 非常に優秀</value>
+  </data>
+  <data name="Intelligent_HealthGrade_Good" xml:space="preserve">
+    <value>B 良好</value>
+  </data>
+  <data name="Intelligent_HealthGrade_Fair" xml:space="preserve">
+    <value>C 普通</value>
+  </data>
+  <data name="Intelligent_HealthGrade_NeedsTuning" xml:space="preserve">
+    <value>D 調整が必要</value>
+  </data>
+  <data name="Intelligent_HealthGrade_Unoptimized" xml:space="preserve">
+    <value>F 未最適化</value>
+  </data>
+  <data name="Intelligent_Domain_GlobalTitle" xml:space="preserve">
+    <value>インテリジェント診断センター</value>
+  </data>
+  <data name="Intelligent_Domain_GlobalDesc" xml:space="preserve">
+    <value>カテゴリを選択してスマートな推奨事項を確認し、システム遅延を低減して設定を最適化します。</value>
+  </data>
+  <data name="Intelligent_Domain_PerfTitle" xml:space="preserve">
+    <value>パフォーマンスエンジン</value>
+  </data>
+  <data name="Intelligent_Domain_PerfDesc" xml:space="preserve">
+    <value>GPUハードウェアスケジューリング、CPUタイムスライス、NTFSバッファインデックスを最適化し、デスクトップメニューの遅延を解消します。</value>
+  </data>
+  <data name="Intelligent_Domain_PrivTitle" xml:space="preserve">
+    <value>プライバシー＆テレメトリ保護</value>
+  </data>
+  <data name="Intelligent_Domain_PrivDesc" xml:space="preserve">
+    <value>バックグラウンドの診断テレメトリ、Windows AIのデータ収集、Recallの画面スナップショット、クラウドへのアクティビティ送信をブロックします。</value>
+  </data>
+  <data name="Intelligent_Domain_FeatTitle" xml:space="preserve">
+    <value>使いやすさとシェル機能</value>
+  </data>
+  <data name="Intelligent_Domain_FeatDesc" xml:space="preserve">
+    <value>クラシックな右クリックメニューを復元し、タスクバーの「タスクの終了」を有効化、拡張子や隠しファイルを表示してスタートメニューを整理します。</value>
+  </data>
+  <data name="Intelligent_ActiveCount" xml:space="preserve">
+    <value>有効: {0} / {1}</value>
+  </data>
+  <data name="Intelligent_OptimizationsActive" xml:space="preserve">
+    <value>有効な最適化: {0} / {1}</value>
+  </data>
+  <data name="Intelligent_PotentialGain" xml:space="preserve">
+    <value>上昇見込み: +{0} pt</value>
+  </data>
+  <data name="Intelligent_RecommendedCount" xml:space="preserve">
+    <value>推奨: {0}</value>
+  </data>
+  <data name="Intelligent_RollbacksCount" xml:space="preserve">
+    <value>ロールバック可能: {0}</value>
+  </data>
+  <data name="Intelligent_Metric_LowLatency" xml:space="preserve">
+    <value>低遅延＆高速UI</value>
+  </data>
+  <data name="Intelligent_Metric_DataShield" xml:space="preserve">
+    <value>データ＆音声保護</value>
+  </data>
+  <data name="Intelligent_Metric_Productivity" xml:space="preserve">
+    <value>ワンクリックで快適化</value>
+  </data>
+  <data name="Intelligent_Category_Performance" xml:space="preserve">
+    <value>パフォーマンス</value>
+  </data>
+  <data name="Intelligent_Category_Privacy" xml:space="preserve">
+    <value>プライバシー</value>
+  </data>
+  <data name="Intelligent_Category_Usability" xml:space="preserve">
+    <value>使いやすさ</value>
+  </data>
+  <data name="Intelligent_Mode_Rec" xml:space="preserve">
+    <value>推奨</value>
+  </data>
+  <data name="Intelligent_Mode_Rec_Tooltip" xml:space="preserve">
+    <value>推奨: 効果が高く、100%安全が確認された調整項目</value>
+  </data>
+  <data name="Intelligent_Mode_Safe" xml:space="preserve">
+    <value>安全</value>
+  </data>
+  <data name="Intelligent_Mode_Safe_Tooltip" xml:space="preserve">
+    <value>安全のみ: 100%安全で副作用のないすべての最適化</value>
+  </data>
+  <data name="Intelligent_Mode_Adv" xml:space="preserve">
+    <value>高度</value>
+  </data>
+  <data name="Intelligent_Mode_Adv_Tooltip" xml:space="preserve">
+    <value>高度: パワーユーザー向けおよび中級レベルの調整を含む</value>
+  </data>
+  <data name="Intelligent_Apply_Format" xml:space="preserve">
+    <value>{0} を適用 ({1})</value>
+  </data>
+  <data name="Intelligent_Apply_Active" xml:space="preserve">
+    <value>{0} 適用済み ✓</value>
+  </data>
+  <data name="Intelligent_Btn_Preview" xml:space="preserve">
+    <value>プレビュー</value>
+  </data>
+  <data name="Intelligent_Btn_Rollback" xml:space="preserve">
+    <value>ロールバック</value>
+  </data>
+  <data name="Intelligent_TuneByDomain" xml:space="preserve">
+    <value>領域ごとに調整</value>
+  </data>
+  <data name="Intelligent_Preview_Title" xml:space="preserve">
+    <value>プレビュー: {0}</value>
+  </data>
+  <data name="Intelligent_Preview_Desc" xml:space="preserve">
+    <value>適用する前に提案された最適化の変更内容を確認してください。変更前の状態は自動的にバックアップされます。</value>
+  </data>
+  <data name="Intelligent_Preview_ApplyBtn" xml:space="preserve">
+    <value>選択した最適化を適用</value>
+  </data>
+  <data name="Intelligent_Preview_CancelBtn" xml:space="preserve">
+    <value>キャンセル</value>
+  </data>
+  <data name="Intelligent_Preview_Empty" xml:space="preserve">
+    <value>このページのすべての最適化は既に有効です。プレビューする項目はありません。</value>
+  </data>
+  <data name="Intelligent_Status_Applying" xml:space="preserve">
+    <value>ステップ 5 [適用中] ({0}/{1}): {2}</value>
+  </data>
+  <data name="Intelligent_Status_Verifying" xml:space="preserve">
+    <value>ステップ 6 [検証中]: リアルタイムのシステム状態を確認中...</value>
+  </data>
+  <data name="Intelligent_Status_Success" xml:space="preserve">
+    <value>{0} 個の最適化の適用と検証が正常に完了しました！</value>
+  </data>
+  <data name="Intelligent_Status_AllActive" xml:space="preserve">
+    <value>このページのすべての {0} 最適化項目は既に有効です！</value>
+  </data>
+  <data name="Intelligent_Status_RollingBack" xml:space="preserve">
+    <value>このページの {0} 個の項目をロールバック中...</value>
+  </data>
+  <data name="Intelligent_Status_RollbackDone" xml:space="preserve">
+    <value>{0} 個の項目を適用前の状態に復元しました。</value>
+  </data>
+  <data name="Intelligent_Status_NoRollbacks" xml:space="preserve">
+    <value>このページのロールバック用バックアップは見つかりませんでした。</value>
+  </data>
+  <data name="Intelligent_Badge_Optimal" xml:space="preserve">
+    <value>最適 ✓</value>
+  </data>
+  <data name="Intelligent_Badge_Recommended" xml:space="preserve">
+    <value>推奨</value>
+  </data>
+  <data name="Intelligent_Badge_Safe" xml:space="preserve">
+    <value>安全</value>
+  </data>
+  <data name="Intelligent_Badge_Moderate" xml:space="preserve">
+    <value>中程度</value>
+  </data>
+  <data name="Intelligent_Badge_Advanced" xml:space="preserve">
+    <value>高度</value>
+  </data>
+  <data name="Intelligent_Badge_Caution" xml:space="preserve">
+    <value>注意</value>
+  </data>
+  <data name="Intelligent_PointsGain" xml:space="preserve">
+    <value>+{0} pt</value>
+  </data>
+  <data name="Intelligent_Flyout_TechnicalDetails" xml:space="preserve">
+    <value>技術詳細</value>
+  </data>
+  <data name="Intelligent_Flyout_ScoreImpact" xml:space="preserve">
+    <value>スコアへの影響: +{0} ポイント ({1})</value>
+  </data>
+  <data name="Intelligent_Flyout_PreApplyBackup" xml:space="preserve">
+    <value>適用前バックアップ: {0} に保存 (初期状態: {1})</value>
+  </data>
+  <data name="Intelligent_Flyout_NoBackup" xml:space="preserve">
+    <value>適用前バックアップ: なし (トグルを切り替えると復元ポイントが作成されます)</value>
+  </data>
+  <data name="Intelligent_Flyout_Status" xml:space="preserve">
+    <value>現在の状態: {0}</value>
+  </data>
+
+  <data name="Intelligent_Verification_Active" xml:space="preserve">
+    <value>適用確認済み ✓</value>
+  </data>
+  <data name="Intelligent_Verification_Restart" xml:space="preserve">
+    <value>再起動が必要です 🔄</value>
+  </data>
+  <data name="Intelligent_Verification_Failed" xml:space="preserve">
+    <value>検証に失敗しました ⚠️</value>
+  </data>
+  <data name="Intelligent_Verification_NotVerified" xml:space="preserve">
+    <value>未検証</value>
+  </data>
+  <data name="Intelligent_General_Category" xml:space="preserve">
+    <value>全般</value>
+  </data>
+
+  <data name="Intelligent_Impact_BackgroundApps" xml:space="preserve">
+    <value>バックグラウンドの CPU サイクルを解放し 200MB 以上の RAM を節約します。</value>
+  </data>
+  <data name="Intelligent_Impact_SystemProfile" xml:space="preserve">
+    <value>マイクロスタッターを低減しフレームレートの安定性を向上させます。</value>
+  </data>
+  <data name="Intelligent_Impact_PrioritizeForegroundApplications" xml:space="preserve">
+    <value>バックグラウンドの重いマルチタスク中もアクティブアプリの反応性が向上します。</value>
+  </data>
+  <data name="Feature_GamingMode.Header" xml:space="preserve">
+    <value>Windows ゲームモードを有効化</value>
+  </data>
+  <data name="Feature_GamingMode.Description" xml:space="preserve">
+    <value>Windows ゲームモードと GPU ハードウェアスケジューリングを超低レイテンシー向けに設定します。</value>
+  </data>
+  <data name="Intelligent_Impact_GamingMode" xml:space="preserve">
+    <value>ゲームプロセスに CPU コアをロックし、スレッドスケジューリングを最適化します。</value>
+  </data>
+  <data name="Feature_FullscreenOptimizations.Header" xml:space="preserve">
+    <value>フルスクリーン最適化を有効化</value>
+  </data>
+  <data name="Feature_FullscreenOptimizations.Description" xml:space="preserve">
+    <value>高性能なボーダーレス表示のために Windows 表示パイプラインを設定します。</value>
+  </data>
+  <data name="Intelligent_Impact_FullscreenOptimizations" xml:space="preserve">
+    <value>Alt+Tab の素早い切替を維持しながら表示レイテンシーを最小化します。</value>
+  </data>
+  <data name="Intelligent_Impact_GpuDriverTweaks" xml:space="preserve">
+    <value>ゲームや 3D レンダリング中の GPU クロック変動を防止します。</value>
+  </data>
+  <data name="Intelligent_Impact_MenuShowDelay" xml:space="preserve">
+    <value>ファイルエクスプローラーとデスクトップ全体で即時の UI 操作感を実現します。</value>
+  </data>
+  <data name="Intelligent_Impact_MouseHoverTime" xml:space="preserve">
+    <value>ツールチップとタスクバーサムネイルを即時表示します。</value>
+  </data>
+  <data name="Intelligent_Impact_KeyboardLatency" xml:space="preserve">
+    <value>瞬時のキー入力認識と高速なキャラクターリピートを実現します。</value>
+  </data>
+  <data name="Feature_MouseAcceleration.Header" xml:space="preserve">
+    <value>マウス加速を無効化 (生入力)</value>
+  </data>
+  <data name="Feature_MouseAcceleration.Description" xml:space="preserve">
+    <value>純粋な 1:1 ハードウェアカーソル精度のために Windows のマウス加速曲線を無効化します。</value>
+  </data>
+  <data name="Intelligent_Impact_MouseAcceleration" xml:space="preserve">
+    <value>ゲームと精密なデザイン作業のための完璧なカーソルトラッキング一貫性。</value>
+  </data>
+  <data name="Intelligent_Impact_OptimizeNTFS" xml:space="preserve">
+    <value>ファイルディレクトリのインデックス作成とディスクメタデータ検索を高速化します。</value>
+  </data>
+  <data name="Intelligent_Impact_ServiceHostSplitting" xml:space="preserve">
+    <value>8GB 以上の RAM を搭載したシステムで合計プロセス数を 30〜50 削減します。</value>
+  </data>
+  <data name="Feature_UsbPowerSaving.Header" xml:space="preserve">
+    <value>USB セレクティブサスペンドを無効化</value>
+  </data>
+  <data name="Feature_UsbPowerSaving.Description" xml:space="preserve">
+    <value>Windows が USB コントローラーと周辺機器を低電力状態にするのを防ぎます。</value>
+  </data>
+  <data name="Intelligent_Impact_UsbPowerSaving" xml:space="preserve">
+    <value>USB オーディオ途切れ、コントローラーラグ、マウス切断を防止します。</value>
+  </data>
+  <data name="Feature_PowerThrottling.Header" xml:space="preserve">
+    <value>パワースロットリングを無効化</value>
+  </data>
+  <data name="Feature_PowerThrottling.Description" xml:space="preserve">
+    <value>バックグラウンド実行スレッドの Windows パワースロットリングアルゴリズムを無効化します。</value>
+  </data>
+  <data name="Intelligent_Impact_PowerThrottling" xml:space="preserve">
+    <value>バックグラウンドのレンダリングやコンパイルジョブが最大 CPU クロック速度で実行されることを保証します。</value>
+  </data>
+  <data name="Intelligent_Impact_LowDiskSpaceChecks" xml:space="preserve">
+    <value>繰り返しのディスクポーリング割り込みを停止します。</value>
+  </data>
+  <data name="Intelligent_Impact_LinkResolve" xml:space="preserve">
+    <value>エクスプローラーをフリーズさせずに壊れたショートカットを高速に開きます。</value>
+  </data>
+  <data name="Intelligent_Impact_AutoComplete" xml:space="preserve">
+    <value>アドレスバーでのパスナビゲーションが高速化されます。</value>
+  </data>
+  <data name="Feature_TelemetryServices.Header" xml:space="preserve">
+    <value>Windows テレメトリー &amp; 診断を無効化</value>
+  </data>
+  <data name="Feature_TelemetryServices.Description" xml:space="preserve">
+    <value>バックグラウンド診断収集の DiagTrack と dmwappushservice を完全に無効化します。</value>
+  </data>
+  <data name="Intelligent_Impact_TelemetryServices" xml:space="preserve">
+    <value>自動バックグラウンド追跡、キーストロークログ、テレメトリーアップロードを停止します。</value>
+  </data>
+  <data name="Feature_WindowsAI.Header" xml:space="preserve">
+    <value>Windows AI 機能を無効化</value>
+  </data>
+  <data name="Feature_WindowsAI.Description" xml:space="preserve">
+    <value>Windows バックグラウンド AI 分析、メモ帳/ペイントの AI 統合、モデルクエリレポートをブロックします。</value>
+  </data>
+  <data name="Intelligent_Impact_WindowsAI" xml:space="preserve">
+    <value>ローカルファイルのプライバシーを保護し、クラウド AI によるスクレイピングを停止します。</value>
+  </data>
+  <data name="Feature_WindowsRecall.Header" xml:space="preserve">
+    <value>Windows Recall のスクリーンショットを無効化</value>
+  </data>
+  <data name="Feature_WindowsRecall.Description" xml:space="preserve">
+    <value>アクティブなデスクトップの定期的な継続的スクリーンショットと OCR インデックスをブロックします。</value>
+  </data>
+  <data name="Intelligent_Impact_WindowsRecall" xml:space="preserve">
+    <value>機密な銀行情報、パスワード、個人文書が記録されないことを保証します。</value>
+  </data>
+  <data name="Feature_CoPilotAI.Header" xml:space="preserve">
+    <value>Copilot AI アシスタントを無効化</value>
+  </data>
+  <data name="Feature_CoPilotAI.Description" xml:space="preserve">
+    <value>Windows Copilot のサイドバー、タスクバーボタン、継続的なクラウド同期クエリを無効化します。</value>
+  </data>
+  <data name="Intelligent_Impact_CoPilotAI" xml:space="preserve">
+    <value>タスクバーの空きを確保し、バックグラウンドの Web ビュープロセスを排除します。</value>
+  </data>
+  <data name="Feature_AdvertisingID.Header" xml:space="preserve">
+    <value>Windows 広告 ID を無効化</value>
+  </data>
+  <data name="Feature_AdvertisingID.Description" xml:space="preserve">
+    <value>Windows ストアアプリが個人化広告のためにユーザー活動を追跡するのを防ぎます。</value>
+  </data>
+  <data name="Intelligent_Impact_AdvertisingID" xml:space="preserve">
+    <value>固有の広告識別子プロファイルの追跡を停止します。</value>
+  </data>
+  <data name="Feature_ActivityUploads.Header" xml:space="preserve">
+    <value>アクティビティ履歴のクラウド同期を無効化</value>
+  </data>
+  <data name="Feature_ActivityUploads.Description" xml:space="preserve">
+    <value>ユーザーのアプリ起動履歴と閲覧履歴の Microsoft クラウドへのアップロードを防止します。</value>
+  </data>
+  <data name="Intelligent_Impact_ActivityUploads" xml:space="preserve">
+    <value>デバイスの使用履歴がリンクされたクラウドアカウントに配信されることはありません。</value>
+  </data>
+  <data name="Feature_ClipboardSync.Header" xml:space="preserve">
+    <value>デバイス間のクリップボードのクラウド同期を無効化</value>
+  </data>
+  <data name="Feature_ClipboardSync.Description" xml:space="preserve">
+    <value>クリップボードのコピーバッファーがクラウドサーバーに自動アップロードされるのを停止します。</value>
+  </data>
+  <data name="Intelligent_Impact_ClipboardSync" xml:space="preserve">
+    <value>コピーされた機密テキスト、パスワード、トークンをクラウドへの露出から保護します。</value>
+  </data>
+  <data name="Feature_LocationAccess.Header" xml:space="preserve">
+    <value>位置情報アクセスとセンサーを無効化</value>
+  </data>
+  <data name="Feature_LocationAccess.Description" xml:space="preserve">
+    <value>Windows の位置情報プロバイダーサービスと位置センサー API を無効化します。</value>
+  </data>
+  <data name="Intelligent_Impact_LocationAccess" xml:space="preserve">
+    <value>Web ブラウザーとデスクトップアプリが物理的な座標を特定するのを防ぎます。</value>
+  </data>
+  <data name="Feature_ClassicContextMenu.Header" xml:space="preserve">
+    <value>Windows 10 クラシック右クリックメニューを復元</value>
+  </data>
+  <data name="Feature_ClassicContextMenu.Description" xml:space="preserve">
+    <value>Windows 11 で '詳細オプションの表示' をクリックせずに完全な右クリックコンテキストメニューを復元します。</value>
+  </data>
+  <data name="Intelligent_Impact_ClassicContextMenu" xml:space="preserve">
+    <value>エクスプローラーでの右クリック操作ごとに 1 クリック節約できます。</value>
+  </data>
+  <data name="Feature_EndTask.Header" xml:space="preserve">
+    <value>タスクバーアプリアイコンに「タスクの終了」を有効化</value>
+  </data>
+  <data name="Feature_EndTask.Description" xml:space="preserve">
+    <value>タスクバーアイテムの右クリックに「タスクの終了」直接アクションを追加して即時プロセス終了を可能にします。</value>
+  </data>
+  <data name="Intelligent_Impact_EndTask" xml:space="preserve">
+    <value>タスクマネージャーを開かずにフリーズしたプログラムを即座に終了します。</value>
+  </data>
+  <data name="Intelligent_Impact_FileExtensionsAndHiddenFiles" xml:space="preserve">
+    <value>偽装されたダブル拡張子マルウェア (.pdf.exe) から保護します。</value>
+  </data>
+  <data name="Feature_StickyKeys.Header" xml:space="preserve">
+    <value>固定キーのプロンプトを無効化</value>
+  </data>
+  <data name="Feature_StickyKeys.Description" xml:space="preserve">
+    <value>ゲーム中に Shift を 5 回押したときのポップアップダイアログを無効化します。</value>
+  </data>
+  <data name="Intelligent_Impact_StickyKeys" xml:space="preserve">
+    <value>Shift キーの連打によるゲームの中断を停止します。</value>
+  </data>
+  <data name="Feature_RecommendedSectionStartMenu.Header" xml:space="preserve">
+    <value>スタートメニューの「おすすめ」セクションを非表示</value>
+  </data>
+  <data name="Feature_RecommendedSectionStartMenu.Description" xml:space="preserve">
+    <value>Windows 11 のスタートメニューから最近のファイルとおすすめのペインを削除します。</value>
+  </data>
+  <data name="Intelligent_Impact_RecommendedSectionStartMenu" xml:space="preserve">
+    <value>ピン留めアプリのためのスペースが増えたすっきりしたスタートメニュー。</value>
+  </data>
+  <data name="Feature_TaskbarToLeft.Header" xml:space="preserve">
+    <value>タスクバーアイコンを左揃えに</value>
+  </data>
+  <data name="Feature_TaskbarToLeft.Description" xml:space="preserve">
+    <value>Windows 11 のスタートボタンとタスクバーアイコンをクラシックな左下の位置に移動します。</value>
+  </data>
+  <data name="Intelligent_Impact_TaskbarToLeft" xml:space="preserve">
+    <value>クラシックな筋肉記憶によるアライメント。</value>
+  </data>
+  <data name="Feature_FilesCompactMode.Header" xml:space="preserve">
+    <value>ファイルエクスプローラーにコンパクト表示を有効化</value>
+  </data>
+  <data name="Feature_FilesCompactMode.Description" xml:space="preserve">
+    <value>ファイルエクスプローラーの行間の垂直パディングを減らして、より多くのファイルを表示します。</value>
+  </data>
+  <data name="Intelligent_Impact_FilesCompactMode" xml:space="preserve">
+    <value>スクロールなしで一画面に表示されるファイル数が増えます。</value>
+  </data>
+  <data name="Feature_CloudClipboard.Header" xml:space="preserve">
+    <value>クリップボード履歴を強化して有効化</value>
+  </data>
+  <data name="Feature_CloudClipboard.Description" xml:space="preserve">
+    <value>クラウド同期なしでローカルの Win+V クリップボード履歴を設定します。</value>
+  </data>
+  <data name="Intelligent_Impact_CloudClipboard" xml:space="preserve">
+    <value>Win+V でアクセスできる複数アイテムのクリップボード履歴。</value>
+  </data>
+  <data name="Feature_EdgeDiscoverBar.Header" xml:space="preserve">
+    <value>Edge の Discover サイドバーとウィジェットを無効化</value>
+  </data>
+  <data name="Feature_EdgeDiscoverBar.Description" xml:space="preserve">
+    <value>Edge ブラウザのサイドバーボタンと浮動検索ウィジェットを無効化します。</value>
+  </data>
+  <data name="Intelligent_Impact_EdgeDiscoverBar" xml:space="preserve">
+    <value>Edge ブラウザの不要な要素を取り除きます。</value>
+  </data>
+  <data name="Feature_BluetoothAdvertising.Header" xml:space="preserve">
+    <value>Bluetooth 広告ビーコンを無効化</value>
+  </data>
+  <data name="Feature_BluetoothAdvertising.Description" xml:space="preserve">
+    <value>Windows が近くのハードウェアに Bluetooth 広告ビーコンをブロードキャストするのを防ぎます。</value>
+  </data>
+  <data name="Intelligent_Impact_BluetoothAdvertising" xml:space="preserve">
+    <value>公共の場所でのワイヤレスデバイスのプライバシーを向上させます。</value>
+  </data>
+  <data name="Feature_SpotlightFeatures.Header" xml:space="preserve">
+    <value>Windows Spotlight の候補を無効化</value>
+  </data>
+  <data name="Feature_SpotlightFeatures.Description" xml:space="preserve">
+    <value>ロック画面でのプロモーション提案とバックグラウンドのクラウド画像ダウンロードを無効化します。</value>
+  </data>
+  <data name="Intelligent_Impact_SpotlightFeatures" xml:space="preserve">
+    <value>ロック画面の広告とバックグラウンドダウンロードを停止します。</value>
+  </data>
+  <data name="Feature_NvidiaTelemetry.Header" xml:space="preserve">
+    <value>NVIDIA テレメトリコンテナを無効化</value>
+  </data>
+  <data name="Feature_NvidiaTelemetry.Description" xml:space="preserve">
+    <value>NVIDIA ドライバーのバックグラウンドテレメトリタスクと追跡サービスを無効化します。</value>
+  </data>
+  <data name="Intelligent_Impact_NvidiaTelemetry" xml:space="preserve">
+    <value>GPU 分析アップロードを停止し、バックグラウンドで 100MB 以上の RAM を解放します。</value>
+  </data>
+  <data name="Feature_EdgeTelemetry.Header" xml:space="preserve">
+    <value>Microsoft Edge のテレメトリーを無効化</value>
+  </data>
+  <data name="Feature_EdgeTelemetry.Description" xml:space="preserve">
+    <value>Edge ブラウザの診断、クラッシュレポート、スタートアップバックグラウンドブーストを無効化します。</value>
+  </data>
+  <data name="Intelligent_Impact_EdgeTelemetry" xml:space="preserve">
+    <value>Edge が永続的なバックグラウンドプロセスを維持するのを防ぎます。</value>
+  </data>
+  <data name="Intelligent_Impact_RemoteRegistry" xml:space="preserve">
+    <value>マルウェアやランサムウェアに悪用される主要なネットワーク脆弱性を閉じます。</value>
+  </data>
+  <data name="Feature_SMBv1.Header" xml:space="preserve">
+    <value>レガシー SMBv1 ネットワークプロトコルを無効化</value>
+  </data>
+  <data name="Feature_SMBv1.Description" xml:space="preserve">
+    <value>30 年前の安全でない SMBv1 ファイル共有プロトコル (EternalBlue/WannaCry 攻撃ベクター) を無効化します。</value>
+  </data>
+  <data name="Intelligent_Impact_SMBv1" xml:space="preserve">
+    <value>ネットワークワームの悪用に対する重要なセキュリティ強化。</value>
+  </data>
+  <data name="Feature_Widgets.Header" xml:space="preserve">
+    <value>Windows 11 ウィジェットボードを無効化</value>
+  </data>
+  <data name="Feature_Widgets.Description" xml:space="preserve">
+    <value>タスクバーのウィジェットフィードとバックグラウンドの Edge WebView プロセスを無効化します。</value>
+  </data>
+  <data name="Intelligent_Impact_Widgets" xml:space="preserve">
+    <value>300MB 以上の RAM を解放し、Edge のバックグラウンドレンダリングを停止します。</value>
+  </data>
+  <data name="Feature_SysMain.Header" xml:space="preserve">
+    <value>SysMain (Superfetch) を最適化</value>
+  </data>
+  <data name="Feature_SysMain.Description" xml:space="preserve">
+    <value>SSD への不要なプリロードを停止するために SysMain サービスを調整または無効化します。</value>
+  </data>
+  <data name="Intelligent_Impact_SysMain" xml:space="preserve">
+    <value>バックグラウンドの高いディスク使用スパイクと不要な SSD 書き込みサイクルを解消します。</value>
+  </data>
 </root>
