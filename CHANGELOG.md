@@ -3,7 +3,7 @@
 All notable changes to this branch will be documented in this file.
 
 
-## 1.7.1 - Unreleased
+## 1.7.1 - Released
 
 ### Added
 
